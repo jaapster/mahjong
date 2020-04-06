@@ -1,0 +1,45 @@
+/dist/**
+**/*.log
+**/node_modules
+**/*.pem
+**/.DS_Store
+**/.idea/
+**.swp
+**.vscode/
+
+**/build-info.json
+
+**/.pnp
+**/.pnp.js
+
+# testing
+**/coverage
+
+# production
+**/build
+
+# misc
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+packages/environment.json
+yarn.lock
+
+!**/.idea/
+/.idea/codeStyles/
+/.idea/dictionaries/
+/.idea/inspectionProfiles/
+/.idea/jsLinters/
+/.idea/
+/.nyc_output/
+/coverage/
+# stryker temp files
+.stryker-tmp
+
+/.history
