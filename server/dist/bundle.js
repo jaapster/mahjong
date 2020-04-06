@@ -86,28 +86,110 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Banner/Banner.scss":
-/*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Banner/Banner.scss ***!
-  \************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/autobind-decorator/lib/esm/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/autobind-decorator/lib/esm/index.js ***!
+  \**********************************************************/
+/*! exports provided: boundMethod, boundClass, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".banner {\n  background-color: moccasin;\n  box-sizing: border-box;\n  padding: 2rem;\n  text-align: center; }\n  .banner__text {\n    color: darkRed; }\n", ""]);
-// Exports
-module.exports = exports;
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "boundMethod", function() { return boundMethod; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "boundClass", function() { return boundClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return autobind; });
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+/**
+ * Return a descriptor removing the value and returning a getter
+ * The getter will return a .bind version of the function
+ * and memoize the result against a symbol on the instance
+ */
+function boundMethod(target, key, descriptor) {
+  var fn = descriptor.value;
+
+  if (typeof fn !== 'function') {
+    throw new TypeError("@boundMethod decorator can only be applied to methods not: ".concat(_typeof(fn)));
+  } // In IE11 calling Object.defineProperty has a side-effect of evaluating the
+  // getter for the property which is being replaced. This causes infinite
+  // recursion and an "Out of stack space" error.
+
+
+  var definingProperty = false;
+  return {
+    configurable: true,
+    get: function get() {
+      // eslint-disable-next-line no-prototype-builtins
+      if (definingProperty || this === target.prototype || this.hasOwnProperty(key) || typeof fn !== 'function') {
+        return fn;
+      }
+
+      var boundFn = fn.bind(this);
+      definingProperty = true;
+      Object.defineProperty(this, key, {
+        configurable: true,
+        get: function get() {
+          return boundFn;
+        },
+        set: function set(value) {
+          fn = value;
+          delete this[key];
+        }
+      });
+      definingProperty = false;
+      return boundFn;
+    },
+    set: function set(value) {
+      fn = value;
+    }
+  };
+}
+/**
+ * Use boundMethod to bind all methods on the target.prototype
+ */
+
+function boundClass(target) {
+  // (Using reflect to get all keys including symbols)
+  var keys; // Use Reflect if exists
+
+  if (typeof Reflect !== 'undefined' && typeof Reflect.ownKeys === 'function') {
+    keys = Reflect.ownKeys(target.prototype);
+  } else {
+    keys = Object.getOwnPropertyNames(target.prototype); // Use symbols if support is provided
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      keys = keys.concat(Object.getOwnPropertySymbols(target.prototype));
+    }
+  }
+
+  keys.forEach(function (key) {
+    // Ignore special case target method
+    if (key === 'constructor') {
+      return;
+    }
+
+    var descriptor = Object.getOwnPropertyDescriptor(target.prototype, key); // Only methods need binding
+
+    if (typeof descriptor.value === 'function') {
+      Object.defineProperty(target.prototype, key, boundMethod(target, key, descriptor));
+    }
+  });
+  return target;
+}
+function autobind() {
+  if (arguments.length === 1) {
+    return boundClass.apply(void 0, arguments);
+  }
+
+  return boundMethod.apply(void 0, arguments);
+}
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/global.scss":
-/*!*************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/global.scss ***!
-  \*************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/base.scss":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/base.scss ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -115,7 +197,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "html {\n  font-size: 10px; }\n\nbody {\n  font-size: 1.8rem;\n  margin: 0 auto;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: sans-serif; }\n\n.tray {\n  display: flex;\n  flex-direction: row;\n  padding: 12px;\n  border: 1px dashed black;\n  flex-wrap: wrap;\n  min-height: 170px; }\n\n.tray.hovered {\n  background: yellow; }\n\n.tile {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 11px;\n  cursor: pointer;\n  padding: 0;\n  padding-bottom: 2px;\n  background: white; }\n\n.tile:hover {\n  background: #e9f9da; }\n\n.tile .gfx {\n  margin-top: -24px;\n  font-size: 120px; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -29022,67 +29104,354 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ "./src/components/Banner/Banner.scss":
-/*!*******************************************!*\
-  !*** ./src/components/Banner/Banner.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./Banner.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Banner/Banner.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
-
-/***/ }),
-
-/***/ "./src/components/Banner/Banner.tsx":
-/*!******************************************!*\
-  !*** ./src/components/Banner/Banner.tsx ***!
-  \******************************************/
+/***/ "./src/components/app/cp-app.tsx":
+/*!***************************************!*\
+  !*** ./src/components/app/cp-app.tsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-__webpack_require__(/*! ./Banner.scss */ "./src/components/Banner/Banner.scss");
+const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
 
-class Banner extends React.Component {
-  render() {
-    return React.createElement("div", {
-      className: "banner"
-    }, React.createElement("span", {
-      className: "banner__text"
-    }, "HHHHHHello ", this.props.name, "!"));
+const cp_table_1 = __webpack_require__(/*! ./cp-table */ "./src/components/app/cp-table.tsx");
+
+let App = class App extends react_1.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      game: undefined
+    };
+    this.stream = new EventSource('/stream');
+    this.stream.onmessage = this.onMessage;
   }
 
-}
+  onConnect() {
+    fetch('/games').then(response => response.json()).then(data => {
+      this.setState({
+        game: data[0]
+      });
+    });
+  }
 
-exports.default = Banner;
+  onMessage(event) {
+    const {
+      id,
+      type,
+      data
+    } = JSON.parse(event.data);
+
+    if (type === 'connect') {
+      this.onConnect();
+    }
+
+    if (type === 'game') {
+      this.setState({
+        game: data
+      });
+    }
+  }
+
+  render() {
+    const {
+      game
+    } = this.state;
+    return react_1.default.createElement("div", {
+      className: "app"
+    }, react_1.default.createElement("h1", null, "Mahjong"), game != null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_table_1.Table, {
+      game: game
+    })) : react_1.default.createElement("p", null, "NO GAME"));
+  }
+
+};
+App = __decorate([autobind_decorator_1.default], App);
+exports.App = App;
+;
+
+/***/ }),
+
+/***/ "./src/components/app/cp-table.tsx":
+/*!*****************************************!*\
+  !*** ./src/components/app/cp-table.tsx ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
+
+const cp_tile_1 = __webpack_require__(/*! ./cp-tile */ "./src/components/app/cp-tile.tsx");
+
+const map = {
+  public: 'a1',
+  private: 'a0',
+  table: 't1'
+};
+let Table = class Table extends react_1.default.Component {
+  // onDragstart(e) {
+  // 	dragged = e.target.id;
+  // 	dragSource = e.target.parentNode.id;
+  // }
+  // onDragOver(e) {
+  // 	dropTarget = e.target.id;
+  // 	event.preventDefault();
+  // }
+  // onDragEnter(e) {
+  // 	const id = e.target.id;
+  // 	if (id != dragSource && map[id]) {
+  // 		e.target.classList.add('hovered');
+  // 	}
+  // 	e.preventDefault();
+  // }
+  // onDragLeave(e) {
+  // 	const id = e.target.id;
+  // 	if (id != dragSource && map[id]) {
+  // 		e.target.classList.remove('hovered');
+  // 	}
+  // 	e.preventDefault();
+  // }
+  // onDragEnd(e) => {
+  // 	if (dropTarget) {
+  // 		if (dropTarget !== dragSource && dropTarget !== dragged) {
+  // 			fetch(`/games/${ gameId }/tiles/${ map[dragSource] }/${ dragged }?to=${ map[dropTarget] }`);
+  // 		}
+  // 	}
+  // 	document.getElementById(dropTarget).classList.remove('hovered');
+  // 	dragged = undefined;
+  // 	dragSource = undefined;
+  // 	dropTarget = undefined;
+  // }
+  onDragStart(e) {
+    this.setState({
+      dragged: e.target.id,
+      dragSource: e.target.parentNode.id
+    });
+  }
+
+  onDrop(e) {}
+
+  onDragEnter(e) {
+    e.preventDefault();
+  }
+
+  onDragOver(e) {
+    this.setState({
+      dropTarget: e.nativeEvent.target.id
+    });
+    e.preventDefault();
+  }
+
+  onDragEnd(e) {
+    const {
+      game
+    } = this.props;
+    const {
+      dropTarget,
+      dragSource,
+      dragged
+    } = this.state;
+
+    if (dropTarget) {
+      if (dropTarget !== dragSource && dropTarget !== dragged) {
+        fetch(`/games/${game.id}/tiles/${map[dragSource]}/${dragged}?to=${map[dropTarget]}`);
+      }
+    }
+
+    this.setState({
+      dragged: undefined,
+      dragSource: undefined,
+      dropTarget: undefined
+    });
+  }
+
+  render() {
+    const {
+      game
+    } = this.props;
+    return react_1.default.createElement("div", {
+      className: "table",
+      onDragEnd: this.onDragEnd
+    }, react_1.default.createElement("h2", null, "Table"), react_1.default.createElement("div", {
+      id: "table",
+      className: "tray",
+      onDragEnter: this.onDragEnter,
+      onDragOver: this.onDragOver,
+      onDrop: this.onDrop
+    }, game.tiles.t1.map(t => react_1.default.createElement(cp_tile_1.Tile, {
+      key: t.id,
+      tile: t,
+      onDragStart: this.onDragStart
+    }))), react_1.default.createElement("h2", null, "Public"), react_1.default.createElement("div", {
+      id: "public",
+      className: "tray",
+      onDragEnter: this.onDragEnter,
+      onDragOver: this.onDragOver,
+      onDrop: this.onDrop
+    }, game.tiles.a1.map(t => react_1.default.createElement(cp_tile_1.Tile, {
+      key: t.id,
+      tile: t,
+      onDragStart: this.onDragStart
+    }))), react_1.default.createElement("h2", null, "Private"), react_1.default.createElement("div", {
+      id: "private",
+      className: "tray",
+      onDragEnter: this.onDragEnter,
+      onDragOver: this.onDragOver,
+      onDrop: this.onDrop
+    }, game.tiles.a0.map(t => react_1.default.createElement(cp_tile_1.Tile, {
+      key: t.id,
+      tile: t,
+      onDragStart: this.onDragStart
+    }))));
+  }
+
+};
+Table = __decorate([autobind_decorator_1.default], Table);
+exports.Table = Table;
+;
+
+/***/ }),
+
+/***/ "./src/components/app/cp-tile.tsx":
+/*!****************************************!*\
+  !*** ./src/components/app/cp-tile.tsx ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+const g = {
+  characters: {
+    '1': '1F007',
+    '2': '1F008',
+    '3': '1F009',
+    '4': '1F00A',
+    '5': '1F00B',
+    '6': '1F00C',
+    '7': '1F00D',
+    '8': '1F00E',
+    '9': '1F00F'
+  },
+  bamboo: {
+    '1': '1F010',
+    '2': '1F011',
+    '3': '1F012',
+    '4': '1F013',
+    '5': '1F014',
+    '6': '1F015',
+    '7': '1F016',
+    '8': '1F017',
+    '9': '1F018'
+  },
+  dots: {
+    '1': '1F019',
+    '2': '1F01A',
+    '3': '1F01B',
+    '4': '1F01C',
+    '5': '1F01D',
+    '6': '1F01E',
+    '7': '1F01F',
+    '8': '1F020',
+    '9': '1F021'
+  },
+  flowers: {
+    'plum': '1F022',
+    'orchid': '1F023',
+    'chrysanthemum': '1F025',
+    'bamboo': '1F024'
+  },
+  seasons: {
+    'spring': '1F022',
+    'summer': '1F023',
+    'autumn': '1F024',
+    'winter': '1F025'
+  },
+  winds: {
+    'east': '1F000',
+    'north': '1F001',
+    'west': '1F002',
+    'south': '1F003'
+  },
+  dragons: {
+    'red': '1F004',
+    'green': '1F005',
+    'white': '1F006'
+  }
+};
+
+exports.Tile = ({
+  tile,
+  onDragStart
+}) => {
+  return react_1.default.createElement("div", {
+    className: "tile",
+    draggable: "true",
+    id: tile.id.toString(),
+    onDragStart: onDragStart
+  }, react_1.default.createElement("span", {
+    className: "gfx",
+    dangerouslySetInnerHTML: {
+      __html: `&#x${g[tile.suit][tile.name]}`
+    }
+  }), react_1.default.createElement("span", null, tile.suit), react_1.default.createElement("span", null, tile.name), react_1.default.createElement("span", null, "(", tile.id, ")"));
+};
 
 /***/ }),
 
@@ -29096,33 +29465,37 @@ exports.default = Banner;
 "use strict";
 
 
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-const ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+const react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
 
-const Banner_1 = __webpack_require__(/*! ./components/Banner/Banner */ "./src/components/Banner/Banner.tsx");
+const cp_app_1 = __webpack_require__(/*! ./components/app/cp-app */ "./src/components/app/cp-app.tsx");
 
-__webpack_require__(/*! ./styles/global.scss */ "./src/styles/global.scss");
+__webpack_require__(/*! ./styles/base.scss */ "./src/styles/base.scss");
 
-ReactDOM.render(React.createElement("div", null, React.createElement(Banner_1.default, {
-  name: "Max"
-})), document.getElementById("app"));
+react_dom_1.default.render(react_1.default.createElement(cp_app_1.App, null), document.getElementById('app'));
 
 /***/ }),
 
-/***/ "./src/styles/global.scss":
-/*!********************************!*\
-  !*** ./src/styles/global.scss ***!
-  \********************************/
+/***/ "./src/styles/base.scss":
+/*!******************************!*\
+  !*** ./src/styles/base.scss ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./global.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/global.scss");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./base.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/base.scss");
 
             content = content.__esModule ? content.default : content;
 
