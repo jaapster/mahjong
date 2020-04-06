@@ -10,7 +10,7 @@ export default class Banner extends React.Component<IProps> {
     return (
       <div className="banner">
         <span className="banner__text">
-          Hello {this.props.name}!
+          HHHHHHello {this.props.name}!
         </span>
       </div>
     );

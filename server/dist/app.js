@@ -5,15 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const express_sse_1 = __importDefault(require("express-sse"));
-const path_1 = __importDefault(require("path"));
 const game_1 = require("./game");
 const app = express_1.default();
 const port = 1001;
 const sse = new express_sse_1.default({ type: 'connect' });
+app.use(express_1.default.static('public'));
 app.get('/stream', sse.init);
-app.get('/', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname + '../../../client/index2.html'));
-});
+// app.get('/', (req, res) => {
+// 	res.sendFile(path.join(__dirname + '../../../client/index.html'));
+// });
+app.use('/', express_1.default.static('dist'));
 app.get('/games', (req, res) => {
     res.send(game_1.listGames());
 });

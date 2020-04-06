@@ -7,11 +7,15 @@ const app = express();
 const port = 1001;
 const sse = new SSE({ type: 'connect' });
 
+app.use(express.static('public'));
+
 app.get('/stream', sse.init);
 
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname + '../../../client/index2.html'));
-});
+// app.get('/', (req, res) => {
+// 	res.sendFile(path.join(__dirname + '../../../client/index.html'));
+// });
+
+app.use('/', express.static('dist'))
 
 app.get('/games', (req, res) => {
 	res.send(listGames());
