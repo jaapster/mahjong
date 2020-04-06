@@ -12,7 +12,7 @@ const port = 1001;
 const sse = new express_sse_1.default({ type: 'connect' });
 app.get('/stream', sse.init);
 app.get('/', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname + '../../../client/index.html'));
+    res.sendFile(path_1.default.join(__dirname + '../../../client/index2.html'));
 });
 app.get('/games', (req, res) => {
     res.send(game_1.listGames());
