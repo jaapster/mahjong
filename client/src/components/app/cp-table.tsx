@@ -1,88 +1,50 @@
 import React from 'react';
 import bind from 'autobind-decorator';
-import { Tile } from './cp-tile';
+import axios from 'axios';
+import { Tray } from './cp-tray';
 
-const map = {
-	public: 'a1',
-	private: 'a0',
-	table: 't1'
-};
+interface Props {
+	game: Mahjong.Game;
+	leave(): void;
+}
+
+interface State {
+	dragged?: HTMLElement;
+	dragSource?: HTMLElement;
+	dropTarget?: HTMLElement;
+}
 
 @bind
-export class Table extends React.Component<any, any> {
-	// onDragstart(e) {
-	// 	dragged = e.target.id;
-	// 	dragSource = e.target.parentNode.id;
-	// }
+export class Table extends React.Component<Props, State> {
+	state = {
+		dragged: undefined,
+		dragSource: undefined,
+		dropTarget: undefined
+	};
 
-	// onDragOver(e) {
-	// 	dropTarget = e.target.id;
-	// 	event.preventDefault();
-	// }
-
-	// onDragEnter(e) {
-	// 	const id = e.target.id;
-
-	// 	if (id != dragSource && map[id]) {
-	// 		e.target.classList.add('hovered');
-	// 	}
-
-	// 	e.preventDefault();
-	// }
-
-	// onDragLeave(e) {
-	// 	const id = e.target.id;
-
-	// 	if (id != dragSource && map[id]) {
-	// 		e.target.classList.remove('hovered');
-	// 	}
-
-	// 	e.preventDefault();
-	// }
-
-	// onDragEnd(e) => {
-	// 	if (dropTarget) {
-	// 		if (dropTarget !== dragSource && dropTarget !== dragged) {
-	// 			fetch(`/games/${ gameId }/tiles/${ map[dragSource] }/${ dragged }?to=${ map[dropTarget] }`);
-	// 		}
-	// 	}
-
-	// 	document.getElementById(dropTarget).classList.remove('hovered');
-
-	// 	dragged = undefined;
-	// 	dragSource = undefined;
-	// 	dropTarget = undefined;
-	// }
-
-	onDragStart(e) {
+	private onDragStart(e) {
 		this.setState({
 			dragged: e.target.id,
-			dragSource: e.target.parentNode.id
+			dragSource: e.target.parentNode
 		});
 	}
 
-	onDrop(e) {
-
-	}
-
-	onDragEnter(e) {
+	private onDragEnter(e) {
+		this.setState({ dropTarget: e.nativeEvent.target });
 		e.preventDefault();
 	}
 
-	onDragOver(e) {
-		this.setState({
-			dropTarget: e.nativeEvent.target.id
-		});
+	private onDragOver(e) {
 		e.preventDefault();
 	}
 
-	onDragEnd(e) {
+	private onDragEnd(e) {
 		const { game } = this.props;
 		const { dropTarget, dragSource, dragged } = this.state;
 
 		if (dropTarget) {
 			if (dropTarget !== dragSource && dropTarget !== dragged) {
-				fetch(`/games/${ game.id }/tiles/${ map[dragSource] }/${ dragged }?to=${ map[dropTarget] }`);
+				axios.put(`/games/${ game.id }/tiles/${ dragSource.id }/${ dragged }?to=${ dropTarget.id }`);
 			}
 		}
 
@@ -94,51 +56,32 @@ export class Table extends React.Component<any, any> {
 	}
 
 	render() {
-		const { game } = this.props;
+		const { game, leave } = this.props;
 
 		return (
 			<div
 				className="table"
 				onDragEnd={ this.onDragEnd }
+				onDragEnter={ this.onDragEnter }
+				onDragOver={ this.onDragOver }
+				onDragStart={ this.onDragStart }
 			>
-				<h2>Table</h2>
-				<div
-					id="table"
-					className="tray"
-					onDragEnter={ this.onDragEnter }
-					onDragOver={ this.onDragOver }
-					onDrop={ this.onDrop }
-				>
-					{
-						game.tiles.t1.map((t) => <Tile key={ t.id } tile={ t } onDragStart={ this.onDragStart } />)
-					}
-				</div>
-
-				<h2>Public</h2>
-				<div
-					id="public"
-					className="tray"
-					onDragEnter={ this.onDragEnter }
-					onDragOver={ this.onDragOver }
-					onDrop={ this.onDrop }
-				>
-					{
-						game.tiles.a1.map((t) => <Tile key={ t.id } tile={ t } onDragStart={ this.onDragStart } />)
-					}
-				</div>
-
-				<h2>Private</h2>
-				<div
-					id="private"
-					className="tray"
-					onDragEnter={ this.onDragEnter }
-					onDragOver={ this.onDragOver }
-					onDrop={ this.onDrop }
-				>
-					{
-						game.tiles.a0.map((t) => <Tile key={ t.id } tile={ t } onDragStart={ this.onDragStart } />)
-					}
-				</div>
+				<a href="#" onClick={ leave }>Leave table</a>
+				<Tray
+					id="t1"
+					name="Table"
+					tiles={ game.tiles.t1 }
+				/>
+				<Tray
+					id="a1"
+					name="Public"
+					tiles={ game.tiles.a1 }
+				/>
+				<Tray
+					id="a0"
+					name="Private"
+					tiles={ game.tiles.a0 }
+				/>
 			</div>
 		);
 	}

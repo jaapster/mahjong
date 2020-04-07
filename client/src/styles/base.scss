@@ -1,5 +1,6 @@
 body {
 	font-family: sans-serif;
+	padding: 8px;
 }
 
 .tray {
@@ -34,4 +35,11 @@ body {
 .tile .gfx {
 	margin-top: -24px;
 	font-size: 120px;
+}
+
+.lobby {
+	.game {
+		margin-bottom: 8px;
+		border-top: 1px solid black;
+	}
 }

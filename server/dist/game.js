@@ -50,12 +50,13 @@ exports.addPlayer = (id, name) => {
             ] });
     });
 };
-exports.moveTile = (gameId, tileId, from, to) => {
-    console.log(gameId, tileId, from, to);
+exports.moveTile = (gameId, tileId, fromId, toId, index) => {
     const game = _games.find(game => game.id === gameId);
-    const tile = game.tiles[from].find(tile => tile.id == tileId);
-    game.tiles[from] = game.tiles[from].filter(tile => tile.id != tileId);
-    game.tiles[to] = game.tiles[to].concat(tile);
+    const tile = game.tiles[fromId].find(tile => tile.id == tileId);
+    game.tiles[fromId] = game.tiles[fromId].filter(tile => tile.id != tileId);
+    game.tiles[toId] = index == null
+        ? game.tiles[toId].concat(tile)
+        : game.tiles[toId].splice(index, 0, tile);
 };
 exports.deal = (id) => {
     _games = _games.map((game) => {
@@ -66,9 +67,13 @@ exports.deal = (id) => {
     });
 };
 // test stuff
-const game = exports.createGame();
+const game1 = exports.createGame();
 ['Leonard', 'Sheldon', 'Howard', 'Raj'].forEach((name) => {
-    exports.addPlayer(game.id, name);
+    exports.addPlayer(game1.id, name);
 });
-exports.deal(game.id);
-//# sourceMappingURL=game.js.map
+exports.deal(game1.id);
+const game2 = exports.createGame();
+['Fred', 'Barney', 'Bettie'].forEach((name) => {
+    exports.addPlayer(game2.id, name);
+});
+exports.deal(game2.id);

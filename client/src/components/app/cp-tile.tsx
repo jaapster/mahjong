@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const g = {
 	characters: {
 		'1': '1F007',
@@ -42,10 +41,10 @@ const g = {
 		'bamboo': '1F024'
 	},
 	seasons: {
-		'spring': '1F022',
-		'summer': '1F023',
-		'autumn': '1F024',
-		'winter': '1F025'
+		'spring': '1F026',
+		'summer': '1F027',
+		'autumn': '1F028',
+		'winter': '1F029'
 	},
 	winds: {
 		'east': '1F000',
@@ -60,27 +59,25 @@ const g = {
 	}
 };
 
-export const Tile = ({ tile, onDragStart }: { tile: Mahjong.Tile, onDragStart: (e: any) => void }) => {
+export const Tile = ({ tile: { id, suit, name } }: { tile: Mahjong.Tile }) => {
 	return (
 		<div
-			className="tile"
+			className={ `tile tile-${ suit }-${ name }` }
 			draggable="true"
-			id={ tile.id.toString() }
-			onDragStart={ onDragStart }
+			id={ id.toString() }
 		>
 			<span
 				className="gfx"
-				dangerouslySetInnerHTML={{__html: `&#x${ g[tile.suit][tile.name] }` }}
-			>
+				dangerouslySetInnerHTML={ { __html: `&#x${ g[suit][name] };` } }
+			/>
+			<span>
+				{ suit }
 			</span>
 			<span>
-				{ tile.suit }
+				{ name }
 			</span>
 			<span>
-				{ tile.name }
-			</span>
-			<span>
-				({ tile.id })
+				({ id })
 			</span>
 		</div>
 	);

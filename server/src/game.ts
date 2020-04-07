@@ -61,14 +61,20 @@ export const addPlayer = (id: string, name: string) => {
 	});
 }
 
-export const moveTile = (gameId: string, tileId: string, from: string, to: string) => {
-	console.log(gameId, tileId, from, to);
-
+export const moveTile = (
+	gameId: string,
+	tileId: string,
+	fromId: string,
+	toId: string,
+	index?: number
+) => {
 	const game = _games.find(game => game.id === gameId);
-	const tile = game.tiles[from].find(tile => tile.id == tileId);
+	const tile = game.tiles[fromId].find(tile => tile.id == tileId);
 
-	game.tiles[from] = game.tiles[from].filter(tile => tile.id != tileId);
-	game.tiles[to] = game.tiles[to].concat(tile);
+	game.tiles[fromId] = game.tiles[fromId].filter(tile => tile.id != tileId);
+	game.tiles[toId] = index == null
+		? game.tiles[toId].concat(tile)
+		: game.tiles[toId].splice(index, 0, tile);
 }
 
 export const deal = (id: string) => {
@@ -93,10 +99,18 @@ export const deal = (id: string) => {
 };
 
 // test stuff
-const game = createGame();
+const game1 = createGame();
 
 ['Leonard', 'Sheldon', 'Howard', 'Raj'].forEach((name) => {
-	addPlayer(game.id, name);
+	addPlayer(game1.id, name);
 });
 
-deal(game.id);
+deal(game1.id);
+
+const game2 = createGame();
+
+['Fred', 'Barney', 'Bettie'].forEach((name) => {
+	addPlayer(game2.id, name);
+});
+
+deal(game2.id);

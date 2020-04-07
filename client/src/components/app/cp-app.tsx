@@ -1,46 +1,59 @@
 import React from 'react';
 import bind from 'autobind-decorator';
 import { Table } from './cp-table';
+import { Lobby } from './cp-lobby';
 
 interface State {
-	game?: Mahjong.Game;
+	game: Mahjong.Game | null;
+	games: Mahjong.Game[];
 }
 
 @bind
-export class App extends React.Component<{}, State> {
-	state = { game: undefined };
+export class App extends React.Component<any, State> {
+	state = { game: null, games: [] };
 
-	private readonly stream: any;
+	private stream: any;
 
-	constructor(props: any) {
-		super(props);
-
-		this.stream = new EventSource('/stream');
-		this.stream.onmessage = this.onMessage;
+	componentDidMount() {
+		this.getGames();
 	}
 
-	private onConnect() {
+	private openStream(gameId: string) {
+		if (this.stream) {
+			this.stream.close();
+		}
+
+		this.stream = new EventSource(`/stream/${ gameId }`);
+		this.stream.addEventListener('game-state', this.onGameState);
+		this.stream.addEventListener('game-close', this.onGameClose);
+	}
+
+	private closeStream() {
+		if (this.stream) {
+			this.stream.removeEventListener('game-state', this.onGameState);
+			this.stream.removeEventListener('game-close', this.onGameClose);
+			this.stream.close();
+		}
+	}
+
+	private getGames() {
 		fetch('/games')
 			.then(response => response.json())
-			.then(data => {
-				this.setState({ game: data[0] });
-			});
+			.then(games => this.setState({ games }));
 	}
 
-	private onMessage(event) {
-		const { id, type, data } = JSON.parse(event.data);
+	private onGameState(event) {
+		this.setState({ game: JSON.parse(event.data) });
+	}
 
-			if (type === 'connect') {
-				this.onConnect();
-			}
-
-			if (type === 'game') {
-				this.setState({ game: data });
-			}
+	private onGameClose() {
+		this.closeStream()
+		this.setState({ game: null });
+		this.getGames();
 	}
 
 	render() {
-		const { game } = this.state;
+		const { game, games } = this.state;
 
 		return (
 			<div className="app">
@@ -48,11 +61,17 @@ export class App extends React.Component<{}, State> {
 				{
 					game != null
 						? (
-							<>
-								<Table game={ game } />
-							</>
+							<Table
+								game={ game }
+								leave={ this.onGameClose }
+							/>
 						)
-						: <p>NO GAME</p>
+						: (
+							<Lobby
+								games={ games }
+								selectGame={ this.openStream }
+							/>
+						)
 				}
 			</div>
 		);

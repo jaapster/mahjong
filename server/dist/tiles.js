@@ -737,4 +737,3 @@ exports.getTileSet = () => {
 // export const getTileSet = (num: number = 144): Mahjong.Tile[] => {
 // 	return shuffle((new Array(num)).fill(0).map((_a, id) => ({ id })));
 // };
-//# sourceMappingURL=tiles.js.map

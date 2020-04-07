@@ -8,4 +8,3 @@ exports.shuffle = (array) => {
     }
     return target;
 };
-//# sourceMappingURL=util-shuffle-array.js.map

@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "start": "tsc && node dist/app.js",
     "watch": "tsc-watch --onSuccess 'node ./dist/app.js'"
   },
   "dependencies": {

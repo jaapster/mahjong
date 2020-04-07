@@ -1,45 +1,56 @@
 import express from 'express';
 import SSE from 'express-sse';
-import path from 'path';
 import { listGames, getGame, createGame, destroyGame, moveTile } from './game';
 
 const app = express();
 const port = 1001;
-const sse = new SSE({ type: 'connect' });
+const streams = {};
 
-app.use(express.static('public'));
+app.get('/stream/:id', (req, res) => {
+	const gameId = req.params.id;
 
-app.get('/stream', sse.init);
+	if (!streams[gameId]) {
+		streams[gameId] = new SSE({
+			type: 'game',
+			data: getGame(gameId)
+		});
+	}
 
-// app.get('/', (req, res) => {
-// 	res.sendFile(path.join(__dirname + '../../../client/index.html'));
-// });
-
-app.use('/', express.static('dist'))
-
-app.get('/games', (req, res) => {
-	res.send(listGames());
+	streams[gameId].init(req, res);
+	streams[gameId].send(getGame(gameId), 'game-state');
 });
 
-app.get('/games/:id', (req, res) => {
-	res.send(getGame(req.params.id));
+app.use('/', express.static('dist'));
+
+app.get('/games', (req, res) => res.send(listGames()));
+
+app.get('/games/:gameId', (req, res) => {
+	const { gameId } = req.params;
+
+	res.send(getGame(gameId));
 });
 
-app.post('/games', (req, res) => {
-	res.send(createGame());
+app.post('/games', (req, res) => res.send(createGame()));
+
+app.delete('/games/:gameId', (req, res) => {
+	const { gameId } = req.params;
+
+	destroyGame(gameId);
+
+	streams[gameId].send({ type: 'close', data: gameId }, 'game-close');
+
+	res.send();
 });
 
-app.delete('/games/:id', (req, res) => {
-	res.send(destroyGame(req.params.id));
-});
-
-// todo: should be PUT
-app.get('/games/:gameId/tiles/:fromId/:tileId', (req, res) => {
+app.put('/games/:gameId/tiles/:fromId/:tileId', (req, res) => {
 	const { gameId, tileId, fromId } = req.params;
-	const { to } = req.query;
+	const { to, index } = req.query;
 
-	res.send(moveTile(gameId, tileId, fromId, to));
-	sse.send({ type: 'game', data: getGame(gameId) });
+	moveTile(gameId, tileId, fromId, to, index);
+
+	streams[gameId].send(getGame(gameId), 'game-state');
+
+	res.send();
 });
 
 app.listen(port, err => {
