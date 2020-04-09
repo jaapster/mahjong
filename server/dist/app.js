@@ -33,10 +33,16 @@ app.delete('/games/:gameId', (req, res) => {
     streams[gameId].send({ type: 'close', data: gameId }, 'game-close');
     res.send();
 });
-app.put('/games/:gameId/tiles/:fromId/:tileId', (req, res) => {
-    const { gameId, tileId, fromId } = req.params;
+// todo: should be a post
+app.get('/games/:gameId/players/:playerName', (req, res) => {
+    const { gameId, playerName } = req.params;
+    res.send(game_1.addPlayer(gameId, playerName));
+    streams[gameId].send(game_1.getGame(gameId), 'game-state');
+});
+app.put('/games/:gameId/tiles/:tileId', (req, res) => {
+    const { gameId, tileId } = req.params;
     const { to, index } = req.query;
-    game_1.moveTile(gameId, tileId, fromId, to, index);
+    game_1.moveTile(gameId, parseInt(tileId), to, index);
     streams[gameId].send(game_1.getGame(gameId), 'game-state');
     res.send();
 });

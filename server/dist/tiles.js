@@ -732,8 +732,5 @@ exports.getTileSet = () => {
             suit: SUITS.SEASONS,
             name: 'winter'
         }
-    ]);
+    ]).map((t, index) => (Object.assign(Object.assign({}, t), { tray: 't0', index })));
 };
-// export const getTileSet = (num: number = 144): Mahjong.Tile[] => {
-// 	return shuffle((new Array(num)).fill(0).map((_a, id) => ({ id })));
-// };

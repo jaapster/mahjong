@@ -1,34 +1,57 @@
 import React from 'react';
 
 interface Props {
+	name: string;
 	games: Mahjong.Game[];
-	selectGame(id: string): void;
+	enter(id: string): void;
+	join(id: string): void;
 }
 
-export const Lobby = ({ games, selectGame }: Props) => {
+export const Lobby = ({ name, games, enter, join }: Props) => {
 	return (
 		<div className="lobby">
 			<h2>Lobby</h2>
-			<h3>Games</h3>
-			{
-				games.map(({ id, players }) => (
-					<div key={ id } className="game">
-						<h4>
-							<a href="#" onClick={ () => selectGame(id) }>
-								{ id }
-							</a>
-						</h4>
-						<h4>Players</h4>
-						{
-							players.map(p => (
-								<p key={ p.name } className="player">
-									{ p.name }
-								</p>
-							))
-						}
-					</div>
-				))
-			}
+			<div className="games">
+				<h3>Spellen <a href="#" title="Nieuw spel toevoegen">(+)</a></h3>
+				{
+					games.map(({ id, chairs, title, creator }) => {
+						const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0)
+
+						return (
+							<div key={ id } className="list-game">
+								<h4>
+									<a href="#" onClick={ () => enter(id) }>
+										{ title ?? 'Spel zonder naam' }
+									</a>
+								</h4>
+								<p>Toegevoegd door { creator ?? 'anoniem' }</p>
+								<h4>Spelers { chairsTaken < 4 ? `(nog ${ 4 - chairsTaken } nodig)` : null}</h4>
+								<ul>
+									{
+										chairs.map(c => (
+											c.player != null
+												? (
+													<li key={ c.id }>
+														{
+															c.player === name
+																? <a href="#" onClick={ () => enter(id) }>{ c.player }</a>
+																: c.player
+														}
+													</li>
+												)
+												: (
+													<li key={ c.id }>
+														<a href="#" onClick={ () => join(id) }>*lege stoel*</a>
+													</li>
+												)
+										))
+									}
+								</ul>
+							</div>
+						);
+					})
+				}
+			</div>
 		</div>
 	)
 };

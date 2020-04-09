@@ -59,18 +59,22 @@ const g = {
 	}
 };
 
-export const Tile = ({ tile: { id, suit, name } }: { tile: Mahjong.Tile }) => {
+export const Tile = ({ tile: { id, suit, name }, hidden }: { tile: Mahjong.Tile, hidden: boolean }) => {
 	return (
 		<div
 			className={ `tile tile-${ suit }-${ name }` }
 			draggable="true"
 			id={ id.toString() }
 		>
-			<span
+			<div
 				className="gfx"
-				dangerouslySetInnerHTML={ { __html: `&#x${ g[suit][name] };` } }
+				dangerouslySetInnerHTML={ {
+					__html: hidden === true
+						? '&#x1F02B'
+						: `&#x${ g[suit][name] };`
+				} }
 			/>
-			<span>
+			{/* <span>
 				{ suit }
 			</span>
 			<span>
@@ -78,7 +82,7 @@ export const Tile = ({ tile: { id, suit, name } }: { tile: Mahjong.Tile }) => {
 			</span>
 			<span>
 				({ id })
-			</span>
+			</span> */}
 		</div>
 	);
 };

@@ -3,22 +3,16 @@ import { Tile } from './cp-tile';
 
 interface Props {
 	id: string;
-	name: string;
 	tiles: Mahjong.Tile[];
+	hidden: boolean;
 }
 
-export const Tray = ({ id, name, tiles }: Props) => {
+export const Tray = ({ id, tiles, hidden }: Props) => {
 	return (
-		<>
-			<h2>{ name }</h2>
-			<div
-				className="tray"
-				id={ id }
-			>
-				{
-					tiles.map(t => <Tile key={ t.id } tile={ t } />)
-				}
-			</div>
-		</>
+		<div className={ `tray ${ hidden ? 'hidden' : null }` } id={ id }>
+			{
+				tiles.map(t => <Tile key={ t.id } tile={ t } hidden={ hidden } />)
+			}
+		</div>
 	)
 };

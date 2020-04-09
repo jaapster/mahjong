@@ -1,0 +1,188 @@
+.game {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	// background: rgba(0, 0, 0, 0.05);
+
+	.table {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		padding: 8px;
+		background: honeydew;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.tile {
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		  	line-height: 37px;
+			overflow: hidden;
+			border-radius: 5px;
+			background: linear-gradient(ivory, blanchedalmond);
+			margin: 2px;
+			position: relative;
+			box-shadow: 0 1px 3px grey;
+
+			.gfx {
+				font-size: 60px;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.tray {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			// height: 100%;
+			// width: 100%;
+			flex-basis: 60px;
+
+			&.hidden {
+				flex-basis: 30px;
+
+				.tile {
+					background: linear-gradient(ivory, blanchedalmond);;
+					border: 1px solid black;
+
+					.gfx {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.middle {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			flex-grow: 1;
+		}
+
+		.center {
+			padding: 50px;
+			margin: 50px;
+			border: 1px solid red;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			.tray {
+				flex-direction: row;
+				align-items: center;
+				height: auto;
+
+				.tile {
+					width: 42px;
+					height: 55px;
+					border-radius: 5px;
+				}
+
+				.gfx {
+					margin-top: 0px;
+					margin-left: -7px;
+					width: 40px;
+					height: 53px;
+				}
+			}
+		}
+
+		.top, .bottom {
+			display: flex;
+			flex-direction: column;
+
+			.tile {
+				width: 42px;
+				height: 55px;
+			}
+
+			.gfx {
+				margin-left: -6px;
+				width: 40px;
+				height: 53px;
+			}
+
+			.tray {
+				flex-direction: row;
+
+				&.hidden {
+					.tile {
+						height: 28px;
+						width: 21.5px;
+						line-height: 19px;
+						border-radius: 2px;
+					}
+				}
+			}
+		}
+
+		.left, .right {
+			display: flex;
+			flex-direction: row;
+
+			.tile {
+				height: 42px;
+				width: 56px;
+			}
+
+			.gfx {
+				margin-right: -12px;
+				margin-bottom: -6px;
+				transform: rotate(90deg);
+				height: 40px;
+				width: 53px;
+			}
+
+			.tray {
+				flex-direction: column;
+				width: 60px;
+				background: rgba(0, 0, 0, 0.1);
+
+				&.hidden {
+					width: 34px;
+					background: none;
+					.tile {
+						height: 22px;
+						width: 28px;
+						line-height: 19px;
+						border-radius: 2px;
+					}
+				}
+			}
+		}
+
+		// .top {
+		// 	.tray {
+		// 		border-bottom: 1px solid black;
+		// 	}
+		// }
+
+		// .bottom {
+		// 	.tray {
+		// 		border-top: 1px solid black;
+		// 	}
+		// }
+
+		// .left {
+		// 	.tray {
+		// 		border-right: 1px solid black;
+		// 	}
+		// }
+
+		// .right {
+		// 	.tray {
+		// 		border-left: 1px solid black;
+		// 	}
+		// }
+	}
+}

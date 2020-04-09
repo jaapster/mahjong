@@ -3,23 +3,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const uuid_1 = require("uuid");
 const tiles_1 = require("./tiles");
 let _games = [];
-exports.createGame = () => {
+exports.createGame = (title, creator) => {
+    const id = uuid_1.v4();
     const game = {
-        id: uuid_1.v4(),
+        id,
+        title,
+        creator,
         players: [],
         dealt: false,
-        tiles: {
-            a0: [],
-            a1: [],
-            b0: [],
-            b1: [],
-            c0: [],
-            c1: [],
-            d0: [],
-            d1: [],
-            t0: tiles_1.getTileSet(),
-            t1: []
-        }
+        ts: tiles_1.getTileSet(),
+        chairs: (new Array(4)).fill(0).map((_e, i) => ({
+            id: `${id}:${uuid_1.v4()}`,
+            player: null,
+            position: ['a', 'b', 'c', 'd'][i]
+        }))
     };
     _games = [
         ..._games,
@@ -36,44 +33,46 @@ exports.listGames = () => {
 exports.getGame = (id) => {
     return _games.find((game) => game.id === id);
 };
-exports.addPlayer = (id, name) => {
+exports.addPlayer = (id, player) => {
+    let chair = { id: null };
     _games = _games.map((game) => {
         if (game.id !== id) {
             return game;
         }
-        return Object.assign(Object.assign({}, game), { players: [
-                ...game.players,
-                {
-                    id: ['a', 'b', 'c', 'd'][game.players.length],
-                    name
-                }
+        const chair = game.chairs.find(c => c.player === null);
+        return Object.assign(Object.assign({}, game), { players: [], chairs: [
+                ...game.chairs.map((c, i) => {
+                    return c !== chair
+                        ? c
+                        : Object.assign(Object.assign({}, c), { player });
+                })
             ] });
     });
+    return chair.id;
 };
-exports.moveTile = (gameId, tileId, fromId, toId, index) => {
+exports.moveTile = (gameId, tileId, toId, index) => {
     const game = _games.find(game => game.id === gameId);
-    const tile = game.tiles[fromId].find(tile => tile.id == tileId);
-    game.tiles[fromId] = game.tiles[fromId].filter(tile => tile.id != tileId);
-    game.tiles[toId] = index == null
-        ? game.tiles[toId].concat(tile)
-        : game.tiles[toId].splice(index, 0, tile);
+    game.ts = game.ts.map(t => t.id === tileId
+        ? Object.assign(Object.assign({}, t), { tray: toId, index }) : t);
 };
 exports.deal = (id) => {
     _games = _games.map((game) => {
         if (game.id !== id || game.dealt) {
             return game;
         }
-        return Object.assign(Object.assign({}, game), { dealt: true, tiles: Object.assign(Object.assign({}, game.tiles), { a0: game.tiles.t0.slice(0, 14), b0: game.tiles.t0.slice(14, 28), c0: game.tiles.t0.slice(28, 42), d0: game.tiles.t0.slice(42, 56), t0: game.tiles.t0.slice(56) }) });
+        return Object.assign(Object.assign({}, game), { dealt: true, ts: game.ts.map((t, i) => {
+                return Object.assign(Object.assign({}, t), { tray: i < 14 ? 'a0' : i < 28 ? 'b0' : i < 42 ? 'c0' : i < 56 ? 'd0' : 't0', index: i - (i < 14 ? 0 : i < 28 ? 14 : i < 42 ? 28 : i < 56 ? 42 : 56) });
+            }) });
     });
 };
 // test stuff
-const game1 = exports.createGame();
-['Leonard', 'Sheldon', 'Howard', 'Raj'].forEach((name) => {
+const game1 = exports.createGame('Woensdag mahjong', 'Anneke');
+['Anneke', 'José', 'Joep', 'Peter'].forEach((name) => {
     exports.addPlayer(game1.id, name);
 });
 exports.deal(game1.id);
-const game2 = exports.createGame();
-['Fred', 'Barney', 'Bettie'].forEach((name) => {
+const game2 = exports.createGame('Mahjong Boefjes', 'Marjan');
+['Marjan', 'Hugo'].forEach((name) => {
     exports.addPlayer(game2.id, name);
 });
 exports.deal(game2.id);

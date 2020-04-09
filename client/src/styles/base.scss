@@ -1,45 +1,28 @@
 body {
 	font-family: sans-serif;
-	padding: 8px;
-}
-
-.tray {
-	display: flex;
-	flex-direction: row;
-	padding: 12px;
-	border: 1px dashed black;
-	flex-wrap: wrap;
-	min-height: 170px;
-}
-
-.tray.hovered {
-	background: yellow;
-}
-
-.tile {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-size: 11px;
-	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	padding: 0;
-
-	padding-bottom: 2px;
-	background: white;
-}
-
-.tile:hover {
-	background: rgb(233, 249, 218);
-}
-
-.tile .gfx {
-	margin-top: -24px;
-	font-size: 120px;
+	margin: 0;
 }
 
 .lobby {
-	.game {
+	padding: 12px;
+
+	.games {
+		padding: 12px;
+	}
+
+	.list-game {
 		margin-bottom: 8px;
-		border-top: 1px solid black;
+		border: 1px solid black;
+		padding: 12px 36px;
+	}
+
+	.add-game {
+		font-size: 12px;
 	}
 }

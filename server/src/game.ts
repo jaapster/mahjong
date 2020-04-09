@@ -3,23 +3,22 @@ import { getTileSet } from './tiles';
 
 let _games: Mahjong.Game[] = [];
 
-export const createGame = (): Mahjong.Game => {
+export const createGame = (title?: string, creator?: string): Mahjong.Game => {
+	const id = v4();
 	const game = {
-		id: v4(),
+		id,
+		title,
+		creator,
 		players: [],
 		dealt: false,
-		tiles: {
-			a0: [],
-			a1: [],
-			b0: [],
-			b1: [],
-			c0: [],
-			c1: [],
-			d0: [],
-			d1: [],
-			t0: getTileSet(),
-			t1: []
-		}
+		ts: getTileSet(),
+		chairs: (new Array(4)).fill(0).map((_e, i) => (
+			{
+				id: `${ id }:${ v4() }`,
+				player: null,
+				position: ['a', 'b', 'c', 'd'][i]
+			}
+		))
 	};
 
 	_games = [
@@ -42,39 +41,47 @@ export const getGame = (id: string): Mahjong.Game => {
 	return _games.find((game) => game.id === id);
 }
 
-export const addPlayer = (id: string, name: string) => {
+export const addPlayer = (id: string, player: string) => {
+	let chair = { id: null };
+
 	_games = _games.map((game) => {
 		if (game.id !== id) {
 			return game;
 		}
 
+		const chair = game.chairs.find(c => c.player === null);
+
 		return {
 			...game,
-			players: [
-				...game.players,
-				{
-					id: ['a', 'b', 'c', 'd'][game.players.length],
-					name
-				}
+			players: [],
+			chairs: [
+				...game.chairs.map((c, i) => {
+					return c !== chair
+						? c
+						: {
+							...c,
+							player
+						};
+				})
 			]
 		}
 	});
+
+	return chair.id;
 }
 
 export const moveTile = (
 	gameId: string,
-	tileId: string,
-	fromId: string,
+	tileId: number,
 	toId: string,
-	index?: number
+	index: number
 ) => {
 	const game = _games.find(game => game.id === gameId);
-	const tile = game.tiles[fromId].find(tile => tile.id == tileId);
 
-	game.tiles[fromId] = game.tiles[fromId].filter(tile => tile.id != tileId);
-	game.tiles[toId] = index == null
-		? game.tiles[toId].concat(tile)
-		: game.tiles[toId].splice(index, 0, tile);
+	game.ts = game.ts.map(t => t.id === tileId
+		? { ...t, tray: toId, index }
+		: t
+	);
 }
 
 export const deal = (id: string) => {
@@ -86,30 +93,29 @@ export const deal = (id: string) => {
 		return {
 			...game,
 			dealt: true,
-			tiles: {
-				...game.tiles,
-				a0: game.tiles.t0.slice(0, 14),
-				b0: game.tiles.t0.slice(14, 28),
-				c0: game.tiles.t0.slice(28, 42),
-				d0: game.tiles.t0.slice(42, 56),
-				t0: game.tiles.t0.slice(56)
-			}
+			ts: game.ts.map((t, i) => {
+				return {
+					...t,
+					tray: i < 14 ? 'a0' : i < 28 ? 'b0' : i < 42 ? 'c0' : i < 56 ? 'd0' : 't0',
+					index: i - (i < 14 ? 0 : i < 28 ? 14 : i < 42 ? 28 : i < 56 ? 42 : 56)
+				};
+			})
 		}
 	});
 };
 
 // test stuff
-const game1 = createGame();
+const game1 = createGame('Woensdag mahjong', 'Anneke');
 
-['Leonard', 'Sheldon', 'Howard', 'Raj'].forEach((name) => {
+['Anneke', 'José', 'Joep', 'Peter'].forEach((name) => {
 	addPlayer(game1.id, name);
 });
 
 deal(game1.id);
 
-const game2 = createGame();
+const game2 = createGame('Mahjong Boefjes', 'Marjan');
 
-['Fred', 'Barney', 'Bettie'].forEach((name) => {
+['Marjan', 'Hugo'].forEach((name) => {
 	addPlayer(game2.id, name);
 });
 

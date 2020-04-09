@@ -10,7 +10,7 @@ const SUITS = {
 	WINDS: 'winds'
 };
 
-export const getTileSet = () => {
+export const getTileSet = (): Mahjong.Tile[]  => {
 	return shuffle([
 		{
 			id: 1,
@@ -732,9 +732,5 @@ export const getTileSet = () => {
 			suit: SUITS.SEASONS,
 			name: 'winter'
 		}
-	]);
-}
-
-// export const getTileSet = (num: number = 144): Mahjong.Tile[] => {
-// 	return shuffle((new Array(num)).fill(0).map((_a, id) => ({ id })));
-// };
+	]).map((t, index) => ({ ...t, tray: 't0', index }));
+};

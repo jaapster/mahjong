@@ -1999,6 +1999,24 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-game.scss":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-game.scss ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".game {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0; }\n  .game .table {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    padding: 8px;\n    background: honeydew;\n    display: flex;\n    flex-direction: column;\n    justify-content: center; }\n    .game .table .tile {\n      cursor: pointer;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      line-height: 37px;\n      overflow: hidden;\n      border-radius: 5px;\n      background: linear-gradient(ivory, blanchedalmond);\n      margin: 2px;\n      position: relative;\n      box-shadow: 0 1px 3px grey; }\n      .game .table .tile .gfx {\n        font-size: 60px;\n        justify-content: center;\n        align-items: center; }\n    .game .table .tray {\n      display: flex;\n      flex-wrap: wrap;\n      justify-content: center;\n      flex-basis: 60px; }\n      .game .table .tray.hidden {\n        flex-basis: 30px; }\n        .game .table .tray.hidden .tile {\n          background: linear-gradient(ivory, blanchedalmond);\n          border: 1px solid black; }\n          .game .table .tray.hidden .tile .gfx {\n            display: none; }\n    .game .table .middle {\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      flex-grow: 1; }\n    .game .table .center {\n      padding: 50px;\n      margin: 50px;\n      border: 1px solid red;\n      display: flex;\n      flex-direction: column;\n      justify-content: center; }\n      .game .table .center .tray {\n        flex-direction: row;\n        align-items: center;\n        height: auto; }\n        .game .table .center .tray .tile {\n          width: 42px;\n          height: 55px;\n          border-radius: 5px; }\n        .game .table .center .tray .gfx {\n          margin-top: 0px;\n          margin-left: -7px;\n          width: 40px;\n          height: 53px; }\n    .game .table .top, .game .table .bottom {\n      display: flex;\n      flex-direction: column; }\n      .game .table .top .tile, .game .table .bottom .tile {\n        width: 42px;\n        height: 55px; }\n      .game .table .top .gfx, .game .table .bottom .gfx {\n        margin-left: -6px;\n        width: 40px;\n        height: 53px; }\n      .game .table .top .tray, .game .table .bottom .tray {\n        flex-direction: row; }\n        .game .table .top .tray.hidden .tile, .game .table .bottom .tray.hidden .tile {\n          height: 28px;\n          width: 21.5px;\n          line-height: 19px;\n          border-radius: 2px; }\n    .game .table .left, .game .table .right {\n      display: flex;\n      flex-direction: row; }\n      .game .table .left .tile, .game .table .right .tile {\n        height: 42px;\n        width: 56px; }\n      .game .table .left .gfx, .game .table .right .gfx {\n        margin-right: -12px;\n        margin-bottom: -6px;\n        transform: rotate(90deg);\n        height: 40px;\n        width: 53px; }\n      .game .table .left .tray, .game .table .right .tray {\n        flex-direction: column;\n        width: 60px;\n        background: rgba(0, 0, 0, 0.1); }\n        .game .table .left .tray.hidden, .game .table .right .tray.hidden {\n          width: 34px;\n          background: none; }\n          .game .table .left .tray.hidden .tile, .game .table .right .tray.hidden .tile {\n            height: 22px;\n            width: 28px;\n            line-height: 19px;\n            border-radius: 2px; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/base.scss":
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/base.scss ***!
@@ -2010,7 +2028,7 @@ module.exports = {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-family: sans-serif;\n  padding: 8px; }\n\n.tray {\n  display: flex;\n  flex-direction: row;\n  padding: 12px;\n  border: 1px dashed black;\n  flex-wrap: wrap;\n  min-height: 170px; }\n\n.tray.hovered {\n  background: yellow; }\n\n.tile {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  font-size: 11px;\n  cursor: pointer;\n  padding: 0;\n  padding-bottom: 2px;\n  background: white; }\n\n.tile:hover {\n  background: #e9f9da; }\n\n.tile .gfx {\n  margin-top: -24px;\n  font-size: 120px; }\n\n.lobby .game {\n  margin-bottom: 8px;\n  border-top: 1px solid black; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: sans-serif;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  padding: 0;\n  margin: 0; }\n\n.lobby {\n  padding: 12px; }\n  .lobby .games {\n    padding: 12px; }\n  .lobby .list-game {\n    margin-bottom: 8px;\n    border: 1px solid black;\n    padding: 12px 36px; }\n  .lobby .add-game {\n    font-size: 12px; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31144,14 +31162,33 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 
 const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
 
-const cp_table_1 = __webpack_require__(/*! ./cp-table */ "./src/components/app/cp-table.tsx");
+const cp_game_1 = __webpack_require__(/*! ./cp-game */ "./src/components/app/cp-game.tsx");
 
 const cp_lobby_1 = __webpack_require__(/*! ./cp-lobby */ "./src/components/app/cp-lobby.tsx");
 
+const cp_entrance_1 = __webpack_require__(/*! ./cp-entrance */ "./src/components/app/cp-entrance.tsx");
+
+const cp_player_1 = __webpack_require__(/*! ./cp-player */ "./src/components/app/cp-player.tsx");
+
+const Storage = {
+  get() {
+    var _a;
+
+    return JSON.parse((_a = localStorage.getItem('mahjong')) !== null && _a !== void 0 ? _a : '{}');
+  },
+
+  set(data) {
+    localStorage.setItem('mahjong', JSON.stringify(Object.assign(Object.assign({
+      games: []
+    }, Storage.get()), data)));
+  }
+
+};
 let App = class App extends react_1.default.Component {
   constructor() {
     super(...arguments);
     this.state = {
+      name: null,
       game: null,
       games: []
     };
@@ -31159,24 +31196,39 @@ let App = class App extends react_1.default.Component {
 
   componentDidMount() {
     this.getGames();
+    this.setState({
+      name: Storage.get().name
+    });
   }
 
-  openStream(gameId) {
+  enterGame(gameId) {
     if (this.stream) {
       this.stream.close();
     }
 
     this.stream = new EventSource(`/stream/${gameId}`);
-    this.stream.addEventListener('game-state', this.onGameState);
-    this.stream.addEventListener('game-close', this.onGameClose);
+    this.stream.addEventListener('game-state', this.updateGame);
+    this.stream.addEventListener('game-close', this.leaveGame);
   }
 
-  closeStream() {
+  joinGame(gameId) {
+    const {
+      name
+    } = this.state;
+    fetch(`/games/${gameId}/players/${name}`).then(this.getGames);
+  }
+
+  leaveGame() {
     if (this.stream) {
-      this.stream.removeEventListener('game-state', this.onGameState);
-      this.stream.removeEventListener('game-close', this.onGameClose);
+      this.stream.removeEventListener('game-state', this.updateGame);
+      this.stream.removeEventListener('game-close', this.leaveGame);
       this.stream.close();
     }
+
+    this.setState({
+      game: null
+    });
+    this.getGames();
   }
 
   getGames() {
@@ -31185,52 +31237,72 @@ let App = class App extends react_1.default.Component {
     }));
   }
 
-  onGameState(event) {
+  updateGame(event) {
     this.setState({
       game: JSON.parse(event.data)
     });
   }
 
-  onGameClose() {
-    this.closeStream();
+  submitName(name) {
     this.setState({
-      game: null
+      name
     });
-    this.getGames();
+    Storage.set({
+      name
+    });
+  }
+
+  logout() {
+    this.setState({
+      name: null
+    });
   }
 
   render() {
     const {
+      name,
       game,
       games
     } = this.state;
-    return react_1.default.createElement("div", {
-      className: "app"
-    }, react_1.default.createElement("h1", null, "Mahjong"), game != null ? react_1.default.createElement(cp_table_1.Table, {
+    return react_1.default.createElement(react_1.default.Fragment, null, name == null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h1", null, "Mahjong"), react_1.default.createElement(cp_entrance_1.Entrance, {
+      submit: this.submitName
+    })) : game != null ? react_1.default.createElement(cp_game_1.Game, {
       game: game,
-      leave: this.onGameClose
-    }) : react_1.default.createElement(cp_lobby_1.Lobby, {
+      leave: this.leaveGame
+    }) : react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_player_1.Player, {
+      name: name,
+      logout: this.logout
+    }), react_1.default.createElement(cp_lobby_1.Lobby, {
+      name: name,
       games: games,
-      selectGame: this.openStream
-    }));
+      join: this.joinGame,
+      enter: this.enterGame
+    })));
   }
 
 };
 App = __decorate([autobind_decorator_1.default], App);
 exports.App = App;
-;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-lobby.tsx":
-/*!*****************************************!*\
-  !*** ./src/components/app/cp-lobby.tsx ***!
-  \*****************************************/
+/***/ "./src/components/app/cp-entrance.tsx":
+/*!********************************************!*\
+  !*** ./src/components/app/cp-entrance.tsx ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
@@ -31244,33 +31316,89 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-exports.Lobby = ({
-  games,
-  selectGame
-}) => {
-  return react_1.default.createElement("div", {
-    className: "lobby"
-  }, react_1.default.createElement("h2", null, "Lobby"), react_1.default.createElement("h3", null, "Games"), games.map(({
-    id,
-    players
-  }) => react_1.default.createElement("div", {
-    key: id,
-    className: "game"
-  }, react_1.default.createElement("h4", null, react_1.default.createElement("a", {
-    href: "#",
-    onClick: () => selectGame(id)
-  }, id)), react_1.default.createElement("h4", null, "Players"), players.map(p => react_1.default.createElement("p", {
-    key: p.name,
-    className: "player"
-  }, p.name)))));
+const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
+
+let Entrance = class Entrance extends react_1.default.Component {
+  constructor() {
+    super(...arguments);
+    this.state = {
+      name: ''
+    };
+  }
+
+  onChange(e) {
+    this.setState({
+      name: e.target.value
+    });
+  }
+
+  onSubmit() {
+    const {
+      submit
+    } = this.props;
+    const {
+      name
+    } = this.state;
+    submit(name);
+  }
+
+  render() {
+    const {
+      name
+    } = this.state;
+    return react_1.default.createElement("div", {
+      className: "entrance"
+    }, react_1.default.createElement("h2", null, "Welkom!"), react_1.default.createElement("p", null, "Vul hier je naam in en ga door naar de lobby"), react_1.default.createElement("input", {
+      type: "text",
+      value: name,
+      onChange: this.onChange
+    }), react_1.default.createElement("button", {
+      onClick: this.onSubmit,
+      disabled: !name
+    }, "Naar de lobby"));
+  }
+
 };
+Entrance = __decorate([autobind_decorator_1.default], Entrance);
+exports.Entrance = Entrance;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-table.tsx":
+/***/ "./src/components/app/cp-game.scss":
 /*!*****************************************!*\
-  !*** ./src/components/app/cp-table.tsx ***!
+  !*** ./src/components/app/cp-game.scss ***!
   \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-game.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-game.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/app/cp-game.tsx":
+/*!****************************************!*\
+  !*** ./src/components/app/cp-game.tsx ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31303,7 +31431,9 @@ const axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules
 
 const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/app/cp-tray.tsx");
 
-let Table = class Table extends react_1.default.Component {
+__webpack_require__(/*! ./cp-game.scss */ "./src/components/app/cp-game.scss");
+
+let Game = class Game extends react_1.default.Component {
   constructor() {
     super(...arguments);
     this.state = {
@@ -31341,9 +31471,16 @@ let Table = class Table extends react_1.default.Component {
       dragged
     } = this.state;
 
-    if (dropTarget) {
+    if (dropTarget.id) {
       if (dropTarget !== dragSource && dropTarget !== dragged) {
-        axios_1.default.put(`/games/${game.id}/tiles/${dragSource.id}/${dragged}?to=${dropTarget.id}`);
+        if (dropTarget.classList.contains('tile')) {
+          const daddy = dropTarget.parentNode;
+          const index = Array.from(daddy.children).indexOf(dropTarget);
+          axios_1.default.put(`/games/${game.id}/tiles/${dragged}?to=${daddy.id}&index=${index}`);
+        } else {
+          const index = Array.from(dropTarget.children).length;
+          axios_1.default.put(`/games/${game.id}/tiles/${dragged}?to=${dropTarget.id}&index=${index}`);
+        }
       }
     }
 
@@ -31354,39 +31491,178 @@ let Table = class Table extends react_1.default.Component {
     });
   }
 
+  getTray(id) {
+    const {
+      game
+    } = this.props;
+    return game.ts.filter(t => t.tray === id).sort((a, b) => a.index > b.index ? 1 : -1);
+  }
+
   render() {
     const {
-      game,
       leave
     } = this.props;
     return react_1.default.createElement("div", {
-      className: "table",
+      className: "game",
       onDragEnd: this.onDragEnd,
       onDragEnter: this.onDragEnter,
       onDragOver: this.onDragOver,
       onDragStart: this.onDragStart
-    }, react_1.default.createElement("a", {
-      href: "#",
-      onClick: leave
-    }, "Leave table"), react_1.default.createElement(cp_tray_1.Tray, {
-      id: "t1",
-      name: "Table",
-      tiles: game.tiles.t1
+    }, react_1.default.createElement("div", {
+      className: "table"
+    }, react_1.default.createElement("div", {
+      className: "top"
+    }, react_1.default.createElement(cp_tray_1.Tray, {
+      id: "c0",
+      hidden: true,
+      tiles: this.getTray('c0')
     }), react_1.default.createElement(cp_tray_1.Tray, {
+      id: "c1",
+      hidden: false,
+      tiles: this.getTray('c1')
+    })), react_1.default.createElement("div", {
+      className: "middle"
+    }, react_1.default.createElement("div", {
+      className: "left"
+    }, react_1.default.createElement(cp_tray_1.Tray, {
+      id: "d0",
+      hidden: true,
+      tiles: this.getTray('d0')
+    }), react_1.default.createElement(cp_tray_1.Tray, {
+      id: "d1",
+      hidden: false,
+      tiles: this.getTray('d1')
+    })), react_1.default.createElement("div", {
+      className: "center"
+    }, react_1.default.createElement(cp_tray_1.Tray, {
+      id: "t1",
+      hidden: false,
+      tiles: this.getTray('t1')
+    })), react_1.default.createElement("div", {
+      className: "right"
+    }, react_1.default.createElement(cp_tray_1.Tray, {
+      id: "b1",
+      hidden: false,
+      tiles: this.getTray('b1')
+    }), react_1.default.createElement(cp_tray_1.Tray, {
+      id: "b0",
+      hidden: true,
+      tiles: this.getTray('b0')
+    }))), react_1.default.createElement("div", {
+      className: "bottom"
+    }, react_1.default.createElement(cp_tray_1.Tray, {
       id: "a1",
-      name: "Public",
-      tiles: game.tiles.a1
+      hidden: false,
+      tiles: this.getTray('a1')
     }), react_1.default.createElement(cp_tray_1.Tray, {
       id: "a0",
-      name: "Private",
-      tiles: game.tiles.a0
-    }));
+      hidden: false,
+      tiles: this.getTray('a0')
+    }))));
   }
 
 };
-Table = __decorate([autobind_decorator_1.default], Table);
-exports.Table = Table;
+Game = __decorate([autobind_decorator_1.default], Game);
+exports.Game = Game;
 ;
+
+/***/ }),
+
+/***/ "./src/components/app/cp-lobby.tsx":
+/*!*****************************************!*\
+  !*** ./src/components/app/cp-lobby.tsx ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+exports.Lobby = ({
+  name,
+  games,
+  enter,
+  join
+}) => {
+  return react_1.default.createElement("div", {
+    className: "lobby"
+  }, react_1.default.createElement("h2", null, "Lobby"), react_1.default.createElement("div", {
+    className: "games"
+  }, react_1.default.createElement("h3", null, "Spellen ", react_1.default.createElement("a", {
+    href: "#",
+    title: "Nieuw spel toevoegen"
+  }, "(+)")), games.map(({
+    id,
+    chairs,
+    title,
+    creator
+  }) => {
+    const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
+    return react_1.default.createElement("div", {
+      key: id,
+      className: "list-game"
+    }, react_1.default.createElement("h4", null, react_1.default.createElement("a", {
+      href: "#",
+      onClick: () => enter(id)
+    }, title !== null && title !== void 0 ? title : 'Spel zonder naam')), react_1.default.createElement("p", null, "Toegevoegd door ", creator !== null && creator !== void 0 ? creator : 'anoniem'), react_1.default.createElement("h4", null, "Spelers ", chairsTaken < 4 ? `(nog ${4 - chairsTaken} nodig)` : null), react_1.default.createElement("ul", null, chairs.map(c => c.player != null ? react_1.default.createElement("li", {
+      key: c.id
+    }, c.player === name ? react_1.default.createElement("a", {
+      href: "#",
+      onClick: () => enter(id)
+    }, c.player) : c.player) : react_1.default.createElement("li", {
+      key: c.id
+    }, react_1.default.createElement("a", {
+      href: "#",
+      onClick: () => join(id)
+    }, "*lege stoel*")))));
+  })));
+};
+
+/***/ }),
+
+/***/ "./src/components/app/cp-player.tsx":
+/*!******************************************!*\
+  !*** ./src/components/app/cp-player.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+exports.Player = ({
+  logout,
+  name
+}) => {
+  return react_1.default.createElement("p", null, "Spelernaam: ", name, "\u00A0", react_1.default.createElement("a", {
+    href: "#",
+    onClick: logout
+  }, "(aanpassen)"));
+};
 
 /***/ }),
 
@@ -31476,18 +31752,19 @@ exports.Tile = ({
     id,
     suit,
     name
-  }
+  },
+  hidden
 }) => {
   return react_1.default.createElement("div", {
     className: `tile tile-${suit}-${name}`,
     draggable: "true",
     id: id.toString()
-  }, react_1.default.createElement("span", {
+  }, react_1.default.createElement("div", {
     className: "gfx",
     dangerouslySetInnerHTML: {
-      __html: `&#x${g[suit][name]};`
+      __html: hidden === true ? '&#x1F02B' : `&#x${g[suit][name]};`
     }
-  }), react_1.default.createElement("span", null, suit), react_1.default.createElement("span", null, name), react_1.default.createElement("span", null, "(", id, ")"));
+  }));
 };
 
 /***/ }),
@@ -31518,16 +31795,17 @@ const cp_tile_1 = __webpack_require__(/*! ./cp-tile */ "./src/components/app/cp-
 
 exports.Tray = ({
   id,
-  name,
-  tiles
+  tiles,
+  hidden
 }) => {
-  return react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h2", null, name), react_1.default.createElement("div", {
-    className: "tray",
+  return react_1.default.createElement("div", {
+    className: `tray ${hidden ? 'hidden' : null}`,
     id: id
   }, tiles.map(t => react_1.default.createElement(cp_tile_1.Tile, {
     key: t.id,
-    tile: t
-  }))));
+    tile: t,
+    hidden: hidden
+  })));
 };
 
 /***/ }),

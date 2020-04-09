@@ -1,6 +1,6 @@
 import express from 'express';
 import SSE from 'express-sse';
-import { listGames, getGame, createGame, destroyGame, moveTile } from './game';
+import { listGames, getGame, createGame, destroyGame, moveTile, addPlayer } from './game';
 
 const app = express();
 const port = 1001;
@@ -37,18 +37,36 @@ app.delete('/games/:gameId', (req, res) => {
 
 	destroyGame(gameId);
 
-	streams[gameId].send({ type: 'close', data: gameId }, 'game-close');
+	streams[gameId].send(
+		{ type: 'close', data: gameId },
+		'game-close'
+	);
 
 	res.send();
 });
 
-app.put('/games/:gameId/tiles/:fromId/:tileId', (req, res) => {
-	const { gameId, tileId, fromId } = req.params;
+// todo: should be a post
+app.get('/games/:gameId/players/:playerName', (req, res) => {
+	const { gameId, playerName } = req.params;
+
+	res.send(addPlayer(gameId, playerName));
+
+	streams[gameId].send(
+		getGame(gameId),
+		'game-state'
+	);
+});
+
+app.put('/games/:gameId/tiles/:tileId', (req, res) => {
+	const { gameId, tileId } = req.params;
 	const { to, index } = req.query;
 
-	moveTile(gameId, tileId, fromId, to, index);
+	moveTile(gameId, parseInt(tileId), to, index);
 
-	streams[gameId].send(getGame(gameId), 'game-state');
+	streams[gameId].send(
+		getGame(gameId),
+		'game-state'
+	);
 
 	res.send();
 });
