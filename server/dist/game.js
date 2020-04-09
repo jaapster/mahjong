@@ -39,7 +39,7 @@ exports.addPlayer = (id, player) => {
         if (game.id !== id) {
             return game;
         }
-        const chair = game.chairs.find(c => c.player === null);
+        chair = game.chairs.find(c => c.player === null);
         return Object.assign(Object.assign({}, game), { players: [], chairs: [
                 ...game.chairs.map((c, i) => {
                     return c !== chair

@@ -1,4 +1,5 @@
 import React from 'react';
+import bind from 'autobind-decorator';
 
 const g = {
 	characters: {
@@ -59,30 +60,48 @@ const g = {
 	}
 };
 
-export const Tile = ({ tile: { id, suit, name }, hidden }: { tile: Mahjong.Tile, hidden: boolean }) => {
-	return (
-		<div
-			className={ `tile tile-${ suit }-${ name }` }
-			draggable="true"
-			id={ id.toString() }
-		>
+interface Props {
+	tile: Mahjong.Tile;
+	hidden: boolean;
+}
+
+interface State {
+	hovered: boolean;
+}
+
+@bind
+export class Tile extends React.Component<Props, State> {
+	state = { hovered: false };
+
+	componentDidMount() {
+		document.addEventListener('dragend', this.onDragLeave);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('dragend', this.onDragLeave);
+	}
+
+	onDragLeave() {
+		this.setState({ hovered: false });
+	}
+
+	onDragEnter() {
+		this.setState({ hovered: true });
+	}
+
+	render() {
+		const { tile: { id, suit, name }, hidden } = this.props;
+
+		return (
 			<div
-				className="gfx"
-				dangerouslySetInnerHTML={ {
-					__html: hidden === true
-						? '&#x1F02B'
-						: `&#x${ g[suit][name] };`
-				} }
-			/>
-			{/* <span>
-				{ suit }
-			</span>
-			<span>
-				{ name }
-			</span>
-			<span>
-				({ id })
-			</span> */}
-		</div>
-	);
-};
+				className={ `vectile${ hidden ? ' tile-hidden' : '' }` }
+				draggable="true"
+				onDragEnter={ this.onDragEnter }
+				onDragLeave={ this.onDragLeave }
+				id={ id.toString() }
+			>
+				<div className={ `image tile-${ suit }-${ name }` } />
+			</div>
+		);
+	}
+}

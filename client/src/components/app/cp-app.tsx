@@ -4,36 +4,48 @@ import { Game } from './cp-game';
 import { Lobby } from './cp-lobby';
 import { Entrance } from './cp-entrance';
 import { Player } from './cp-player';
+import axios from 'axios';
 
 interface State {
 	name: string | null;
 	game: Mahjong.Game | null;
 	games: Mahjong.Game[];
+	chairs: string[];
 }
 
 const Storage = {
 	get() {
-		return JSON.parse(localStorage.getItem('mahjong') ?? '{}');
+		return JSON.parse(localStorage.getItem('mahjong') ?? '{ "chairs": [] }');
 	},
 
-	set(data: { [key: string]: any }) {
+	setName(name: string) {
 		localStorage.setItem('mahjong', JSON.stringify({
-			games: [],
 			...Storage.get(),
-			...data
+			name
+		}));
+	},
+
+	addChair(id: string) {
+		const data = Storage.get();
+		localStorage.setItem('mahjong', JSON.stringify({
+			...data,
+			chairs: data.chairs.concat(id)
 		}));
 	}
 };
 
 @bind
 export class App extends React.Component<any, State> {
-	state = { name: null, game: null, games: [] };
+	state = { name: null, game: null, games: [], chairs: [] };
 
 	private stream: any;
 
 	componentDidMount() {
 		this.getGames();
-		this.setState({ name: Storage.get().name });
+
+		const { name, chairs } = Storage.get();
+
+		this.setState({ name, chairs });
 	}
 
 	private enterGame(gameId: string) {
@@ -47,9 +59,14 @@ export class App extends React.Component<any, State> {
 	}
 
 	private joinGame(gameId: string) {
-		const { name } = this.state;
+		const { name, chairs } = this.state;
 
-		fetch(`/games/${ gameId }/players/${ name }`).then(this.getGames);
+		axios.get(`/games/${ gameId }/players/${ name }`)
+			.then(({ data }) => {
+				Storage.addChair(data);
+				this.setState({ chairs: chairs.concat(data) });
+				this.getGames();
+			});
 	}
 
 	private leaveGame() {
@@ -75,7 +92,7 @@ export class App extends React.Component<any, State> {
 
 	private submitName(name: string) {
 		this.setState({ name });
-		Storage.set({ name });
+		Storage.setName(name);
 	}
 
 	private logout() {
@@ -83,7 +100,7 @@ export class App extends React.Component<any, State> {
 	}
 
 	render() {
-		const { name, game, games } = this.state;
+		const { name, game, games, chairs } = this.state;
 
 		return (
 			<>
@@ -100,19 +117,21 @@ export class App extends React.Component<any, State> {
 								<Game
 									game={ game }
 									leave={ this.leaveGame }
+									name={ name }
 								/>
 							)
 							: (
 								<>
 									<Player
-										name={ name }
 										logout={ this.logout }
+										name={ name }
 									/>
 									<Lobby
-										name={ name }
+										chairs={ chairs }
+										enter={ this.enterGame }
 										games={ games }
 										join={ this.joinGame }
-										enter={ this.enterGame }
+										name={ name }
 									/>
 								</>
 							)

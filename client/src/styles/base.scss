@@ -7,6 +7,12 @@ body {
 	bottom: 0;
 	padding: 0;
 	margin: 0;
+
+	box-sizing: border-box;
+
+	* {
+		box-sizing: border-box;
+	}
 }
 
 .lobby {
@@ -24,5 +30,103 @@ body {
 
 	.add-game {
 		font-size: 12px;
+	}
+}
+
+.vectile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 38px;
+	height: 58px;
+
+	background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);
+
+	margin: 0.5px;
+
+	// border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+	.image {
+		background-size: 30px 45px;
+
+		width: 30px;
+		height: 45px;
+
+		pointer-events: none;
+
+		&.tile-dragons-red { background-image: url(/tiles/Chun.svg); }
+		&.tile-dragons-green { background-image: url(/tiles/Hatsu.svg); }
+		&.tile-dragons-white { background-image: url(/tiles/Haku.svg); }
+
+		&.tile-winds-east { background-image: url(/tiles/Ton.svg); }
+		&.tile-winds-north { background-image: url(/tiles/Nan.svg); }
+		&.tile-winds-west { background-image: url(/tiles/Shaa.svg); }
+		&.tile-winds-south { background-image: url(/tiles/Pei.svg); }
+
+		&.tile-dots-1 { background-image: url(/tiles/Pin1.svg); }
+		&.tile-dots-2 { background-image: url(/tiles/Pin2.svg); }
+		&.tile-dots-3 { background-image: url(/tiles/Pin3.svg); }
+		&.tile-dots-4 { background-image: url(/tiles/Pin4.svg); }
+		&.tile-dots-5 { background-image: url(/tiles/Pin5.svg); }
+		&.tile-dots-6 { background-image: url(/tiles/Pin6.svg); }
+		&.tile-dots-7 { background-image: url(/tiles/Pin7.svg); }
+		&.tile-dots-8 { background-image: url(/tiles/Pin8.svg); }
+		&.tile-dots-9 { background-image: url(/tiles/Pin9.svg); }
+
+		&.tile-characters-1 { background-image: url(/tiles/Man1.svg); }
+		&.tile-characters-2 { background-image: url(/tiles/Man2.svg); }
+		&.tile-characters-3 { background-image: url(/tiles/Man3.svg); }
+		&.tile-characters-4 { background-image: url(/tiles/Man4.svg); }
+		&.tile-characters-5 { background-image: url(/tiles/Man5.svg); }
+		&.tile-characters-6 { background-image: url(/tiles/Man6.svg); }
+		&.tile-characters-7 { background-image: url(/tiles/Man7.svg); }
+		&.tile-characters-8 { background-image: url(/tiles/Man8.svg); }
+		&.tile-characters-9 { background-image: url(/tiles/Man9.svg); }
+
+		&.tile-bamboo-1 { background-image: url(/tiles/Sou1.svg); }
+		&.tile-bamboo-2 { background-image: url(/tiles/Sou2.svg); }
+		&.tile-bamboo-3 { background-image: url(/tiles/Sou3.svg); }
+		&.tile-bamboo-4 { background-image: url(/tiles/Sou4.svg); }
+		&.tile-bamboo-5 { background-image: url(/tiles/Sou5.svg); }
+		&.tile-bamboo-6 { background-image: url(/tiles/Sou6.svg); }
+		&.tile-bamboo-7 { background-image: url(/tiles/Sou7.svg); }
+		&.tile-bamboo-8 { background-image: url(/tiles/Sou8.svg); }
+		&.tile-bamboo-9 { background-image: url(/tiles/Sou9.svg); }
+	}
+
+	&.tile-hidden {
+		width: 16px;
+		height: 24px;
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+		border-radius: 2px;
+
+		.image {
+			display: none;
+		}
+	}
+}
+
+.left, .right {
+	.vectile {
+		width: 58px;
+		height: 38px;
+
+		.image {
+			transform: rotate(90deg);
+		}
+
+		&.tile-hidden {
+			width: 24px;
+			height: 16px;
+		}
+	}
+}
+
+.wall {
+	.image {
+		display: none;
 	}
 }

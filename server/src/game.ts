@@ -49,7 +49,7 @@ export const addPlayer = (id: string, player: string) => {
 			return game;
 		}
 
-		const chair = game.chairs.find(c => c.player === null);
+		chair = game.chairs.find(c => c.player === null);
 
 		return {
 			...game,
