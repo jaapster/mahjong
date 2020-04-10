@@ -2010,7 +2010,25 @@ module.exports = {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".game {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: honeydew;\n  box-sizing: border-box; }\n  .game .table {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0; }\n    .game .table .tray {\n      display: flex;\n      flex-wrap: wrap;\n      flex-basis: 120px;\n      justify-content: center;\n      align-items: center;\n      background: rgba(0, 0, 0, 0.05); }\n      .game .table .tray.hidden {\n        flex-basis: 52px;\n        background: rgba(0, 0, 0, 0.2); }\n    .game .table .top, .game .table .left, .game .table .right, .game .table .bottom, .game .table .center {\n      position: absolute;\n      display: flex;\n      justify-content: center; }\n    .game .table .top, .game .table .bottom, .game .table .center, .game .table .wall {\n      flex-direction: column; }\n      .game .table .top .tray, .game .table .bottom .tray, .game .table .center .tray, .game .table .wall .tray {\n        flex-direction: row;\n        width: 100%; }\n    .game .table .left, .game .table .right {\n      flex-direction: row; }\n      .game .table .left .tray, .game .table .right .tray {\n        flex-direction: column;\n        height: 100%; }\n        .game .table .left .tray.hidden, .game .table .right .tray.hidden {\n          width: 74px; }\n    .game .table .center {\n      top: 172px;\n      left: 172px;\n      bottom: 240px;\n      right: 172px;\n      margin: 10px;\n      border: 1px dashed black; }\n      .game .table .center .tray {\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        right: 0px;\n        bottom: 0px; }\n    .game .table .wall {\n      position: absolute;\n      bottom: 0;\n      right: 10px;\n      height: 210px;\n      width: 152px;\n      background: #e05a5a; }\n      .game .table .wall:before {\n        content: '';\n        border-top: 20px dashed #e05a5a;\n        position: absolute;\n        width: 152px;\n        top: -20px; }\n      .game .table .wall .tray {\n        height: 100%;\n        background: transparent; }\n      .game .table .wall .vectile:before {\n        content: '?';\n        font-size: 30px;\n        font-family: serif;\n        font-weight: bolder;\n        color: firebrick; }\n    .game .table .exit {\n      display: flex;\n      position: absolute;\n      bottom: 0;\n      right: left;\n      height: 240px;\n      width: 172px;\n      background: ivory;\n      color: lightgrey;\n      font-size: 100px;\n      cursor: default;\n      transform: scale(-1, 1);\n      justify-content: center;\n      align-items: center; }\n      .game .table .exit:hover {\n        background: dodgerblue;\n        color: ivory; }\n    .game .table .top {\n      top: 0;\n      left: 172px;\n      right: 172px;\n      height: 172px;\n      background: yellow; }\n    .game .table .left {\n      top: 172px;\n      left: 0px;\n      bottom: 240px;\n      width: 172px;\n      background: pink; }\n    .game .table .right {\n      top: 172px;\n      right: 0px;\n      bottom: 240px;\n      width: 172px;\n      background: lightblue; }\n    .game .table .bottom {\n      bottom: 0;\n      left: 172px;\n      right: 172px;\n      height: 240px;\n      background: darkseagreen; }\n      .game .table .bottom .tray:last-child {\n        background: rgba(0, 0, 0, 0.2); }\n    .game .table .nameTag {\n      position: absolute;\n      z-index: 2;\n      top: 0px;\n      left: 0px;\n      padding: 4px;\n      background: rgba(0, 0, 0, 0.7);\n      opacity: 0.3;\n      color: white;\n      font-size: 10px; }\n", ""]);
+exports.push([module.i, ".game {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: honeydew;\n  box-sizing: border-box; }\n  .game .table {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0; }\n    .game .table .tray {\n      position: relative;\n      display: flex;\n      flex-wrap: wrap;\n      flex-basis: 120px;\n      justify-content: center;\n      align-items: center;\n      background: rgba(0, 0, 0, 0.05); }\n      .game .table .tray.hidden {\n        flex-basis: 30px;\n        background: rgba(0, 0, 0, 0.2); }\n    .game .table .top, .game .table .left, .game .table .right, .game .table .bottom, .game .table .center {\n      position: absolute;\n      display: flex;\n      justify-content: center; }\n    .game .table .top, .game .table .bottom, .game .table .center, .game .table .wall {\n      flex-direction: column; }\n      .game .table .top .tray, .game .table .bottom .tray, .game .table .center .tray, .game .table .wall .tray {\n        flex-direction: row;\n        width: 100%; }\n    .game .table .left, .game .table .right {\n      flex-direction: row; }\n      .game .table .left .tray, .game .table .right .tray {\n        flex-direction: column;\n        height: 100%; }\n        .game .table .left .tray.hidden, .game .table .right .tray.hidden {\n          width: 37px; }\n    .game .table .center {\n      top: 150px;\n      left: 150px;\n      bottom: 240px;\n      right: 150px;\n      box-shadow: inset 0 0 5px grey; }\n      .game .table .center .tray {\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        right: 0px;\n        bottom: 0px; }\n    .game .table .wall {\n      position: absolute;\n      bottom: 0;\n      right: 10px;\n      height: 210px;\n      width: 130px;\n      background: #e6e6e6; }\n      .game .table .wall:before {\n        content: '';\n        border-top: 20px dashed #e6e6e6;\n        position: absolute;\n        width: 130px;\n        top: -20px; }\n      .game .table .wall .tray {\n        height: 100%;\n        background: transparent; }\n      .game .table .wall .vectile .tile-graphic:before {\n        content: '?';\n        font-size: 30px;\n        font-family: serif;\n        font-weight: bolder;\n        color: firebrick; }\n    .game .table .exit {\n      display: flex;\n      position: absolute;\n      bottom: 0;\n      right: left;\n      height: 240px;\n      width: 150px;\n      background: ivory;\n      color: #e6e6e6;\n      font-size: 100px;\n      cursor: default;\n      transform: scale(-1, 1);\n      justify-content: center;\n      align-items: center; }\n      .game .table .exit:hover {\n        background: dodgerblue;\n        color: ivory; }\n    .game .table .top {\n      top: 0;\n      left: 150px;\n      right: 150px;\n      height: 150px;\n      background: yellow; }\n    .game .table .left {\n      top: 0;\n      left: 0px;\n      bottom: 240px;\n      width: 150px;\n      background: pink; }\n    .game .table .right {\n      top: 0;\n      right: 0px;\n      bottom: 240px;\n      width: 150px;\n      background: lightblue; }\n    .game .table .bottom {\n      bottom: 0;\n      left: 150px;\n      right: 150px;\n      height: 240px;\n      background: darkseagreen; }\n      .game .table .bottom .tray:last-child {\n        background: rgba(0, 0, 0, 0.2); }\n        .game .table .bottom .tray:last-child.tray-exceeds-max-tiles {\n          background: red; }\n    .game .table .name-tag {\n      position: absolute;\n      z-index: 2;\n      top: 0px;\n      left: 0px;\n      padding: 4px;\n      background: rgba(0, 0, 0, 0.5);\n      opacity: 0.5;\n      font-size: 10px;\n      cursor: default;\n      color: white; }\n    .game .table .tile-count {\n      position: absolute;\n      z-index: 2;\n      top: 0px;\n      left: 0px;\n      padding: 4px;\n      color: black;\n      opacity: 0.5;\n      background: white;\n      font-size: 10px;\n      display: none;\n      width: 20px; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-tile.scss":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-tile.scss ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".vectile {\n  transition: padding 100ms;\n  overflow: hidden; }\n  .vectile.tile-hover {\n    padding: 0 0 0 38px; }\n  .vectile.tile-dragged {\n    opacity: 0.3; }\n  .vectile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .vectile .tile-graphic .image {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .vectile .tile-graphic .image.tile-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .vectile .tile-graphic .image.tile-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .vectile .tile-graphic .image.tile-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .vectile .tile-graphic .image.tile-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .vectile .tile-graphic .image.tile-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .vectile .tile-graphic .image.tile-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .vectile .tile-graphic .image.tile-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .vectile .tile-graphic .image.tile-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .vectile .tile-graphic .image.tile-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .vectile .tile-graphic .image.tile-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .vectile .tile-graphic .image.tile-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .vectile .tile-graphic .image.tile-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .vectile .tile-graphic .image.tile-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .vectile .tile-graphic .image.tile-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .vectile .tile-graphic .image.tile-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .vectile .tile-graphic .image.tile-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .vectile .tile-graphic .image.tile-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .vectile .tile-graphic .image.tile-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .vectile .tile-graphic .image.tile-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .vectile .tile-graphic .image.tile-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .vectile .tile-graphic .image.tile-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .vectile .tile-graphic .image.tile-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .vectile .tile-graphic .image.tile-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .vectile .tile-graphic .image.tile-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .vectile .tile-graphic .image.tile-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .vectile.tile-hidden .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n    .vectile.tile-hidden .tile-graphic .image {\n      display: none; }\n\n.left .vectile.tile-hover, .right .vectile.tile-hover {\n  padding: 38px 0 0 0; }\n\n.left .vectile .tile-graphic, .right .vectile .tile-graphic {\n  width: 58px;\n  height: 38px; }\n  .left .vectile .tile-graphic .image, .right .vectile .tile-graphic .image {\n    transform: rotate(90deg); }\n\n.left .vectile.tile-hidden .tile-graphic, .right .vectile.tile-hidden .tile-graphic {\n  width: 24px;\n  height: 16px; }\n\n.wall .image {\n  display: none; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2028,7 +2046,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-family: sans-serif;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box; }\n  body * {\n    box-sizing: border-box; }\n\n.lobby {\n  padding: 12px; }\n  .lobby .games {\n    padding: 12px; }\n  .lobby .list-game {\n    margin-bottom: 8px;\n    border: 1px solid black;\n    padding: 12px 36px; }\n  .lobby .add-game {\n    font-size: 12px; }\n\n.vectile {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 38px;\n  height: 58px;\n  background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n  margin: 0.5px;\n  border-radius: 4px;\n  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }\n  .vectile .image {\n    background-size: 30px 45px;\n    width: 30px;\n    height: 45px;\n    pointer-events: none; }\n    .vectile .image.tile-dragons-red {\n      background-image: url(/tiles/Chun.svg); }\n    .vectile .image.tile-dragons-green {\n      background-image: url(/tiles/Hatsu.svg); }\n    .vectile .image.tile-dragons-white {\n      background-image: url(/tiles/Haku.svg); }\n    .vectile .image.tile-winds-east {\n      background-image: url(/tiles/Ton.svg); }\n    .vectile .image.tile-winds-north {\n      background-image: url(/tiles/Nan.svg); }\n    .vectile .image.tile-winds-west {\n      background-image: url(/tiles/Shaa.svg); }\n    .vectile .image.tile-winds-south {\n      background-image: url(/tiles/Pei.svg); }\n    .vectile .image.tile-dots-1 {\n      background-image: url(/tiles/Pin1.svg); }\n    .vectile .image.tile-dots-2 {\n      background-image: url(/tiles/Pin2.svg); }\n    .vectile .image.tile-dots-3 {\n      background-image: url(/tiles/Pin3.svg); }\n    .vectile .image.tile-dots-4 {\n      background-image: url(/tiles/Pin4.svg); }\n    .vectile .image.tile-dots-5 {\n      background-image: url(/tiles/Pin5.svg); }\n    .vectile .image.tile-dots-6 {\n      background-image: url(/tiles/Pin6.svg); }\n    .vectile .image.tile-dots-7 {\n      background-image: url(/tiles/Pin7.svg); }\n    .vectile .image.tile-dots-8 {\n      background-image: url(/tiles/Pin8.svg); }\n    .vectile .image.tile-dots-9 {\n      background-image: url(/tiles/Pin9.svg); }\n    .vectile .image.tile-characters-1 {\n      background-image: url(/tiles/Man1.svg); }\n    .vectile .image.tile-characters-2 {\n      background-image: url(/tiles/Man2.svg); }\n    .vectile .image.tile-characters-3 {\n      background-image: url(/tiles/Man3.svg); }\n    .vectile .image.tile-characters-4 {\n      background-image: url(/tiles/Man4.svg); }\n    .vectile .image.tile-characters-5 {\n      background-image: url(/tiles/Man5.svg); }\n    .vectile .image.tile-characters-6 {\n      background-image: url(/tiles/Man6.svg); }\n    .vectile .image.tile-characters-7 {\n      background-image: url(/tiles/Man7.svg); }\n    .vectile .image.tile-characters-8 {\n      background-image: url(/tiles/Man8.svg); }\n    .vectile .image.tile-characters-9 {\n      background-image: url(/tiles/Man9.svg); }\n    .vectile .image.tile-bamboo-1 {\n      background-image: url(/tiles/Sou1.svg); }\n    .vectile .image.tile-bamboo-2 {\n      background-image: url(/tiles/Sou2.svg); }\n    .vectile .image.tile-bamboo-3 {\n      background-image: url(/tiles/Sou3.svg); }\n    .vectile .image.tile-bamboo-4 {\n      background-image: url(/tiles/Sou4.svg); }\n    .vectile .image.tile-bamboo-5 {\n      background-image: url(/tiles/Sou5.svg); }\n    .vectile .image.tile-bamboo-6 {\n      background-image: url(/tiles/Sou6.svg); }\n    .vectile .image.tile-bamboo-7 {\n      background-image: url(/tiles/Sou7.svg); }\n    .vectile .image.tile-bamboo-8 {\n      background-image: url(/tiles/Sou8.svg); }\n    .vectile .image.tile-bamboo-9 {\n      background-image: url(/tiles/Sou9.svg); }\n  .vectile.tile-hidden {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n    .vectile.tile-hidden .image {\n      display: none; }\n\n.left .vectile, .right .vectile {\n  width: 58px;\n  height: 38px; }\n  .left .vectile .image, .right .vectile .image {\n    transform: rotate(90deg); }\n  .left .vectile.tile-hidden, .right .vectile.tile-hidden {\n    width: 24px;\n    height: 16px; }\n\n.wall .image {\n  display: none; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: sans-serif;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box; }\n  body * {\n    box-sizing: border-box; }\n\n.lobby {\n  padding: 12px; }\n  .lobby .games {\n    padding: 12px; }\n  .lobby .list-game {\n    margin-bottom: 8px;\n    border: 1px solid black;\n    padding: 12px 36px; }\n  .lobby .add-game {\n    font-size: 12px; }\n\nul li {\n  margin-bottom: 8px;\n  padding: 4px; }\n  ul li.current-player {\n    background: rgba(255, 255, 0, 0.5); }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31183,13 +31201,6 @@ const Storage = {
     localStorage.setItem('mahjong', JSON.stringify(Object.assign(Object.assign({}, Storage.get()), {
       name
     })));
-  },
-
-  addChair(id) {
-    const data = Storage.get();
-    localStorage.setItem('mahjong', JSON.stringify(Object.assign(Object.assign({}, data), {
-      chairs: data.chairs.concat(id)
-    })));
   }
 
 };
@@ -31199,60 +31210,51 @@ let App = class App extends react_1.default.Component {
     this.state = {
       name: null,
       game: null,
-      games: [],
-      chairs: []
+      games: []
     };
   }
 
   componentDidMount() {
     this.getGames();
     const {
-      name,
-      chairs
+      name
     } = Storage.get();
     this.setState({
-      name,
-      chairs
+      name
     });
+    this.globalStream = new EventSource('/streams/global');
+    this.globalStream.addEventListener('games', this.onGamesUpdate);
   }
 
   enterGame(gameId) {
-    if (this.stream) {
-      this.stream.close();
+    if (this.gameStream) {
+      this.gameStream.close();
     }
 
-    this.stream = new EventSource(`/stream/${gameId}`);
-    this.stream.addEventListener('game-state', this.updateGame);
-    this.stream.addEventListener('game-close', this.leaveGame);
+    this.gameStream = new EventSource(`/streams/games/${gameId}`);
+    this.gameStream.addEventListener('game-state', this.onGameState);
+    this.gameStream.addEventListener('game-close', this.onGameClose);
   }
 
   joinGame(gameId) {
     const {
-      name,
-      chairs
+      name
     } = this.state;
-    axios_1.default.get(`/games/${gameId}/players/${name}`).then(({
-      data
-    }) => {
-      Storage.addChair(data);
-      this.setState({
-        chairs: chairs.concat(data)
-      });
-      this.getGames();
+    axios_1.default.post(`/games/${gameId}/players`, {
+      playerName: name
     });
   }
 
-  leaveGame() {
-    if (this.stream) {
-      this.stream.removeEventListener('game-state', this.updateGame);
-      this.stream.removeEventListener('game-close', this.leaveGame);
-      this.stream.close();
+  onGameClose() {
+    if (this.gameStream) {
+      this.gameStream.removeEventListener('game-state', this.onGameState);
+      this.gameStream.removeEventListener('game-close', this.onGameClose);
+      this.gameStream.close();
     }
 
     this.setState({
       game: null
     });
-    this.getGames();
   }
 
   getGames() {
@@ -31261,10 +31263,27 @@ let App = class App extends react_1.default.Component {
     }));
   }
 
-  updateGame(event) {
+  onGamesUpdate(event) {
+    this.setState(JSON.parse(event.data));
+  }
+
+  onGameState(event) {
     this.setState({
       game: JSON.parse(event.data)
     });
+  }
+
+  createGame() {
+    const {
+      name
+    } = this.state;
+    axios_1.default.post('/games', {
+      creator: name
+    });
+  }
+
+  deleteGame(id) {
+    axios_1.default.delete(`/games/${id}`);
   }
 
   submitName(name) {
@@ -31284,24 +31303,24 @@ let App = class App extends react_1.default.Component {
     const {
       name,
       game,
-      games,
-      chairs
+      games
     } = this.state;
     return react_1.default.createElement(react_1.default.Fragment, null, name == null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h1", null, "Mahjong"), react_1.default.createElement(cp_entrance_1.Entrance, {
       submit: this.submitName
     })) : game != null ? react_1.default.createElement(cp_game_1.Game, {
       game: game,
-      leave: this.leaveGame,
+      leave: this.onGameClose,
       name: name
     }) : react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_player_1.Player, {
       logout: this.logout,
       name: name
     }), react_1.default.createElement(cp_lobby_1.Lobby, {
-      chairs: chairs,
       enter: this.enterGame,
       games: games,
       join: this.joinGame,
-      name: name
+      player: name,
+      createGame: this.createGame,
+      deleteGame: this.deleteGame
     })));
   }
 
@@ -31459,6 +31478,20 @@ const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/app/cp-
 __webpack_require__(/*! ./cp-game.scss */ "./src/components/app/cp-game.scss");
 
 let Game = class Game extends react_1.default.Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const {
+      game,
+      name
+    } = nextProps;
+    const playerChair = game.chairs.find(c => c.player === name);
+    const playerPosition = playerChair.position;
+    const ord = playerPosition === 'a' ? ['a', 'b', 'c', 'd'] : playerPosition === 'b' ? ['b', 'c', 'd', 'a'] : playerPosition === 'c' ? ['c', 'd', 'a', 'b'] : ['d', 'a', 'b', 'c'];
+    const order = ord.map(p => game.chairs.find(c => c.position === p));
+    return Object.assign(Object.assign({}, prevState), {
+      order
+    });
+  }
+
   constructor(props) {
     super(props);
     const {
@@ -31471,7 +31504,6 @@ let Game = class Game extends react_1.default.Component {
     const order = ord.map(p => game.chairs.find(c => c.position === p));
     this.state = {
       dragged: undefined,
-      dragSource: undefined,
       dropTarget: undefined,
       order
     };
@@ -31479,8 +31511,7 @@ let Game = class Game extends react_1.default.Component {
 
   onDragStart(e) {
     this.setState({
-      dragged: e.target.id,
-      dragSource: e.target.parentNode
+      dragged: e.target.id
     });
   }
 
@@ -31505,28 +31536,28 @@ let Game = class Game extends react_1.default.Component {
     } = this.props;
     const {
       dropTarget,
-      dragSource,
       dragged
     } = this.state;
 
-    if (dropTarget.id) {
-      if (dropTarget !== dragSource && dropTarget.id !== dragged) {
-        if (dropTarget.classList.contains('vectile')) {
-          const parent = dropTarget.parentNode;
-          const children = Array.from(parent.children);
-          const ids = children.map(c => c.id).filter(id => id !== dragged);
-          ids.splice(children.indexOf(dropTarget), 0, dragged);
-          Promise.all(ids.map((id, i) => axios_1.default.put(`/games/${game.id}/tiles/${id}?to=${parent.id}&index=${i}`)));
-        } else {
-          const index = Array.from(dropTarget.children).length;
-          axios_1.default.put(`/games/${game.id}/tiles/${dragged}?to=${dropTarget.id}&index=${index}`);
-        }
+    if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
+      if (dropTarget.classList.contains('vectile')) {
+        const parent = dropTarget.parentNode;
+        const index = Array.from(parent.children).indexOf(dropTarget);
+        axios_1.default.put(`/games/${game.id}/tiles/${dragged}`, {
+          to: parent.id,
+          index
+        });
+      } else {
+        const index = Array.from(dropTarget.children).length;
+        axios_1.default.put(`/games/${game.id}/tiles/${dragged}`, {
+          to: dropTarget.id,
+          index
+        });
       }
     }
 
     this.setState({
       dragged: undefined,
-      dragSource: undefined,
       dropTarget: undefined
     });
   }
@@ -31536,6 +31567,21 @@ let Game = class Game extends react_1.default.Component {
       game
     } = this.props;
     return game.ts.filter(t => t.tray === id).sort((a, b) => a.index > b.index ? 1 : -1);
+  }
+
+  toggleReveal() {
+    const {
+      game
+    } = this.props;
+    const {
+      order
+    } = this.state;
+    const chair = order[0];
+    axios_1.default.put(`/games/${game.id}/chairs/${chair.position}`, {
+      chairData: Object.assign(Object.assign({}, chair), {
+        reveal: !chair.reveal
+      })
+    });
   }
 
   render() {
@@ -31557,10 +31603,10 @@ let Game = class Game extends react_1.default.Component {
     }, react_1.default.createElement("div", {
       className: "top"
     }, react_1.default.createElement("div", {
-      className: "nameTag"
-    }, order[2].player), react_1.default.createElement(cp_tray_1.Tray, {
+      className: "name-tag"
+    }, react_1.default.createElement("span", null, order[2].player)), react_1.default.createElement(cp_tray_1.Tray, {
       id: `${order[2].position}0`,
-      hidden: true,
+      hidden: !order[2].reveal,
       tiles: this.getTray(`${order[2].position}0`)
     }), react_1.default.createElement(cp_tray_1.Tray, {
       id: `${order[2].position}1`,
@@ -31569,38 +31615,21 @@ let Game = class Game extends react_1.default.Component {
     })), react_1.default.createElement("div", {
       className: "left"
     }, react_1.default.createElement("div", {
-      className: "nameTag"
-    }, order[1].player), react_1.default.createElement(cp_tray_1.Tray, {
+      className: "name-tag"
+    }, react_1.default.createElement("span", null, order[1].player)), react_1.default.createElement(cp_tray_1.Tray, {
       id: `${order[1].position}0`,
-      hidden: true,
+      hidden: !order[1].reveal,
       tiles: this.getTray(`${order[1].position}0`)
     }), react_1.default.createElement(cp_tray_1.Tray, {
       id: `${order[1].position}1`,
       hidden: false,
       tiles: this.getTray(`${order[1].position}1`)
     })), react_1.default.createElement("div", {
-      className: "center"
-    }, react_1.default.createElement(cp_tray_1.Tray, {
-      id: "t1",
-      hidden: false,
-      tiles: this.getTray('t1')
-    })), react_1.default.createElement("div", {
-      className: "right"
-    }, react_1.default.createElement("div", {
-      className: "nameTag"
-    }, order[3].player), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[3].position}1`,
-      hidden: false,
-      tiles: this.getTray(`${order[3].position}1`)
-    }), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[3].position}0`,
-      hidden: true,
-      tiles: this.getTray(`${order[3].position}0`)
-    })), react_1.default.createElement("div", {
       className: "bottom"
     }, react_1.default.createElement("div", {
-      className: "nameTag"
-    }, order[0].player), react_1.default.createElement(cp_tray_1.Tray, {
+      className: "name-tag",
+      onClick: this.toggleReveal
+    }, react_1.default.createElement("span", null, order[0].player)), react_1.default.createElement(cp_tray_1.Tray, {
       id: `${order[0].position}1`,
       hidden: false,
       tiles: this.getTray(`${order[0].position}1`)
@@ -31609,17 +31638,35 @@ let Game = class Game extends react_1.default.Component {
       hidden: false,
       tiles: this.getTray(`${order[0].position}0`)
     })), react_1.default.createElement("div", {
+      className: "right"
+    }, react_1.default.createElement("div", {
+      className: "name-tag"
+    }, react_1.default.createElement("span", null, order[3].player)), react_1.default.createElement(cp_tray_1.Tray, {
+      id: `${order[3].position}1`,
+      hidden: false,
+      tiles: this.getTray(`${order[3].position}1`)
+    }), react_1.default.createElement(cp_tray_1.Tray, {
+      id: `${order[3].position}0`,
+      hidden: !order[3].reveal,
+      tiles: this.getTray(`${order[3].position}0`)
+    })), react_1.default.createElement("div", {
       className: "wall",
       title: "De muur"
     }, react_1.default.createElement(cp_tray_1.Tray, {
       id: "t0",
       hidden: false,
-      tiles: [this.getTray('t0')[0]]
+      tiles: this.getTray('t0')[0] ? [this.getTray('t0')[0]] : []
     })), react_1.default.createElement("div", {
       className: "exit",
       onClick: leave,
       title: "Naar de lobby"
-    }, react_1.default.createElement("span", null, "\u2799"))));
+    }, react_1.default.createElement("span", null, "\u2799")), react_1.default.createElement("div", {
+      className: "center"
+    }, react_1.default.createElement(cp_tray_1.Tray, {
+      id: "t1",
+      hidden: false,
+      tiles: this.getTray('t1')
+    }))));
   }
 
 };
@@ -31652,11 +31699,12 @@ Object.defineProperty(exports, "__esModule", {
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 exports.Lobby = ({
-  name,
   games,
   enter,
   join,
-  chairs
+  createGame,
+  deleteGame,
+  player
 }) => {
   return react_1.default.createElement("div", {
     className: "lobby"
@@ -31664,29 +31712,30 @@ exports.Lobby = ({
     className: "games"
   }, react_1.default.createElement("h3", null, "Spellen ", react_1.default.createElement("a", {
     href: "#",
+    onClick: createGame,
     title: "Nieuw spel toevoegen"
   }, "(+)")), games.map(({
     id,
-    chairs: ch,
+    chairs,
     title,
     creator
   }) => {
-    const chairsTaken = ch.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
-    const inThisGame = ch.find(c => chairs.find(v => v === c.id) != null) != null;
+    const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
+    const inThisGame = chairs.find(c => c.player === player);
     return react_1.default.createElement("div", {
       key: id,
       className: "list-game"
-    }, react_1.default.createElement("h4", null, inThisGame ? react_1.default.createElement("a", {
+    }, react_1.default.createElement("h4", null, react_1.default.createElement("a", {
       href: "#",
       onClick: () => enter(id)
-    }, title !== null && title !== void 0 ? title : 'Spel zonder naam', " (aan tafel)") : react_1.default.createElement("span", null, title !== null && title !== void 0 ? title : 'Spel zonder naam')), react_1.default.createElement("p", null, "Toegevoegd door ", creator !== null && creator !== void 0 ? creator : 'anoniem'), react_1.default.createElement("h4", null, "Spelers ", chairsTaken < 4 ? `(nog ${4 - chairsTaken} nodig)` : null), react_1.default.createElement("ul", null, ch.map(c => c.player != null ? react_1.default.createElement("li", {
-      key: c.id
-    }, chairs.find(v => v === c.id) != null ? react_1.default.createElement("a", {
+    }, title || 'Spel zonder naam'), "\u00A0", react_1.default.createElement("span", null, "(", creator !== null && creator !== void 0 ? creator : 'anoniem', ")")), react_1.default.createElement("a", {
       href: "#",
-      onClick: () => enter(id)
-    }, c.player) : c.player) : react_1.default.createElement("li", {
+      onClick: () => deleteGame(id)
+    }, "X"), react_1.default.createElement("h4", null, "Spelers ", chairsTaken < 4 ? `(nog ${4 - chairsTaken} nodig)` : null), react_1.default.createElement("ul", null, chairs.map(c => c.player != null ? react_1.default.createElement("li", {
       key: c.id
-    }, inThisGame ? react_1.default.createElement("span", null, "[ ]") : react_1.default.createElement("a", {
+    }, c.player) : react_1.default.createElement("li", {
+      key: c.id
+    }, inThisGame ? react_1.default.createElement("span", null, "...") : react_1.default.createElement("a", {
       href: "#",
       onClick: () => join(id)
     }, "[+]")))));
@@ -31729,6 +31778,37 @@ exports.Player = ({
 
 /***/ }),
 
+/***/ "./src/components/app/cp-tile.scss":
+/*!*****************************************!*\
+  !*** ./src/components/app/cp-tile.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-tile.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-tile.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
 /***/ "./src/components/app/cp-tile.tsx":
 /*!****************************************!*\
   !*** ./src/components/app/cp-tile.tsx ***!
@@ -31761,69 +31841,14 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 
 const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
 
-const g = {
-  characters: {
-    '1': '1F007',
-    '2': '1F008',
-    '3': '1F009',
-    '4': '1F00A',
-    '5': '1F00B',
-    '6': '1F00C',
-    '7': '1F00D',
-    '8': '1F00E',
-    '9': '1F00F'
-  },
-  bamboo: {
-    '1': '1F010',
-    '2': '1F011',
-    '3': '1F012',
-    '4': '1F013',
-    '5': '1F014',
-    '6': '1F015',
-    '7': '1F016',
-    '8': '1F017',
-    '9': '1F018'
-  },
-  dots: {
-    '1': '1F019',
-    '2': '1F01A',
-    '3': '1F01B',
-    '4': '1F01C',
-    '5': '1F01D',
-    '6': '1F01E',
-    '7': '1F01F',
-    '8': '1F020',
-    '9': '1F021'
-  },
-  flowers: {
-    'plum': '1F022',
-    'orchid': '1F023',
-    'chrysanthemum': '1F025',
-    'bamboo': '1F024'
-  },
-  seasons: {
-    'spring': '1F026',
-    'summer': '1F027',
-    'autumn': '1F028',
-    'winter': '1F029'
-  },
-  winds: {
-    'east': '1F000',
-    'north': '1F001',
-    'west': '1F002',
-    'south': '1F003'
-  },
-  dragons: {
-    'red': '1F004',
-    'green': '1F005',
-    'white': '1F006'
-  }
-};
+__webpack_require__(/*! ./cp-tile.scss */ "./src/components/app/cp-tile.scss");
+
 let Tile = class Tile extends react_1.default.Component {
   constructor() {
     super(...arguments);
     this.state = {
-      hovered: false
+      hovered: false,
+      dragged: false
     };
   }
 
@@ -31835,15 +31860,29 @@ let Tile = class Tile extends react_1.default.Component {
     document.removeEventListener('dragend', this.onDragLeave);
   }
 
+  onDragEnter() {
+    this.setState({
+      hovered: true
+    });
+  }
+
   onDragLeave() {
     this.setState({
       hovered: false
     });
   }
 
-  onDragEnter() {
+  onDragStart() {
+    setTimeout(() => {
+      this.setState({
+        dragged: true
+      });
+    }, 1);
+  }
+
+  onDragEnd() {
     this.setState({
-      hovered: true
+      dragged: false
     });
   }
 
@@ -31856,15 +31895,23 @@ let Tile = class Tile extends react_1.default.Component {
       },
       hidden
     } = this.props;
+    const {
+      hovered,
+      dragged
+    } = this.state;
     return react_1.default.createElement("div", {
-      className: `vectile${hidden ? ' tile-hidden' : ''}`,
+      className: `vectile${hidden ? ' tile-hidden' : ''}${hovered ? ' tile-hover' : ''}${dragged ? ' tile-dragged' : ''}`,
       draggable: "true",
       onDragEnter: this.onDragEnter,
       onDragLeave: this.onDragLeave,
+      onDragStart: this.onDragStart,
+      onDragEnd: this.onDragEnd,
       id: id.toString()
     }, react_1.default.createElement("div", {
+      className: "tile-graphic"
+    }, react_1.default.createElement("div", {
       className: `image tile-${suit}-${name}`
-    }));
+    })));
   }
 
 };
@@ -31900,16 +31947,20 @@ const cp_tile_1 = __webpack_require__(/*! ./cp-tile */ "./src/components/app/cp-
 exports.Tray = ({
   id,
   tiles,
-  hidden
+  hidden,
+  max = 13
 }) => {
+  const exceeds = tiles.length > max;
   return react_1.default.createElement("div", {
-    className: `tray ${hidden ? 'hidden' : null}`,
+    className: `tray${hidden ? ' hidden' : ''}${exceeds ? ' tray-exceeds-max-tiles' : ''}`,
     id: id
   }, tiles.map(t => react_1.default.createElement(cp_tile_1.Tile, {
     key: t.id,
     tile: t,
     hidden: hidden
-  })));
+  })), react_1.default.createElement("div", {
+    className: "tile-count"
+  }, tiles.length));
 };
 
 /***/ }),

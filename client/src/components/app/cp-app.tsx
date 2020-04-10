@@ -10,7 +10,6 @@ interface State {
 	name: string | null;
 	game: Mahjong.Game | null;
 	games: Mahjong.Game[];
-	chairs: string[];
 }
 
 const Storage = {
@@ -23,61 +22,50 @@ const Storage = {
 			...Storage.get(),
 			name
 		}));
-	},
-
-	addChair(id: string) {
-		const data = Storage.get();
-		localStorage.setItem('mahjong', JSON.stringify({
-			...data,
-			chairs: data.chairs.concat(id)
-		}));
 	}
 };
 
 @bind
 export class App extends React.Component<any, State> {
-	state = { name: null, game: null, games: [], chairs: [] };
+	state = { name: null, game: null, games: [] };
 
-	private stream: any;
+	private gameStream: any;
+	private globalStream: any;
 
 	componentDidMount() {
 		this.getGames();
 
-		const { name, chairs } = Storage.get();
+		const { name } = Storage.get();
 
-		this.setState({ name, chairs });
+		this.setState({ name });
+
+		this.globalStream = new EventSource('/streams/global');
+		this.globalStream.addEventListener('games', this.onGamesUpdate);
 	}
 
 	private enterGame(gameId: string) {
-		if (this.stream) {
-			this.stream.close();
+		if (this.gameStream) {
+			this.gameStream.close();
 		}
 
-		this.stream = new EventSource(`/stream/${ gameId }`);
-		this.stream.addEventListener('game-state', this.updateGame);
-		this.stream.addEventListener('game-close', this.leaveGame);
+		this.gameStream = new EventSource(`/streams/games/${ gameId }`);
+		this.gameStream.addEventListener('game-state', this.onGameState);
+		this.gameStream.addEventListener('game-close', this.onGameClose);
 	}
 
 	private joinGame(gameId: string) {
-		const { name, chairs } = this.state;
-
-		axios.get(`/games/${ gameId }/players/${ name }`)
-			.then(({ data }) => {
-				Storage.addChair(data);
-				this.setState({ chairs: chairs.concat(data) });
-				this.getGames();
-			});
+		const { name } = this.state;
+		axios.post(`/games/${ gameId }/players`, { playerName: name });
 	}
 
-	private leaveGame() {
-		if (this.stream) {
-			this.stream.removeEventListener('game-state', this.updateGame);
-			this.stream.removeEventListener('game-close', this.leaveGame);
-			this.stream.close();
+	private onGameClose() {
+		if (this.gameStream) {
+			this.gameStream.removeEventListener('game-state', this.onGameState);
+			this.gameStream.removeEventListener('game-close', this.onGameClose);
+			this.gameStream.close();
 		}
 
 		this.setState({ game: null });
-		this.getGames();
 	}
 
 	private getGames() {
@@ -86,8 +74,21 @@ export class App extends React.Component<any, State> {
 			.then(games => this.setState({ games }));
 	}
 
-	private updateGame(event) {
+	private onGamesUpdate(event) {
+		this.setState(JSON.parse(event.data));
+	}
+
+	private onGameState(event) {
 		this.setState({ game: JSON.parse(event.data) });
+	}
+
+	private createGame() {
+		const { name } = this.state;
+		axios.post('/games', { creator: name });
+	}
+
+	private deleteGame(id: string) {
+		axios.delete(`/games/${ id }`);
 	}
 
 	private submitName(name: string) {
@@ -100,7 +101,7 @@ export class App extends React.Component<any, State> {
 	}
 
 	render() {
-		const { name, game, games, chairs } = this.state;
+		const { name, game, games } = this.state;
 
 		return (
 			<>
@@ -116,7 +117,7 @@ export class App extends React.Component<any, State> {
 							? (
 								<Game
 									game={ game }
-									leave={ this.leaveGame }
+									leave={ this.onGameClose }
 									name={ name }
 								/>
 							)
@@ -127,11 +128,12 @@ export class App extends React.Component<any, State> {
 										name={ name }
 									/>
 									<Lobby
-										chairs={ chairs }
 										enter={ this.enterGame }
 										games={ games }
 										join={ this.joinGame }
-										name={ name }
+										player={ name }
+										createGame={ this.createGame }
+										deleteGame={ this.deleteGame }
 									/>
 								</>
 							)

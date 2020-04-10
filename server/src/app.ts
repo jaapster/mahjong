@@ -1,28 +1,60 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import SSE from 'express-sse';
-import { listGames, getGame, createGame, destroyGame, moveTile, addPlayer } from './game';
+import {
+	addPlayer,
+	createGame,
+	destroyGame,
+	getGame,
+	listGames,
+	moveTile,
+	setChairData,
+} from './game';
 
 const app = express();
 const port = 1001;
-const streams = {};
+const globalStream = new SSE({
+	type: 'global',
+	data: {}
+});
 
-app.get('/stream/:id', (req, res) => {
+const gameStreams = {};
+
+app.use(bodyParser.json());
+
+// SSE
+app.get('/streams/games/:id', (req, res) => {
 	const gameId = req.params.id;
 
-	if (!streams[gameId]) {
-		streams[gameId] = new SSE({
+	if (!gameStreams[gameId]) {
+		gameStreams[gameId] = new SSE({
 			type: 'game',
 			data: getGame(gameId)
 		});
 	}
 
-	streams[gameId].init(req, res);
-	streams[gameId].send(getGame(gameId), 'game-state');
+	gameStreams[gameId].init(req, res);
+	gameStreams[gameId].send(getGame(gameId), 'game-state');
 });
 
+app.get('/streams/global', (req, res) => {
+	globalStream.init(req, res);
+});
+
+// STATIC FILES
 app.use('/', express.static('dist'));
 
+// GAMES
 app.get('/games', (req, res) => res.send(listGames()));
+
+
+app.post('/games', (req, res) => {
+	const { title, creator } = req.body;
+
+	res.send(createGame(title, creator));
+
+	globalStream.send({ games: listGames() }, 'games');
+});
 
 app.get('/games/:gameId', (req, res) => {
 	const { gameId } = req.params;
@@ -30,45 +62,55 @@ app.get('/games/:gameId', (req, res) => {
 	res.send(getGame(gameId));
 });
 
-app.post('/games', (req, res) => res.send(createGame()));
-
 app.delete('/games/:gameId', (req, res) => {
 	const { gameId } = req.params;
 
-	destroyGame(gameId);
-
-	streams[gameId].send(
+	gameStreams[gameId]?.send(
 		{ type: 'close', data: gameId },
 		'game-close'
 	);
 
-	res.send();
+	res.send(destroyGame(gameId));
+
+	globalStream.send({ games: listGames() }, 'games');
 });
 
-// todo: should be a post
-app.get('/games/:gameId/players/:playerName', (req, res) => {
-	const { gameId, playerName } = req.params;
+app.post('/games/:gameId/players', (req, res) => {
+	const { gameId } = req.params;
+	const { playerName } = req.body;
 
 	res.send(addPlayer(gameId, playerName));
 
-	streams[gameId].send(
+	gameStreams[gameId].send(
 		getGame(gameId),
 		'game-state'
 	);
+
+	globalStream.send({ games: listGames() }, 'games');
 });
 
 app.put('/games/:gameId/tiles/:tileId', (req, res) => {
 	const { gameId, tileId } = req.params;
-	const { to, index } = req.query;
+	const { to, index } = req.body;
 
-	moveTile(gameId, parseInt(tileId), to, index);
+	res.send(moveTile(gameId, parseInt(tileId), to, parseInt(index)));
 
-	streams[gameId].send(
+	gameStreams[gameId].send(
 		getGame(gameId),
 		'game-state'
 	);
+});
 
-	res.send();
+app.put('/games/:gameId/chairs/:chairPosition', (req, res) => {
+	const { gameId, chairPosition } = req.params;
+	const { chairData } = req.body;
+
+	res.send(setChairData(gameId, chairPosition, chairData));
+
+	gameStreams[gameId].send(
+		getGame(gameId),
+		'game-state'
+	);
 });
 
 app.listen(port, err => {

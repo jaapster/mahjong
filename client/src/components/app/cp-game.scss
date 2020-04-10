@@ -8,8 +8,9 @@
 	box-sizing: border-box;
 
 	$tray: 120px;
-	$large: 172px; //188px;
-	$small: 52px; //68px;
+	// $large: 172px; //188px;
+	$small: 30px; //68px;
+	$large: $tray + $small; //188px;
 
 	.table {
 		position: absolute;
@@ -17,8 +18,11 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		// width: 1024px;
+		// height: 768px;
 
 		.tray {
+			position: relative;
 			display: flex;
 			flex-wrap: wrap;
 			flex-basis: $tray;
@@ -29,6 +33,10 @@
 			&.hidden {
 				flex-basis: $small;
 				background: rgba(0, 0, 0, 0.2);
+
+				// &.tray-exceeds-max-tiles {
+				// 	background: red;
+				// }
 			}
 		}
 
@@ -55,7 +63,7 @@
 				height: 100%;
 
 				&.hidden {
-					width: 74px;
+					width: 37px;
 				}
 			}
 		}
@@ -65,8 +73,7 @@
 			left: $large;
 			bottom: 240px;
 			right: $large;
-			margin: 10px;
-			border: 1px dashed black;
+			box-shadow: inset 0 0 5px grey;
 
 			.tray {
 				position: absolute;
@@ -83,11 +90,11 @@
 			right: 10px;
 			height: 210px;
 			width: $large - 20;
-			background: lighten(firebrick, 20%);
+			background: lighten(black, 90%);
 
 			&:before {
 				content: '';
-				border-top: 20px dashed lighten(firebrick, 20%);
+				border-top: 20px dashed lighten(black, 90%);
 				position: absolute;
 				width: $large - 20;
 				top: -20px;
@@ -99,12 +106,14 @@
 			}
 
 			.vectile {
-				&:before {
-					content: '?';
-					font-size: 30px;
-					font-family: serif;
-					font-weight: bolder;
-					color: firebrick;
+				.tile-graphic {
+					&:before {
+						content: '?';
+						font-size: 30px;
+						font-family: serif;
+						font-weight: bolder;
+						color: firebrick;
+					}
 				}
 			}
 		}
@@ -117,7 +126,7 @@
 			height: 240px;
 			width: $large;
 			background: ivory;
-			color: lightgrey;
+			color: lighten(black, 90%);
 			font-size: 100px;
 			cursor: default;
 			transform: scale(-1, 1);
@@ -139,7 +148,7 @@
 		}
 
 		.left {
-			top: $large;
+			top: 0; //$large;
 			left: 0px;
 			bottom: 240px;
 			width: $large;
@@ -147,7 +156,7 @@
 		}
 
 		.right {
-			top: $large;
+			top: 0; //$large;
 			right: 0px;
 			bottom: 240px;
 			width: $large;
@@ -163,19 +172,44 @@
 
 			.tray:last-child {
 				background: rgba(0, 0, 0, 0.2);
+
+				&.tray-exceeds-max-tiles {
+					background: red;
+				}
 			}
 		}
 
-		.nameTag {
+		.name-tag {
 			position: absolute;
 			z-index: 2;
 			top: 0px;
 			left: 0px;
 			padding: 4px;
-			background: rgba(0, 0, 0, 0.7);
-			opacity: 0.3;
-			color: white;
+			background: rgba(0, 0, 0, 0.5);
+			opacity: 0.5;
 			font-size: 10px;
+			cursor: default;
+			color: white;
 		}
+
+		.tile-count {
+			position: absolute;
+			z-index: 2;
+			top: 0px;
+			left: 0px;
+			padding: 4px;
+			color: black;
+			opacity: 0.5;
+			background: white;
+			font-size: 10px;
+			display: none;
+			width: 20px;
+		}
+
+		// .hidden {
+		// 	.tile-count {
+		// 		display: block;
+		// 	}
+		// }
 	}
 }

@@ -691,46 +691,46 @@ exports.getTileSet = () => {
             id: 136,
             suit: SUITS.DRAGONS,
             name: 'white'
-        },
-        {
-            id: 137,
-            suit: SUITS.FLOWERS,
-            name: 'plum'
-        },
-        {
-            id: 138,
-            suit: SUITS.FLOWERS,
-            name: 'orchid'
-        },
-        {
-            id: 139,
-            suit: SUITS.FLOWERS,
-            name: 'chrysanthemum'
-        },
-        {
-            id: 140,
-            suit: SUITS.FLOWERS,
-            name: 'bamboo'
-        },
-        {
-            id: 141,
-            suit: SUITS.SEASONS,
-            name: 'spring'
-        },
-        {
-            id: 142,
-            suit: SUITS.SEASONS,
-            name: 'summer'
-        },
-        {
-            id: 143,
-            suit: SUITS.SEASONS,
-            name: 'autumn'
-        },
-        {
-            id: 144,
-            suit: SUITS.SEASONS,
-            name: 'winter'
-        }
+        } //,
+        // {
+        // 	id: 137,
+        // 	suit: SUITS.FLOWERS,
+        // 	name: 'plum'
+        // },
+        // {
+        // 	id: 138,
+        // 	suit: SUITS.FLOWERS,
+        // 	name: 'orchid'
+        // },
+        // {
+        // 	id: 139,
+        // 	suit: SUITS.FLOWERS,
+        // 	name: 'chrysanthemum'
+        // },
+        // {
+        // 	id: 140,
+        // 	suit: SUITS.FLOWERS,
+        // 	name: 'bamboo'
+        // },
+        // {
+        // 	id: 141,
+        // 	suit: SUITS.SEASONS,
+        // 	name: 'spring'
+        // },
+        // {
+        // 	id: 142,
+        // 	suit: SUITS.SEASONS,
+        // 	name: 'summer'
+        // },
+        // {
+        // 	id: 143,
+        // 	suit: SUITS.SEASONS,
+        // 	name: 'autumn'
+        // },
+        // {
+        // 	id: 144,
+        // 	suit: SUITS.SEASONS,
+        // 	name: 'winter'
+        // }
     ]).map((t, index) => (Object.assign(Object.assign({}, t), { tray: 't0', index })));
 };

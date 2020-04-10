@@ -9,14 +9,14 @@ export const createGame = (title?: string, creator?: string): Mahjong.Game => {
 		id,
 		title,
 		creator,
-		players: [],
 		dealt: false,
 		ts: getTileSet(),
 		chairs: (new Array(4)).fill(0).map((_e, i) => (
 			{
 				id: `${ id }:${ v4() }`,
 				player: null,
-				position: ['a', 'b', 'c', 'd'][i]
+				position: ['a', 'b', 'c', 'd'][i],
+				reveal: false
 			}
 		))
 	};
@@ -25,6 +25,9 @@ export const createGame = (title?: string, creator?: string): Mahjong.Game => {
 		..._games,
 		game
 	];
+
+	addPlayer(id, creator);
+	deal(id);
 
 	return game;
 };
@@ -41,6 +44,29 @@ export const getGame = (id: string): Mahjong.Game => {
 	return _games.find((game) => game.id === id);
 }
 
+export const setChairData = (gameId: string, chairPosition: string, chairData: Mahjong.Chair) => {
+	_games = _games.map((game) => {
+		if (game.id !== gameId) {
+			return game;
+		}
+
+		return {
+			...game,
+			chairs: game.chairs.map(c => {
+				if (c.position === chairPosition) {
+					return chairData;
+				}
+
+				return c;
+			})
+		}
+	});
+}
+
+/*
+ * Seats a player (represented by name) in a game-chair
+ * and return the chair id.
+ **/
 export const addPlayer = (id: string, player: string) => {
 	let chair = { id: null };
 
@@ -53,7 +79,6 @@ export const addPlayer = (id: string, player: string) => {
 
 		return {
 			...game,
-			players: [],
 			chairs: [
 				...game.chairs.map((c, i) => {
 					return c !== chair
@@ -70,18 +95,37 @@ export const addPlayer = (id: string, player: string) => {
 	return chair.id;
 }
 
+/*
+ * Moves a tile to a tray at a specified index
+ **/
 export const moveTile = (
 	gameId: string,
 	tileId: number,
-	toId: string,
-	index: number
+	toTray: string,
+	toIndex: number
 ) => {
 	const game = _games.find(game => game.id === gameId);
+	const tile = game.ts.find(t => t.id === tileId);
+	const fromTray = tile.tray;
+	const fromIndex = tile.index;
 
-	game.ts = game.ts.map(t => t.id === tileId
-		? { ...t, tray: toId, index }
-		: t
-	);
+	game.ts = game.ts.map(t => (
+		t.tray === toTray && t.index >= toIndex
+			? { ...t, index: t.index + 1 }
+			: t
+	));
+
+	game.ts = game.ts.map(t => (
+		t.tray === fromTray && t.index > fromIndex
+			? { ...t, index: t.index - 1 }
+			: t
+	));
+
+	game.ts = game.ts.map(t => (
+		t.id === tileId
+			? { ...t, tray: toTray, index: toIndex - (fromTray === toTray && fromIndex < toIndex ? 1 : 0) }
+			: t
+	));
 }
 
 export const deal = (id: string) => {
@@ -96,8 +140,8 @@ export const deal = (id: string) => {
 			ts: game.ts.map((t, i) => {
 				return {
 					...t,
-					tray: i < 14 ? 'a0' : i < 28 ? 'b0' : i < 42 ? 'c0' : i < 56 ? 'd0' : 't0',
-					index: i - (i < 14 ? 0 : i < 28 ? 14 : i < 42 ? 28 : i < 56 ? 42 : 56)
+					tray: i < 13 ? 'a0' : i < 26 ? 'b0' : i < 39 ? 'c0' : i < 52 ? 'd0' : 't0',
+					index: i - (i < 13 ? 0 : i < 26 ? 13 : i < 39 ? 26 : i < 52 ? 39 : 52)
 				};
 			})
 		}
@@ -107,16 +151,6 @@ export const deal = (id: string) => {
 // test stuff
 const game1 = createGame('Woensdag mahjong', 'Anneke');
 
-['Anneke', 'José', 'Joep', 'Peter'].forEach((name) => {
+['José', 'Jaap', 'Peter'].forEach((name) => {
 	addPlayer(game1.id, name);
 });
-
-deal(game1.id);
-
-const game2 = createGame('Mahjong Boefjes', 'Marjan');
-
-['Marjan', 'Hugo'].forEach((name) => {
-	addPlayer(game2.id, name);
-});
-
-deal(game2.id);

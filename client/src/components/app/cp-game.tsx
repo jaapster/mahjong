@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Tray } from './cp-tray';
 
 import './cp-game.scss';
+import { Chair } from './cp-chair';
 
 interface Props {
 	name: string;
@@ -13,13 +14,34 @@ interface Props {
 
 interface State {
 	dragged?: string;
-	dragSource?: HTMLElement;
 	dropTarget?: HTMLElement;
 	order: Mahjong.Chair[];
 }
 
 @bind
 export class Game extends React.Component<Props, State> {
+	static getDerivedStateFromProps(nextProps, prevState) {
+		const { game, name } = nextProps;
+
+		const playerChair = game.chairs.find(c => c.player === name);
+		const playerPosition = playerChair.position;
+
+		const ord = playerPosition === 'a'
+			? ['a', 'b', 'c', 'd']
+			: playerPosition === 'b'
+				? ['b', 'c', 'd', 'a']
+				: playerPosition === 'c'
+					? ['c', 'd', 'a', 'b']
+					: ['d', 'a', 'b', 'c'];
+
+		const order = ord.map(p => game.chairs.find(c => c.position === p));
+
+		return {
+			...prevState,
+			order
+		}
+	}
+
 	constructor(props: Props) {
 		super(props);
 
@@ -39,17 +61,13 @@ export class Game extends React.Component<Props, State> {
 
 		this.state = {
 			dragged: undefined,
-			dragSource: undefined,
 			dropTarget: undefined,
 			order
 		};
 	}
 
 	private onDragStart(e) {
-		this.setState({
-			dragged: e.target.id,
-			dragSource: e.target.parentNode
-		});
+		this.setState({ dragged: e.target.id });
 	}
 
 	private onDragEnter(e) {
@@ -67,30 +85,29 @@ export class Game extends React.Component<Props, State> {
 
 	private onDragEnd(e) {
 		const { game } = this.props;
-		const { dropTarget, dragSource, dragged } = this.state;
+		const { dropTarget, dragged } = this.state;
 
-		if (dropTarget.id) {
-			if (dropTarget !== dragSource && dropTarget.id !== dragged) {
-				if ((dropTarget as HTMLElement).classList.contains('vectile')) {
-					const parent: HTMLElement = dropTarget.parentNode as HTMLElement;
-					const children = Array.from(parent.children);
-					const ids = children.map(c => c.id).filter(id => id !== dragged);
+		if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
+			if ((dropTarget as HTMLElement).classList.contains('vectile')) {
+				const parent: HTMLElement = dropTarget.parentNode as HTMLElement;
+				const index = Array.from(parent.children).indexOf(dropTarget);
 
-					ids.splice(children.indexOf(dropTarget), 0, dragged);
+				axios.put(`/games/${ game.id }/tiles/${ dragged }`, {
+					to: parent.id,
+					index
+				});
+			} else {
+				const index = Array.from(dropTarget.children).length;
 
-					Promise.all(ids.map((id, i) => (
-						axios.put(`/games/${ game.id }/tiles/${ id }?to=${ parent.id }&index=${ i }`)
-					)));
-				} else {
-					const index = Array.from(dropTarget.children).length;
-					axios.put(`/games/${ game.id }/tiles/${ dragged }?to=${ dropTarget.id }&index=${ index }`);
-				}
+				axios.put(`/games/${ game.id }/tiles/${ dragged }`, {
+					to: dropTarget.id,
+					index
+				});
 			}
 		}
 
 		this.setState({
 			dragged: undefined,
-			dragSource: undefined,
 			dropTarget: undefined
 		});
 	}
@@ -101,6 +118,19 @@ export class Game extends React.Component<Props, State> {
 		return game.ts
 			.filter(t => t.tray === id)
 			.sort((a, b) => a.index > b.index ? 1 : -1);
+	}
+
+	private toggleReveal() {
+		const { game } = this.props;
+		const { order } = this.state;
+		const chair = order[0];
+
+		axios.put(`/games/${ game.id }/chairs/${ chair.position }`, {
+			chairData: {
+				...chair,
+				reveal: !chair.reveal
+			}
+		});
 	}
 
 	render() {
@@ -118,10 +148,10 @@ export class Game extends React.Component<Props, State> {
 			>
 				<div className="table">
 					<div className="top">
-						<div className="nameTag">{ order[2].player }</div>
+						<div className="name-tag"><span>{ order[2].player }</span></div>
 						<Tray
 							id={ `${ order[2].position }0` }
-							hidden={ true }
+							hidden={ !order[2].reveal }
 							tiles={ this.getTray(`${ order[2].position }0`) }
 						/>
 						<Tray
@@ -131,10 +161,10 @@ export class Game extends React.Component<Props, State> {
 						/>
 					</div>
 					<div className="left">
-						<div className="nameTag">{ order[1].player }</div>
+						<div className="name-tag"><span>{ order[1].player }</span></div>
 						<Tray
 							id={ `${ order[1].position }0` }
-							hidden={ true }
+							hidden={ !order[1].reveal }
 							tiles={ this.getTray(`${ order[1].position }0`) }
 						/>
 						<Tray
@@ -143,28 +173,8 @@ export class Game extends React.Component<Props, State> {
 							tiles={ this.getTray(`${ order[1].position }1`) }
 						/>
 					</div>
-					<div className="center">
-						<Tray
-							id="t1"
-							hidden={ false }
-							tiles={ this.getTray('t1') }
-						/>
-					</div>
-					<div className="right">
-						<div className="nameTag">{ order[3].player }</div>
-						<Tray
-							id={ `${ order[3].position }1` }
-							hidden={ false }
-							tiles={ this.getTray(`${ order[3].position }1`) }
-						/>
-						<Tray
-							id={ `${ order[3].position }0` }
-							hidden={ true }
-							tiles={ this.getTray(`${ order[3].position }0`) }
-						/>
-					</div>
 					<div className="bottom">
-						<div className="nameTag">{ order[0].player }</div>
+						<div className="name-tag" onClick={ this.toggleReveal }><span>{ order[0].player }</span></div>
 						<Tray
 							id={ `${ order[0].position }1` }
 							hidden={ false }
@@ -176,15 +186,39 @@ export class Game extends React.Component<Props, State> {
 							tiles={ this.getTray(`${ order[0].position }0`) }
 						/>
 					</div>
+					<div className="right">
+						<div className="name-tag"><span>{ order[3].player }</span></div>
+						<Tray
+							id={ `${ order[3].position }1` }
+							hidden={ false }
+							tiles={ this.getTray(`${ order[3].position }1`) }
+						/>
+						<Tray
+							id={ `${ order[3].position }0` }
+							hidden={ !order[3].reveal }
+							tiles={ this.getTray(`${ order[3].position }0`) }
+						/>
+					</div>
 					<div className="wall" title="De muur">
 						<Tray
 							id="t0"
 							hidden={ false }
-							tiles={ [this.getTray('t0')[0]] }
+							tiles={
+								this.getTray('t0')[0]
+									? [this.getTray('t0')[0]]
+									: []
+							}
 						/>
 					</div>
 					<div className="exit" onClick={ leave } title="Naar de lobby">
 						<span>&#x2799;</span>
+					</div>
+					<div className="center">
+						<Tray
+							id="t1"
+							hidden={ false }
+							tiles={ this.getTray('t1') }
+						/>
 					</div>
 				</div>
 			</div>

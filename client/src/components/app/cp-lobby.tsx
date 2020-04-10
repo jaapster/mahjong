@@ -1,57 +1,48 @@
 import React from 'react';
 
 interface Props {
-	name: string;
+	player: string;
 	games: Mahjong.Game[];
 	enter(id: string): void;
 	join(id: string): void;
-	chairs: string[];
+	createGame(): void;
+	deleteGame(id: string): void;
 }
 
-export const Lobby = ({ name, games, enter, join, chairs }: Props) => {
+export const Lobby = ({ games, enter, join, createGame, deleteGame, player }: Props) => {
 	return (
 		<div className="lobby">
 			<h2>Lobby</h2>
 			<div className="games">
-				<h3>Spellen <a href="#" title="Nieuw spel toevoegen">(+)</a></h3>
+				<h3>Spellen <a href="#" onClick={ createGame } title="Nieuw spel toevoegen">(+)</a></h3>
 				{
-					games.map(({ id, chairs: ch, title, creator }) => {
-						const chairsTaken = ch.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
-						const inThisGame = ch.find(c => chairs.find(v => v === c.id) != null) != null;
+					games.map(({ id, chairs, title, creator }) => {
+						const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
+						const inThisGame = chairs.find(c => c.player === player);
 
 						return (
 							<div key={ id } className="list-game">
 								<h4>
-									{
-										inThisGame
-											? (
-												<a href="#" onClick={ () => enter(id) }>
-													{ title ?? 'Spel zonder naam' } (aan tafel)
-												</a>
-											)
-											: <span>{ title ?? 'Spel zonder naam' }</span>
-									}
+									<a href="#" onClick={ () => enter(id) }>{ title || 'Spel zonder naam' }</a>
+									&nbsp;<span>({ creator ?? 'anoniem' })</span>
 								</h4>
-								<p>Toegevoegd door { creator ?? 'anoniem' }</p>
+								<a href="#" onClick={ () => deleteGame(id) }>X</a>
+
 								<h4>Spelers { chairsTaken < 4 ? `(nog ${ 4 - chairsTaken } nodig)` : null}</h4>
 								<ul>
 									{
-										ch.map(c => (
+										chairs.map(c => (
 											c.player != null
 												? (
 													<li key={ c.id }>
-														{
-															chairs.find(v => v === c.id) != null
-																? <a href="#" onClick={ () => enter(id) }>{ c.player }</a>
-																: c.player
-														}
+														{ c.player }
 													</li>
 												)
 												: (
 													<li key={ c.id }>
 														{
 															inThisGame
-																? <span>[ ]</span>
+																? <span>...</span>
 																: <a href="#" onClick={ () => join(id) }>[+]</a>
 														}
 													</li>
