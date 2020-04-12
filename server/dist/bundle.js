@@ -2082,7 +2082,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px;\n    background: lightyellow; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightpink; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightblue; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px;\n    background: darkseagreen; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    color: white;\n    background: green;\n    opacity: 0.4; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n", ""]);
+exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-a {\n    background: lightyellow; }\n  .chair.chair-b {\n    background: lightpink; }\n  .chair.chair-c {\n    background: lightblue; }\n  .chair.chair-d {\n    background: darkseagreen; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    color: white;\n    background: green;\n    opacity: 1; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -32088,7 +32088,7 @@ class Chair extends react_1.default.Component {
       transit
     } = this.props;
     return react_1.default.createElement("div", {
-      className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`)
+      className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`, `chair-${id}`)
     }, react_1.default.createElement(cp_tray_1.Tray, {
       id: `${id}0`,
       hidden: index > 0 && !chair.reveal,
@@ -32114,7 +32114,7 @@ class Chair extends react_1.default.Component {
       className: util_merge_classes_1.mergeClasses('transit', `transit-${index}`)
     }, react_1.default.createElement(cp_tray_1.Tray, {
       id: `${id}transit`,
-      hidden: index > 0,
+      hidden: true,
       tiles: util_get_tray_1.getTray(`${id}transit`, tiles),
       rotate: index === 1 || index === 3,
       small: false,

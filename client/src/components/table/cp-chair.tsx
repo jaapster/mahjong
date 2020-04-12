@@ -25,7 +25,11 @@ export class Chair extends React.Component<Props> {
 		const { chair: { id }, chair, index, tiles, reveal, transit } = this.props;
 
 		return (
-			<div className={ mergeClasses('chair', `chair-${ POSITIONS[index] }`)}>
+			<div className={ mergeClasses(
+					'chair',
+					`chair-${ POSITIONS[index] }`,
+					`chair-${ id }`
+				) }>
 				<Tray
 					id={ `${ id }0` }
 					hidden={ index > 0 && !chair.reveal }
@@ -59,10 +63,13 @@ export class Chair extends React.Component<Props> {
 					transit
 						? (
 							<Portal id="transit-area">
-								<div className={ mergeClasses('transit', `transit-${ index }`)}>
+								<div className={ mergeClasses(
+										'transit',
+										`transit-${ index }`
+									) }>
 									<Tray
 										id={ `${ id }transit` }
-										hidden={ index > 0 }
+										hidden={ true }
 										tiles={ getTray(`${ id }transit`, tiles) }
 										rotate={ index === 1 || index === 3 }
 										small={ false }

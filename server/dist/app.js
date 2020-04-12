@@ -8,7 +8,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const express_sse_1 = __importDefault(require("express-sse"));
 const tables_1 = require("./tables");
 const app = express_1.default();
-const port = 1001;
+const port = 2001;
 app.use(body_parser_1.default.json());
 // Statics
 app.use('/', express_1.default.static('dist'));
