@@ -1,116 +1,79 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import SSE from 'express-sse';
-import {
-	addPlayer,
-	createGame,
-	destroyGame,
-	getGame,
-	listGames,
-	moveTile,
-	setChairData,
-} from './game';
+import { Tables } from './tables';
 
 const app = express();
 const port = 1001;
-const globalStream = new SSE({
-	type: 'global',
-	data: {}
-});
-
-const gameStreams = {};
 
 app.use(bodyParser.json());
 
-// SSE
-app.get('/streams/games/:id', (req, res) => {
-	const gameId = req.params.id;
+// Statics
+app.use('/', express.static('dist'));
 
-	if (!gameStreams[gameId]) {
-		gameStreams[gameId] = new SSE({
-			type: 'game',
-			data: getGame(gameId)
+// Tables
+const tableStreams = {};
+const tablesStream = new SSE({
+	type: 'tables',
+	data: {}
+});
+
+app.get('/streams/tables', (req, res) => {
+	tablesStream.init(req, res);
+});
+
+app.get('/streams/tables/:id', (req, res) => {
+	const id = req.params.id;
+
+	if (!tableStreams[id]) {
+		tableStreams[id] = new SSE({
+			type: 'table',
+			data: Tables.read(id)
 		});
 	}
 
-	gameStreams[gameId].init(req, res);
-	gameStreams[gameId].send(getGame(gameId), 'game-state');
+	tableStreams[id].init(req, res);
+	tableStreams[id].send(Tables.read(id), 'update');
 });
 
-app.get('/streams/global', (req, res) => {
-	globalStream.init(req, res);
+app.get('/tables', (req, res) => {
+	res.send(Tables.all());
 });
 
-// STATIC FILES
-app.use('/', express.static('dist'));
-
-// GAMES
-app.get('/games', (req, res) => res.send(listGames()));
-
-
-app.post('/games', (req, res) => {
-	const { title, creator } = req.body;
-
-	res.send(createGame(title, creator));
-
-	globalStream.send({ games: listGames() }, 'games');
+app.post('/tables', (req, res) => {
+	res.send(Tables.create(req.body.creator));
+	tablesStream.send(Tables.all(), 'update');
 });
 
-app.get('/games/:gameId', (req, res) => {
-	const { gameId } = req.params;
-
-	res.send(getGame(gameId));
+app.get('/tables/:id', (req, res) => {
+	res.send(Tables.read(req.params.id));
 });
 
-app.delete('/games/:gameId', (req, res) => {
-	const { gameId } = req.params;
-
-	gameStreams[gameId]?.send(
-		{ type: 'close', data: gameId },
-		'game-close'
-	);
-
-	res.send(destroyGame(gameId));
-
-	globalStream.send({ games: listGames() }, 'games');
+app.put('/tables/:id', ({ params: { id }, body: { data } }, res) => {
+	res.send(Tables.update(id, data));
+	tablesStream.send(Tables.all(), 'update');
+	tableStreams[id]?.send(Tables.read(id), 'update');
 });
 
-app.post('/games/:gameId/players', (req, res) => {
-	const { gameId } = req.params;
-	const { playerName } = req.body;
-
-	res.send(addPlayer(gameId, playerName));
-
-	gameStreams[gameId].send(
-		getGame(gameId),
-		'game-state'
-	);
-
-	globalStream.send({ games: listGames() }, 'games');
+app.delete('/tables/:id', (req, res) => {
+	res.send(Tables.delete(req.params.id));
+	tablesStream.send(Tables.all(), 'update');
 });
 
-app.put('/games/:gameId/tiles/:tileId', (req, res) => {
-	const { gameId, tileId } = req.params;
-	const { to, index } = req.body;
-
-	res.send(moveTile(gameId, parseInt(tileId), to, parseInt(index)));
-
-	gameStreams[gameId].send(
-		getGame(gameId),
-		'game-state'
-	);
+app.post('/tables/:id/game', ({ params: { id } }, res) => {
+	res.send(Tables.newGame(id));
+	tableStreams[id]?.send(Tables.read(id), 'update');
 });
 
-app.put('/games/:gameId/chairs/:chairPosition', (req, res) => {
-	const { gameId, chairPosition } = req.params;
-	const { chairData } = req.body;
+app.post('tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } }, res) => {
+	res.send(Tables.updateChair(id, chair, data));
+	tablesStream.send(Tables.all(), 'update');
+	tableStreams[id]?.send(Tables.read(id), 'update');
+});
 
-	res.send(setChairData(gameId, chairPosition, chairData));
-
-	gameStreams[gameId].send(
-		getGame(gameId),
-		'game-state'
-	);
+app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { data } }, res) => {
+	res.send(Tables.moveTile(id, tileId, data));
+	tableStreams[id].send(Tables.read(id), 'update');
 });
 
 app.listen(port, err => {

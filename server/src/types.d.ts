@@ -1,25 +1,25 @@
 declare namespace Mahjong {
 	interface Tile {
-		id: number;
+		id: string;
 		index: number;
-		name: number;
+		name: string;
 		suit: string;
 		tray: string;
 	}
 
 	interface Chair {
 		id: string;
-		player: string | null;
-		position: string;
+		player?: string;
 		reveal: boolean;
+		seated: boolean;
 	}
 
-	interface Game {
-		chairs: Chair[];
-		creator?: string;
-		dealt: boolean;
+	interface Table {
 		id: string;
-		title?: string;
-		ts: Tile[];
+		chairs: Chair[];
+		creator: string;
+		game: {
+			tiles: Tile[];
+		};
 	}
 }

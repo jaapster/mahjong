@@ -1,0 +1,33 @@
+.wall {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	height: 210px;
+	width: 130px;
+	background: lighten(black, 90%);
+
+	&:before {
+		content: '';
+		border-top: 20px dashed lighten(black, 90%);
+		position: absolute;
+		width: 130px;
+		top: -20px;
+	}
+
+	.tray {
+		height: 100%;
+		background: transparent;
+	}
+
+	.tile {
+		.tile-graphic {
+			&:before {
+				content: '?';
+				font-size: 30px;
+				font-family: serif;
+				font-weight: bolder;
+				color: firebrick;
+			}
+		}
+	}
+}

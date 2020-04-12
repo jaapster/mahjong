@@ -1999,10 +1999,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-game.scss":
-/*!**********************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-game.scss ***!
-  \**********************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss":
+/*!****************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2010,17 +2010,17 @@ module.exports = {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".game {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: honeydew;\n  box-sizing: border-box; }\n  .game .table {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0; }\n    .game .table .tray {\n      position: relative;\n      display: flex;\n      flex-wrap: wrap;\n      flex-basis: 120px;\n      justify-content: center;\n      align-items: center;\n      background: rgba(0, 0, 0, 0.05); }\n      .game .table .tray.hidden {\n        flex-basis: 30px;\n        background: rgba(0, 0, 0, 0.2); }\n    .game .table .top, .game .table .left, .game .table .right, .game .table .bottom, .game .table .center {\n      position: absolute;\n      display: flex;\n      justify-content: center; }\n    .game .table .top, .game .table .bottom, .game .table .center, .game .table .wall {\n      flex-direction: column; }\n      .game .table .top .tray, .game .table .bottom .tray, .game .table .center .tray, .game .table .wall .tray {\n        flex-direction: row;\n        width: 100%; }\n    .game .table .left, .game .table .right {\n      flex-direction: row; }\n      .game .table .left .tray, .game .table .right .tray {\n        flex-direction: column;\n        height: 100%; }\n        .game .table .left .tray.hidden, .game .table .right .tray.hidden {\n          width: 37px; }\n    .game .table .center {\n      top: 150px;\n      left: 150px;\n      bottom: 240px;\n      right: 150px;\n      box-shadow: inset 0 0 5px grey; }\n      .game .table .center .tray {\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        right: 0px;\n        bottom: 0px; }\n    .game .table .wall {\n      position: absolute;\n      bottom: 0;\n      right: 10px;\n      height: 210px;\n      width: 130px;\n      background: #e6e6e6; }\n      .game .table .wall:before {\n        content: '';\n        border-top: 20px dashed #e6e6e6;\n        position: absolute;\n        width: 130px;\n        top: -20px; }\n      .game .table .wall .tray {\n        height: 100%;\n        background: transparent; }\n      .game .table .wall .vectile .tile-graphic:before {\n        content: '?';\n        font-size: 30px;\n        font-family: serif;\n        font-weight: bolder;\n        color: firebrick; }\n    .game .table .exit {\n      display: flex;\n      position: absolute;\n      bottom: 0;\n      right: left;\n      height: 240px;\n      width: 150px;\n      background: ivory;\n      color: #e6e6e6;\n      font-size: 100px;\n      cursor: default;\n      transform: scale(-1, 1);\n      justify-content: center;\n      align-items: center; }\n      .game .table .exit:hover {\n        background: dodgerblue;\n        color: ivory; }\n    .game .table .top {\n      top: 0;\n      left: 150px;\n      right: 150px;\n      height: 150px;\n      background: yellow; }\n    .game .table .left {\n      top: 0;\n      left: 0px;\n      bottom: 240px;\n      width: 150px;\n      background: pink; }\n    .game .table .right {\n      top: 0;\n      right: 0px;\n      bottom: 240px;\n      width: 150px;\n      background: lightblue; }\n    .game .table .bottom {\n      bottom: 0;\n      left: 150px;\n      right: 150px;\n      height: 240px;\n      background: darkseagreen; }\n      .game .table .bottom .tray:last-child {\n        background: rgba(0, 0, 0, 0.2); }\n        .game .table .bottom .tray:last-child.tray-exceeds-max-tiles {\n          background: red; }\n    .game .table .name-tag {\n      position: absolute;\n      z-index: 2;\n      top: 0px;\n      left: 0px;\n      padding: 4px;\n      background: rgba(0, 0, 0, 0.5);\n      opacity: 0.5;\n      font-size: 10px;\n      cursor: default;\n      color: white; }\n    .game .table .tile-count {\n      position: absolute;\n      z-index: 2;\n      top: 0px;\n      left: 0px;\n      padding: 4px;\n      color: black;\n      opacity: 0.5;\n      background: white;\n      font-size: 10px;\n      display: none;\n      width: 20px; }\n", ""]);
+exports.push([module.i, "", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-tile.scss":
-/*!**********************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-tile.scss ***!
-  \**********************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2028,7 +2028,115 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".vectile {\n  transition: padding 100ms;\n  overflow: hidden; }\n  .vectile.tile-hover {\n    padding: 0 0 0 38px; }\n  .vectile.tile-dragged {\n    opacity: 0.3; }\n  .vectile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .vectile .tile-graphic .image {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .vectile .tile-graphic .image.tile-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .vectile .tile-graphic .image.tile-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .vectile .tile-graphic .image.tile-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .vectile .tile-graphic .image.tile-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .vectile .tile-graphic .image.tile-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .vectile .tile-graphic .image.tile-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .vectile .tile-graphic .image.tile-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .vectile .tile-graphic .image.tile-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .vectile .tile-graphic .image.tile-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .vectile .tile-graphic .image.tile-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .vectile .tile-graphic .image.tile-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .vectile .tile-graphic .image.tile-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .vectile .tile-graphic .image.tile-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .vectile .tile-graphic .image.tile-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .vectile .tile-graphic .image.tile-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .vectile .tile-graphic .image.tile-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .vectile .tile-graphic .image.tile-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .vectile .tile-graphic .image.tile-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .vectile .tile-graphic .image.tile-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .vectile .tile-graphic .image.tile-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .vectile .tile-graphic .image.tile-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .vectile .tile-graphic .image.tile-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .vectile .tile-graphic .image.tile-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .vectile .tile-graphic .image.tile-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .vectile .tile-graphic .image.tile-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .vectile .tile-graphic .image.tile-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .vectile.tile-hidden .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n    .vectile.tile-hidden .tile-graphic .image {\n      display: none; }\n\n.left .vectile.tile-hover, .right .vectile.tile-hover {\n  padding: 38px 0 0 0; }\n\n.left .vectile .tile-graphic, .right .vectile .tile-graphic {\n  width: 58px;\n  height: 38px; }\n  .left .vectile .tile-graphic .image, .right .vectile .tile-graphic .image {\n    transform: rotate(90deg); }\n\n.left .vectile.tile-hidden .tile-graphic, .right .vectile.tile-hidden .tile-graphic {\n  width: 24px;\n  height: 16px; }\n\n.wall .image {\n  display: none; }\n", ""]);
+exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey; }\n  .center .tray {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-chair.scss":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-chair.scss ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px;\n    background: lightyellow; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightpink; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightblue; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px;\n    background: darkseagreen; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player-name {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    color: white;\n    background: black;\n    opacity: 0.3; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-exit.scss":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-exit.scss ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".exit {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  display: flex;\n  width: 150px;\n  height: 240px;\n  background: ivory;\n  color: #e6e6e6;\n  font-size: 100px;\n  cursor: default;\n  transform: scale(-1, 1);\n  justify-content: center;\n  align-items: center; }\n  .exit:hover {\n    background: dodgerblue;\n    color: ivory; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-table.scss":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-table.scss ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tile.scss":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tile.scss ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".tile {\n  transition: padding 100ms;\n  overflow: hidden; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-hidden .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n    .tile.tile-hidden .tile-graphic .tile-symbol {\n      display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-hidden .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tray.scss":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tray.scss ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-wall.scss":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-wall.scss ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".wall {\n  position: absolute;\n  bottom: 0;\n  right: 10px;\n  height: 210px;\n  width: 130px;\n  background: #e6e6e6; }\n  .wall:before {\n    content: '';\n    border-top: 20px dashed #e6e6e6;\n    position: absolute;\n    width: 130px;\n    top: -20px; }\n  .wall .tray {\n    height: 100%;\n    background: transparent; }\n  .wall .tile .tile-graphic:before {\n    content: '?';\n    font-size: 30px;\n    font-family: serif;\n    font-weight: bolder;\n    color: firebrick; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2046,7 +2154,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-family: sans-serif;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box; }\n  body * {\n    box-sizing: border-box; }\n\n.lobby {\n  padding: 12px; }\n  .lobby .games {\n    padding: 12px; }\n  .lobby .list-game {\n    margin-bottom: 8px;\n    border: 1px solid black;\n    padding: 12px 36px; }\n  .lobby .add-game {\n    font-size: 12px; }\n\nul li {\n  margin-bottom: 8px;\n  padding: 4px; }\n  ul li.current-player {\n    background: rgba(255, 255, 0, 0.5); }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box; }\n\nbody {\n  font-family: sans-serif;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  margin: 0;\n  padding: 0; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31148,10 +31256,10 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ "./src/components/app/cp-app.tsx":
-/*!***************************************!*\
-  !*** ./src/components/app/cp-app.tsx ***!
-  \***************************************/
+/***/ "./src/components/app/cp-mahjong.tsx":
+/*!*******************************************!*\
+  !*** ./src/components/app/cp-mahjong.tsx ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31180,26 +31288,30 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 
 const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
 
-const cp_game_1 = __webpack_require__(/*! ./cp-game */ "./src/components/app/cp-game.tsx");
-
-const cp_lobby_1 = __webpack_require__(/*! ./cp-lobby */ "./src/components/app/cp-lobby.tsx");
-
-const cp_entrance_1 = __webpack_require__(/*! ./cp-entrance */ "./src/components/app/cp-entrance.tsx");
-
-const cp_player_1 = __webpack_require__(/*! ./cp-player */ "./src/components/app/cp-player.tsx");
-
 const axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
+
+const cp_table_1 = __webpack_require__(/*! ../table/cp-table */ "./src/components/table/cp-table.tsx");
+
+const cp_lobby_1 = __webpack_require__(/*! ../lobby/cp-lobby */ "./src/components/lobby/cp-lobby.tsx");
+
+const cp_entrance_1 = __webpack_require__(/*! ../lobby/cp-entrance */ "./src/components/lobby/cp-entrance.tsx");
 
 const Storage = {
   get() {
     var _a;
 
-    return JSON.parse((_a = localStorage.getItem('mahjong')) !== null && _a !== void 0 ? _a : '{ "chairs": [] }');
+    return JSON.parse((_a = localStorage.getItem('mahjong')) !== null && _a !== void 0 ? _a : '{}');
   },
 
   setName(name) {
     localStorage.setItem('mahjong', JSON.stringify(Object.assign(Object.assign({}, Storage.get()), {
       name
+    })));
+  },
+
+  setTable(table) {
+    localStorage.setItem('mahjong', JSON.stringify(Object.assign(Object.assign({}, Storage.get()), {
+      table
     })));
   }
 
@@ -31209,81 +31321,96 @@ let App = class App extends react_1.default.Component {
     super(...arguments);
     this.state = {
       name: null,
-      game: null,
-      games: []
+      table: null,
+      tables: []
     };
   }
 
   componentDidMount() {
-    this.getGames();
+    this.getTables();
     const {
-      name
+      name,
+      table
     } = Storage.get();
     this.setState({
       name
     });
-    this.globalStream = new EventSource('/streams/global');
-    this.globalStream.addEventListener('games', this.onGamesUpdate);
+    this.tablesStream = new EventSource('/streams/tables');
+    this.tablesStream.addEventListener('update', this.onTablesUpdate);
+
+    if (table != null) {
+      this.openTable(table);
+    }
   }
 
-  enterGame(gameId) {
-    if (this.gameStream) {
-      this.gameStream.close();
+  openTable(id) {
+    if (this.tableStream) {
+      this.tableStream.close();
     }
 
-    this.gameStream = new EventSource(`/streams/games/${gameId}`);
-    this.gameStream.addEventListener('game-state', this.onGameState);
-    this.gameStream.addEventListener('game-close', this.onGameClose);
+    this.tableStream = new EventSource(`/streams/tables/${id}`);
+    this.tableStream.addEventListener('update', this.onTableUpdate);
+    this.tableStream.addEventListener('delete', this.onTableDelete);
+    Storage.setTable(id);
   }
 
-  joinGame(gameId) {
+  joinTable(tableId, chairId) {
     const {
-      name
+      name: player,
+      tables
     } = this.state;
-    axios_1.default.post(`/games/${gameId}/players`, {
-      playerName: name
+    const table = tables.find(table => table.id === tableId);
+    axios_1.default.put(`/tables/${tableId}`, {
+      data: Object.assign(Object.assign({}, table), {
+        chairs: table.chairs.map(chair => chair.id === chairId ? Object.assign(Object.assign({}, chair), {
+          player
+        }) : chair)
+      })
     });
   }
 
-  onGameClose() {
-    if (this.gameStream) {
-      this.gameStream.removeEventListener('game-state', this.onGameState);
-      this.gameStream.removeEventListener('game-close', this.onGameClose);
-      this.gameStream.close();
+  onTableDelete() {
+    if (this.tableStream) {
+      this.tableStream.removeEventListener('update', this.onTableUpdate);
+      this.tableStream.removeEventListener('delete', this.onTableDelete);
+      this.tableStream.close();
     }
 
     this.setState({
-      game: null
+      table: null
     });
+    Storage.setTable(undefined);
   }
 
-  getGames() {
-    fetch('/games').then(response => response.json()).then(games => this.setState({
-      games
+  getTables() {
+    fetch('/tables').then(response => response.json()).then(tables => this.setState({
+      tables
     }));
   }
 
-  onGamesUpdate(event) {
-    this.setState(JSON.parse(event.data));
-  }
-
-  onGameState(event) {
+  onTablesUpdate(event) {
     this.setState({
-      game: JSON.parse(event.data)
+      tables: JSON.parse(event.data)
     });
   }
 
-  createGame() {
+  onTableUpdate(event) {
+    this.setState({
+      table: JSON.parse(event.data)
+    });
+  }
+
+  createTable() {
     const {
       name
     } = this.state;
-    axios_1.default.post('/games', {
+    axios_1.default.post('/tables', {
       creator: name
     });
   }
 
-  deleteGame(id) {
-    axios_1.default.delete(`/games/${id}`);
+  deleteTable(id) {
+    axios_1.default.delete(`/tables/${id}`);
   }
 
   submitName(name) {
@@ -31302,25 +31429,23 @@ let App = class App extends react_1.default.Component {
   render() {
     const {
       name,
-      game,
-      games
+      table,
+      tables
     } = this.state;
     return react_1.default.createElement(react_1.default.Fragment, null, name == null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h1", null, "Mahjong"), react_1.default.createElement(cp_entrance_1.Entrance, {
       submit: this.submitName
-    })) : game != null ? react_1.default.createElement(cp_game_1.Game, {
-      game: game,
-      leave: this.onGameClose,
-      name: name
-    }) : react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_player_1.Player, {
-      logout: this.logout,
-      name: name
-    }), react_1.default.createElement(cp_lobby_1.Lobby, {
-      enter: this.enterGame,
-      games: games,
-      join: this.joinGame,
+    })) : table != null ? react_1.default.createElement(cp_table_1.Table, {
+      table: table,
+      leaveTable: this.onTableDelete,
+      player: name
+    }) : react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_lobby_1.Lobby, {
+      openTable: this.openTable,
+      tables: tables,
+      joinTable: this.joinTable,
       player: name,
-      createGame: this.createGame,
-      deleteGame: this.deleteGame
+      createTable: this.createTable,
+      deleteTable: this.deleteTable,
+      logout: this.logout
     })));
   }
 
@@ -31330,10 +31455,41 @@ exports.App = App;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-entrance.tsx":
-/*!********************************************!*\
-  !*** ./src/components/app/cp-entrance.tsx ***!
-  \********************************************/
+/***/ "./src/components/lobby/cp-entrance.scss":
+/*!***********************************************!*\
+  !*** ./src/components/lobby/cp-entrance.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-entrance.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/lobby/cp-entrance.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/lobby/cp-entrance.tsx ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31361,6 +31517,8 @@ Object.defineProperty(exports, "__esModule", {
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
+
+__webpack_require__(/*! ./cp-entrance.scss */ "./src/components/lobby/cp-entrance.scss");
 
 let Entrance = class Entrance extends react_1.default.Component {
   constructor() {
@@ -31408,15 +31566,87 @@ exports.Entrance = Entrance;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-game.scss":
-/*!*****************************************!*\
-  !*** ./src/components/app/cp-game.scss ***!
-  \*****************************************/
+/***/ "./src/components/lobby/cp-lobby.tsx":
+/*!*******************************************!*\
+  !*** ./src/components/lobby/cp-lobby.tsx ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! ./cp-entrance.scss */ "./src/components/lobby/cp-entrance.scss");
+
+exports.Lobby = ({
+  createTable,
+  deleteTable,
+  joinTable,
+  openTable,
+  player,
+  tables,
+  logout
+}) => {
+  return react_1.default.createElement("div", {
+    className: "lobby"
+  }, react_1.default.createElement("h2", null, "Lobby"), react_1.default.createElement("p", null, "Spelernaam: ", player, "\u00A0", react_1.default.createElement("a", {
+    href: "#",
+    onClick: logout
+  }, "(aanpassen)")), react_1.default.createElement("div", {
+    className: "tables"
+  }, react_1.default.createElement("h3", null, react_1.default.createElement("span", null, "Tafels"), react_1.default.createElement("a", {
+    href: "#",
+    onClick: createTable,
+    title: "Nieuwe tafel"
+  }, "(+)")), tables.map(({
+    id,
+    chairs
+  }) => {
+    const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
+    const inThisGame = chairs.find(c => c.player === player);
+    return react_1.default.createElement("div", {
+      key: id,
+      className: "list-game"
+    }, react_1.default.createElement("h4", null, inThisGame ? react_1.default.createElement("a", {
+      href: "#",
+      onClick: () => openTable(id)
+    }, chairs[0].player, "'s tafel") : `${chairs[0].player}'s tafel`), react_1.default.createElement("a", {
+      href: "#",
+      onClick: () => deleteTable(id)
+    }, "X"), react_1.default.createElement("h4", null, "Spelers ", chairsTaken < 4 ? `(nog ${4 - chairsTaken} nodig)` : null), react_1.default.createElement("ul", null, chairs.map(c => c.player != null ? react_1.default.createElement("li", {
+      key: c.id
+    }, c.player) : react_1.default.createElement("li", {
+      key: c.id
+    }, inThisGame ? react_1.default.createElement("span", null, "...") : react_1.default.createElement("a", {
+      href: "#",
+      onClick: () => joinTable(id, c.id)
+    }, "[+]")))));
+  })));
+};
+
+/***/ }),
+
+/***/ "./src/components/table/cp-center.scss":
+/*!*********************************************!*\
+  !*** ./src/components/table/cp-center.scss ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-game.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-game.scss");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-center.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss");
 
             content = content.__esModule ? content.default : content;
 
@@ -31439,10 +31669,238 @@ module.exports = exported;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-game.tsx":
-/*!****************************************!*\
-  !*** ./src/components/app/cp-game.tsx ***!
-  \****************************************/
+/***/ "./src/components/table/cp-center.tsx":
+/*!********************************************!*\
+  !*** ./src/components/table/cp-center.tsx ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! ./cp-center.scss */ "./src/components/table/cp-center.scss");
+
+const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/table/cp-tray.tsx");
+
+const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./src/utils/util-get-tray.ts");
+
+exports.Center = ({
+  tiles
+}) => {
+  return react_1.default.createElement("div", {
+    className: "center"
+  }, react_1.default.createElement("div", {
+    className: "mat"
+  }), react_1.default.createElement(cp_tray_1.Tray, {
+    id: "t1",
+    hidden: false,
+    tiles: util_get_tray_1.getTray('t1', tiles)
+  }));
+};
+
+/***/ }),
+
+/***/ "./src/components/table/cp-chair.scss":
+/*!********************************************!*\
+  !*** ./src/components/table/cp-chair.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-chair.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-chair.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/cp-chair.tsx":
+/*!*******************************************!*\
+  !*** ./src/components/table/cp-chair.tsx ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/utils/util-merge-classes.ts");
+
+__webpack_require__(/*! ./cp-chair.scss */ "./src/components/table/cp-chair.scss");
+
+const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/table/cp-tray.tsx");
+
+const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./src/utils/util-get-tray.ts");
+
+const POSITIONS = ['player', 'left', 'top', 'right'];
+
+exports.Chair = ({
+  chair,
+  index,
+  tiles
+}) => {
+  return react_1.default.createElement("div", {
+    className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`)
+  }, react_1.default.createElement(cp_tray_1.Tray, {
+    id: `${chair.id}0`,
+    hidden: index > 0,
+    tiles: util_get_tray_1.getTray(`${chair.id}0`, tiles),
+    rotate: index === 1 || index === 3
+  }), react_1.default.createElement(cp_tray_1.Tray, {
+    id: `${chair.id}1`,
+    hidden: false,
+    tiles: util_get_tray_1.getTray(`${chair.id}1`, tiles),
+    rotate: index === 1 || index === 3
+  }), react_1.default.createElement("div", {
+    className: "player-name"
+  }, chair.player));
+};
+
+/***/ }),
+
+/***/ "./src/components/table/cp-exit.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/cp-exit.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-exit.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-exit.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/cp-exit.tsx":
+/*!******************************************!*\
+  !*** ./src/components/table/cp-exit.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! ./cp-exit.scss */ "./src/components/table/cp-exit.scss");
+
+exports.Exit = ({
+  onClick
+}) => {
+  return react_1.default.createElement("div", {
+    className: "exit",
+    onClick: onClick
+  }, react_1.default.createElement("span", null, "\u2799"));
+};
+
+/***/ }),
+
+/***/ "./src/components/table/cp-table.scss":
+/*!********************************************!*\
+  !*** ./src/components/table/cp-table.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-table.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-table.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/cp-table.tsx":
+/*!*******************************************!*\
+  !*** ./src/components/table/cp-table.tsx ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31467,48 +31925,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
 const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 const axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
 
-const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/app/cp-tray.tsx");
+const cp_chair_1 = __webpack_require__(/*! ./cp-chair */ "./src/components/table/cp-chair.tsx");
 
-__webpack_require__(/*! ./cp-game.scss */ "./src/components/app/cp-game.scss");
+const cp_wall_1 = __webpack_require__(/*! ./cp-wall */ "./src/components/table/cp-wall.tsx");
 
-let Game = class Game extends react_1.default.Component {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const {
-      game,
-      name
-    } = nextProps;
-    const playerChair = game.chairs.find(c => c.player === name);
-    const playerPosition = playerChair.position;
-    const ord = playerPosition === 'a' ? ['a', 'b', 'c', 'd'] : playerPosition === 'b' ? ['b', 'c', 'd', 'a'] : playerPosition === 'c' ? ['c', 'd', 'a', 'b'] : ['d', 'a', 'b', 'c'];
-    const order = ord.map(p => game.chairs.find(c => c.position === p));
-    return Object.assign(Object.assign({}, prevState), {
-      order
-    });
-  }
+const cp_exit_1 = __webpack_require__(/*! ./cp-exit */ "./src/components/table/cp-exit.tsx");
 
-  constructor(props) {
-    super(props);
-    const {
-      game,
-      name
-    } = this.props;
-    const playerChair = game.chairs.find(c => c.player === name);
-    const playerPosition = playerChair.position;
-    const ord = playerPosition === 'a' ? ['a', 'b', 'c', 'd'] : playerPosition === 'b' ? ['b', 'c', 'd', 'a'] : playerPosition === 'c' ? ['c', 'd', 'a', 'b'] : ['d', 'a', 'b', 'c'];
-    const order = ord.map(p => game.chairs.find(c => c.position === p));
-    this.state = {
-      dragged: undefined,
-      dropTarget: undefined,
-      order
-    };
-  }
+const cp_center_1 = __webpack_require__(/*! ./cp-center */ "./src/components/table/cp-center.tsx");
 
+__webpack_require__(/*! ./cp-table.scss */ "./src/components/table/cp-table.scss");
+
+let Table = class Table extends react_1.default.Component {
   onDragStart(e) {
     this.setState({
       dragged: e.target.id
@@ -31532,7 +31965,7 @@ let Game = class Game extends react_1.default.Component {
 
   onDragEnd(e) {
     const {
-      game
+      table
     } = this.props;
     const {
       dropTarget,
@@ -31540,18 +31973,21 @@ let Game = class Game extends react_1.default.Component {
     } = this.state;
 
     if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
-      if (dropTarget.classList.contains('vectile')) {
+      if (dropTarget.classList.contains('tile')) {
         const parent = dropTarget.parentNode;
         const index = Array.from(parent.children).indexOf(dropTarget);
-        axios_1.default.put(`/games/${game.id}/tiles/${dragged}`, {
-          to: parent.id,
-          index
+        axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
+          data: {
+            tray: parent.id,
+            index
+          }
         });
       } else {
-        const index = Array.from(dropTarget.children).length;
-        axios_1.default.put(`/games/${game.id}/tiles/${dragged}`, {
-          to: dropTarget.id,
-          index
+        axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
+          data: {
+            tray: dropTarget.id,
+            index: Array.from(dropTarget.children).length
+          }
         });
       }
     }
@@ -31562,231 +31998,81 @@ let Game = class Game extends react_1.default.Component {
     });
   }
 
-  getTray(id) {
-    const {
-      game
-    } = this.props;
-    return game.ts.filter(t => t.tray === id).sort((a, b) => a.index > b.index ? 1 : -1);
-  }
-
   toggleReveal() {
     const {
-      game
+      table: {
+        id,
+        chairs
+      },
+      player
     } = this.props;
-    const {
-      order
-    } = this.state;
-    const chair = order[0];
-    axios_1.default.put(`/games/${game.id}/chairs/${chair.position}`, {
-      chairData: Object.assign(Object.assign({}, chair), {
+    const chair = chairs.find(c => c.player === player);
+    axios_1.default.put(`/tables/${id}/chairs/${chair.id}`, {
+      data: Object.assign(Object.assign({}, chair), {
         reveal: !chair.reveal
       })
     });
   }
 
+  leaveTable() {
+    const {
+      table: {
+        id
+      },
+      leaveTable
+    } = this.props;
+    leaveTable(id);
+  }
+
   render() {
     const {
-      leave
+      table,
+      player
     } = this.props;
     const {
-      order
-    } = this.state;
+      game: {
+        tiles
+      },
+      chairs
+    } = table;
+    const p = chairs.findIndex(c => c.player === player);
     return react_1.default.createElement("div", {
-      className: "game",
+      className: "table",
       onDragEnd: this.onDragEnd,
       onDragEnter: this.onDragEnter,
+      onDragLeave: this.onDragLeave,
       onDragOver: this.onDragOver,
-      onDragStart: this.onDragStart,
-      onDragLeave: this.onDragLeave
-    }, react_1.default.createElement("div", {
-      className: "table"
-    }, react_1.default.createElement("div", {
-      className: "top"
-    }, react_1.default.createElement("div", {
-      className: "name-tag"
-    }, react_1.default.createElement("span", null, order[2].player)), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[2].position}0`,
-      hidden: !order[2].reveal,
-      tiles: this.getTray(`${order[2].position}0`)
-    }), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[2].position}1`,
-      hidden: false,
-      tiles: this.getTray(`${order[2].position}1`)
-    })), react_1.default.createElement("div", {
-      className: "left"
-    }, react_1.default.createElement("div", {
-      className: "name-tag"
-    }, react_1.default.createElement("span", null, order[1].player)), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[1].position}0`,
-      hidden: !order[1].reveal,
-      tiles: this.getTray(`${order[1].position}0`)
-    }), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[1].position}1`,
-      hidden: false,
-      tiles: this.getTray(`${order[1].position}1`)
-    })), react_1.default.createElement("div", {
-      className: "bottom"
-    }, react_1.default.createElement("div", {
-      className: "name-tag",
-      onClick: this.toggleReveal
-    }, react_1.default.createElement("span", null, order[0].player)), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[0].position}1`,
-      hidden: false,
-      tiles: this.getTray(`${order[0].position}1`)
-    }), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[0].position}0`,
-      hidden: false,
-      tiles: this.getTray(`${order[0].position}0`)
-    })), react_1.default.createElement("div", {
-      className: "right"
-    }, react_1.default.createElement("div", {
-      className: "name-tag"
-    }, react_1.default.createElement("span", null, order[3].player)), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[3].position}1`,
-      hidden: false,
-      tiles: this.getTray(`${order[3].position}1`)
-    }), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${order[3].position}0`,
-      hidden: !order[3].reveal,
-      tiles: this.getTray(`${order[3].position}0`)
-    })), react_1.default.createElement("div", {
-      className: "wall",
-      title: "De muur"
-    }, react_1.default.createElement(cp_tray_1.Tray, {
-      id: "t0",
-      hidden: false,
-      tiles: this.getTray('t0')[0] ? [this.getTray('t0')[0]] : []
-    })), react_1.default.createElement("div", {
-      className: "exit",
-      onClick: leave,
-      title: "Naar de lobby"
-    }, react_1.default.createElement("span", null, "\u2799")), react_1.default.createElement("div", {
-      className: "center"
-    }, react_1.default.createElement(cp_tray_1.Tray, {
-      id: "t1",
-      hidden: false,
-      tiles: this.getTray('t1')
-    }))));
+      onDragStart: this.onDragStart
+    }, chairs.slice(p).concat(chairs.slice(0, p)).map((c, i) => react_1.default.createElement(cp_chair_1.Chair, {
+      chair: c,
+      index: i,
+      key: c.id,
+      tiles: tiles
+    })), react_1.default.createElement(cp_center_1.Center, {
+      tiles: tiles
+    }), react_1.default.createElement(cp_wall_1.Wall, {
+      tiles: tiles
+    }), react_1.default.createElement(cp_exit_1.Exit, {
+      onClick: this.leaveTable
+    }));
   }
 
 };
-Game = __decorate([autobind_decorator_1.default], Game);
-exports.Game = Game;
+Table = __decorate([autobind_decorator_1.default], Table);
+exports.Table = Table;
 ;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-lobby.tsx":
-/*!*****************************************!*\
-  !*** ./src/components/app/cp-lobby.tsx ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-exports.Lobby = ({
-  games,
-  enter,
-  join,
-  createGame,
-  deleteGame,
-  player
-}) => {
-  return react_1.default.createElement("div", {
-    className: "lobby"
-  }, react_1.default.createElement("h2", null, "Lobby"), react_1.default.createElement("div", {
-    className: "games"
-  }, react_1.default.createElement("h3", null, "Spellen ", react_1.default.createElement("a", {
-    href: "#",
-    onClick: createGame,
-    title: "Nieuw spel toevoegen"
-  }, "(+)")), games.map(({
-    id,
-    chairs,
-    title,
-    creator
-  }) => {
-    const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
-    const inThisGame = chairs.find(c => c.player === player);
-    return react_1.default.createElement("div", {
-      key: id,
-      className: "list-game"
-    }, react_1.default.createElement("h4", null, react_1.default.createElement("a", {
-      href: "#",
-      onClick: () => enter(id)
-    }, title || 'Spel zonder naam'), "\u00A0", react_1.default.createElement("span", null, "(", creator !== null && creator !== void 0 ? creator : 'anoniem', ")")), react_1.default.createElement("a", {
-      href: "#",
-      onClick: () => deleteGame(id)
-    }, "X"), react_1.default.createElement("h4", null, "Spelers ", chairsTaken < 4 ? `(nog ${4 - chairsTaken} nodig)` : null), react_1.default.createElement("ul", null, chairs.map(c => c.player != null ? react_1.default.createElement("li", {
-      key: c.id
-    }, c.player) : react_1.default.createElement("li", {
-      key: c.id
-    }, inThisGame ? react_1.default.createElement("span", null, "...") : react_1.default.createElement("a", {
-      href: "#",
-      onClick: () => join(id)
-    }, "[+]")))));
-  })));
-};
-
-/***/ }),
-
-/***/ "./src/components/app/cp-player.tsx":
-/*!******************************************!*\
-  !*** ./src/components/app/cp-player.tsx ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-exports.Player = ({
-  logout,
-  name
-}) => {
-  return react_1.default.createElement("p", null, "Spelernaam: ", name, "\u00A0", react_1.default.createElement("a", {
-    href: "#",
-    onClick: logout
-  }, "(aanpassen)"));
-};
-
-/***/ }),
-
-/***/ "./src/components/app/cp-tile.scss":
-/*!*****************************************!*\
-  !*** ./src/components/app/cp-tile.scss ***!
-  \*****************************************/
+/***/ "./src/components/table/cp-tile.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/cp-tile.scss ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-tile.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-tile.scss");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-tile.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tile.scss");
 
             content = content.__esModule ? content.default : content;
 
@@ -31809,10 +32095,10 @@ module.exports = exported;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-tile.tsx":
-/*!****************************************!*\
-  !*** ./src/components/app/cp-tile.tsx ***!
-  \****************************************/
+/***/ "./src/components/table/cp-tile.tsx":
+/*!******************************************!*\
+  !*** ./src/components/table/cp-tile.tsx ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31841,7 +32127,9 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 
 const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
 
-__webpack_require__(/*! ./cp-tile.scss */ "./src/components/app/cp-tile.scss");
+const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/utils/util-merge-classes.ts");
+
+__webpack_require__(/*! ./cp-tile.scss */ "./src/components/table/cp-tile.scss");
 
 let Tile = class Tile extends react_1.default.Component {
   constructor() {
@@ -31893,24 +32181,32 @@ let Tile = class Tile extends react_1.default.Component {
         suit,
         name
       },
-      hidden
+      hidden,
+      rotate,
+      blank
     } = this.props;
     const {
       hovered,
       dragged
     } = this.state;
     return react_1.default.createElement("div", {
-      className: `vectile${hidden ? ' tile-hidden' : ''}${hovered ? ' tile-hover' : ''}${dragged ? ' tile-dragged' : ''}`,
+      className: util_merge_classes_1.mergeClasses('tile', {
+        'tile-hidden': hidden,
+        'tile-hovered': hovered,
+        'tile-dragged': dragged,
+        'tile-rotated': rotate,
+        'tile-blank': blank
+      }),
       draggable: "true",
+      id: id.toString(),
+      onDragEnd: this.onDragEnd,
       onDragEnter: this.onDragEnter,
       onDragLeave: this.onDragLeave,
-      onDragStart: this.onDragStart,
-      onDragEnd: this.onDragEnd,
-      id: id.toString()
+      onDragStart: this.onDragStart
     }, react_1.default.createElement("div", {
       className: "tile-graphic"
     }, react_1.default.createElement("div", {
-      className: `image tile-${suit}-${name}`
+      className: `tile-symbol tile-symbol-${suit}-${name}`
     })));
   }
 
@@ -31920,10 +32216,41 @@ exports.Tile = Tile;
 
 /***/ }),
 
-/***/ "./src/components/app/cp-tray.tsx":
-/*!****************************************!*\
-  !*** ./src/components/app/cp-tray.tsx ***!
-  \****************************************/
+/***/ "./src/components/table/cp-tray.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/cp-tray.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-tray.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tray.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/cp-tray.tsx":
+/*!******************************************!*\
+  !*** ./src/components/table/cp-tray.tsx ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31942,25 +32269,107 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-const cp_tile_1 = __webpack_require__(/*! ./cp-tile */ "./src/components/app/cp-tile.tsx");
+const cp_tile_1 = __webpack_require__(/*! ./cp-tile */ "./src/components/table/cp-tile.tsx");
+
+const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/utils/util-merge-classes.ts");
+
+__webpack_require__(/*! ./cp-tray.scss */ "./src/components/table/cp-tray.scss");
 
 exports.Tray = ({
   id,
   tiles,
   hidden,
-  max = 13
+  rotate,
+  blank
 }) => {
-  const exceeds = tiles.length > max;
   return react_1.default.createElement("div", {
-    className: `tray${hidden ? ' hidden' : ''}${exceeds ? ' tray-exceeds-max-tiles' : ''}`,
-    id: id
+    id: id,
+    className: util_merge_classes_1.mergeClasses('tray', {
+      'tray-hidden': hidden,
+      'tray-overflow': tiles.length > 13
+    })
   }, tiles.map(t => react_1.default.createElement(cp_tile_1.Tile, {
     key: t.id,
     tile: t,
-    hidden: hidden
-  })), react_1.default.createElement("div", {
-    className: "tile-count"
-  }, tiles.length));
+    hidden: hidden,
+    rotate: rotate,
+    blank: blank
+  })));
+};
+
+/***/ }),
+
+/***/ "./src/components/table/cp-wall.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/cp-wall.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-wall.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-wall.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/cp-wall.tsx":
+/*!******************************************!*\
+  !*** ./src/components/table/cp-wall.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/table/cp-tray.tsx");
+
+const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./src/utils/util-get-tray.ts");
+
+__webpack_require__(/*! ./cp-wall.scss */ "./src/components/table/cp-wall.scss");
+
+exports.Wall = ({
+  tiles
+}) => {
+  const tile = util_get_tray_1.getTray('t0', tiles)[0];
+  return react_1.default.createElement("div", {
+    className: "wall"
+  }, react_1.default.createElement(cp_tray_1.Tray, {
+    id: "t0",
+    hidden: false,
+    tiles: tile ? [tile] : [],
+    blank: true
+  }));
 };
 
 /***/ }),
@@ -31989,11 +32398,11 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 
 const react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
 
-const cp_app_1 = __webpack_require__(/*! ./components/app/cp-app */ "./src/components/app/cp-app.tsx");
+const cp_mahjong_1 = __webpack_require__(/*! ./components/app/cp-mahjong */ "./src/components/app/cp-mahjong.tsx");
 
 __webpack_require__(/*! ./styles/base.scss */ "./src/styles/base.scss");
 
-react_dom_1.default.render(react_1.default.createElement(cp_app_1.App, null), document.getElementById('app'));
+react_dom_1.default.render(react_1.default.createElement(cp_mahjong_1.App, null), document.getElementById('app'));
 
 /***/ }),
 
@@ -32025,6 +32434,42 @@ var exported = content.locals ? content.locals : {};
 
 
 module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/utils/util-get-tray.ts":
+/*!************************************!*\
+  !*** ./src/utils/util-get-tray.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.getTray = (id, tiles) => tiles.filter(t => t.tray === id).sort((a, b) => a.index > b.index ? 1 : -1);
+
+/***/ }),
+
+/***/ "./src/utils/util-merge-classes.ts":
+/*!*****************************************!*\
+  !*** ./src/utils/util-merge-classes.ts ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.mergeClasses = (...args) => args.reduce((m1, arg) => typeof arg === 'string' ? `${m1}${arg} ` : typeof arg === 'object' ? `${m1}${Object.keys(arg).reduce((m2, className) => arg[className] ? `${m2}${className} ` : m2, '')}` : m1, '');
 
 /***/ })
 

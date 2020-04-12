@@ -6,68 +6,66 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const express_sse_1 = __importDefault(require("express-sse"));
-const game_1 = require("./game");
+const tables_1 = require("./tables");
 const app = express_1.default();
 const port = 1001;
-const globalStream = new express_sse_1.default({
-    type: 'global',
+app.use(body_parser_1.default.json());
+// Statics
+app.use('/', express_1.default.static('dist'));
+// Tables
+const tableStreams = {};
+const tablesStream = new express_sse_1.default({
+    type: 'tables',
     data: {}
 });
-const gameStreams = {};
-app.use(body_parser_1.default.json());
-// SSE
-app.get('/streams/games/:id', (req, res) => {
-    const gameId = req.params.id;
-    if (!gameStreams[gameId]) {
-        gameStreams[gameId] = new express_sse_1.default({
-            type: 'game',
-            data: game_1.getGame(gameId)
+app.get('/streams/tables', (req, res) => {
+    tablesStream.init(req, res);
+});
+app.get('/streams/tables/:id', (req, res) => {
+    const id = req.params.id;
+    if (!tableStreams[id]) {
+        tableStreams[id] = new express_sse_1.default({
+            type: 'table',
+            data: tables_1.Tables.read(id)
         });
     }
-    gameStreams[gameId].init(req, res);
-    gameStreams[gameId].send(game_1.getGame(gameId), 'game-state');
+    tableStreams[id].init(req, res);
+    tableStreams[id].send(tables_1.Tables.read(id), 'update');
 });
-app.get('/streams/global', (req, res) => {
-    globalStream.init(req, res);
+app.get('/tables', (req, res) => {
+    res.send(tables_1.Tables.all());
 });
-// STATIC FILES
-app.use('/', express_1.default.static('dist'));
-// GAMES
-app.get('/games', (req, res) => res.send(game_1.listGames()));
-app.post('/games', (req, res) => {
-    const { title, creator } = req.body;
-    res.send(game_1.createGame(title, creator));
-    globalStream.send({ games: game_1.listGames() }, 'games');
+app.post('/tables', (req, res) => {
+    res.send(tables_1.Tables.create(req.body.creator));
+    tablesStream.send(tables_1.Tables.all(), 'update');
 });
-app.get('/games/:gameId', (req, res) => {
-    const { gameId } = req.params;
-    res.send(game_1.getGame(gameId));
+app.get('/tables/:id', (req, res) => {
+    res.send(tables_1.Tables.read(req.params.id));
 });
-app.delete('/games/:gameId', (req, res) => {
+app.put('/tables/:id', ({ params: { id }, body: { data } }, res) => {
     var _a;
-    const { gameId } = req.params;
-    (_a = gameStreams[gameId]) === null || _a === void 0 ? void 0 : _a.send({ type: 'close', data: gameId }, 'game-close');
-    res.send(game_1.destroyGame(gameId));
-    globalStream.send({ games: game_1.listGames() }, 'games');
+    res.send(tables_1.Tables.update(id, data));
+    tablesStream.send(tables_1.Tables.all(), 'update');
+    (_a = tableStreams[id]) === null || _a === void 0 ? void 0 : _a.send(tables_1.Tables.read(id), 'update');
 });
-app.post('/games/:gameId/players', (req, res) => {
-    const { gameId } = req.params;
-    const { playerName } = req.body;
-    res.send(game_1.addPlayer(gameId, playerName));
-    gameStreams[gameId].send(game_1.getGame(gameId), 'game-state');
-    globalStream.send({ games: game_1.listGames() }, 'games');
+app.delete('/tables/:id', (req, res) => {
+    res.send(tables_1.Tables.delete(req.params.id));
+    tablesStream.send(tables_1.Tables.all(), 'update');
 });
-app.put('/games/:gameId/tiles/:tileId', (req, res) => {
-    const { gameId, tileId } = req.params;
-    const { to, index } = req.body;
-    res.send(game_1.moveTile(gameId, parseInt(tileId), to, parseInt(index)));
-    gameStreams[gameId].send(game_1.getGame(gameId), 'game-state');
+app.post('/tables/:id/game', ({ params: { id } }, res) => {
+    var _a;
+    res.send(tables_1.Tables.newGame(id));
+    (_a = tableStreams[id]) === null || _a === void 0 ? void 0 : _a.send(tables_1.Tables.read(id), 'update');
 });
-app.put('/games/:gameId/chairs/:chairPosition', (req, res) => {
-    const { gameId, chairPosition } = req.params;
-    const { chairData } = req.body;
-    res.send(game_1.setChairData(gameId, chairPosition, chairData));
-    gameStreams[gameId].send(game_1.getGame(gameId), 'game-state');
+app.post('tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } }, res) => {
+    var _a;
+    res.send(tables_1.Tables.updateChair(id, chair, data));
+    tablesStream.send(tables_1.Tables.all(), 'update');
+    (_a = tableStreams[id]) === null || _a === void 0 ? void 0 : _a.send(tables_1.Tables.read(id), 'update');
+});
+app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { data } }, res) => {
+    res.send(tables_1.Tables.moveTile(id, tileId, data));
+    tableStreams[id].send(tables_1.Tables.read(id), 'update');
 });
 app.listen(port, err => {
     if (err) {

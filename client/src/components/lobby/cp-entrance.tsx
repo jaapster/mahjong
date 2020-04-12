@@ -1,5 +1,6 @@
 import React from 'react';
 import bind from 'autobind-decorator';
+import './cp-entrance.scss';
 
 interface Props {
 	submit(name: string): void;
@@ -10,7 +11,7 @@ interface State {
 }
 
 @bind
-export class Entrance extends React.Component<Props> {
+export class Entrance extends React.Component<Props, State> {
 	state = { name: '' };
 
 	private onChange(e) {

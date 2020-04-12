@@ -1,0 +1,87 @@
+.chair {
+	$large: 150px;
+
+	position: absolute;
+	display: flex;
+	justify-content: center;
+
+	&.chair-top,
+	&.chair-player {
+		.tray {
+			flex-direction: row;
+			width: 100%;
+		}
+	}
+
+	&.chair-left,
+	&.chair-right {
+		.tray {
+			flex-direction: column;
+			height: 100%;
+		}
+	}
+
+	&.chair-top,
+	&.chair-left,
+	&.chair-right {
+		.tray {
+			&:first-child {
+				background: rgba(0, 0, 0, 0.2);
+				flex-basis: 30px;
+			}
+		}
+	}
+
+	&.chair-top {
+		flex-direction: column;
+		top: 0;
+		left: $large;
+		right: $large;
+		height: $large;
+		background: lightyellow;
+	}
+
+	&.chair-left {
+		flex-direction: row;
+		top: 0;
+		left: 0;
+		bottom: 240px;
+		width: $large;
+		background: lightpink;
+	}
+
+	&.chair-right {
+		flex-direction: row-reverse;
+		top: 0;
+		right: 0;
+		bottom: 240px;
+		width: $large;
+		background: lightblue;
+	}
+
+	&.chair-player {
+		flex-direction: column-reverse;
+		bottom: 0;
+		left: $large;
+		right: $large;
+		height: 240px;
+		background: darkseagreen;
+
+		.tray {
+			&:first-child {
+				background: rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+
+	.player-name {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 10px;
+		padding: 3px 5px;
+		color: white;
+		background: black;
+		opacity: 0.3;
+	}
+}

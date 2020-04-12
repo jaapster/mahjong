@@ -9,10 +9,9 @@ exports.createGame = (title, creator) => {
         id,
         title,
         creator,
-        dealt: false,
-        ts: tiles_1.getTileSet(),
+        tiles: tiles_1.getTileSet().map((t, i) => (Object.assign(Object.assign({}, t), { tray: i < 13 ? 'a0' : i < 26 ? 'b0' : i < 39 ? 'c0' : i < 52 ? 'd0' : 't0', index: i - (i < 13 ? 0 : i < 26 ? 13 : i < 39 ? 26 : i < 52 ? 39 : 52) }))),
         chairs: (new Array(4)).fill(0).map((_e, i) => ({
-            id: `${id}:${uuid_1.v4()}`,
+            id: ['a', 'b', 'c', 'd'][i],
             player: null,
             position: ['a', 'b', 'c', 'd'][i],
             reveal: false
@@ -35,13 +34,13 @@ exports.listGames = () => {
 exports.getGame = (id) => {
     return _games.find((game) => game.id === id);
 };
-exports.setChairData = (gameId, chairPosition, chairData) => {
+exports.setChairData = (gameId, chairId, chairData) => {
     _games = _games.map((game) => {
         if (game.id !== gameId) {
             return game;
         }
         return Object.assign(Object.assign({}, game), { chairs: game.chairs.map(c => {
-                if (c.position === chairPosition) {
+                if (c.id === chairId) {
                     return chairData;
                 }
                 return c;
@@ -74,22 +73,22 @@ exports.addPlayer = (id, player) => {
  **/
 exports.moveTile = (gameId, tileId, toTray, toIndex) => {
     const game = _games.find(game => game.id === gameId);
-    const tile = game.ts.find(t => t.id === tileId);
+    const tile = game.tiles.find(t => t.id === tileId);
     const fromTray = tile.tray;
     const fromIndex = tile.index;
-    game.ts = game.ts.map(t => (t.tray === toTray && t.index >= toIndex
+    game.tiles = game.tiles.map(t => (t.tray === toTray && t.index >= toIndex
         ? Object.assign(Object.assign({}, t), { index: t.index + 1 }) : t));
-    game.ts = game.ts.map(t => (t.tray === fromTray && t.index > fromIndex
+    game.tiles = game.tiles.map(t => (t.tray === fromTray && t.index > fromIndex
         ? Object.assign(Object.assign({}, t), { index: t.index - 1 }) : t));
-    game.ts = game.ts.map(t => (t.id === tileId
+    game.tiles = game.tiles.map(t => (t.id === tileId
         ? Object.assign(Object.assign({}, t), { tray: toTray, index: toIndex - (fromTray === toTray && fromIndex < toIndex ? 1 : 0) }) : t));
 };
 exports.deal = (id) => {
     _games = _games.map((game) => {
-        if (game.id !== id || game.dealt) {
+        if (game.id !== id) {
             return game;
         }
-        return Object.assign(Object.assign({}, game), { dealt: true, ts: game.ts.map((t, i) => {
+        return Object.assign(Object.assign({}, game), { tiles: game.tiles.map((t, i) => {
                 return Object.assign(Object.assign({}, t), { tray: i < 13 ? 'a0' : i < 26 ? 'b0' : i < 39 ? 'c0' : i < 52 ? 'd0' : 't0', index: i - (i < 13 ? 0 : i < 26 ? 13 : i < 39 ? 26 : i < 52 ? 39 : 52) });
             }) });
     });
