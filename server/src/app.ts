@@ -4,7 +4,7 @@ import SSE from 'express-sse';
 import { Tables } from './tables';
 
 const app = express();
-const port = 1001;
+const port = 2001;
 
 app.use(bodyParser.json());
 
