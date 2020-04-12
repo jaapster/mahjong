@@ -51,6 +51,8 @@ export class Tile extends React.Component<Props, State> {
 		const { tile: { id, suit, name }, hidden, rotate, blank, small, draggable } = this.props;
 		const { hovered, dragged } = this.state;
 
+		// const draggable = true;
+
 		return (
 			<div
 				className={ mergeClasses(
@@ -66,10 +68,10 @@ export class Tile extends React.Component<Props, State> {
 				) }
 				draggable={ draggable }
 				id={ id.toString() }
-				onDragEnd={ this.onDragEnd }
+				onDragEnd={ draggable ? this.onDragEnd : undefined }
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
-				onDragStart={ this.onDragStart }
+				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault()  }
 			>
 				<div className="tile-graphic">
 					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />

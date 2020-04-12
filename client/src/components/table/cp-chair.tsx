@@ -16,6 +16,11 @@ interface Props {
 const POSITIONS = ['player', 'left', 'top', 'right'];
 
 export class Chair extends React.Component<Props> {
+	componentDidMount() {
+		// todo: this is done to ensure that 'transit-area' is in the DOM
+		this.forceUpdate();
+	}
+
 	render() {
 		const { chair: { id }, chair, index, tiles, reveal, transit } = this.props;
 
@@ -61,7 +66,7 @@ export class Chair extends React.Component<Props> {
 										tiles={ getTray(`${ id }transit`, tiles) }
 										rotate={ index === 1 || index === 3 }
 										small={ false }
-										draggable={ index === 0 }
+										draggable={ true }
 									/>
 								</div>
 							</Portal>

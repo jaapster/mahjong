@@ -15,6 +15,7 @@ export const Center = ({ tiles }: Props) => {
 				hidden={ false }
 				tiles={ getTray('t1', tiles) }
 				small={ false }
+				draggable={ true }
 			/>
 			<div className="transit-area" id="transit-area"/>
 		</div>

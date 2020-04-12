@@ -69,19 +69,6 @@ export class Table extends React.Component<Props, State> {
 		});
 	}
 
-	private toggleReveal() {
-		const { table: { id, chairs }, player } = this.props;
-		const chair = chairs.find(c => c.player === player );
-
-
-		axios.put(`/tables/${ id }/chairs/${ chair.id }`, {
-			data: {
-				...chair,
-				reveal: !chair.reveal
-			}
-		});
-	}
-
 	private leaveTable() {
 		const { table: { id }, leaveTable } = this.props;
 		leaveTable(id);

@@ -2064,7 +2064,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey; }\n  .center .tray {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 140px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -70px; }\n      .center .transit-area .transit.transit-1 {\n        height: 140px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -70px; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 140px;\n        top: 0;\n        left: 50%;\n        margin-left: -70px; }\n      .center .transit-area .transit.transit-3 {\n        height: 140px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -70px; }\n", ""]);
+exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey; }\n  .center .tray {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 200px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-0 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-1 {\n        height: 200px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-1 .tray {\n          flex-direction: column; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 200px;\n        top: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-2 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-3 {\n        height: 200px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-3 .tray {\n          flex-direction: column; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31995,7 +31995,8 @@ exports.Center = ({
     id: "t1",
     hidden: false,
     tiles: util_get_tray_1.getTray('t1', tiles),
-    small: false
+    small: false,
+    draggable: true
   }), react_1.default.createElement("div", {
     className: "transit-area",
     id: "transit-area"
@@ -32070,6 +32071,11 @@ __webpack_require__(/*! ./cp-chair.scss */ "./src/components/table/cp-chair.scss
 const POSITIONS = ['player', 'left', 'top', 'right'];
 
 class Chair extends react_1.default.Component {
+  componentDidMount() {
+    // todo: this is done to ensure that 'transit-area' is in the DOM
+    this.forceUpdate();
+  }
+
   render() {
     const {
       chair: {
@@ -32112,7 +32118,7 @@ class Chair extends react_1.default.Component {
       tiles: util_get_tray_1.getTray(`${id}transit`, tiles),
       rotate: index === 1 || index === 3,
       small: false,
-      draggable: index === 0
+      draggable: true
     }))) : null);
   }
 
@@ -32321,22 +32327,6 @@ let Table = class Table extends react_1.default.Component {
     });
   }
 
-  toggleReveal() {
-    const {
-      table: {
-        id,
-        chairs
-      },
-      player
-    } = this.props;
-    const chair = chairs.find(c => c.player === player);
-    axios_1.default.put(`/tables/${id}/chairs/${chair.id}`, {
-      data: Object.assign(Object.assign({}, chair), {
-        reveal: !chair.reveal
-      })
-    });
-  }
-
   leaveTable() {
     const {
       table: {
@@ -32516,7 +32506,8 @@ let Tile = class Tile extends react_1.default.Component {
     const {
       hovered,
       dragged
-    } = this.state;
+    } = this.state; // const draggable = true;
+
     return react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('tile', {
         'tile-hidden': hidden,
@@ -32528,10 +32519,10 @@ let Tile = class Tile extends react_1.default.Component {
       }),
       draggable: draggable,
       id: id.toString(),
-      onDragEnd: this.onDragEnd,
+      onDragEnd: draggable ? this.onDragEnd : undefined,
       onDragEnter: this.onDragEnter,
       onDragLeave: this.onDragLeave,
-      onDragStart: this.onDragStart
+      onDragStart: draggable ? this.onDragStart : e => e.preventDefault()
     }, react_1.default.createElement("div", {
       className: "tile-graphic"
     }, react_1.default.createElement("div", {
