@@ -57,7 +57,7 @@ app.post('/tables/:id/game', ({ params: { id } }, res) => {
     res.send(tables_1.Tables.newGame(id));
     (_a = tableStreams[id]) === null || _a === void 0 ? void 0 : _a.send(tables_1.Tables.read(id), 'update');
 });
-app.post('tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } }, res) => {
+app.put('/tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } }, res) => {
     var _a;
     res.send(tables_1.Tables.updateChair(id, chair, data));
     tablesStream.send(tables_1.Tables.all(), 'update');

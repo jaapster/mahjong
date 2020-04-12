@@ -1999,6 +1999,24 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-menu.scss":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-menu.scss ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".menu {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 4;\n  background: rgba(255, 255, 255, 0.01);\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  .menu .menu-body {\n    background: white;\n    width: 300px;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n    padding: 20px;\n    text-align: center;\n    border-radius: 2px; }\n    .menu .menu-body a {\n      display: block;\n      text-decoration: none;\n      color: grey;\n      padding: 5px; }\n      .menu .menu-body a:hover {\n        background: dodgerblue;\n        color: white; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss":
 /*!****************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss ***!
@@ -2017,6 +2035,24 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-lobby.scss":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-lobby.scss ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".lobby {\n  padding: 12px; }\n  .lobby .games {\n    padding: 12px; }\n  .lobby .list-game {\n    margin-bottom: 8px;\n    border: 1px solid black;\n    padding: 12px 36px; }\n  .lobby .add-game {\n    font-size: 12px; }\n  .lobby ul li {\n    padding: 4px; }\n    .lobby ul li.current-player {\n      background: rgba(255, 255, 0, 0.5); }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss":
 /*!**************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss ***!
@@ -2028,7 +2064,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey; }\n  .center .tray {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px; }\n", ""]);
+exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey; }\n  .center .tray {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 140px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -70px; }\n      .center .transit-area .transit.transit-1 {\n        height: 140px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -70px; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 140px;\n        top: 0;\n        left: 50%;\n        margin-left: -70px; }\n      .center .transit-area .transit.transit-3 {\n        height: 140px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -70px; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2046,7 +2082,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px;\n    background: lightyellow; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightpink; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightblue; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px;\n    background: darkseagreen; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player-name {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    color: white;\n    background: black;\n    opacity: 0.3; }\n", ""]);
+exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px;\n    background: lightyellow; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightpink; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px;\n    background: lightblue; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px;\n    background: darkseagreen; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    color: white;\n    background: green;\n    opacity: 0.4; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2100,7 +2136,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tile {\n  transition: padding 100ms;\n  overflow: hidden; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-hidden .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n    .tile.tile-hidden .tile-graphic .tile-symbol {\n      display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-hidden .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n", ""]);
+exports.push([module.i, ".tile {\n  transition: padding 100ms;\n  overflow: hidden; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-small .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n  .tile.tile-hidden .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-small .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31296,6 +31332,8 @@ const cp_lobby_1 = __webpack_require__(/*! ../lobby/cp-lobby */ "./src/component
 
 const cp_entrance_1 = __webpack_require__(/*! ../lobby/cp-entrance */ "./src/components/lobby/cp-entrance.tsx");
 
+const cp_menu_1 = __webpack_require__(/*! ./cp-menu */ "./src/components/app/cp-menu.tsx");
+
 const Storage = {
   get() {
     var _a;
@@ -31303,9 +31341,9 @@ const Storage = {
     return JSON.parse((_a = localStorage.getItem('mahjong')) !== null && _a !== void 0 ? _a : '{}');
   },
 
-  setName(name) {
+  setPlayer(player) {
     localStorage.setItem('mahjong', JSON.stringify(Object.assign(Object.assign({}, Storage.get()), {
-      name
+      player
     })));
   },
 
@@ -31320,43 +31358,84 @@ let App = class App extends react_1.default.Component {
   constructor() {
     super(...arguments);
     this.state = {
-      name: null,
+      player: null,
       table: null,
-      tables: []
+      tables: [],
+      showMenu: false
     };
   }
 
   componentDidMount() {
-    this.getTables();
-    const {
-      name,
-      table
-    } = Storage.get();
-    this.setState({
-      name
-    });
-    this.tablesStream = new EventSource('/streams/tables');
-    this.tablesStream.addEventListener('update', this.onTablesUpdate);
+    this.getTables().then(() => {
+      const {
+        player,
+        table
+      } = Storage.get();
+      this.setState({
+        player
+      });
+      this.tablesStream = new EventSource('/streams/tables');
+      this.tablesStream.addEventListener('update', this.onTablesUpdate);
 
-    if (table != null) {
-      this.openTable(table);
+      if (table != null) {
+        this.openTable(table);
+      }
+    }); // @ts-ignore
+
+    window.transit = this.transit;
+    document.addEventListener('keyup', this.onKeyUp);
+
+    window.onbeforeunload = () => {
+      const {
+        table,
+        player
+      } = this.state;
+      const chair = table === null || table === void 0 ? void 0 : table.chairs.find(chair => chair.player === player);
+
+      if (chair) {
+        axios_1.default.put(`/tables/${table.id}/chairs/${chair.id}`, {
+          data: Object.assign(Object.assign({}, chair), {
+            seated: false
+          })
+        });
+      }
+    };
+  }
+
+  onKeyUp(e) {
+    if (e.key === 'Escape') {
+      this.toggleMenu();
     }
   }
 
   openTable(id) {
-    if (this.tableStream) {
-      this.tableStream.close();
-    }
+    const {
+      player,
+      tables
+    } = this.state;
 
-    this.tableStream = new EventSource(`/streams/tables/${id}`);
-    this.tableStream.addEventListener('update', this.onTableUpdate);
-    this.tableStream.addEventListener('delete', this.onTableDelete);
-    Storage.setTable(id);
+    if (tables.find(table => table.id === id)) {
+      if (this.tableStream) {
+        this.tableStream.close();
+      }
+
+      this.tableStream = new EventSource(`/streams/tables/${id}`);
+      this.tableStream.addEventListener('update', this.onTableUpdate);
+      this.tableStream.addEventListener('delete', this.onTableDelete);
+      const table = tables.find(table => table.id === id);
+      const chair = table.chairs.find(chair => chair.player === player);
+      axios_1.default.put(`/tables/${id}/chairs/${chair.id}`, {
+        data: Object.assign(Object.assign({}, chair), {
+          seated: true
+        })
+      });
+      Storage.setTable(id);
+    }
   }
 
   joinTable(tableId, chairId) {
     const {
-      name: player,
+      player,
       tables
     } = this.state;
     const table = tables.find(table => table.id === tableId);
@@ -31370,6 +31449,11 @@ let App = class App extends react_1.default.Component {
   }
 
   onTableDelete() {
+    const {
+      table,
+      player
+    } = this.state;
+
     if (this.tableStream) {
       this.tableStream.removeEventListener('update', this.onTableUpdate);
       this.tableStream.removeEventListener('delete', this.onTableDelete);
@@ -31379,13 +31463,21 @@ let App = class App extends react_1.default.Component {
     this.setState({
       table: null
     });
+    const chair = table.chairs.find(chair => chair.player === player);
+    axios_1.default.put(`/tables/${table.id}/chairs/${chair.id}`, {
+      data: Object.assign(Object.assign({}, chair), {
+        seated: false
+      })
+    });
     Storage.setTable(undefined);
   }
 
   getTables() {
-    fetch('/tables').then(response => response.json()).then(tables => this.setState({
-      tables
-    }));
+    return fetch('/tables').then(response => response.json()).then(tables => {
+      this.setState({
+        tables
+      });
+    });
   }
 
   onTablesUpdate(event) {
@@ -31402,10 +31494,10 @@ let App = class App extends react_1.default.Component {
 
   createTable() {
     const {
-      name
+      player
     } = this.state;
     axios_1.default.post('/tables', {
-      creator: name
+      creator: player
     });
   }
 
@@ -31413,45 +31505,211 @@ let App = class App extends react_1.default.Component {
     axios_1.default.delete(`/tables/${id}`);
   }
 
-  submitName(name) {
+  submitName(player) {
     this.setState({
-      name
+      player
     });
-    Storage.setName(name);
+    Storage.setPlayer(player);
   }
 
   logout() {
     this.setState({
-      name: null
+      player: null
     });
+  }
+
+  reveal(id) {
+    const {
+      table
+    } = this.state;
+    const chair = table.chairs.find(chair => chair.id === id);
+    axios_1.default.put(`/tables/${table.id}/chairs/${id}`, {
+      data: Object.assign(Object.assign({}, chair), {
+        reveal: !chair.reveal
+      })
+    });
+  }
+
+  toggleTransitMode() {
+    const {
+      table
+    } = this.state;
+    axios_1.default.put(`/tables/${table.id}`, {
+      data: Object.assign(Object.assign({}, table), {
+        transit: !table.transit
+      })
+    });
+  }
+
+  hideMenu() {
+    this.setState({
+      showMenu: false
+    });
+  }
+
+  toggleMenu() {
+    const {
+      showMenu
+    } = this.state;
+    this.setState({
+      showMenu: !showMenu
+    });
+  }
+
+  startNewGame() {
+    const {
+      table
+    } = this.state;
+    axios_1.default.post(`/tables/${table.id}/game`);
   }
 
   render() {
     const {
-      name,
+      player,
       table,
-      tables
+      tables,
+      showMenu
     } = this.state;
-    return react_1.default.createElement(react_1.default.Fragment, null, name == null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h1", null, "Mahjong"), react_1.default.createElement(cp_entrance_1.Entrance, {
+    return react_1.default.createElement(react_1.default.Fragment, null, player == null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h1", null, "Mahjong"), react_1.default.createElement(cp_entrance_1.Entrance, {
       submit: this.submitName
-    })) : table != null ? react_1.default.createElement(cp_table_1.Table, {
+    })) : table != null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_table_1.Table, {
       table: table,
       leaveTable: this.onTableDelete,
-      player: name
-    }) : react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_lobby_1.Lobby, {
+      player: player,
+      reveal: this.reveal
+    }), showMenu ? react_1.default.createElement(cp_menu_1.Menu, {
+      table: table,
+      startNewGame: this.startNewGame,
+      toggleTransitMode: this.toggleTransitMode,
+      close: this.hideMenu
+    }) : null) : react_1.default.createElement(cp_lobby_1.Lobby, {
       openTable: this.openTable,
       tables: tables,
       joinTable: this.joinTable,
-      player: name,
+      player: player,
       createTable: this.createTable,
       deleteTable: this.deleteTable,
       logout: this.logout
-    })));
+    }));
   }
 
 };
 App = __decorate([autobind_decorator_1.default], App);
 exports.App = App;
+
+/***/ }),
+
+/***/ "./src/components/app/cp-menu.scss":
+/*!*****************************************!*\
+  !*** ./src/components/app/cp-menu.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-menu.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-menu.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/app/cp-menu.tsx":
+/*!****************************************!*\
+  !*** ./src/components/app/cp-menu.tsx ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! ./cp-menu.scss */ "./src/components/app/cp-menu.scss");
+
+exports.Menu = ({
+  toggleTransitMode,
+  startNewGame,
+  close,
+  table
+}) => {
+  return react_1.default.createElement("div", {
+    className: "menu"
+  }, react_1.default.createElement("div", {
+    className: "menu-body"
+  }, react_1.default.createElement("a", {
+    href: "#",
+    onClick: () => {
+      toggleTransitMode();
+      close();
+    }
+  }, "Zet doorschuiven ", table.transit ? 'uit' : 'aan'), react_1.default.createElement("a", {
+    href: "#",
+    onClick: () => {
+      startNewGame();
+      close();
+    }
+  }, "Nieuw spel beginnen")));
+};
+
+/***/ }),
+
+/***/ "./src/components/app/cp-portal.tsx":
+/*!******************************************!*\
+  !*** ./src/components/app/cp-portal.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
+
+exports.Portal = ({
+  children,
+  id
+}) => {
+  const target = document.getElementById(id);
+  return target != null ? react_dom_1.default.createPortal(children, document.getElementById(id)) : null;
+};
 
 /***/ }),
 
@@ -31566,6 +31824,37 @@ exports.Entrance = Entrance;
 
 /***/ }),
 
+/***/ "./src/components/lobby/cp-lobby.scss":
+/*!********************************************!*\
+  !*** ./src/components/lobby/cp-lobby.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-lobby.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-lobby.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
 /***/ "./src/components/lobby/cp-lobby.tsx":
 /*!*******************************************!*\
   !*** ./src/components/lobby/cp-lobby.tsx ***!
@@ -31588,7 +31877,7 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-__webpack_require__(/*! ./cp-entrance.scss */ "./src/components/lobby/cp-entrance.scss");
+__webpack_require__(/*! ./cp-lobby.scss */ "./src/components/lobby/cp-lobby.scss");
 
 exports.Lobby = ({
   createTable,
@@ -31702,12 +31991,14 @@ exports.Center = ({
 }) => {
   return react_1.default.createElement("div", {
     className: "center"
-  }, react_1.default.createElement("div", {
-    className: "mat"
-  }), react_1.default.createElement(cp_tray_1.Tray, {
+  }, react_1.default.createElement(cp_tray_1.Tray, {
     id: "t1",
     hidden: false,
-    tiles: util_get_tray_1.getTray('t1', tiles)
+    tiles: util_get_tray_1.getTray('t1', tiles),
+    small: false
+  }), react_1.default.createElement("div", {
+    className: "transit-area",
+    id: "transit-area"
   }));
 };
 
@@ -31768,35 +32059,67 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 
 const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/utils/util-merge-classes.ts");
 
-__webpack_require__(/*! ./cp-chair.scss */ "./src/components/table/cp-chair.scss");
-
 const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/table/cp-tray.tsx");
 
 const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./src/utils/util-get-tray.ts");
 
+const cp_portal_1 = __webpack_require__(/*! ../app/cp-portal */ "./src/components/app/cp-portal.tsx");
+
+__webpack_require__(/*! ./cp-chair.scss */ "./src/components/table/cp-chair.scss");
+
 const POSITIONS = ['player', 'left', 'top', 'right'];
 
-exports.Chair = ({
-  chair,
-  index,
-  tiles
-}) => {
-  return react_1.default.createElement("div", {
-    className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`)
-  }, react_1.default.createElement(cp_tray_1.Tray, {
-    id: `${chair.id}0`,
-    hidden: index > 0,
-    tiles: util_get_tray_1.getTray(`${chair.id}0`, tiles),
-    rotate: index === 1 || index === 3
-  }), react_1.default.createElement(cp_tray_1.Tray, {
-    id: `${chair.id}1`,
-    hidden: false,
-    tiles: util_get_tray_1.getTray(`${chair.id}1`, tiles),
-    rotate: index === 1 || index === 3
-  }), react_1.default.createElement("div", {
-    className: "player-name"
-  }, chair.player));
-};
+class Chair extends react_1.default.Component {
+  render() {
+    const {
+      chair: {
+        id
+      },
+      chair,
+      index,
+      tiles,
+      reveal,
+      transit
+    } = this.props;
+    return react_1.default.createElement("div", {
+      className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`)
+    }, react_1.default.createElement(cp_tray_1.Tray, {
+      id: `${id}0`,
+      hidden: index > 0 && !chair.reveal,
+      tiles: util_get_tray_1.getTray(`${id}0`, tiles),
+      rotate: index === 1 || index === 3,
+      small: index > 0 && !chair.reveal,
+      draggable: index === 0
+    }), react_1.default.createElement(cp_tray_1.Tray, {
+      id: `${id}1`,
+      hidden: false,
+      tiles: util_get_tray_1.getTray(`${id}1`, tiles),
+      rotate: index === 1 || index === 3,
+      small: false,
+      draggable: index === 0
+    }), react_1.default.createElement("div", {
+      className: util_merge_classes_1.mergeClasses('player', {
+        'player-unseated': !chair.seated
+      }),
+      onClick: () => reveal(id)
+    }, chair.player), transit ? react_1.default.createElement(cp_portal_1.Portal, {
+      id: "transit-area"
+    }, react_1.default.createElement("div", {
+      className: util_merge_classes_1.mergeClasses('transit', `transit-${index}`)
+    }, react_1.default.createElement(cp_tray_1.Tray, {
+      id: `${id}transit`,
+      hidden: index > 0,
+      tiles: util_get_tray_1.getTray(`${id}transit`, tiles),
+      rotate: index === 1 || index === 3,
+      small: false,
+      draggable: index === 0
+    }))) : null);
+  }
+
+}
+
+exports.Chair = Chair;
+;
 
 /***/ }),
 
@@ -32027,7 +32350,8 @@ let Table = class Table extends react_1.default.Component {
   render() {
     const {
       table,
-      player
+      player,
+      reveal
     } = this.props;
     const {
       game: {
@@ -32047,7 +32371,9 @@ let Table = class Table extends react_1.default.Component {
       chair: c,
       index: i,
       key: c.id,
-      tiles: tiles
+      tiles: tiles,
+      reveal: reveal,
+      transit: table.transit
     })), react_1.default.createElement(cp_center_1.Center, {
       tiles: tiles
     }), react_1.default.createElement(cp_wall_1.Wall, {
@@ -32183,7 +32509,9 @@ let Tile = class Tile extends react_1.default.Component {
       },
       hidden,
       rotate,
-      blank
+      blank,
+      small,
+      draggable
     } = this.props;
     const {
       hovered,
@@ -32195,9 +32523,10 @@ let Tile = class Tile extends react_1.default.Component {
         'tile-hovered': hovered,
         'tile-dragged': dragged,
         'tile-rotated': rotate,
-        'tile-blank': blank
+        'tile-blank': blank,
+        'tile-small': small
       }),
-      draggable: "true",
+      draggable: draggable,
       id: id.toString(),
       onDragEnd: this.onDragEnd,
       onDragEnter: this.onDragEnter,
@@ -32280,7 +32609,9 @@ exports.Tray = ({
   tiles,
   hidden,
   rotate,
-  blank
+  blank,
+  small,
+  draggable
 }) => {
   return react_1.default.createElement("div", {
     id: id,
@@ -32293,7 +32624,9 @@ exports.Tray = ({
     tile: t,
     hidden: hidden,
     rotate: rotate,
-    blank: blank
+    blank: blank,
+    small: small,
+    draggable: draggable
   })));
 };
 
@@ -32368,7 +32701,9 @@ exports.Wall = ({
     id: "t0",
     hidden: false,
     tiles: tile ? [tile] : [],
-    blank: true
+    blank: true,
+    small: false,
+    draggable: true
   }));
 };
 
@@ -32474,4 +32809,4 @@ exports.mergeClasses = (...args) => args.reduce((m1, arg) => typeof arg === 'str
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=bundle.js.source.map

@@ -18,6 +18,7 @@ declare namespace Mahjong {
 		id: string;
 		chairs: Chair[];
 		creator: string;
+		transit: boolean;
 		game: {
 			tiles: Tile[];
 		};

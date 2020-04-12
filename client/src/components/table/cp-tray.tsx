@@ -9,9 +9,11 @@ interface Props {
 	tiles: Mahjong.Tile[];
 	rotate?: boolean;
 	blank?: boolean;
+	small: boolean;
+	draggable: boolean;
 }
 
-export const Tray = ({ id, tiles, hidden, rotate, blank }: Props) => {
+export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable }: Props) => {
 	return (
 		<div
 			id={ id }
@@ -33,6 +35,8 @@ export const Tray = ({ id, tiles, hidden, rotate, blank }: Props) => {
 						hidden={ hidden }
 						rotate={ rotate }
 						blank={ blank }
+						small={ small }
+						draggable={ draggable }
 					/>
 				))
 			}

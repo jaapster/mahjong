@@ -18,7 +18,8 @@ let tables: Mahjong.Table[] = [
 		],
 		game: {
 			tiles: dealTiles(getTileSet())
-		}
+		},
+		transit: false
 	}
 ];
 
@@ -39,7 +40,8 @@ export const Tables = {
 			],
 			game: {
 				tiles: dealTiles(getTileSet())
-			}
+			},
+			transit: false
 		}
 
 		tables = tables.concat([table]);

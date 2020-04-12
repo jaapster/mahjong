@@ -65,7 +65,7 @@ app.post('/tables/:id/game', ({ params: { id } }, res) => {
 	tableStreams[id]?.send(Tables.read(id), 'update');
 });
 
-app.post('tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } }, res) => {
+app.put('/tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } }, res) => {
 	res.send(Tables.updateChair(id, chair, data));
 	tablesStream.send(Tables.all(), 'update');
 	tableStreams[id]?.send(Tables.read(id), 'update');

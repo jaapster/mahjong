@@ -17,6 +17,8 @@ export const Wall = ({ tiles }: Props) => {
 				hidden={ false }
 				tiles={ tile ? [tile] : [] }
 				blank={ true }
+				small={ false }
+				draggable={ true }
 			/>
 		</div>
 	);

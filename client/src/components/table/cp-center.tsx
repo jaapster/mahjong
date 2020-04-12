@@ -10,12 +10,13 @@ interface Props {
 export const Center = ({ tiles }: Props) => {
 	return (
 		<div className="center">
-			<div className="mat" />
 			<Tray
 				id="t1"
 				hidden={ false }
 				tiles={ getTray('t1', tiles) }
+				small={ false }
 			/>
+			<div className="transit-area" id="transit-area"/>
 		</div>
 	);
 }

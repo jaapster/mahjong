@@ -11,6 +11,7 @@ interface Props {
 	table: Mahjong.Table;
 	player: string;
 	leaveTable(id: string): void;
+	reveal(id: string): void;
 }
 
 interface State {
@@ -87,7 +88,7 @@ export class Table extends React.Component<Props, State> {
 	}
 
 	render() {
-		const { table, player } = this.props;
+		const { table, player, reveal } = this.props;
 		const { game: { tiles }, chairs } = table;
 		const p = chairs.findIndex(c => c.player === player );
 
@@ -110,6 +111,8 @@ export class Table extends React.Component<Props, State> {
 								index={ i }
 								key={ c.id }
 								tiles={ tiles }
+								reveal={ reveal }
+								transit={ table.transit }
 							/>
 						))
 				}

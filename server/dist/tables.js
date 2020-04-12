@@ -16,7 +16,8 @@ let tables = [
         ],
         game: {
             tiles: util_deal_tiles_1.dealTiles(tiles_1.getTileSet())
-        }
+        },
+        transit: false
     }
 ];
 exports.Tables = {
@@ -35,7 +36,8 @@ exports.Tables = {
             ],
             game: {
                 tiles: util_deal_tiles_1.dealTiles(tiles_1.getTileSet())
-            }
+            },
+            transit: false
         };
         tables = tables.concat([table]);
         return table;

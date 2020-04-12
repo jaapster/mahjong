@@ -76,13 +76,17 @@
 		opacity: 0.3;
 	}
 
-	&.tile-hidden {
+	&.tile-small {
 		.tile-graphic {
 			width: 16px;
 			height: 24px;
 			box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 			border-radius: 2px;
+		}
+	}
 
+	&.tile-hidden {
+		.tile-graphic {
 			.tile-symbol {
 				display: none;
 			}
@@ -103,7 +107,7 @@
 			}
 		}
 
-		&.tile-hidden {
+		&.tile-small {
 			.tile-graphic {
 				width: 24px;
 				height: 16px;

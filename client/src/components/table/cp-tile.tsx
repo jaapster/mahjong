@@ -8,6 +8,8 @@ interface Props {
 	hidden: boolean;
 	rotate: boolean;
 	blank: boolean;
+	small: boolean;
+	draggable: boolean;
 }
 
 interface State {
@@ -46,7 +48,7 @@ export class Tile extends React.Component<Props, State> {
 	}
 
 	render() {
-		const { tile: { id, suit, name }, hidden, rotate, blank } = this.props;
+		const { tile: { id, suit, name }, hidden, rotate, blank, small, draggable } = this.props;
 		const { hovered, dragged } = this.state;
 
 		return (
@@ -58,10 +60,11 @@ export class Tile extends React.Component<Props, State> {
 						'tile-hovered': hovered,
 						'tile-dragged': dragged,
 						'tile-rotated': rotate,
-						'tile-blank': blank
+						'tile-blank': blank,
+						'tile-small': small
 					}
 				) }
-				draggable="true"
+				draggable={ draggable }
 				id={ id.toString() }
 				onDragEnd={ this.onDragEnd }
 				onDragEnter={ this.onDragEnter }
