@@ -70,7 +70,7 @@ export class Tile extends React.Component<Props, State> {
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
 				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
-				title={ blank ? '?' : title }
+				title={ blank || hidden ? '?' : title }
 			>
 				<div className="tile-graphic">
 					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />

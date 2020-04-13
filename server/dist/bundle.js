@@ -32316,7 +32316,8 @@ exports.Exit = ({
 }) => {
   return react_1.default.createElement("div", {
     className: "exit",
-    onClick: onClick
+    onClick: onClick,
+    title: "Terug naar de lobby"
   }, react_1.default.createElement("span", null, "\u2799"));
 };
 
@@ -32653,7 +32654,7 @@ let Tile = class Tile extends react_1.default.Component {
       onDragEnter: this.onDragEnter,
       onDragLeave: this.onDragLeave,
       onDragStart: draggable ? this.onDragStart : e => e.preventDefault(),
-      title: blank ? '?' : title
+      title: blank || hidden ? '?' : title
     }, react_1.default.createElement("div", {
       className: "tile-graphic"
     }, react_1.default.createElement("div", {

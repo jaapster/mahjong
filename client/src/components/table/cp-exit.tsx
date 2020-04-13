@@ -10,6 +10,7 @@ export const Exit = ({ onClick }: Props) => {
 		<div
 			className="exit"
 			onClick={ onClick }
+			title="Terug naar de lobby"
 		>
 			<span>&#x2799;</span>
 		</div>
