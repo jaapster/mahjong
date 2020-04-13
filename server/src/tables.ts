@@ -100,6 +100,8 @@ export const Tables = {
 	},
 
 	moveTile(id: string, tileId: string, { tray, index }: { tray: string; index: number }) {
+		let from;
+
 		tables = tables.map(table => {
 			if (table.id !== id) {
 				return table;
@@ -109,6 +111,8 @@ export const Tables = {
 			const tile = game.tiles.find(t => t.id === tileId);
 			const fromTray = tile.tray;
 			const fromIndex = tile.index;
+
+			from = fromTray;
 
 			game.tiles = game.tiles.map(t => (
 				t.tray === tray && t.index >= index
@@ -130,5 +134,11 @@ export const Tables = {
 
 			return table;
 		});
+
+		return {
+			from,
+			to: tray,
+			tile: tileId
+		};
 	}
 };

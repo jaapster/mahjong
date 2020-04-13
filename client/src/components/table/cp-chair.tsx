@@ -24,6 +24,9 @@ export class Chair extends React.Component<Props> {
 	render() {
 		const { chair: { id }, chair, index, tiles, reveal, transit } = this.props;
 
+		const isPlayer = index === 0;
+		const isDummy = chair.player == null;
+
 		return (
 			<div className={ mergeClasses(
 					'chair',
@@ -31,20 +34,20 @@ export class Chair extends React.Component<Props> {
 					`chair-${ id }`
 				) }>
 				<Tray
-					id={ `${ id }0` }
-					hidden={ index > 0 && !chair.reveal }
+					id={ (isPlayer || isDummy) ? `${ id }0` : undefined }
+					hidden={ !isPlayer && !chair.reveal }
 					tiles={ getTray(`${ id }0`, tiles) }
 					rotate={ index === 1 || index === 3 }
-					small={ index > 0 && !chair.reveal }
-					draggable={ index === 0 }
+					small={ !isPlayer && !chair.reveal }
+					draggable={ isPlayer || isDummy }
 				/>
 				<Tray
-					id={ `${ id }1` }
+					id={ isPlayer ? `${ id }1` : undefined }
 					hidden={ false }
 					tiles={ getTray(`${ id }1`, tiles) }
 					rotate={ index === 1 || index === 3 }
 					small={ false }
-					draggable={ index === 0 }
+					draggable={ isPlayer }
 				/>
 				<div
 					className={
@@ -55,10 +58,39 @@ export class Chair extends React.Component<Props> {
 							}
 						)
 					}
-					onClick={ () => reveal(id) }
 				>
 					{ chair.player }
 				</div>
+				{
+					index === 0
+						? (
+							<div
+								className={ mergeClasses(
+									'tray-visibility',
+									{
+										'tray-visible': chair.reveal
+									}
+								) }
+								onClick={
+									index === 0
+										? () => reveal(id)
+										: undefined
+								}
+								title={
+									chair.reveal
+										? 'Verberg'
+										: 'Maak zichtbaar voor iedereen'
+								}
+							>
+								{
+									chair.reveal
+										? 'Zichtbaar voor iedereen'
+										: 'Verborgen'
+								}
+							</div>
+						)
+						: null
+				}
 				{
 					transit
 						? (
@@ -68,7 +100,7 @@ export class Chair extends React.Component<Props> {
 										`transit-${ index }`
 									) }>
 									<Tray
-										id={ `${ id }transit` }
+										id={ index === 0 ? `${ id }transit` : undefined }
 										hidden={ true }
 										tiles={ getTray(`${ id }transit`, tiles) }
 										rotate={ index === 1 || index === 3 }

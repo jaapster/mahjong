@@ -69,6 +69,7 @@ exports.Tables = {
                 } }) : table));
     },
     moveTile(id, tileId, { tray, index }) {
+        let from;
         tables = tables.map(table => {
             if (table.id !== id) {
                 return table;
@@ -77,6 +78,7 @@ exports.Tables = {
             const tile = game.tiles.find(t => t.id === tileId);
             const fromTray = tile.tray;
             const fromIndex = tile.index;
+            from = fromTray;
             game.tiles = game.tiles.map(t => (t.tray === tray && t.index >= index
                 ? Object.assign(Object.assign({}, t), { index: t.index + 1 }) : t));
             game.tiles = game.tiles.map(t => (t.tray === fromTray && t.index > fromIndex
@@ -85,5 +87,10 @@ exports.Tables = {
                 ? Object.assign(Object.assign({}, t), { tray, index: index - (fromTray === tray && fromIndex < index ? 1 : 0) }) : t));
             return table;
         });
+        return {
+            from,
+            to: tray,
+            tile: tileId
+        };
     }
 };

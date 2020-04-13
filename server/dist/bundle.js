@@ -2017,6 +2017,24 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-notification.scss":
+/*!******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-notification.scss ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".notification {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 8px;\n  background: red;\n  color: white; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss":
 /*!****************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss ***!
@@ -2082,7 +2100,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-a {\n    background: lightyellow; }\n  .chair.chair-b {\n    background: lightpink; }\n  .chair.chair-c {\n    background: lightblue; }\n  .chair.chair-d {\n    background: darkseagreen; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    color: white;\n    background: green;\n    opacity: 1; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n", ""]);
+exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-a {\n    background: lightyellow; }\n  .chair.chair-b {\n    background: lightpink; }\n  .chair.chair-c {\n    background: lightblue; }\n  .chair.chair-d {\n    background: darkseagreen; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    color: white;\n    background: green;\n    opacity: 0.5; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n  .chair .tray-visibility {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 3px 5px;\n    background: black;\n    color: white;\n    cursor: default;\n    opacity: 0.4; }\n    .chair .tray-visibility:hover {\n      opacity: 1; }\n    .chair .tray-visibility.tray-visible {\n      background: yellow;\n      color: black;\n      opacity: 1; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31334,6 +31352,8 @@ const cp_entrance_1 = __webpack_require__(/*! ../lobby/cp-entrance */ "./src/com
 
 const cp_menu_1 = __webpack_require__(/*! ./cp-menu */ "./src/components/app/cp-menu.tsx");
 
+__webpack_require__(/*! ./cp-notification.scss */ "./src/components/app/cp-notification.scss");
+
 const Storage = {
   get() {
     var _a;
@@ -31361,7 +31381,8 @@ let App = class App extends react_1.default.Component {
       player: null,
       table: null,
       tables: [],
-      showMenu: false
+      showMenu: false,
+      tileMove: undefined
     };
   }
 
@@ -31422,6 +31443,7 @@ let App = class App extends react_1.default.Component {
       this.tableStream = new EventSource(`/streams/tables/${id}`);
       this.tableStream.addEventListener('update', this.onTableUpdate);
       this.tableStream.addEventListener('delete', this.onTableDelete);
+      this.tableStream.addEventListener('tile-move', this.onTileMove);
       const table = tables.find(table => table.id === id);
       const chair = table.chairs.find(chair => chair.player === player);
       axios_1.default.put(`/tables/${id}/chairs/${chair.id}`, {
@@ -31457,6 +31479,7 @@ let App = class App extends react_1.default.Component {
     if (this.tableStream) {
       this.tableStream.removeEventListener('update', this.onTableUpdate);
       this.tableStream.removeEventListener('delete', this.onTableDelete);
+      this.tableStream.removeEventListener('tile-move', this.onTileMove);
       this.tableStream.close();
     }
 
@@ -31490,6 +31513,42 @@ let App = class App extends react_1.default.Component {
     this.setState({
       table: JSON.parse(event.data)
     });
+  }
+
+  onTileMove(event) {
+    var _a, _b;
+
+    const {
+      tile,
+      from,
+      to
+    } = JSON.parse(event.data);
+
+    if (from !== to) {
+      const {
+        table
+      } = this.state;
+      const {
+        title
+      } = table.game.tiles.find(t => t.id === tile);
+      const map = {
+        'a0': table.chairs.find(chair => chair.id === 'a').player,
+        'b0': table.chairs.find(chair => chair.id === 'b').player,
+        'c0': table.chairs.find(chair => chair.id === 'c').player,
+        'd0': table.chairs.find(chair => chair.id === 'd').player
+      };
+      console.log(table);
+      this.setState({
+        tileMove: {
+          title: from === 't0' ? 'een steen' : title,
+          from: from === 't0' ? 'de muur' : from === 't1' ? 'de tafel' : (_a = map[from]) !== null && _a !== void 0 ? _a : 'een dummy',
+          to: to === 't1' ? 'de tafel' : (_b = map[to]) !== null && _b !== void 0 ? _b : 'een dummy'
+        }
+      });
+      setTimeout(() => this.setState({
+        tileMove: undefined
+      }), 5000);
+    }
   }
 
   createTable() {
@@ -31568,7 +31627,8 @@ let App = class App extends react_1.default.Component {
       player,
       table,
       tables,
-      showMenu
+      showMenu,
+      tileMove
     } = this.state;
     return react_1.default.createElement(react_1.default.Fragment, null, player == null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h1", null, "Mahjong"), react_1.default.createElement(cp_entrance_1.Entrance, {
       submit: this.submitName
@@ -31590,7 +31650,9 @@ let App = class App extends react_1.default.Component {
       createTable: this.createTable,
       deleteTable: this.deleteTable,
       logout: this.logout
-    }));
+    }), tileMove ? react_1.default.createElement("div", {
+      className: "notification"
+    }, tileMove.title, " van ", tileMove.from, " naar ", tileMove.to) : null);
   }
 
 };
@@ -31678,6 +31740,37 @@ exports.Menu = ({
     }
   }, "Nieuw spel beginnen")));
 };
+
+/***/ }),
+
+/***/ "./src/components/app/cp-notification.scss":
+/*!*************************************************!*\
+  !*** ./src/components/app/cp-notification.scss ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-notification.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-notification.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
 
 /***/ }),
 
@@ -32087,33 +32180,40 @@ class Chair extends react_1.default.Component {
       reveal,
       transit
     } = this.props;
+    const isPlayer = index === 0;
+    const isDummy = chair.player == null;
     return react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`, `chair-${id}`)
     }, react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${id}0`,
-      hidden: index > 0 && !chair.reveal,
+      id: isPlayer || isDummy ? `${id}0` : undefined,
+      hidden: !isPlayer && !chair.reveal,
       tiles: util_get_tray_1.getTray(`${id}0`, tiles),
       rotate: index === 1 || index === 3,
-      small: index > 0 && !chair.reveal,
-      draggable: index === 0
+      small: !isPlayer && !chair.reveal,
+      draggable: isPlayer || isDummy
     }), react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${id}1`,
+      id: isPlayer ? `${id}1` : undefined,
       hidden: false,
       tiles: util_get_tray_1.getTray(`${id}1`, tiles),
       rotate: index === 1 || index === 3,
       small: false,
-      draggable: index === 0
+      draggable: isPlayer
     }), react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('player', {
         'player-unseated': !chair.seated
+      })
+    }, chair.player), index === 0 ? react_1.default.createElement("div", {
+      className: util_merge_classes_1.mergeClasses('tray-visibility', {
+        'tray-visible': chair.reveal
       }),
-      onClick: () => reveal(id)
-    }, chair.player), transit ? react_1.default.createElement(cp_portal_1.Portal, {
+      onClick: index === 0 ? () => reveal(id) : undefined,
+      title: chair.reveal ? 'Verberg' : 'Maak zichtbaar voor iedereen'
+    }, chair.reveal ? 'Zichtbaar voor iedereen' : 'Verborgen') : null, transit ? react_1.default.createElement(cp_portal_1.Portal, {
       id: "transit-area"
     }, react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('transit', `transit-${index}`)
     }, react_1.default.createElement(cp_tray_1.Tray, {
-      id: `${id}transit`,
+      id: index === 0 ? `${id}transit` : undefined,
       hidden: true,
       tiles: util_get_tray_1.getTray(`${id}transit`, tiles),
       rotate: index === 1 || index === 3,

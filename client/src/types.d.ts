@@ -5,6 +5,7 @@ declare namespace Mahjong {
 		name: string;
 		suit: string;
 		tray: string;
+		title: string;
 	}
 
 	interface Chair {

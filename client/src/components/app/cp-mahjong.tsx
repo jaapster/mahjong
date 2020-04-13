@@ -6,11 +6,18 @@ import { Lobby } from '../lobby/cp-lobby';
 import { Entrance } from '../lobby/cp-entrance';
 import { Menu } from './cp-menu';
 
+import './cp-notification.scss';
+
 interface State {
 	player: string | null;
 	table: Mahjong.Table | null;
 	tables: Mahjong.Table[];
 	showMenu: boolean;
+	tileMove?: {
+		from: string;
+		to: string;
+		title: string;
+	}
 }
 
 const Storage = {
@@ -35,7 +42,7 @@ const Storage = {
 
 @bind
 export class App extends React.Component<any, State> {
-	state = { player: null, table: null, tables: [], showMenu: false };
+	state = { player: null, table: null, tables: [], showMenu: false, tileMove: undefined };
 
 	private tableStream: any;
 	private tablesStream: any;
@@ -92,6 +99,7 @@ export class App extends React.Component<any, State> {
 			this.tableStream = new EventSource(`/streams/tables/${ id }`);
 			this.tableStream.addEventListener('update', this.onTableUpdate);
 			this.tableStream.addEventListener('delete', this.onTableDelete);
+			this.tableStream.addEventListener('tile-move', this.onTileMove);
 
 			const table = tables.find(table => table.id === id);
 			const chair = table.chairs.find(chair => chair.player === player);
@@ -129,6 +137,7 @@ export class App extends React.Component<any, State> {
 		if (this.tableStream) {
 			this.tableStream.removeEventListener('update', this.onTableUpdate);
 			this.tableStream.removeEventListener('delete', this.onTableDelete);
+			this.tableStream.removeEventListener('tile-move', this.onTileMove);
 			this.tableStream.close();
 		}
 
@@ -160,6 +169,42 @@ export class App extends React.Component<any, State> {
 
 	private onTableUpdate(event) {
 		this.setState({ table: JSON.parse(event.data) });
+	}
+
+	private onTileMove(event) {
+		const { tile, from, to } = JSON.parse(event.data);
+
+		if (from !== to) {
+			const { table } = this.state;
+			const { title } = table.game.tiles.find(t => t.id === tile);
+
+			const map = {
+				'a0': table.chairs.find(chair => chair.id === 'a').player,
+				'b0': table.chairs.find(chair => chair.id === 'b').player,
+				'c0': table.chairs.find(chair => chair.id === 'c').player,
+				'd0': table.chairs.find(chair => chair.id === 'd').player,
+			};
+
+			console.log(table);
+
+			this.setState({
+				tileMove: {
+					title: from === 't0'
+						? 'een steen'
+						: title,
+					from: from === 't0'
+						? 'de muur'
+						: from === 't1'
+							? 'de tafel'
+							: map[from] ?? 'een dummy',
+					to: to === 't1'
+						? 'de tafel'
+						: map[to] ?? 'een dummy'
+				}
+			});
+
+			setTimeout(() => this.setState({ tileMove: undefined }), 5000);
+		}
 	}
 
 	private createTable() {
@@ -219,7 +264,7 @@ export class App extends React.Component<any, State> {
 	}
 
 	render() {
-		const { player, table, tables, showMenu } = this.state;
+		const { player, table, tables, showMenu, tileMove } = this.state;
 
 		return (
 			<>
@@ -265,6 +310,15 @@ export class App extends React.Component<any, State> {
 									logout={ this.logout }
 								/>
 							)
+				}
+				{
+					tileMove
+						? (
+							<div className="notification">
+								{ tileMove.title } van { tileMove.from } naar { tileMove.to }
+							</div>
+						)
+						: null
 				}
 			</>
 		);

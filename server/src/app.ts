@@ -72,8 +72,10 @@ app.put('/tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } },
 });
 
 app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { data } }, res) => {
-	res.send(Tables.moveTile(id, tileId, data));
+	const event = Tables.moveTile(id, tileId, data);
+	res.send(event);
 	tableStreams[id].send(Tables.read(id), 'update');
+	tableStreams[id].send(event, 'tile-move');
 });
 
 app.listen(port, err => {

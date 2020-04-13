@@ -64,8 +64,10 @@ app.put('/tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } },
     (_a = tableStreams[id]) === null || _a === void 0 ? void 0 : _a.send(tables_1.Tables.read(id), 'update');
 });
 app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { data } }, res) => {
-    res.send(tables_1.Tables.moveTile(id, tileId, data));
+    const event = tables_1.Tables.moveTile(id, tileId, data);
+    res.send(event);
     tableStreams[id].send(tables_1.Tables.read(id), 'update');
+    tableStreams[id].send(event, 'tile-move');
 });
 app.listen(port, err => {
     if (err) {
