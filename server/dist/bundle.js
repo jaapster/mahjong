@@ -32207,7 +32207,6 @@ class Chair extends react_1.default.Component {
       reveal,
       transit
     } = this.props;
-    console.log('transit', transit);
     const isPlayer = index === 0;
     const isDummy = chair.player == null;
     return react_1.default.createElement("div", {

@@ -115,15 +115,15 @@ export const Tables = {
 		}
 
 		// move tile from table to open tray
-		if (tray === 'a1' || tray === 'b1' || tray === 'c1' || tray === 'd1') {
-			if (from === 't1') {
-				return {
-					to: tray,
-					from: tray,
-					tile: tileId
-				}
-			}
-		}
+		// if (tray === 'a1' || tray === 'b1' || tray === 'c1' || tray === 'd1') {
+		// 	if (from === 't1') {
+		// 		return {
+		// 			to: tray,
+		// 			from: tray,
+		// 			tile: tileId
+		// 		}
+		// 	}
+		// }
 
 		// move tile from open tray to table
 		if (from === 'a1' || from === 'b1' || from === 'c1' || from === 'd1') {
