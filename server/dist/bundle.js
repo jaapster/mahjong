@@ -2172,7 +2172,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n  .tray .tile-count {\n    position: absolute;\n    bottom: 0;\n    right: 0;\n    padding: 5px;\n    background: black;\n    color: white;\n    font-size: 10px;\n    opacity: 0.5; }\n    .tray .tile-count.tile-count-overflow {\n      background: red; }\n", ""]);
+exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n\n.tile-count {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 5px;\n  background: black;\n  color: white;\n  font-size: 10px;\n  opacity: 0.5; }\n  .tile-count.tile-count-overflow {\n    background: red; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -32235,7 +32235,7 @@ class Chair extends react_1.default.Component {
       }),
       onClick: index === 0 ? () => reveal(id) : undefined,
       title: chair.reveal ? 'Verberg' : 'Maak zichtbaar voor iedereen'
-    }, chair.reveal ? 'Zichtbaar voor iedereen' : 'Verborgen') : null, transit ? react_1.default.createElement(cp_portal_1.Portal, {
+    }, chair.reveal ? 'Zichtbaar' : 'Verborgen') : null, transit ? react_1.default.createElement(cp_portal_1.Portal, {
       id: "transit-area"
     }, react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('transit', `transit-${index}`)
@@ -32821,6 +32821,7 @@ __webpack_require__(/*! ./cp-wall.scss */ "./src/components/table/cp-wall.scss")
 exports.Wall = ({
   tiles
 }) => {
+  const count = util_get_tray_1.getTray('t0', tiles).length;
   const tile = util_get_tray_1.getTray('t0', tiles)[0];
   return react_1.default.createElement("div", {
     className: "wall"
@@ -32831,7 +32832,9 @@ exports.Wall = ({
     blank: true,
     small: false,
     draggable: true
-  }));
+  }), react_1.default.createElement("div", {
+    className: "tile-count"
+  }, count));
 };
 
 /***/ }),

@@ -8,6 +8,7 @@ interface Props {
 }
 
 export const Wall = ({ tiles }: Props) => {
+	const count = getTray('t0', tiles).length;
 	const tile = getTray('t0', tiles)[0];
 
 	return (
@@ -20,6 +21,9 @@ export const Wall = ({ tiles }: Props) => {
 				small={ false }
 				draggable={ true }
 			/>
+			<div className="tile-count">
+				{ count }
+			</div>
 		</div>
 	);
 }

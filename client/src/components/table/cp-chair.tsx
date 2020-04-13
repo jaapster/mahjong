@@ -85,7 +85,7 @@ export class Chair extends React.Component<Props> {
 							>
 								{
 									chair.reveal
-										? 'Zichtbaar voor iedereen'
+										? 'Zichtbaar'
 										: 'Verborgen'
 								}
 							</div>

@@ -73,8 +73,8 @@ exports.Tables = {
         const tile = table.game.tiles.find(tile => tile.id === tileId);
         const from = tile.tray;
         // check for illegal moves
-        // move tile to wall or from wall to table
-        if (tray === 't1' && tile.tray === 't0' || tray === 't0') {
+        // move tile from wall to table
+        if (tray === 't1' && tile.tray === 't0') {
             return {
                 to: tray,
                 from: tray,
