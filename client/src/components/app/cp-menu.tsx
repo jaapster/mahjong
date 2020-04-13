@@ -1,5 +1,5 @@
 import React from 'react';
-import './cp-menu.scss';
+import './ss-menu.scss';
 
 export const Menu = ({ toggleTransitMode, startNewGame, close, table }: any) => {
 	return (

@@ -145,6 +145,7 @@ export const Tables = {
 			const fromIndex = tile.index;
 
 			if (tray === 't1') {
+				// tile in "active" table zone moves to inactive zone
 				game.tiles = game.tiles.map(t => (
 					t.tray === tray
 						? { ...t, tray: 't2' }
@@ -174,7 +175,7 @@ export const Tables = {
 		});
 
 		if (from !== tray) {
-			console.log('Tile', tileId, 'moved from', from, 'to', tray);
+			console.log('Tile', tileId, 'moved from', from, 'to', tray, 'at index', index);
 		}
 
 		return {

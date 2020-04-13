@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tile } from './cp-tile';
 import { mergeClasses } from '../../utils/util-merge-classes';
-import './cp-tray.scss';
+import './ss-tray.scss';
 
 interface Props {
 	id: string;
@@ -28,6 +28,11 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 			}
 		>
 			{
+				tiles.length > 0
+					? <div className="before" id={ tiles[0]?.id } />
+					: null
+			}
+			{
 				tiles.map((t, i) => (
 					<Tile
 						key={ t.id }
@@ -40,6 +45,7 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 					/>
 				))
 			}
+			<div className="after" />
 			{
 				showCount
 					? (

@@ -232,217 +232,217 @@ exports.getTileSet = () => {
             id: '37',
             suit: SUITS.DOTS,
             name: '1',
-            title: 'kringen 1'
+            title: 'ringen 1'
         },
         {
             id: '38',
             suit: SUITS.DOTS,
             name: '2',
-            title: 'kringen 2'
+            title: 'ringen 2'
         },
         {
             id: '39',
             suit: SUITS.DOTS,
             name: '3',
-            title: 'kringen 3'
+            title: 'ringen 3'
         },
         {
             id: '40',
             suit: SUITS.DOTS,
             name: '4',
-            title: 'kringen 4'
+            title: 'ringen 4'
         },
         {
             id: '41',
             suit: SUITS.DOTS,
             name: '5',
-            title: 'kringen 5'
+            title: 'ringen 5'
         },
         {
             id: '42',
             suit: SUITS.DOTS,
             name: '6',
-            title: 'kringen 6'
+            title: 'ringen 6'
         },
         {
             id: '43',
             suit: SUITS.DOTS,
             name: '7',
-            title: 'kringen 7'
+            title: 'ringen 7'
         },
         {
             id: '44',
             suit: SUITS.DOTS,
             name: '8',
-            title: 'kringen 8'
+            title: 'ringen 8'
         },
         {
             id: '45',
             suit: SUITS.DOTS,
             name: '9',
-            title: 'kringen 9'
+            title: 'ringen 9'
         },
         {
             id: '46',
             suit: SUITS.DOTS,
             name: '1',
-            title: 'kringen 1'
+            title: 'ringen 1'
         },
         {
             id: '47',
             suit: SUITS.DOTS,
             name: '2',
-            title: 'kringen 2'
+            title: 'ringen 2'
         },
         {
             id: '48',
             suit: SUITS.DOTS,
             name: '3',
-            title: 'kringen 3'
+            title: 'ringen 3'
         },
         {
             id: '49',
             suit: SUITS.DOTS,
             name: '4',
-            title: 'kringen 4'
+            title: 'ringen 4'
         },
         {
             id: '50',
             suit: SUITS.DOTS,
             name: '5',
-            title: 'kringen 5'
+            title: 'ringen 5'
         },
         {
             id: '51',
             suit: SUITS.DOTS,
             name: '6',
-            title: 'kringen 6'
+            title: 'ringen 6'
         },
         {
             id: '52',
             suit: SUITS.DOTS,
             name: '7',
-            title: 'kringen 7'
+            title: 'ringen 7'
         },
         {
             id: '53',
             suit: SUITS.DOTS,
             name: '8',
-            title: 'kringen 8'
+            title: 'ringen 8'
         },
         {
             id: '54',
             suit: SUITS.DOTS,
             name: '9',
-            title: 'kringen 9'
+            title: 'ringen 9'
         },
         {
             id: '55',
             suit: SUITS.DOTS,
             name: '1',
-            title: 'kringen 1'
+            title: 'ringen 1'
         },
         {
             id: '56',
             suit: SUITS.DOTS,
             name: '2',
-            title: 'kringen 2'
+            title: 'ringen 2'
         },
         {
             id: '57',
             suit: SUITS.DOTS,
             name: '3',
-            title: 'kringen 3'
+            title: 'ringen 3'
         },
         {
             id: '58',
             suit: SUITS.DOTS,
             name: '4',
-            title: 'kringen 4'
+            title: 'ringen 4'
         },
         {
             id: '59',
             suit: SUITS.DOTS,
             name: '5',
-            title: 'kringen 5'
+            title: 'ringen 5'
         },
         {
             id: '60',
             suit: SUITS.DOTS,
             name: '6',
-            title: 'kringen 6'
+            title: 'ringen 6'
         },
         {
             id: '61',
             suit: SUITS.DOTS,
             name: '7',
-            title: 'kringen 7'
+            title: 'ringen 7'
         },
         {
             id: '62',
             suit: SUITS.DOTS,
             name: '8',
-            title: 'kringen 8'
+            title: 'ringen 8'
         },
         {
             id: '63',
             suit: SUITS.DOTS,
             name: '9',
-            title: 'kringen 9'
+            title: 'ringen 9'
         },
         {
             id: '64',
             suit: SUITS.DOTS,
             name: '1',
-            title: 'kringen 1'
+            title: 'ringen 1'
         },
         {
             id: '65',
             suit: SUITS.DOTS,
             name: '2',
-            title: 'kringen 2'
+            title: 'ringen 2'
         },
         {
             id: '66',
             suit: SUITS.DOTS,
             name: '3',
-            title: 'kringen 3'
+            title: 'ringen 3'
         },
         {
             id: '67',
             suit: SUITS.DOTS,
             name: '4',
-            title: 'kringen 4'
+            title: 'ringen 4'
         },
         {
             id: '68',
             suit: SUITS.DOTS,
             name: '5',
-            title: 'kringen 5'
+            title: 'ringen 5'
         },
         {
             id: '69',
             suit: SUITS.DOTS,
             name: '6',
-            title: 'kringen 6'
+            title: 'ringen 6'
         },
         {
             id: '70',
             suit: SUITS.DOTS,
             name: '7',
-            title: 'kringen 7'
+            title: 'ringen 7'
         },
         {
             id: '71',
             suit: SUITS.DOTS,
             name: '8',
-            title: 'kringen 8'
+            title: 'ringen 8'
         },
         {
             id: '72',
             suit: SUITS.DOTS,
             name: '9',
-            title: 'kringen 9'
+            title: 'ringen 9'
         },
         {
             id: '73',

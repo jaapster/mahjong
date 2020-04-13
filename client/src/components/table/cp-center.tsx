@@ -1,5 +1,5 @@
 import React from 'react';
-import './cp-center.scss';
+import './ss-center.scss';
 import { Tray } from './cp-tray';
 import { getTray } from '../../utils/util-get-tray';
 

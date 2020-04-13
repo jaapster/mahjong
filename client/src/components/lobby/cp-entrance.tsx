@@ -1,6 +1,6 @@
 import React from 'react';
 import bind from 'autobind-decorator';
-import './cp-entrance.scss';
+import './ss-entrance.scss';
 
 interface Props {
 	submit(name: string): void;

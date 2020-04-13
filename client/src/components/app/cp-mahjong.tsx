@@ -1,12 +1,11 @@
 import React from 'react';
 import bind from 'autobind-decorator';
 import axios from 'axios';
-import { Table } from '../table/cp-table';
-import { Lobby } from '../lobby/cp-lobby';
 import { Entrance } from '../lobby/cp-entrance';
+import { Lobby } from '../lobby/cp-lobby';
 import { Menu } from './cp-menu';
-
-import './cp-notification.scss';
+import { Notifications } from './cp-notifications';
+import { Table } from '../table/cp-table';
 
 interface State {
 	player: string | null;
@@ -317,17 +316,7 @@ export class App extends React.Component<any, State> {
 								/>
 							)
 				}
-				<div className="notifications">
-					{
-						notification
-							? (
-								<div className="notification">
-									{ notification }
-								</div>
-							)
-							: null
-					}
-				</div>
+				<Notifications notification={ notification } />
 			</>
 		);
 	}

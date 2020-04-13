@@ -1,7 +1,7 @@
 import React from 'react';
 import bind from 'autobind-decorator';
 import { mergeClasses } from '../../utils/util-merge-classes';
-import './cp-tile.scss';
+import './ss-tile.scss';
 
 interface Props {
 	tile: Mahjong.Tile;

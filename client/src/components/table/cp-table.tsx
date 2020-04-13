@@ -5,7 +5,7 @@ import { Chair } from './cp-chair';
 import { Wall } from './cp-wall';
 import { Exit } from './cp-exit';
 import { Center } from './cp-center';
-import './cp-table.scss';
+import './ss-table.scss';
 
 interface Props {
 	table: Mahjong.Table;
@@ -43,11 +43,12 @@ export class Table extends React.Component<Props, State> {
 		const { dropTarget, dragged } = this.state;
 
 		if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
-			if ((dropTarget as HTMLElement).classList.contains('tile')) {
+			const list = (dropTarget as HTMLElement).classList;
+			if (list.contains('tile') || list.contains('before')) {
 				const parent: HTMLElement = dropTarget.parentNode as HTMLElement;
 
 				if (parent.id) {
-					const index = Array.from(parent.children).indexOf(dropTarget);
+					const index = Array.from(parent.children).indexOf(dropTarget) - 1;
 
 					axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
 						data: {
@@ -62,7 +63,9 @@ export class Table extends React.Component<Props, State> {
 				axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
 					data: {
 						tray: dropTarget.id,
-						index: Array.from(dropTarget.children).length
+						index: dropTarget.id === 't0'
+							? 0
+							: Array.from(dropTarget.children).length
 					}
 				});
 			}

@@ -3,7 +3,7 @@ import { mergeClasses } from '../../utils/util-merge-classes';
 import { Tray } from './cp-tray';
 import { getTray } from '../../utils/util-get-tray';
 import { Portal } from '../app/cp-portal';
-import './cp-chair.scss';
+import './ss-chair.scss';
 
 interface Props {
 	chair: Mahjong.Chair;
@@ -27,6 +27,12 @@ export class Chair extends React.Component<Props> {
 		const isPlayer = index === 0;
 		const isDummy = chair.player == null;
 
+		const set0 = getTray(`${ id }0`, tiles);
+		const set1 = getTray(`${ id }1`, tiles);
+		const rotate = index === 1 || index === 3;
+
+		const total = set0.length + set1.length;
+
 		return (
 			<div className={ mergeClasses(
 					'chair',
@@ -34,21 +40,22 @@ export class Chair extends React.Component<Props> {
 					`chair-${ id }`
 				) }>
 				<Tray
-					id={ (isPlayer || isDummy) ? `${ id }0` : undefined }
-					hidden={ !isPlayer && !chair.reveal }
-					tiles={ getTray(`${ id }0`, tiles) }
-					rotate={ index === 1 || index === 3 }
-					small={ !isPlayer && !chair.reveal }
 					draggable={ isPlayer || isDummy }
+					hidden={ !isPlayer && !chair.reveal }
+					id={ (isPlayer || isDummy) ? `${ id }0` : undefined }
+					rotate={ rotate }
 					showCount
+					small={ !isPlayer && !chair.reveal }
+					tiles={ set0 }
 				/>
 				<Tray
-					id={ isPlayer ? `${ id }1` : undefined }
-					hidden={ false }
-					tiles={ getTray(`${ id }1`, tiles) }
-					rotate={ index === 1 || index === 3 }
-					small={ false }
 					draggable={ isPlayer }
+					hidden={ false }
+					id={ isPlayer ? `${ id }1` : undefined }
+					rotate={ rotate }
+					showCount
+					small={ false }
+					tiles={ set1 }
 				/>
 				<div
 					className={

@@ -1999,9 +1999,9 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-menu.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/ss-menu.scss":
 /*!**********************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-menu.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/ss-menu.scss ***!
   \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2017,10 +2017,10 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-notification.scss":
-/*!******************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-notification.scss ***!
-  \******************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/ss-notifications.scss":
+/*!*******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/ss-notifications.scss ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2035,9 +2035,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/ss-entrance.scss":
 /*!****************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/ss-entrance.scss ***!
   \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2053,9 +2053,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-lobby.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/ss-lobby.scss":
 /*!*************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-lobby.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/ss-lobby.scss ***!
   \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2071,9 +2071,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-center.scss":
 /*!**************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-center.scss ***!
   \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2089,9 +2089,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-chair.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-chair.scss":
 /*!*************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-chair.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-chair.scss ***!
   \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2107,9 +2107,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-exit.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-exit.scss":
 /*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-exit.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-exit.scss ***!
   \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2125,9 +2125,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-table.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-table.scss":
 /*!*************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-table.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-table.scss ***!
   \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2143,9 +2143,9 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tile.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-tile.scss":
 /*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tile.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-tile.scss ***!
   \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2154,16 +2154,16 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tile {\n  transition: padding 100ms; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-disabled {\n    opacity: 0.3; }\n  .tile.tile-small .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n  .tile.tile-hidden .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-small .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n", ""]);
+exports.push([module.i, ".tile {\n  transition: padding 30ms;\n  position: relative; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n    .tile.tile-hovered:nth-child(2) {\n      padding: 0; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-disabled {\n    opacity: 0.3; }\n  .tile.tile-small .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n  .tile.tile-hidden .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-small .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tray.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-tray.scss":
 /*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tray.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-tray.scss ***!
   \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2172,16 +2172,16 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n\n.tile-count {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 5px;\n  background: black;\n  color: white;\n  font-size: 10px;\n  opacity: 0.5; }\n  .tile-count.tile-count-overflow {\n    background: red; }\n", ""]);
+exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n\n.before, .after {\n  flex-grow: 1;\n  height: 58px;\n  background: red;\n  opacity: 0.01; }\n\n.after {\n  pointer-events: none;\n  background: green; }\n\n.tile-count {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 5px;\n  background: black;\n  color: white;\n  font-size: 10px;\n  opacity: 0.5; }\n  .tile-count.tile-count-overflow {\n    background: red; }\n", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-wall.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-wall.scss":
 /*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-wall.scss ***!
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-wall.scss ***!
   \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -31344,15 +31344,15 @@ const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-de
 
 const axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/axios/index.js"));
 
-const cp_table_1 = __webpack_require__(/*! ../table/cp-table */ "./src/components/table/cp-table.tsx");
+const cp_entrance_1 = __webpack_require__(/*! ../lobby/cp-entrance */ "./src/components/lobby/cp-entrance.tsx");
 
 const cp_lobby_1 = __webpack_require__(/*! ../lobby/cp-lobby */ "./src/components/lobby/cp-lobby.tsx");
 
-const cp_entrance_1 = __webpack_require__(/*! ../lobby/cp-entrance */ "./src/components/lobby/cp-entrance.tsx");
-
 const cp_menu_1 = __webpack_require__(/*! ./cp-menu */ "./src/components/app/cp-menu.tsx");
 
-__webpack_require__(/*! ./cp-notification.scss */ "./src/components/app/cp-notification.scss");
+const cp_notifications_1 = __webpack_require__(/*! ./cp-notifications */ "./src/components/app/cp-notifications.tsx");
+
+const cp_table_1 = __webpack_require__(/*! ../table/cp-table */ "./src/components/table/cp-table.tsx");
 
 const Storage = {
   get() {
@@ -31671,47 +31671,14 @@ let App = class App extends react_1.default.Component {
       createTable: this.createTable,
       deleteTable: this.deleteTable,
       logout: this.logout
-    }), react_1.default.createElement("div", {
-      className: "notifications"
-    }, notification ? react_1.default.createElement("div", {
-      className: "notification"
-    }, notification) : null));
+    }), react_1.default.createElement(cp_notifications_1.Notifications, {
+      notification: notification
+    }));
   }
 
 };
 App = __decorate([autobind_decorator_1.default], App);
 exports.App = App;
-
-/***/ }),
-
-/***/ "./src/components/app/cp-menu.scss":
-/*!*****************************************!*\
-  !*** ./src/components/app/cp-menu.scss ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-menu.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-menu.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
 
 /***/ }),
 
@@ -31737,7 +31704,7 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-__webpack_require__(/*! ./cp-menu.scss */ "./src/components/app/cp-menu.scss");
+__webpack_require__(/*! ./ss-menu.scss */ "./src/components/app/ss-menu.scss");
 
 exports.Menu = ({
   toggleTransitMode,
@@ -31777,34 +31744,39 @@ exports.Menu = ({
 
 /***/ }),
 
-/***/ "./src/components/app/cp-notification.scss":
+/***/ "./src/components/app/cp-notifications.tsx":
 /*!*************************************************!*\
-  !*** ./src/components/app/cp-notification.scss ***!
+  !*** ./src/components/app/cp-notifications.tsx ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-notification.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/cp-notification.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
+"use strict";
 
 
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
 
-module.exports = exported;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+__webpack_require__(/*! ./ss-notifications.scss */ "./src/components/app/ss-notifications.scss");
+
+exports.Notifications = ({
+  notification
+}) => {
+  return react_1.default.createElement("div", {
+    className: "notifications"
+  }, notification ? react_1.default.createElement("div", {
+    className: "notification"
+  }, notification) : null);
+};
 
 /***/ }),
 
@@ -31840,15 +31812,46 @@ exports.Portal = ({
 
 /***/ }),
 
-/***/ "./src/components/lobby/cp-entrance.scss":
-/*!***********************************************!*\
-  !*** ./src/components/lobby/cp-entrance.scss ***!
-  \***********************************************/
+/***/ "./src/components/app/ss-menu.scss":
+/*!*****************************************!*\
+  !*** ./src/components/app/ss-menu.scss ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-entrance.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-entrance.scss");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-menu.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/ss-menu.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/app/ss-notifications.scss":
+/*!**************************************************!*\
+  !*** ./src/components/app/ss-notifications.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-notifications.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/app/ss-notifications.scss");
 
             content = content.__esModule ? content.default : content;
 
@@ -31903,7 +31906,7 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 
 const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-decorator */ "./node_modules/autobind-decorator/lib/esm/index.js"));
 
-__webpack_require__(/*! ./cp-entrance.scss */ "./src/components/lobby/cp-entrance.scss");
+__webpack_require__(/*! ./ss-entrance.scss */ "./src/components/lobby/ss-entrance.scss");
 
 let Entrance = class Entrance extends react_1.default.Component {
   constructor() {
@@ -31951,37 +31954,6 @@ exports.Entrance = Entrance;
 
 /***/ }),
 
-/***/ "./src/components/lobby/cp-lobby.scss":
-/*!********************************************!*\
-  !*** ./src/components/lobby/cp-lobby.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-lobby.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/cp-lobby.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
-
-/***/ }),
-
 /***/ "./src/components/lobby/cp-lobby.tsx":
 /*!*******************************************!*\
   !*** ./src/components/lobby/cp-lobby.tsx ***!
@@ -32004,7 +31976,7 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-__webpack_require__(/*! ./cp-lobby.scss */ "./src/components/lobby/cp-lobby.scss");
+__webpack_require__(/*! ./ss-lobby.scss */ "./src/components/lobby/ss-lobby.scss");
 
 exports.Lobby = ({
   createTable,
@@ -32054,15 +32026,46 @@ exports.Lobby = ({
 
 /***/ }),
 
-/***/ "./src/components/table/cp-center.scss":
-/*!*********************************************!*\
-  !*** ./src/components/table/cp-center.scss ***!
-  \*********************************************/
+/***/ "./src/components/lobby/ss-entrance.scss":
+/*!***********************************************!*\
+  !*** ./src/components/lobby/ss-entrance.scss ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-center.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-center.scss");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-entrance.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/ss-entrance.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/lobby/ss-lobby.scss":
+/*!********************************************!*\
+  !*** ./src/components/lobby/ss-lobby.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-lobby.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/lobby/ss-lobby.scss");
 
             content = content.__esModule ? content.default : content;
 
@@ -32107,7 +32110,7 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-__webpack_require__(/*! ./cp-center.scss */ "./src/components/table/cp-center.scss");
+__webpack_require__(/*! ./ss-center.scss */ "./src/components/table/ss-center.scss");
 
 const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/table/cp-tray.tsx");
 
@@ -32136,37 +32139,6 @@ exports.Center = ({
     id: "transit-area"
   }));
 };
-
-/***/ }),
-
-/***/ "./src/components/table/cp-chair.scss":
-/*!********************************************!*\
-  !*** ./src/components/table/cp-chair.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-chair.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-chair.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
 
 /***/ }),
 
@@ -32200,7 +32172,7 @@ const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./
 
 const cp_portal_1 = __webpack_require__(/*! ../app/cp-portal */ "./src/components/app/cp-portal.tsx");
 
-__webpack_require__(/*! ./cp-chair.scss */ "./src/components/table/cp-chair.scss");
+__webpack_require__(/*! ./ss-chair.scss */ "./src/components/table/ss-chair.scss");
 
 const POSITIONS = ['player', 'left', 'top', 'right'];
 
@@ -32223,23 +32195,28 @@ class Chair extends react_1.default.Component {
     } = this.props;
     const isPlayer = index === 0;
     const isDummy = chair.player == null;
+    const set0 = util_get_tray_1.getTray(`${id}0`, tiles);
+    const set1 = util_get_tray_1.getTray(`${id}1`, tiles);
+    const rotate = index === 1 || index === 3;
+    const total = set0.length + set1.length;
     return react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`, `chair-${id}`)
     }, react_1.default.createElement(cp_tray_1.Tray, {
-      id: isPlayer || isDummy ? `${id}0` : undefined,
-      hidden: !isPlayer && !chair.reveal,
-      tiles: util_get_tray_1.getTray(`${id}0`, tiles),
-      rotate: index === 1 || index === 3,
-      small: !isPlayer && !chair.reveal,
       draggable: isPlayer || isDummy,
-      showCount: true
+      hidden: !isPlayer && !chair.reveal,
+      id: isPlayer || isDummy ? `${id}0` : undefined,
+      rotate: rotate,
+      showCount: true,
+      small: !isPlayer && !chair.reveal,
+      tiles: set0
     }), react_1.default.createElement(cp_tray_1.Tray, {
-      id: isPlayer ? `${id}1` : undefined,
+      draggable: isPlayer,
       hidden: false,
-      tiles: util_get_tray_1.getTray(`${id}1`, tiles),
-      rotate: index === 1 || index === 3,
+      id: isPlayer ? `${id}1` : undefined,
+      rotate: rotate,
+      showCount: true,
       small: false,
-      draggable: isPlayer
+      tiles: set1
     }), react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('player', {
         'player-unseated': !chair.seated
@@ -32271,37 +32248,6 @@ exports.Chair = Chair;
 
 /***/ }),
 
-/***/ "./src/components/table/cp-exit.scss":
-/*!*******************************************!*\
-  !*** ./src/components/table/cp-exit.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-exit.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-exit.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
-
-/***/ }),
-
 /***/ "./src/components/table/cp-exit.tsx":
 /*!******************************************!*\
   !*** ./src/components/table/cp-exit.tsx ***!
@@ -32324,7 +32270,7 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-__webpack_require__(/*! ./cp-exit.scss */ "./src/components/table/cp-exit.scss");
+__webpack_require__(/*! ./ss-exit.scss */ "./src/components/table/ss-exit.scss");
 
 exports.Exit = ({
   onClick
@@ -32335,37 +32281,6 @@ exports.Exit = ({
     title: "Terug naar de lobby"
   }, react_1.default.createElement("span", null, "\u2799"));
 };
-
-/***/ }),
-
-/***/ "./src/components/table/cp-table.scss":
-/*!********************************************!*\
-  !*** ./src/components/table/cp-table.scss ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-table.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-table.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
 
 /***/ }),
 
@@ -32411,7 +32326,7 @@ const cp_exit_1 = __webpack_require__(/*! ./cp-exit */ "./src/components/table/c
 
 const cp_center_1 = __webpack_require__(/*! ./cp-center */ "./src/components/table/cp-center.tsx");
 
-__webpack_require__(/*! ./cp-table.scss */ "./src/components/table/cp-table.scss");
+__webpack_require__(/*! ./ss-table.scss */ "./src/components/table/ss-table.scss");
 
 let Table = class Table extends react_1.default.Component {
   onDragStart(e) {
@@ -32445,11 +32360,13 @@ let Table = class Table extends react_1.default.Component {
     } = this.state;
 
     if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
-      if (dropTarget.classList.contains('tile')) {
+      const list = dropTarget.classList;
+
+      if (list.contains('tile') || list.contains('before')) {
         const parent = dropTarget.parentNode;
 
         if (parent.id) {
-          const index = Array.from(parent.children).indexOf(dropTarget);
+          const index = Array.from(parent.children).indexOf(dropTarget) - 1;
           axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
             data: {
               tray: parent.id,
@@ -32461,7 +32378,7 @@ let Table = class Table extends react_1.default.Component {
         axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
           data: {
             tray: dropTarget.id,
-            index: Array.from(dropTarget.children).length
+            index: dropTarget.id === 't0' ? 0 : Array.from(dropTarget.children).length
           }
         });
       }
@@ -32527,37 +32444,6 @@ exports.Table = Table;
 
 /***/ }),
 
-/***/ "./src/components/table/cp-tile.scss":
-/*!*******************************************!*\
-  !*** ./src/components/table/cp-tile.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-tile.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tile.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
-
-/***/ }),
-
 /***/ "./src/components/table/cp-tile.tsx":
 /*!******************************************!*\
   !*** ./src/components/table/cp-tile.tsx ***!
@@ -32592,7 +32478,7 @@ const autobind_decorator_1 = __importDefault(__webpack_require__(/*! autobind-de
 
 const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/utils/util-merge-classes.ts");
 
-__webpack_require__(/*! ./cp-tile.scss */ "./src/components/table/cp-tile.scss");
+__webpack_require__(/*! ./ss-tile.scss */ "./src/components/table/ss-tile.scss");
 
 let Tile = class Tile extends react_1.default.Component {
   constructor() {
@@ -32684,37 +32570,6 @@ exports.Tile = Tile;
 
 /***/ }),
 
-/***/ "./src/components/table/cp-tray.scss":
-/*!*******************************************!*\
-  !*** ./src/components/table/cp-tray.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-tray.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-tray.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
-
-/***/ }),
-
 /***/ "./src/components/table/cp-tray.tsx":
 /*!******************************************!*\
   !*** ./src/components/table/cp-tray.tsx ***!
@@ -32741,7 +32596,7 @@ const cp_tile_1 = __webpack_require__(/*! ./cp-tile */ "./src/components/table/c
 
 const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/utils/util-merge-classes.ts");
 
-__webpack_require__(/*! ./cp-tray.scss */ "./src/components/table/cp-tray.scss");
+__webpack_require__(/*! ./ss-tray.scss */ "./src/components/table/ss-tray.scss");
 
 exports.Tray = ({
   id,
@@ -32753,12 +32608,17 @@ exports.Tray = ({
   draggable,
   showCount
 }) => {
+  var _a;
+
   return react_1.default.createElement("div", {
     id: id,
     className: util_merge_classes_1.mergeClasses('tray', {
       'tray-hidden': hidden
     })
-  }, tiles.map((t, i) => react_1.default.createElement(cp_tile_1.Tile, {
+  }, tiles.length > 0 ? react_1.default.createElement("div", {
+    className: "before",
+    id: (_a = tiles[0]) === null || _a === void 0 ? void 0 : _a.id
+  }) : null, tiles.map((t, i) => react_1.default.createElement(cp_tile_1.Tile, {
     key: t.id,
     tile: t,
     hidden: hidden,
@@ -32766,43 +32626,14 @@ exports.Tray = ({
     blank: blank,
     small: small,
     draggable: draggable
-  })), showCount ? react_1.default.createElement("div", {
+  })), react_1.default.createElement("div", {
+    className: "after"
+  }), showCount ? react_1.default.createElement("div", {
     className: util_merge_classes_1.mergeClasses('tile-count', {
       'tile-count-overflow': tiles.length > 13
     })
   }, tiles.length) : null);
 };
-
-/***/ }),
-
-/***/ "./src/components/table/cp-wall.scss":
-/*!*******************************************!*\
-  !*** ./src/components/table/cp-wall.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cp-wall.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/cp-wall.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
 
 /***/ }),
 
@@ -32832,7 +32663,7 @@ const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/table/c
 
 const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./src/utils/util-get-tray.ts");
 
-__webpack_require__(/*! ./cp-wall.scss */ "./src/components/table/cp-wall.scss");
+__webpack_require__(/*! ./ss-wall.scss */ "./src/components/table/ss-wall.scss");
 
 exports.Wall = ({
   tiles
@@ -32852,6 +32683,223 @@ exports.Wall = ({
     className: "tile-count"
   }, count));
 };
+
+/***/ }),
+
+/***/ "./src/components/table/ss-center.scss":
+/*!*********************************************!*\
+  !*** ./src/components/table/ss-center.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-center.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-center.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/ss-chair.scss":
+/*!********************************************!*\
+  !*** ./src/components/table/ss-chair.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-chair.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-chair.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/ss-exit.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/ss-exit.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-exit.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-exit.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/ss-table.scss":
+/*!********************************************!*\
+  !*** ./src/components/table/ss-table.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-table.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-table.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/ss-tile.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/ss-tile.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-tile.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-tile.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/ss-tray.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/ss-tray.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-tray.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-tray.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./src/components/table/ss-wall.scss":
+/*!*******************************************!*\
+  !*** ./src/components/table/ss-wall.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-wall.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-wall.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
 
 /***/ }),
 

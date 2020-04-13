@@ -1,6 +1,6 @@
 .tile {
-	transition: padding 100ms;
-	// overflow: hidden;
+	transition: padding 30ms;
+	position: relative;
 
 	.tile-graphic {
 		pointer-events: none;
@@ -32,9 +32,9 @@
 			&.tile-symbol-dragons-white { background-image: url(/tiles/Haku.svg); }
 
 			&.tile-symbol-winds-east { background-image: url(/tiles/Ton.svg); }
-			&.tile-symbol-winds-north { background-image: url(/tiles/Nan.svg); }
+			&.tile-symbol-winds-north { background-image: url(/tiles/Pei.svg); }
 			&.tile-symbol-winds-west { background-image: url(/tiles/Shaa.svg); }
-			&.tile-symbol-winds-south { background-image: url(/tiles/Pei.svg); }
+			&.tile-symbol-winds-south { background-image: url(/tiles/Nan.svg); }
 
 			&.tile-symbol-dots-1 { background-image: url(/tiles/Pin1.svg); }
 			&.tile-symbol-dots-2 { background-image: url(/tiles/Pin2.svg); }
@@ -70,6 +70,10 @@
 
 	&.tile-hovered {
 		padding: 0 0 0 38px;
+
+		&:nth-child(2) {
+			padding: 0;
+		}
 	}
 
 	&.tile-dragged {

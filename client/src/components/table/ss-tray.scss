@@ -8,6 +8,18 @@
 	background: rgba(0, 0, 0, 0.05);
 }
 
+.before, .after {
+	flex-grow: 1;
+	height: 58px;
+	background: red;
+	opacity: 0.01;
+}
+
+.after {
+	pointer-events: none;
+	background: green;
+}
+
 .tile-count {
 	position: absolute;
 	bottom: 0;

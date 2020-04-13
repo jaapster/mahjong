@@ -1,5 +1,5 @@
 import React from 'react';
-import './cp-lobby.scss';
+import './ss-lobby.scss';
 
 interface Props {
 	createTable(): void;

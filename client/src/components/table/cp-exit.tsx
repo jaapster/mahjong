@@ -1,5 +1,5 @@
 import React from 'react';
-import './cp-exit.scss';
+import './ss-exit.scss';
 
 interface Props {
 	onClick(): void;
