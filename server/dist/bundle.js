@@ -32654,7 +32654,7 @@ let Tile = class Tile extends react_1.default.Component {
       onDragEnter: this.onDragEnter,
       onDragLeave: this.onDragLeave,
       onDragStart: draggable ? this.onDragStart : e => e.preventDefault(),
-      title: blank || hidden ? '?' : title
+      title: blank || hidden ? undefined : title
     }, react_1.default.createElement("div", {
       className: "tile-graphic"
     }, react_1.default.createElement("div", {
