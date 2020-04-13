@@ -32241,7 +32241,7 @@ class Chair extends react_1.default.Component {
     }, react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('transit', `transit-${index}`)
     }, react_1.default.createElement(cp_tray_1.Tray, {
-      id: index === 0 ? `${id}transit` : undefined,
+      id: isPlayer || isDummy ? `${id}transit` : undefined,
       hidden: true,
       tiles: util_get_tray_1.getTray(`${id}transit`, tiles),
       rotate: index === 1 || index === 3,

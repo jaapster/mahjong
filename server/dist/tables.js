@@ -71,6 +71,13 @@ exports.Tables = {
     moveTile(id, tileId, { tray, index }) {
         const table = tables.find(table => table.id === id);
         const tile = table.game.tiles.find(tile => tile.id === tileId);
+        if (!tile) {
+            return {
+                to: tray,
+                from: tray,
+                tile: tileId
+            };
+        }
         const from = tile.tray;
         // check for illegal moves
         // move tile from wall to table
@@ -81,16 +88,6 @@ exports.Tables = {
                 tile: tileId
             };
         }
-        // move tile from table to open tray
-        // if (tray === 'a1' || tray === 'b1' || tray === 'c1' || tray === 'd1') {
-        // 	if (from === 't1') {
-        // 		return {
-        // 			to: tray,
-        // 			from: tray,
-        // 			tile: tileId
-        // 		}
-        // 	}
-        // }
         // move tile from open tray to table
         if (from === 'a1' || from === 'b1' || from === 'c1' || from === 'd1') {
             if (tray === 't1') {

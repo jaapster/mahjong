@@ -101,7 +101,7 @@ export class Chair extends React.Component<Props> {
 										`transit-${ index }`
 									) }>
 									<Tray
-										id={ index === 0 ? `${ id }transit` : undefined }
+										id={isPlayer || isDummy ? `${ id }transit` : undefined }
 										hidden={ true }
 										tiles={ getTray(`${ id }transit`, tiles) }
 										rotate={ index === 1 || index === 3 }
