@@ -28,7 +28,7 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable }: Pro
 			}
 		>
 			{
-				tiles.map(t => (
+				tiles.map((t, i) => (
 					<Tile
 						key={ t.id }
 						tile={ t }

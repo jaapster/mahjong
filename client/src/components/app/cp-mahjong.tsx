@@ -13,11 +13,7 @@ interface State {
 	table: Mahjong.Table | null;
 	tables: Mahjong.Table[];
 	showMenu: boolean;
-	tileMove?: {
-		from: string;
-		to: string;
-		title: string;
-	}
+	notification?: string
 }
 
 const Storage = {
@@ -42,10 +38,11 @@ const Storage = {
 
 @bind
 export class App extends React.Component<any, State> {
-	state = { player: null, table: null, tables: [], showMenu: false, tileMove: undefined };
+	state = { player: null, table: null, tables: [], showMenu: false, notification: undefined };
 
 	private tableStream: any;
 	private tablesStream: any;
+	private timeout: any;
 
 	componentDidMount() {
 		this.getTables().then(() => {
@@ -175,7 +172,8 @@ export class App extends React.Component<any, State> {
 		const { tile, from, to } = JSON.parse(event.data);
 
 		if (from !== to) {
-			const { table } = this.state;
+			let str;
+			const { table, player } = this.state;
 			const { title } = table.game.tiles.find(t => t.id === tile);
 
 			const map = {
@@ -183,27 +181,32 @@ export class App extends React.Component<any, State> {
 				'b0': table.chairs.find(chair => chair.id === 'b').player,
 				'c0': table.chairs.find(chair => chair.id === 'c').player,
 				'd0': table.chairs.find(chair => chair.id === 'd').player,
+				'a1': table.chairs.find(chair => chair.id === 'a').player,
+				'b1': table.chairs.find(chair => chair.id === 'b').player,
+				'c1': table.chairs.find(chair => chair.id === 'c').player,
+				'd1': table.chairs.find(chair => chair.id === 'd').player
 			};
 
-			console.log(table);
+			if (map[from] === player || map[to] === player) {
+				return;
+			}
 
-			this.setState({
-				tileMove: {
-					title: from === 't0'
-						? 'een steen'
-						: title,
-					from: from === 't0'
-						? 'de muur'
-						: from === 't1'
-							? 'de tafel'
-							: map[from] ?? 'een dummy',
-					to: to === 't1'
-						? 'de tafel'
-						: map[to] ?? 'een dummy'
-				}
-			});
+			if (from === 't0') {
+				// from wall
+				str = `${ map[to] ?? 'Een dummy' } pakt een steen van de muur`;
+			} else if (from === 't1') {
+				// from table
+				str = `${ map[to] ?? 'Een dummy' } pakt een "${ title }" van de tafel`;
+			} else if (to === 't1') {
+				// to table
+				str = `${ map[from] ?? 'Een dummy' } legt een "${ title }" op de tafel`;
+			}
 
-			setTimeout(() => this.setState({ tileMove: undefined }), 5000);
+			this.setState({ notification: str });
+
+			clearTimeout(this.timeout);
+
+			this.timeout = setTimeout(() => this.setState({ notification: undefined }), 50000);
 		}
 	}
 
@@ -264,7 +267,7 @@ export class App extends React.Component<any, State> {
 	}
 
 	render() {
-		const { player, table, tables, showMenu, tileMove } = this.state;
+		const { player, table, tables, showMenu, notification } = this.state;
 
 		return (
 			<>
@@ -311,15 +314,17 @@ export class App extends React.Component<any, State> {
 								/>
 							)
 				}
-				{
-					tileMove
-						? (
-							<div className="notification">
-								{ tileMove.title } van { tileMove.from } naar { tileMove.to }
-							</div>
-						)
-						: null
-				}
+				<div className="notifications">
+					{
+						notification
+							? (
+								<div className="notification">
+									{ notification }
+								</div>
+							)
+							: null
+					}
+				</div>
 			</>
 		);
 	}

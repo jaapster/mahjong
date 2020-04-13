@@ -51,8 +51,6 @@ export class Tile extends React.Component<Props, State> {
 		const { tile: { id, suit, name }, hidden, rotate, blank, small, draggable } = this.props;
 		const { hovered, dragged } = this.state;
 
-		// const draggable = true;
-
 		return (
 			<div
 				className={ mergeClasses(

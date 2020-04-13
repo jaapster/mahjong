@@ -50,7 +50,9 @@ export class Table extends React.Component<Props, State> {
 				axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
 					data: {
 						tray: parent.id,
-						index
+						index: parent.id === 't1'
+							? Array.from(parent.children).length
+							: index
 					}
 				});
 			} else {

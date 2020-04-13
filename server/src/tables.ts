@@ -114,11 +114,19 @@ export const Tables = {
 
 			from = fromTray;
 
-			game.tiles = game.tiles.map(t => (
-				t.tray === tray && t.index >= index
-					? { ...t, index: t.index + 1 }
-					: t
-			));
+			if (tray === 't1') {
+				game.tiles = game.tiles.map(t => (
+					t.tray === tray
+						? { ...t, tray: 't2' }
+						: t
+				));
+			} else {
+				game.tiles = game.tiles.map(t => (
+					t.tray === tray && t.index >= index
+						? { ...t, index: t.index + 1 }
+						: t
+				));
+			}
 
 			game.tiles = game.tiles.map(t => (
 				t.tray === fromTray && t.index > fromIndex

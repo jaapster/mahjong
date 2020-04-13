@@ -76,6 +76,10 @@
 		opacity: 0.3;
 	}
 
+	&.tile-disabled {
+		opacity: 0.3;
+	}
+
 	&.tile-small {
 		.tile-graphic {
 			width: 16px;

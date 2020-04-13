@@ -7,13 +7,27 @@
 	bottom: 240px;
 	right: $large;
 	box-shadow: inset 0 0 5px grey;
+	background: rgba(0, 0, 0, 0.05);
 
 	.tray {
 		position: absolute;
-		top: 0px;
 		left: 0px;
 		right: 0px;
-		bottom: 0px;
+		background: none;
+
+		&#t1 {
+			bottom: 0px;
+			height: 50%;
+			border: 1px dashed rgba(0, 0, 0, 0.3);
+			margin: 5px;
+		}
+
+		&#t2 {
+			top: 0px;
+			height: 50%;
+			pointer-events: none;
+			opacity: 0.5;
+		}
 	}
 
 	.transit-area {

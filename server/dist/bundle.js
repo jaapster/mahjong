@@ -2028,7 +2028,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".notification {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 8px;\n  background: red;\n  color: white; }\n", ""]);
+exports.push([module.i, ".notifications {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  pointer-events: none; }\n  .notifications .notification {\n    margin-top: 125px;\n    background: white;\n    width: 360px;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n    padding: 20px;\n    text-align: center;\n    border-radius: 2px; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2082,7 +2082,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey; }\n  .center .tray {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 200px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-0 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-1 {\n        height: 200px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-1 .tray {\n          flex-direction: column; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 200px;\n        top: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-2 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-3 {\n        height: 200px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-3 .tray {\n          flex-direction: column; }\n", ""]);
+exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey;\n  background: rgba(0, 0, 0, 0.05); }\n  .center .tray {\n    position: absolute;\n    left: 0px;\n    right: 0px;\n    background: none; }\n    .center .tray#t1 {\n      bottom: 0px;\n      height: 50%;\n      border: 1px dashed rgba(0, 0, 0, 0.3);\n      margin: 5px; }\n    .center .tray#t2 {\n      top: 0px;\n      height: 50%;\n      pointer-events: none;\n      opacity: 0.5; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 200px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-0 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-1 {\n        height: 200px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-1 .tray {\n          flex-direction: column; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 200px;\n        top: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-2 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-3 {\n        height: 200px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-3 .tray {\n          flex-direction: column; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2154,7 +2154,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tile {\n  transition: padding 100ms;\n  overflow: hidden; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-small .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n  .tile.tile-hidden .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-small .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n", ""]);
+exports.push([module.i, ".tile {\n  transition: padding 100ms;\n  overflow: hidden; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/Haku.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-disabled {\n    opacity: 0.3; }\n  .tile.tile-small .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n  .tile.tile-hidden .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-small .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31382,7 +31382,7 @@ let App = class App extends react_1.default.Component {
       table: null,
       tables: [],
       showMenu: false,
-      tileMove: undefined
+      notification: undefined
     };
   }
 
@@ -31516,7 +31516,7 @@ let App = class App extends react_1.default.Component {
   }
 
   onTileMove(event) {
-    var _a, _b;
+    var _a, _b, _c;
 
     const {
       tile,
@@ -31525,8 +31525,10 @@ let App = class App extends react_1.default.Component {
     } = JSON.parse(event.data);
 
     if (from !== to) {
+      let str;
       const {
-        table
+        table,
+        player
       } = this.state;
       const {
         title
@@ -31535,19 +31537,35 @@ let App = class App extends react_1.default.Component {
         'a0': table.chairs.find(chair => chair.id === 'a').player,
         'b0': table.chairs.find(chair => chair.id === 'b').player,
         'c0': table.chairs.find(chair => chair.id === 'c').player,
-        'd0': table.chairs.find(chair => chair.id === 'd').player
+        'd0': table.chairs.find(chair => chair.id === 'd').player,
+        'a1': table.chairs.find(chair => chair.id === 'a').player,
+        'b1': table.chairs.find(chair => chair.id === 'b').player,
+        'c1': table.chairs.find(chair => chair.id === 'c').player,
+        'd1': table.chairs.find(chair => chair.id === 'd').player
       };
-      console.log(table);
+
+      if (map[from] === player || map[to] === player) {
+        return;
+      }
+
+      if (from === 't0') {
+        // from wall
+        str = `${(_a = map[to]) !== null && _a !== void 0 ? _a : 'Een dummy'} pakt een steen van de muur`;
+      } else if (from === 't1') {
+        // from table
+        str = `${(_b = map[to]) !== null && _b !== void 0 ? _b : 'Een dummy'} pakt een "${title}" van de tafel`;
+      } else if (to === 't1') {
+        // to table
+        str = `${(_c = map[from]) !== null && _c !== void 0 ? _c : 'Een dummy'} legt een "${title}" op de tafel`;
+      }
+
       this.setState({
-        tileMove: {
-          title: from === 't0' ? 'een steen' : title,
-          from: from === 't0' ? 'de muur' : from === 't1' ? 'de tafel' : (_a = map[from]) !== null && _a !== void 0 ? _a : 'een dummy',
-          to: to === 't1' ? 'de tafel' : (_b = map[to]) !== null && _b !== void 0 ? _b : 'een dummy'
-        }
+        notification: str
       });
-      setTimeout(() => this.setState({
-        tileMove: undefined
-      }), 5000);
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => this.setState({
+        notification: undefined
+      }), 50000);
     }
   }
 
@@ -31628,7 +31646,7 @@ let App = class App extends react_1.default.Component {
       table,
       tables,
       showMenu,
-      tileMove
+      notification
     } = this.state;
     return react_1.default.createElement(react_1.default.Fragment, null, player == null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("h1", null, "Mahjong"), react_1.default.createElement(cp_entrance_1.Entrance, {
       submit: this.submitName
@@ -31650,9 +31668,11 @@ let App = class App extends react_1.default.Component {
       createTable: this.createTable,
       deleteTable: this.deleteTable,
       logout: this.logout
-    }), tileMove ? react_1.default.createElement("div", {
+    }), react_1.default.createElement("div", {
+      className: "notifications"
+    }, notification ? react_1.default.createElement("div", {
       className: "notification"
-    }, tileMove.title, " van ", tileMove.from, " naar ", tileMove.to) : null);
+    }, notification) : null));
   }
 
 };
@@ -32085,6 +32105,12 @@ exports.Center = ({
   return react_1.default.createElement("div", {
     className: "center"
   }, react_1.default.createElement(cp_tray_1.Tray, {
+    id: "t2",
+    hidden: false,
+    tiles: util_get_tray_1.getTray('t2', tiles),
+    small: false,
+    draggable: false
+  }), react_1.default.createElement(cp_tray_1.Tray, {
     id: "t1",
     hidden: false,
     tiles: util_get_tray_1.getTray('t1', tiles),
@@ -32408,7 +32434,7 @@ let Table = class Table extends react_1.default.Component {
         axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
           data: {
             tray: parent.id,
-            index
+            index: parent.id === 't1' ? Array.from(parent.children).length : index
           }
         });
       } else {
@@ -32606,8 +32632,7 @@ let Tile = class Tile extends react_1.default.Component {
     const {
       hovered,
       dragged
-    } = this.state; // const draggable = true;
-
+    } = this.state;
     return react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('tile', {
         'tile-hidden': hidden,
@@ -32710,7 +32735,7 @@ exports.Tray = ({
       'tray-hidden': hidden,
       'tray-overflow': tiles.length > 13
     })
-  }, tiles.map(t => react_1.default.createElement(cp_tile_1.Tile, {
+  }, tiles.map((t, i) => react_1.default.createElement(cp_tile_1.Tile, {
     key: t.id,
     tile: t,
     hidden: hidden,

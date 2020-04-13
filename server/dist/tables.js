@@ -79,8 +79,14 @@ exports.Tables = {
             const fromTray = tile.tray;
             const fromIndex = tile.index;
             from = fromTray;
-            game.tiles = game.tiles.map(t => (t.tray === tray && t.index >= index
-                ? Object.assign(Object.assign({}, t), { index: t.index + 1 }) : t));
+            if (tray === 't1') {
+                game.tiles = game.tiles.map(t => (t.tray === tray
+                    ? Object.assign(Object.assign({}, t), { tray: 't2' }) : t));
+            }
+            else {
+                game.tiles = game.tiles.map(t => (t.tray === tray && t.index >= index
+                    ? Object.assign(Object.assign({}, t), { index: t.index + 1 }) : t));
+            }
             game.tiles = game.tiles.map(t => (t.tray === fromTray && t.index > fromIndex
                 ? Object.assign(Object.assign({}, t), { index: t.index - 1 }) : t));
             game.tiles = game.tiles.map(t => (t.id === tileId
