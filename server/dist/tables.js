@@ -68,38 +68,35 @@ exports.Tables = {
                     tiles: util_deal_tiles_1.dealTiles(tiles_1.getTileSet())
                 } }) : table));
     },
-    moveTile(id, tileId, { tray, index }) {
-        const table = tables.find(table => table.id === id);
+    moveTile(tableId, tileId, { tray, index }) {
+        const table = tables.find(table => table.id === tableId);
         const tile = table.game.tiles.find(tile => tile.id === tileId);
+        const openTrays = ['a1', 'b1', 'c1', 'd1'];
+        const noMove = {
+            to: tray,
+            from: tray,
+            tile: tileId
+        };
         if (!tile) {
-            return {
-                to: tray,
-                from: tray,
-                tile: tileId
-            };
+            console.log('tile not found with id', tileId);
+            return noMove;
         }
         const from = tile.tray;
         // check for illegal moves
         // move tile from wall to table
         if (tray === 't1' && tile.tray === 't0') {
-            return {
-                to: tray,
-                from: tray,
-                tile: tileId
-            };
+            return noMove;
+        }
+        // move tile from wall to open tray
+        if (openTrays.includes(tray) && tile.tray === 't0') {
+            return noMove;
         }
         // move tile from open tray to table
-        if (from === 'a1' || from === 'b1' || from === 'c1' || from === 'd1') {
-            if (tray === 't1') {
-                return {
-                    to: tray,
-                    from: tray,
-                    tile: tileId
-                };
-            }
+        if (openTrays.includes(from) && tray === 't1') {
+            return noMove;
         }
         tables = tables.map(table => {
-            if (table.id !== id) {
+            if (table.id !== tableId) {
                 return table;
             }
             const { game } = table;
@@ -120,6 +117,9 @@ exports.Tables = {
                 ? Object.assign(Object.assign({}, t), { tray, index: index - (fromTray === tray && fromIndex < index ? 1 : 0) }) : t));
             return table;
         });
+        if (from !== tray) {
+            console.log('Tile', tileId, 'moved from', from, 'to', tray);
+        }
         return {
             from,
             to: tray,

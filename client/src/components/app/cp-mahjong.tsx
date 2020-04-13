@@ -194,6 +194,9 @@ export class App extends React.Component<any, State> {
 			if (from === 't0') {
 				// from wall
 				str = `${ map[to] ?? 'Een dummy' } pakt een steen van de muur`;
+			} else if (to === 't0') {
+				// to wall
+				str = `${ map[from] ?? 'Een dummy' } legt een steen op de muur`;
 			} else if (from === 't1') {
 				// from table
 				str = `${ map[to] ?? 'Een dummy' } pakt een "${ title }" van de tafel`;

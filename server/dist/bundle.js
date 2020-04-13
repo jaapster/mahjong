@@ -31516,7 +31516,7 @@ let App = class App extends react_1.default.Component {
   }
 
   onTileMove(event) {
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 
     const {
       tile,
@@ -31551,12 +31551,15 @@ let App = class App extends react_1.default.Component {
       if (from === 't0') {
         // from wall
         str = `${(_a = map[to]) !== null && _a !== void 0 ? _a : 'Een dummy'} pakt een steen van de muur`;
+      } else if (to === 't0') {
+        // to wall
+        str = `${(_b = map[from]) !== null && _b !== void 0 ? _b : 'Een dummy'} legt een steen op de muur`;
       } else if (from === 't1') {
         // from table
-        str = `${(_b = map[to]) !== null && _b !== void 0 ? _b : 'Een dummy'} pakt een "${title}" van de tafel`;
+        str = `${(_c = map[to]) !== null && _c !== void 0 ? _c : 'Een dummy'} pakt een "${title}" van de tafel`;
       } else if (to === 't1') {
         // to table
-        str = `${(_c = map[from]) !== null && _c !== void 0 ? _c : 'Een dummy'} legt een "${title}" op de tafel`;
+        str = `${(_d = map[from]) !== null && _d !== void 0 ? _d : 'Een dummy'} legt een "${title}" op de tafel`;
       }
 
       this.setState({
@@ -31746,13 +31749,24 @@ exports.Menu = ({
     className: "menu"
   }, react_1.default.createElement("div", {
     className: "menu-body"
-  }, react_1.default.createElement("a", {
+  }, table.transit ? table.game.tiles.filter(tile => tile.tray.match('transit')).length ? react_1.default.createElement("a", {
+    href: "#",
+    style: {
+      opacity: 0.3
+    }
+  }, "Zet doorschuiven uit") : react_1.default.createElement("a", {
     href: "#",
     onClick: () => {
       toggleTransitMode();
       close();
     }
-  }, "Zet doorschuiven ", table.transit ? 'uit' : 'aan'), react_1.default.createElement("a", {
+  }, "Zet doorschuiven uit") : react_1.default.createElement("a", {
+    href: "#",
+    onClick: () => {
+      toggleTransitMode();
+      close();
+    }
+  }, "Zet doorschuiven aan"), react_1.default.createElement("a", {
     href: "#",
     onClick: () => {
       startNewGame();
