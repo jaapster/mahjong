@@ -48,7 +48,7 @@ export class Tile extends React.Component<Props, State> {
 	}
 
 	render() {
-		const { tile: { id, suit, name }, hidden, rotate, blank, small, draggable } = this.props;
+		const { tile: { id, suit, name, title }, hidden, rotate, blank, small, draggable } = this.props;
 		const { hovered, dragged } = this.state;
 
 		return (
@@ -69,7 +69,8 @@ export class Tile extends React.Component<Props, State> {
 				onDragEnd={ draggable ? this.onDragEnd : undefined }
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
-				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault()  }
+				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
+				title={ blank ? '?' : title }
 			>
 				<div className="tile-graphic">
 					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />

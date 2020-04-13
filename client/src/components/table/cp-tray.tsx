@@ -11,9 +11,10 @@ interface Props {
 	blank?: boolean;
 	small: boolean;
 	draggable: boolean;
+	showCount?: boolean;
 }
 
-export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable }: Props) => {
+export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount }: Props) => {
 	return (
 		<div
 			id={ id }
@@ -21,8 +22,7 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable }: Pro
 				mergeClasses(
 					'tray',
 					{
-						'tray-hidden': hidden,
-						'tray-overflow': tiles.length > 13
+						'tray-hidden': hidden
 					}
 				)
 			}
@@ -39,6 +39,22 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable }: Pro
 						draggable={ draggable }
 					/>
 				))
+			}
+			{
+				showCount
+					? (
+						<div
+							className={ mergeClasses(
+								'tile-count',
+								{
+									'tile-count-overflow': tiles.length > 13
+								}
+							) }
+						>
+							{ tiles.length }
+						</div>
+					)
+					: null
 			}
 		</div>
 	)

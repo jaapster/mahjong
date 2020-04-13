@@ -40,6 +40,7 @@ export class Chair extends React.Component<Props> {
 					rotate={ index === 1 || index === 3 }
 					small={ !isPlayer && !chair.reveal }
 					draggable={ isPlayer || isDummy }
+					showCount
 				/>
 				<Tray
 					id={ isPlayer ? `${ id }1` : undefined }

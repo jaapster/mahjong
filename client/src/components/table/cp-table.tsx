@@ -45,16 +45,19 @@ export class Table extends React.Component<Props, State> {
 		if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
 			if ((dropTarget as HTMLElement).classList.contains('tile')) {
 				const parent: HTMLElement = dropTarget.parentNode as HTMLElement;
-				const index = Array.from(parent.children).indexOf(dropTarget);
 
-				axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
-					data: {
-						tray: parent.id,
-						index: parent.id === 't1'
-							? Array.from(parent.children).length
-							: index
-					}
-				});
+				if (parent.id) {
+					const index = Array.from(parent.children).indexOf(dropTarget);
+
+					axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
+						data: {
+							tray: parent.id,
+							index: parent.id === 't1'
+								? Array.from(parent.children).length
+								: index
+						}
+					});
+				}
 			} else {
 				axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
 					data: {

@@ -206,7 +206,7 @@ export class App extends React.Component<any, State> {
 
 			clearTimeout(this.timeout);
 
-			this.timeout = setTimeout(() => this.setState({ notification: undefined }), 50000);
+			this.timeout = setTimeout(() => this.setState({ notification: undefined }), 5000);
 		}
 	}
 

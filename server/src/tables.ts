@@ -100,7 +100,41 @@ export const Tables = {
 	},
 
 	moveTile(id: string, tileId: string, { tray, index }: { tray: string; index: number }) {
-		let from;
+		const table = tables.find(table => table.id === id);
+		const tile = table.game.tiles.find(tile => tile.id === tileId);
+		const from = tile.tray;
+
+		// check for illegal moves
+		// move tile to wall or from wall to table
+		if (tray === 't1' && tile.tray === 't0' || tray === 't0') {
+			return {
+				to: tray,
+				from: tray,
+				tile: tileId
+			}
+		}
+
+		// move tile from table to open tray
+		if (tray === 'a1' || tray === 'b1' || tray === 'c1' || tray === 'd1') {
+			if (from === 't1') {
+				return {
+					to: tray,
+					from: tray,
+					tile: tileId
+				}
+			}
+		}
+
+		// move tile from open tray to table
+		if (from === 'a1' || from === 'b1' || from === 'c1' || from === 'd1') {
+			if (tray === 't1') {
+				return {
+					to: tray,
+					from: tray,
+					tile: tileId
+				}
+			}
+		}
 
 		tables = tables.map(table => {
 			if (table.id !== id) {
@@ -111,8 +145,6 @@ export const Tables = {
 			const tile = game.tiles.find(t => t.id === tileId);
 			const fromTray = tile.tray;
 			const fromIndex = tile.index;
-
-			from = fromTray;
 
 			if (tray === 't1') {
 				game.tiles = game.tiles.map(t => (
