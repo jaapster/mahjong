@@ -108,7 +108,10 @@ export class Table extends React.Component<Props, State> {
 							/>
 						))
 				}
-				<Center tiles={ tiles } />
+				<Center
+					tiles={ tiles }
+					transit={ table.transit }
+				/>
 				<Wall tiles={ tiles } />
 				<Exit onClick={ this.leaveTable } />
 			</div>

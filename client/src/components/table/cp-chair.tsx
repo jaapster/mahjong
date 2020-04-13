@@ -24,6 +24,8 @@ export class Chair extends React.Component<Props> {
 	render() {
 		const { chair: { id }, chair, index, tiles, reveal, transit } = this.props;
 
+		console.log('transit', transit);
+
 		const isPlayer = index === 0;
 		const isDummy = chair.player == null;
 

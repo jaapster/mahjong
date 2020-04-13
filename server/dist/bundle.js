@@ -2082,7 +2082,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey;\n  background: rgba(0, 0, 0, 0.05); }\n  .center .tray {\n    position: absolute;\n    left: 0px;\n    right: 0px;\n    background: none; }\n    .center .tray#t1 {\n      bottom: 0px;\n      height: 50%;\n      border: 1px dashed rgba(0, 0, 0, 0.3);\n      margin: 5px; }\n    .center .tray#t2 {\n      top: 0px;\n      height: 50%;\n      pointer-events: none;\n      opacity: 0.5; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 200px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-0 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-1 {\n        height: 200px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-1 .tray {\n          flex-direction: column; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 200px;\n        top: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-2 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-3 {\n        height: 200px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-3 .tray {\n          flex-direction: column; }\n", ""]);
+exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey;\n  background: rgba(0, 0, 0, 0.05); }\n  .center .tray {\n    position: absolute;\n    left: 0px;\n    right: 0px; }\n    .center .tray#t1 {\n      bottom: 0px;\n      height: 50%;\n      border: 1px dashed rgba(0, 0, 0, 0.3);\n      margin: 5px; }\n    .center .tray#t2 {\n      top: 0px;\n      height: 50%;\n      pointer-events: none;\n      opacity: 0.5; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 200px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-0 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-1 {\n        height: 200px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-1 .tray {\n          flex-direction: column; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 200px;\n        top: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-2 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-3 {\n        height: 200px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-3 .tray {\n          flex-direction: column; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -32100,11 +32100,12 @@ const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/components/table/c
 const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./src/utils/util-get-tray.ts");
 
 exports.Center = ({
-  tiles
+  tiles,
+  transit
 }) => {
   return react_1.default.createElement("div", {
     className: "center"
-  }, react_1.default.createElement(cp_tray_1.Tray, {
+  }, !transit ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_tray_1.Tray, {
     id: "t2",
     hidden: false,
     tiles: util_get_tray_1.getTray('t2', tiles),
@@ -32116,7 +32117,7 @@ exports.Center = ({
     tiles: util_get_tray_1.getTray('t1', tiles),
     small: false,
     draggable: true
-  }), react_1.default.createElement("div", {
+  })) : null, react_1.default.createElement("div", {
     className: "transit-area",
     id: "transit-area"
   }));
@@ -32206,6 +32207,7 @@ class Chair extends react_1.default.Component {
       reveal,
       transit
     } = this.props;
+    console.log('transit', transit);
     const isPlayer = index === 0;
     const isDummy = chair.player == null;
     return react_1.default.createElement("div", {
@@ -32496,7 +32498,8 @@ let Table = class Table extends react_1.default.Component {
       reveal: reveal,
       transit: table.transit
     })), react_1.default.createElement(cp_center_1.Center, {
-      tiles: tiles
+      tiles: tiles,
+      transit: table.transit
     }), react_1.default.createElement(cp_wall_1.Wall, {
       tiles: tiles
     }), react_1.default.createElement(cp_exit_1.Exit, {
