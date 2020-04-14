@@ -18,9 +18,12 @@ interface State {
 	dropTarget?: HTMLElement;
 }
 
+let x;
+
 @bind
 export class Table extends React.Component<Props, State> {
 	private onDragStart(e) {
+		x = e.clientX;
 		this.setState({ dragged: e.target.id });
 	}
 
@@ -41,37 +44,45 @@ export class Table extends React.Component<Props, State> {
 		const { table } = this.props;
 		const { dropTarget, dragged } = this.state;
 
-		if (dropTarget?.id && dropTarget.id !== dragged) {
-			let target = dropTarget as HTMLElement;
-			let index = Array.from(dropTarget.children).length;
+		if (dropTarget?.id) {
+			if (dropTarget.id === dragged) {
+				if (e.clientX - x > 1) {
+					this.space(dragged, true);
+				} else if (x - e.clientX > 1) {
+					this.space(dragged, false);
+				}
+			} else {
+				let target = dropTarget as HTMLElement;
+				let index = Array.from(dropTarget.children).length;
 
-			if (target.classList.contains('tile')) {
-				target = dropTarget.parentNode as HTMLElement;
-				index = Array.from(target.children).indexOf(dropTarget) - 1;
-			}
+				if (target.classList.contains('tile')) {
+					target = dropTarget.parentNode as HTMLElement;
+					index = Array.from(target.children).indexOf(dropTarget) - 1;
+				}
 
-			if (target.classList.contains('before')) {
-				target = dropTarget.parentNode as HTMLElement;
-				index = 0;
-			}
+				if (target.classList.contains('before')) {
+					target = dropTarget.parentNode as HTMLElement;
+					index = 0;
+				}
 
-			if (target.id === 't0-begin') {
-				index = 0;
-			}
+				if (target.id === 't0-begin') {
+					index = 0;
+				}
 
-			if (target.id === 't0-end') {
-				index = table.game.tiles.filter(tile => tile.tray === 't0').length;
-			}
+				if (target.id === 't0-end') {
+					index = table.game.tiles.filter(tile => tile.tray === 't0').length;
+				}
 
-			const tray = target.id;
+				const tray = target.id;
 
-			if (tray) {
-				axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
-					data: {
-						tray: tray.match('t0') ? 't0' : tray,
-						index
-					}
-				});
+				if (tray) {
+					axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
+						data: {
+							tray: tray.match('t0') ? 't0' : tray,
+							index
+						}
+					});
+				}
 			}
 		}
 
@@ -81,9 +92,24 @@ export class Table extends React.Component<Props, State> {
 		});
 	}
 
-	private leaveTable() {
-		const { table: { id }, leaveTable } = this.props;
-		leaveTable(id);
+	private space(id: string, space: boolean) {
+		const { table } = this.props;
+
+		axios.put(`/tables/${ table.id }/game/tiles/${ id }`, {
+			data: {
+				space
+			}
+		});
+	}
+
+	private flip(id: string) {
+		const { table } = this.props;
+
+		axios.put(`/tables/${ table.id }/game/tiles/${ id }`, {
+			data: {
+				flip: true
+			}
+		});
 	}
 
 	render() {
@@ -113,6 +139,7 @@ export class Table extends React.Component<Props, State> {
 								reveal={ reveal }
 								transit={ table.transit }
 								player={ player }
+								flip={ this.flip }
 							/>
 						))
 				}
@@ -122,7 +149,6 @@ export class Table extends React.Component<Props, State> {
 				/>
 				<Wall tiles={ tiles } begin={ true } />
 				<Wall tiles={ tiles } begin={ false } />
-				{/* <Exit onClick={ this.leaveTable } /> */}
 			</div>
 		);
 	}

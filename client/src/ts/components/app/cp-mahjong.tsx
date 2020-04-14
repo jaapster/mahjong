@@ -8,7 +8,6 @@ import { Notifications } from './cp-notifications';
 import { Table } from '../table/cp-table';
 
 interface State {
-	alive: boolean;
 	player: string | null;
 	table: Mahjong.Table | null;
 	tables: Mahjong.Table[];
@@ -38,7 +37,7 @@ const Storage = {
 
 @bind
 export class App extends React.Component<any, State> {
-	state = { alive: true, player: null, table: null, tables: [], showMenu: false, notification: undefined };
+	state = { player: null, table: null, tables: [], showMenu: false, notification: undefined };
 
 	private clockStream: any;
 	private tableStream: any;
@@ -117,12 +116,14 @@ export class App extends React.Component<any, State> {
 			const table = tables.find(table => table.id === id);
 			const chair = table.chairs.find(chair => chair.player === player);
 
-			axios.put(`/tables/${ id }/chairs/${ chair.id }`, {
-				data: {
-					...chair,
-					seated: true
-				}
-			});
+			if (chair != null) {
+				axios.put(`/tables/${ id }/chairs/${ chair.id }`, {
+					data: {
+						...chair,
+						seated: true
+					}
+				});
+			}
 
 			Storage.setTable(id);
 		}
@@ -177,8 +178,7 @@ export class App extends React.Component<any, State> {
 	}
 
 	private onTablesUpdate(event) {
-		console.log('tables!');
-		this.setState({ tables: JSON.parse(event.data), alive: true });
+		this.setState({ tables: JSON.parse(event.data) });
 	}
 
 	private onTableUpdate(event) {
@@ -287,7 +287,7 @@ export class App extends React.Component<any, State> {
 	}
 
 	render() {
-		const { alive, player, table, tables, showMenu, notification } = this.state;
+		const { player, table, tables, showMenu, notification } = this.state;
 
 		return (
 			<>

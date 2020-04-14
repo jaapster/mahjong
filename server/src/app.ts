@@ -80,10 +80,24 @@ app.put('/tables/:id/chairs/:chair', ({ params: { id, chair }, body: { data } },
 });
 
 app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { data } }, res) => {
-	const event = Tables.moveTile(id, tileId, data);
-	res.send(event);
-	tableStreams[id].send(Tables.read(id), 'update');
-	tableStreams[id].send(event, 'tile-move');
+	if (data.tray && data.index != null) {
+		const event = Tables.moveTile(id, tileId, data);
+		res.send(event);
+		tableStreams[id].send(Tables.read(id), 'update');
+		tableStreams[id].send(event, 'tile-move');
+	}
+
+	if (data.space != null) {
+		const event = Tables.spaceTile(id, tileId, data.space);
+		res.send(event);
+		tableStreams[id].send(Tables.read(id), 'update');
+	}
+
+	if (data.flip) {
+		const event = Tables.flipTile(id, tileId);
+		res.send(event);
+		tableStreams[id].send(Tables.read(id), 'update');
+	}
 });
 
 app.listen(port, err => {

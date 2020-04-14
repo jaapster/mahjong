@@ -140,4 +140,13 @@
 			}
 		}
 	}
+
+	&.tile-spaced {
+		margin-left: 8px;
+
+		&.tile-rotated {
+			margin-left: 0;
+			margin-top: 8px;
+		}
+	}
 }

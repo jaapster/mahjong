@@ -12,9 +12,10 @@ interface Props {
 	small: boolean;
 	draggable: boolean;
 	showCount?: boolean;
+	flip?(id: string): void;
 }
 
-export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount }: Props) => {
+export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount, flip }: Props) => {
 	return (
 		<div
 			id={ id }
@@ -42,6 +43,7 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 						blank={ blank }
 						small={ small }
 						draggable={ draggable }
+						flip={ flip }
 					/>
 				))
 			}

@@ -68,6 +68,44 @@ exports.Tables = {
                     tiles: util_deal_tiles_1.dealTiles(tiles_1.getTileSet())
                 }, chairs: table.chairs.map(chair => (Object.assign(Object.assign({}, chair), { reveal: false }))) }) : table));
     },
+    spaceTile(tableId, tileId, spaced) {
+        let tray;
+        tables = tables.map(table => {
+            if (table.id !== tableId) {
+                return table;
+            }
+            return Object.assign(Object.assign({}, table), { game: Object.assign(Object.assign({}, table.game), { tiles: table.game.tiles.map(tile => {
+                        if (tile.id !== tileId) {
+                            return tile;
+                        }
+                        tray = tile.tray;
+                        return Object.assign(Object.assign({}, tile), { spaced });
+                    }) }) });
+        });
+        return {
+            tray,
+            tile: tileId
+        };
+    },
+    flipTile(tableId, tileId) {
+        let tray;
+        tables = tables.map(table => {
+            if (table.id !== tableId) {
+                return table;
+            }
+            return Object.assign(Object.assign({}, table), { game: Object.assign(Object.assign({}, table.game), { tiles: table.game.tiles.map(tile => {
+                        if (tile.id !== tileId) {
+                            return tile;
+                        }
+                        tray = tile.tray;
+                        return Object.assign(Object.assign({}, tile), { hidden: !tile.hidden });
+                    }) }) });
+        });
+        return {
+            tray,
+            tile: tileId
+        };
+    },
     moveTile(tableId, tileId, { tray, index }) {
         const table = tables.find(table => table.id === tableId);
         const tile = table.game.tiles.find(tile => tile.id === tileId);
@@ -103,6 +141,7 @@ exports.Tables = {
             const tile = game.tiles.find(t => t.id === tileId);
             const fromTray = tile.tray;
             const fromIndex = tile.index;
+            const spaced = tile.spaced;
             if (tray === 't1') {
                 // tile in "active" table zone moves to inactive zone
                 game.tiles = game.tiles.map(t => (t.tray === tray
@@ -115,7 +154,8 @@ exports.Tables = {
             game.tiles = game.tiles.map(t => (t.tray === fromTray && t.index > fromIndex
                 ? Object.assign(Object.assign({}, t), { index: t.index - 1 }) : t));
             game.tiles = game.tiles.map(t => (t.id === tileId
-                ? Object.assign(Object.assign({}, t), { tray, index: index - (fromTray === tray && fromIndex < index ? 1 : 0) }) : t));
+                ? Object.assign(Object.assign({}, t), { tray, index: index - (fromTray === tray && fromIndex < index ? 1 : 0), spaced: false }) : t.tray === fromTray && t.index === fromIndex
+                ? Object.assign(Object.assign({}, t), { spaced: t.spaced || spaced }) : t));
             return table;
         });
         if (from !== tray) {

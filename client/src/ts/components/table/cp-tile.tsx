@@ -10,12 +10,15 @@ interface Props {
 	blank: boolean;
 	small: boolean;
 	draggable: boolean;
+	flip?(id: string): void;
 }
 
 interface State {
 	hovered: boolean;
 	dragged: boolean;
 }
+
+let id;
 
 @bind
 export class Tile extends React.Component<Props, State> {
@@ -30,7 +33,11 @@ export class Tile extends React.Component<Props, State> {
 	}
 
 	onDragEnter() {
-		this.setState({ hovered: true });
+		const { tile } = this.props;
+
+		if (id !== tile.id) {
+			this.setState({ hovered: true });
+		}
 	}
 
 	onDragLeave() {
@@ -39,6 +46,8 @@ export class Tile extends React.Component<Props, State> {
 
 	onDragStart() {
 		setTimeout(() => {
+			const { tile } = this.props;
+			id = tile.id;
 			this.setState({ dragged: true });
 		}, 1);
 	}
@@ -47,8 +56,15 @@ export class Tile extends React.Component<Props, State> {
 		this.setState({ dragged: false });
 	}
 
+	onDoubleClick(e) {
+		if (e.shiftKey) {
+			const { flip, tile } = this.props;
+			flip?.(tile.id);
+		}
+	}
+
 	render() {
-		const { tile: { id, suit, name, title }, hidden, rotate, blank, small, draggable } = this.props;
+		const { tile: { id, suit, name, title, spaced }, tile, hidden, rotate, blank, small, draggable } = this.props;
 		const { hovered, dragged } = this.state;
 
 		return (
@@ -56,12 +72,13 @@ export class Tile extends React.Component<Props, State> {
 				className={ mergeClasses(
 					'tile',
 					{
-						'tile-hidden': hidden,
+						'tile-hidden': hidden || tile.hidden,
 						'tile-hovered': hovered,
 						'tile-dragged': dragged,
 						'tile-rotated': rotate,
 						'tile-blank': blank,
-						'tile-small': small
+						'tile-small': small,
+						'tile-spaced': spaced
 					}
 				) }
 				draggable={ draggable }
@@ -71,6 +88,7 @@ export class Tile extends React.Component<Props, State> {
 				onDragLeave={ this.onDragLeave }
 				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
 				title={ blank || hidden ? undefined : title }
+				onClick={ draggable ? this.onDoubleClick : undefined }
 			>
 				<div className="tile-graphic">
 					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />

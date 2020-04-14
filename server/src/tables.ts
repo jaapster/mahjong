@@ -42,7 +42,7 @@ export const Tables = {
 				tiles: dealTiles(getTileSet())
 			},
 			transit: false
-		}
+		};
 
 		tables = tables.concat([table]);
 
@@ -103,6 +103,74 @@ export const Tables = {
 		));
 	},
 
+	spaceTile(tableId: string, tileId: string, spaced: boolean) {
+		let tray;
+
+		tables = tables.map(table => {
+			if (table.id !== tableId) {
+				return table;
+			}
+
+			return {
+				...table,
+				game: {
+					...table.game,
+					tiles: table.game.tiles.map(tile => {
+						if (tile.id !== tileId) {
+							return tile;
+						}
+
+						tray = tile.tray;
+
+						return {
+							...tile,
+							spaced
+						};
+					})
+				}
+			};
+		});
+
+		return {
+			tray,
+			tile: tileId
+		};
+	},
+
+	flipTile(tableId: string, tileId: string) {
+		let tray;
+
+		tables = tables.map(table => {
+			if (table.id !== tableId) {
+				return table;
+			}
+
+			return {
+				...table,
+				game: {
+					...table.game,
+					tiles: table.game.tiles.map(tile => {
+						if (tile.id !== tileId) {
+							return tile;
+						}
+
+						tray = tile.tray;
+
+						return {
+							...tile,
+							hidden: !tile.hidden
+						};
+					})
+				}
+			};
+		});
+
+		return {
+			tray,
+			tile: tileId
+		};
+	},
+
 	moveTile(tableId: string, tileId: string, { tray, index }: { tray: string; index: number }) {
 		const table = tables.find(table => table.id === tableId);
 		const tile = table.game.tiles.find(tile => tile.id === tileId);
@@ -147,6 +215,7 @@ export const Tables = {
 			const tile = game.tiles.find(t => t.id === tileId);
 			const fromTray = tile.tray;
 			const fromIndex = tile.index;
+			const spaced = tile.spaced;
 
 			if (tray === 't1') {
 				// tile in "active" table zone moves to inactive zone
@@ -171,8 +240,15 @@ export const Tables = {
 
 			game.tiles = game.tiles.map(t => (
 				t.id === tileId
-					? { ...t, tray, index: index - (fromTray === tray && fromIndex < index ? 1 : 0) }
-					: t
+					? {
+						...t,
+						tray,
+						index: index - (fromTray === tray && fromIndex < index ? 1 : 0),
+						spaced: false
+					}
+					: t.tray === fromTray && t.index === fromIndex
+						? { ...t, spaced: t.spaced || spaced }
+						: t
 			));
 
 			return table;
