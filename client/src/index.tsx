@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./components/app/cp-mahjong";
+import { App } from "./ts/components/app/cp-mahjong";
 
-import "./styles/base.scss";
+import "./style/base.scss";
 
 ReactDOM.render(
 	<App />,

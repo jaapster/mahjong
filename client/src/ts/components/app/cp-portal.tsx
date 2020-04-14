@@ -7,5 +7,5 @@ export const Portal = ({ children, id }: any) => {
 			children,
 			document.getElementById(id)
 		)
-		: null
+		: null;
 };

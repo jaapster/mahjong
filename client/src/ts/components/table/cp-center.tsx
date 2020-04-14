@@ -37,4 +37,4 @@ export const Center = ({ tiles, transit }: Props) => {
 			<div className="transit-area" id="transit-area"/>
 		</div>
 	);
-}
+};

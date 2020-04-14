@@ -63,5 +63,5 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 					: null
 			}
 		</div>
-	)
+	);
 };

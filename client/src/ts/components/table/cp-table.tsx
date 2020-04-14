@@ -3,7 +3,6 @@ import React from 'react';
 import axios from 'axios';
 import { Chair } from './cp-chair';
 import { Wall } from './cp-wall';
-import { Exit } from './cp-exit';
 import { Center } from './cp-center';
 import './ss-table.scss';
 

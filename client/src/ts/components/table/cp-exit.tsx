@@ -15,4 +15,4 @@ export const Exit = ({ onClick }: Props) => {
 			<span>&#x2799;</span>
 		</div>
 	);
-}
+};

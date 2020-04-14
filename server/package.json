@@ -1,8 +1,10 @@
 {
 	"name": "server",
 	"version": "0.0.1",
+	"author": "jaaplous@gmail.com",
+	"license": "MIT",
 	"scripts": {
-		"watch": "tsc-watch --onSuccess 'node ./dist/app.js'"
+		"watch": "tsc-watch --onSuccess 'node ../dist/app.js'"
 	},
 	"dependencies": {
 		"body-parser": "^1.19.0",
@@ -13,7 +15,6 @@
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.4",
-		"tsc-watch": "^4.2.3",
-		"tslint": "^6.1.1"
+		"tsc-watch": "^4.2.3"
 	}
 }
