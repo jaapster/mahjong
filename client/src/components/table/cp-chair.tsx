@@ -11,6 +11,7 @@ interface Props {
 	tiles: Mahjong.Tile[];
 	transit: boolean;
 	reveal(id: string): void;
+	player: string;
 }
 
 const POSITIONS = ['player', 'left', 'top', 'right'];
@@ -22,9 +23,9 @@ export class Chair extends React.Component<Props> {
 	}
 
 	render() {
-		const { chair: { id }, chair, index, tiles, reveal, transit } = this.props;
+		const { chair: { id }, chair, index, tiles, reveal, transit, player } = this.props;
 
-		const isPlayer = index === 0;
+		const isPlayer = index === 0 || player === 'zork';
 		const isDummy = chair.player == null;
 
 		const set0 = getTray(`${ id }0`, tiles);

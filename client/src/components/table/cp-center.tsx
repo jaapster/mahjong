@@ -15,6 +15,7 @@ export const Center = ({ tiles, transit }: Props) => {
 				!transit
 					? (
 						<>
+							<div className="drop-zone" id="t1" />
 							<Tray
 								id="t2"
 								hidden={ false }

@@ -2082,7 +2082,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey;\n  background: rgba(0, 0, 0, 0.05); }\n  .center .tray {\n    position: absolute;\n    left: 0px;\n    right: 0px; }\n    .center .tray#t1 {\n      bottom: 0px;\n      height: 50%;\n      border: 1px dashed rgba(0, 0, 0, 0.3);\n      margin: 5px; }\n    .center .tray#t2 {\n      top: 0px;\n      height: 50%;\n      pointer-events: none;\n      opacity: 0.5; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 200px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-0 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-1 {\n        height: 200px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-1 .tray {\n          flex-direction: column; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 200px;\n        top: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-2 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-3 {\n        height: 200px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-3 .tray {\n          flex-direction: column; }\n", ""]);
+exports.push([module.i, ".center {\n  position: absolute;\n  top: 150px;\n  left: 150px;\n  bottom: 240px;\n  right: 150px;\n  box-shadow: inset 0 0 5px grey;\n  background: rgba(0, 0, 0, 0.05); }\n  .center .drop-zone {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px; }\n  .center .tray {\n    position: absolute;\n    left: 0px;\n    right: 0px; }\n    .center .tray#t1 {\n      bottom: 0px;\n      height: 40%;\n      margin: 5px;\n      background: none; }\n    .center .tray#t2 {\n      top: 0px;\n      height: 60%;\n      pointer-events: none;\n      opacity: 0.5;\n      background: none; }\n  .center .transit-area {\n    position: absolute;\n    z-index: 3;\n    top: 0px;\n    left: 0px;\n    right: 0px;\n    bottom: 0px;\n    pointer-events: none; }\n    .center .transit-area .transit {\n      position: absolute;\n      pointer-events: all; }\n      .center .transit-area .transit .tray {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0; }\n      .center .transit-area .transit.transit-0 {\n        height: 60px;\n        width: 200px;\n        bottom: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-0 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-1 {\n        height: 200px;\n        width: 60px;\n        left: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-1 .tray {\n          flex-direction: column; }\n      .center .transit-area .transit.transit-2 {\n        height: 60px;\n        width: 200px;\n        top: 0;\n        left: 50%;\n        margin-left: -100px; }\n        .center .transit-area .transit.transit-2 .tray {\n          flex-direction: row; }\n      .center .transit-area .transit.transit-3 {\n        height: 200px;\n        width: 60px;\n        right: 0;\n        top: 50%;\n        margin-top: -100px; }\n        .center .transit-area .transit.transit-3 .tray {\n          flex-direction: column; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2101,24 +2101,6 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-a {\n    background: lightyellow; }\n  .chair.chair-b {\n    background: lightpink; }\n  .chair.chair-c {\n    background: lightblue; }\n  .chair.chair-d {\n    background: darkseagreen; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 5px;\n    color: white;\n    background: green;\n    opacity: 0.5; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n  .chair .tray-visibility {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 5px;\n    background: black;\n    color: white;\n    cursor: default;\n    opacity: 0.5; }\n    .chair .tray-visibility:hover {\n      opacity: 1; }\n    .chair .tray-visibility.tray-visible {\n      background: yellow;\n      color: black;\n      opacity: 1; }\n", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-exit.scss":
-/*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-exit.scss ***!
-  \************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".exit {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  display: flex;\n  width: 150px;\n  height: 240px;\n  background: ivory;\n  color: #e6e6e6;\n  font-size: 100px;\n  cursor: default;\n  transform: scale(-1, 1);\n  justify-content: center;\n  align-items: center; }\n  .exit:hover {\n    background: dodgerblue;\n    color: ivory; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2190,7 +2172,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".wall {\n  position: absolute;\n  bottom: 0;\n  right: 10px;\n  height: 210px;\n  width: 130px;\n  background: #e6e6e6; }\n  .wall:before {\n    content: '';\n    border-top: 20px dashed #e6e6e6;\n    position: absolute;\n    width: 130px;\n    top: -20px; }\n  .wall .tray {\n    height: 100%;\n    background: transparent; }\n  .wall .tile .tile-graphic:before {\n    content: '?';\n    font-size: 30px;\n    font-family: serif;\n    font-weight: bolder;\n    color: firebrick; }\n", ""]);
+exports.push([module.i, ".wall {\n  position: absolute;\n  bottom: 0;\n  height: 200px;\n  width: 140px;\n  background: #e6e6e6; }\n  .wall:before {\n    content: '';\n    border-top: 20px dashed #e6e6e6;\n    position: absolute;\n    width: 140px;\n    top: -20px; }\n  .wall.wall-begin {\n    left: 10px; }\n  .wall.wall-end {\n    right: 10px; }\n  .wall .tray {\n    height: 210px;\n    margin-top: -30px;\n    background: transparent; }\n  .wall .tile .tile-graphic:before {\n    content: '?';\n    font-size: 30px;\n    font-family: serif;\n    font-weight: bolder;\n    color: firebrick; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31662,7 +31644,8 @@ let App = class App extends react_1.default.Component {
       table: table,
       startNewGame: this.startNewGame,
       toggleTransitMode: this.toggleTransitMode,
-      close: this.hideMenu
+      close: this.hideMenu,
+      leaveTable: this.onTableDelete
     }) : null) : react_1.default.createElement(cp_lobby_1.Lobby, {
       openTable: this.openTable,
       tables: tables,
@@ -31710,13 +31693,20 @@ exports.Menu = ({
   toggleTransitMode,
   startNewGame,
   close,
-  table
+  table,
+  leaveTable
 }) => {
   return react_1.default.createElement("div", {
     className: "menu"
   }, react_1.default.createElement("div", {
     className: "menu-body"
-  }, table.transit ? table.game.tiles.filter(tile => tile.tray.match('transit')).length ? react_1.default.createElement("a", {
+  }, react_1.default.createElement("a", {
+    href: "#",
+    onClick: () => {
+      leaveTable(table.id);
+      close();
+    }
+  }, "Naar de lobby"), table.transit ? table.game.tiles.filter(tile => tile.tray.match('transit')).length ? react_1.default.createElement("a", {
     href: "#",
     style: {
       opacity: 0.3
@@ -32003,7 +31993,7 @@ exports.Lobby = ({
     chairs
   }) => {
     const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
-    const inThisGame = chairs.find(c => c.player === player);
+    const inThisGame = chairs.find(c => c.player === player) || player === 'zork';
     return react_1.default.createElement("div", {
       key: id,
       className: "list-game"
@@ -32122,7 +32112,10 @@ exports.Center = ({
 }) => {
   return react_1.default.createElement("div", {
     className: "center"
-  }, !transit ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_tray_1.Tray, {
+  }, !transit ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement("div", {
+    className: "drop-zone",
+    id: "t1"
+  }), react_1.default.createElement(cp_tray_1.Tray, {
     id: "t2",
     hidden: false,
     tiles: util_get_tray_1.getTray('t2', tiles),
@@ -32191,9 +32184,10 @@ class Chair extends react_1.default.Component {
       index,
       tiles,
       reveal,
-      transit
+      transit,
+      player
     } = this.props;
-    const isPlayer = index === 0;
+    const isPlayer = index === 0 || player === 'zork';
     const isDummy = chair.player == null;
     const set0 = util_get_tray_1.getTray(`${id}0`, tiles);
     const set1 = util_get_tray_1.getTray(`${id}1`, tiles);
@@ -32248,42 +32242,6 @@ exports.Chair = Chair;
 
 /***/ }),
 
-/***/ "./src/components/table/cp-exit.tsx":
-/*!******************************************!*\
-  !*** ./src/components/table/cp-exit.tsx ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-__webpack_require__(/*! ./ss-exit.scss */ "./src/components/table/ss-exit.scss");
-
-exports.Exit = ({
-  onClick
-}) => {
-  return react_1.default.createElement("div", {
-    className: "exit",
-    onClick: onClick,
-    title: "Terug naar de lobby"
-  }, react_1.default.createElement("span", null, "\u2799"));
-};
-
-/***/ }),
-
 /***/ "./src/components/table/cp-table.tsx":
 /*!*******************************************!*\
   !*** ./src/components/table/cp-table.tsx ***!
@@ -32322,8 +32280,6 @@ const cp_chair_1 = __webpack_require__(/*! ./cp-chair */ "./src/components/table
 
 const cp_wall_1 = __webpack_require__(/*! ./cp-wall */ "./src/components/table/cp-wall.tsx");
 
-const cp_exit_1 = __webpack_require__(/*! ./cp-exit */ "./src/components/table/cp-exit.tsx");
-
 const cp_center_1 = __webpack_require__(/*! ./cp-center */ "./src/components/table/cp-center.tsx");
 
 __webpack_require__(/*! ./ss-table.scss */ "./src/components/table/ss-table.scss");
@@ -32359,26 +32315,35 @@ let Table = class Table extends react_1.default.Component {
       dragged
     } = this.state;
 
-    if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
-      const list = dropTarget.classList;
+    if ((dropTarget === null || dropTarget === void 0 ? void 0 : dropTarget.id) && dropTarget.id !== dragged) {
+      let target = dropTarget;
+      let index = Array.from(dropTarget.children).length;
 
-      if (list.contains('tile') || list.contains('before')) {
-        const parent = dropTarget.parentNode;
+      if (target.classList.contains('tile')) {
+        target = dropTarget.parentNode;
+        index = Array.from(target.children).indexOf(dropTarget) - 1;
+      }
 
-        if (parent.id) {
-          const index = Array.from(parent.children).indexOf(dropTarget) - 1;
-          axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
-            data: {
-              tray: parent.id,
-              index: parent.id === 't1' ? Array.from(parent.children).length : index
-            }
-          });
-        }
-      } else {
+      if (target.classList.contains('before')) {
+        target = dropTarget.parentNode;
+        index = 0;
+      }
+
+      if (target.id === 't0-begin') {
+        index = 0;
+      }
+
+      if (target.id === 't0-end') {
+        index = table.game.tiles.filter(tile => tile.tray === 't0').length;
+      }
+
+      const tray = target.id;
+
+      if (tray) {
         axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
           data: {
-            tray: dropTarget.id,
-            index: dropTarget.id === 't0' ? 0 : Array.from(dropTarget.children).length
+            tray: tray.match('t0') ? 't0' : tray,
+            index
           }
         });
       }
@@ -32426,14 +32391,17 @@ let Table = class Table extends react_1.default.Component {
       key: c.id,
       tiles: tiles,
       reveal: reveal,
-      transit: table.transit
+      transit: table.transit,
+      player: player
     })), react_1.default.createElement(cp_center_1.Center, {
       tiles: tiles,
       transit: table.transit
     }), react_1.default.createElement(cp_wall_1.Wall, {
-      tiles: tiles
-    }), react_1.default.createElement(cp_exit_1.Exit, {
-      onClick: this.leaveTable
+      tiles: tiles,
+      begin: true
+    }), react_1.default.createElement(cp_wall_1.Wall, {
+      tiles: tiles,
+      begin: false
     }));
   }
 
@@ -32665,15 +32633,22 @@ const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./
 
 __webpack_require__(/*! ./ss-wall.scss */ "./src/components/table/ss-wall.scss");
 
+const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/utils/util-merge-classes.ts");
+
 exports.Wall = ({
-  tiles
+  tiles,
+  begin
 }) => {
-  const count = util_get_tray_1.getTray('t0', tiles).length;
-  const tile = util_get_tray_1.getTray('t0', tiles)[0];
+  const list = util_get_tray_1.getTray('t0', tiles);
+  const count = list.length;
+  const tile = begin ? list[0] : list[count - 1];
   return react_1.default.createElement("div", {
-    className: "wall"
+    className: util_merge_classes_1.mergeClasses('wall', {
+      'wall-begin': begin,
+      'wall-end': !begin
+    })
   }, react_1.default.createElement(cp_tray_1.Tray, {
-    id: "t0",
+    id: `t0-${begin ? 'begin' : 'end'}`,
     hidden: false,
     tiles: tile ? [tile] : [],
     blank: true,
@@ -32726,37 +32701,6 @@ module.exports = exported;
 
 var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
             var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-chair.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-chair.scss");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-var exported = content.locals ? content.locals : {};
-
-
-
-module.exports = exported;
-
-/***/ }),
-
-/***/ "./src/components/table/ss-exit.scss":
-/*!*******************************************!*\
-  !*** ./src/components/table/ss-exit.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./ss-exit.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/table/ss-exit.scss");
 
             content = content.__esModule ? content.default : content;
 

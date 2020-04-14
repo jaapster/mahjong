@@ -66,7 +66,7 @@ exports.Tables = {
         tables = tables.map(table => (table.id === id
             ? Object.assign(Object.assign({}, table), { game: {
                     tiles: util_deal_tiles_1.dealTiles(tiles_1.getTileSet())
-                } }) : table));
+                }, chairs: table.chairs.map(chair => (Object.assign(Object.assign({}, chair), { reveal: false }))) }) : table));
     },
     moveTile(tableId, tileId, { tray, index }) {
         const table = tables.find(table => table.id === tableId);

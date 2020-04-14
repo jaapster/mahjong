@@ -298,6 +298,7 @@ export class App extends React.Component<any, State> {
 													startNewGame={ this.startNewGame }
 													toggleTransitMode={ this.toggleTransitMode }
 													close={ this.hideMenu }
+													leaveTable={ this.onTableDelete }
 												/>
 											)
 											: null

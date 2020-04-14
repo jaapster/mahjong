@@ -42,30 +42,35 @@ export class Table extends React.Component<Props, State> {
 		const { table } = this.props;
 		const { dropTarget, dragged } = this.state;
 
-		if (dropTarget && dropTarget.id && dropTarget.id !== dragged) {
-			const list = (dropTarget as HTMLElement).classList;
-			if (list.contains('tile') || list.contains('before')) {
-				const parent: HTMLElement = dropTarget.parentNode as HTMLElement;
+		if (dropTarget?.id && dropTarget.id !== dragged) {
+			let target = dropTarget as HTMLElement;
+			let index = Array.from(dropTarget.children).length;
 
-				if (parent.id) {
-					const index = Array.from(parent.children).indexOf(dropTarget) - 1;
+			if (target.classList.contains('tile')) {
+				target = dropTarget.parentNode as HTMLElement;
+				index = Array.from(target.children).indexOf(dropTarget) - 1;
+			}
 
-					axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
-						data: {
-							tray: parent.id,
-							index: parent.id === 't1'
-								? Array.from(parent.children).length
-								: index
-						}
-					});
-				}
-			} else {
+			if (target.classList.contains('before')) {
+				target = dropTarget.parentNode as HTMLElement;
+				index = 0;
+			}
+
+			if (target.id === 't0-begin') {
+				index = 0;
+			}
+
+			if (target.id === 't0-end') {
+				index = table.game.tiles.filter(tile => tile.tray === 't0').length;
+			}
+
+			const tray = target.id;
+
+			if (tray) {
 				axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
 					data: {
-						tray: dropTarget.id,
-						index: dropTarget.id === 't0'
-							? 0
-							: Array.from(dropTarget.children).length
+						tray: tray.match('t0') ? 't0' : tray,
+						index
 					}
 				});
 			}
@@ -108,6 +113,7 @@ export class Table extends React.Component<Props, State> {
 								tiles={ tiles }
 								reveal={ reveal }
 								transit={ table.transit }
+								player={ player }
 							/>
 						))
 				}
@@ -115,8 +121,9 @@ export class Table extends React.Component<Props, State> {
 					tiles={ tiles }
 					transit={ table.transit }
 				/>
-				<Wall tiles={ tiles } />
-				<Exit onClick={ this.leaveTable } />
+				<Wall tiles={ tiles } begin={ true } />
+				<Wall tiles={ tiles } begin={ false } />
+				{/* <Exit onClick={ this.leaveTable } /> */}
 			</div>
 		);
 	}

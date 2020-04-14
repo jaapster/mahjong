@@ -93,7 +93,11 @@ export const Tables = {
 					...table,
 					game: {
 						tiles: dealTiles(getTileSet())
-					}
+					},
+					chairs: table.chairs.map(chair => ({
+						...chair,
+						reveal: false
+					}))
 				}
 				: table
 		));

@@ -39,7 +39,7 @@ export const Lobby = ({
 				{
 					tables.map(({ id, chairs }) => {
 						const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
-						const inThisGame = chairs.find(c => c.player === player);
+						const inThisGame = chairs.find(c => c.player === player) || player === 'zork';
 
 						return (
 							<div key={ id } className="list-game">

@@ -1,10 +1,19 @@
 import React from 'react';
 import './ss-menu.scss';
 
-export const Menu = ({ toggleTransitMode, startNewGame, close, table }: any) => {
+export const Menu = ({ toggleTransitMode, startNewGame, close, table, leaveTable }: any) => {
 	return (
 		<div className="menu">
 			<div className="menu-body">
+				<a
+					href="#"
+					onClick={ () => {
+						leaveTable(table.id);
+						close();
+					} }
+				>
+					Naar de lobby
+				</a>
 				{
 					table.transit
 						? table.game.tiles.filter(tile => tile.tray.match('transit')).length
