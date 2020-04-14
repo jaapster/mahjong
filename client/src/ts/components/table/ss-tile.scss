@@ -29,7 +29,7 @@
 
 			&.tile-symbol-dragons-red { background-image: url(/tiles/Chun.svg); }
 			&.tile-symbol-dragons-green { background-image: url(/tiles/Hatsu.svg); }
-			&.tile-symbol-dragons-white { background-image: url(/tiles/Haku.svg); }
+			&.tile-symbol-dragons-white { background-image: url(/tiles/wittedraak.svg); } //Haku
 
 			&.tile-symbol-winds-east { background-image: url(/tiles/Ton.svg); }
 			&.tile-symbol-winds-north { background-image: url(/tiles/Pei.svg); }
@@ -65,6 +65,16 @@
 			&.tile-symbol-bamboo-7 { background-image: url(/tiles/Sou7.svg); }
 			&.tile-symbol-bamboo-8 { background-image: url(/tiles/Sou8.svg); }
 			&.tile-symbol-bamboo-9 { background-image: url(/tiles/Sou9.svg); }
+
+			&.tile-symbol-seasons-spring { background-image: url(/tiles/seizoenlente.svg); }
+			&.tile-symbol-seasons-summer { background-image: url(/tiles/seizoenzomer.svg); }
+			&.tile-symbol-seasons-autumn { background-image: url(/tiles/seizoenherfst.svg); }
+			&.tile-symbol-seasons-winter { background-image: url(/tiles/seizoenwinter.svg); }
+
+			&.tile-symbol-flowers-plum { background-image: url(/tiles/flowersplum.svg); }
+			&.tile-symbol-flowers-orchid { background-image: url(/tiles/flowersorchid.svg); }
+			&.tile-symbol-flowers-chrysanthemum { background-image: url(/tiles/flowerschrysanthemum.svg); }
+			&.tile-symbol-flowers-bamboo { background-image: url(/tiles/flowersbamboo.svg); }
 		}
 	}
 
