@@ -1,4 +1,6 @@
 import express from 'express';
+import https from 'https';
+import fs from 'fs';
 import bodyParser from 'body-parser';
 import SSE from 'express-sse';
 import { Tables } from './tables';
@@ -100,10 +102,17 @@ app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { dat
 	}
 });
 
-app.listen(port, err => {
-	if (err) {
-		return console.error(err);
-	}
+// app.listen(port, err => {
+// 	if (err) {
+// 		return console.error(err);
+// 	}
 
-	return console.log(`Mahjong server is listening on ${ port }`);
+// 	return console.log(`Mahjong server is listening on ${ port }`);
+// });
+
+https.createServer({
+	key: fs.readFileSync('localhost+2-key.pem'),
+	cert: fs.readFileSync('localhost+2.pem')
+}, app).listen(2001, function () {
+	console.log('Mahjong server on https://localhost:2001');
 });

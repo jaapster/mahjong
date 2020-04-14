@@ -23,16 +23,15 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 				mergeClasses(
 					'tray',
 					{
-						'tray-hidden': hidden
+						'tray-hidden': hidden,
+						'tray-rotate': rotate,
+						'tray-regular': !rotate
 					}
 				)
 			}
 		>
-			{
-				tiles.length > 0
-					? <div className="before" id={ tiles[0]?.id } />
-					: null
-			}
+			<div className="before" id="before"/>
+			<div className="after" id="before"/>
 			{
 				tiles.map((t, i) => (
 					<Tile
@@ -47,7 +46,6 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 					/>
 				))
 			}
-			<div className="after" />
 			{
 				showCount
 					? (

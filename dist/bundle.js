@@ -2154,7 +2154,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tile {\n  transition: padding 30ms;\n  position: relative; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/wittedraak.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-spring {\n        background-image: url(/tiles/seizoenlente.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-summer {\n        background-image: url(/tiles/seizoenzomer.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-autumn {\n        background-image: url(/tiles/seizoenherfst.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-winter {\n        background-image: url(/tiles/seizoenwinter.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-plum {\n        background-image: url(/tiles/flowersplum.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-orchid {\n        background-image: url(/tiles/flowersorchid.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-chrysanthemum {\n        background-image: url(/tiles/flowerschrysanthemum.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-bamboo {\n        background-image: url(/tiles/flowersbamboo.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n    .tile.tile-hovered:nth-child(2) {\n      padding: 0; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-disabled {\n    opacity: 0.3; }\n  .tile.tile-small .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n  .tile.tile-hidden .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-small .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-spaced {\n    margin-left: 8px; }\n    .tile.tile-spaced.tile-rotated {\n      margin-left: 0;\n      margin-top: 8px; }\n", ""]);
+exports.push([module.i, ".tile {\n  transition: padding 30ms;\n  position: relative; }\n  .tile .tile-graphic {\n    pointer-events: none;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 38px;\n    height: 58px;\n    background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);\n    margin: 0.5px;\n    border-radius: 4px;\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);\n    overflow: hidden; }\n    .tile .tile-graphic .tile-symbol {\n      position: absolute;\n      background-size: 30px 45px;\n      width: 30px;\n      height: 45px;\n      pointer-events: none; }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-red {\n        background-image: url(/tiles/Chun.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-green {\n        background-image: url(/tiles/Hatsu.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dragons-white {\n        background-image: url(/tiles/wittedraak.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-east {\n        background-image: url(/tiles/Ton.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-north {\n        background-image: url(/tiles/Pei.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-west {\n        background-image: url(/tiles/Shaa.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-winds-south {\n        background-image: url(/tiles/Nan.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-1 {\n        background-image: url(/tiles/Pin1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-2 {\n        background-image: url(/tiles/Pin2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-3 {\n        background-image: url(/tiles/Pin3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-4 {\n        background-image: url(/tiles/Pin4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-5 {\n        background-image: url(/tiles/Pin5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-6 {\n        background-image: url(/tiles/Pin6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-7 {\n        background-image: url(/tiles/Pin7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-8 {\n        background-image: url(/tiles/Pin8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-dots-9 {\n        background-image: url(/tiles/Pin9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-1 {\n        background-image: url(/tiles/Man1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-2 {\n        background-image: url(/tiles/Man2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-3 {\n        background-image: url(/tiles/Man3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-4 {\n        background-image: url(/tiles/Man4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-5 {\n        background-image: url(/tiles/Man5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-6 {\n        background-image: url(/tiles/Man6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-7 {\n        background-image: url(/tiles/Man7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-8 {\n        background-image: url(/tiles/Man8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-characters-9 {\n        background-image: url(/tiles/Man9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-1 {\n        background-image: url(/tiles/Sou1.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-2 {\n        background-image: url(/tiles/Sou2.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-3 {\n        background-image: url(/tiles/Sou3.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-4 {\n        background-image: url(/tiles/Sou4.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-5 {\n        background-image: url(/tiles/Sou5.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-6 {\n        background-image: url(/tiles/Sou6.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-7 {\n        background-image: url(/tiles/Sou7.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-8 {\n        background-image: url(/tiles/Sou8.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-bamboo-9 {\n        background-image: url(/tiles/Sou9.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-spring {\n        background-image: url(/tiles/seizoenlente.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-summer {\n        background-image: url(/tiles/seizoenzomer.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-autumn {\n        background-image: url(/tiles/seizoenherfst.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-seasons-winter {\n        background-image: url(/tiles/seizoenwinter.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-plum {\n        background-image: url(/tiles/flowersplum.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-orchid {\n        background-image: url(/tiles/flowersorchid.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-chrysanthemum {\n        background-image: url(/tiles/flowerschrysanthemum.svg); }\n      .tile .tile-graphic .tile-symbol.tile-symbol-flowers-bamboo {\n        background-image: url(/tiles/flowersbamboo.svg); }\n  .tile.tile-hovered {\n    padding: 0 0 0 38px; }\n    .tile.tile-hovered:nth-child(2) {\n      padding: 0; }\n  .tile.tile-dragged {\n    opacity: 0.3; }\n  .tile.tile-disabled {\n    opacity: 0.3; }\n  .tile.tile-small .tile-graphic {\n    width: 16px;\n    height: 24px;\n    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);\n    border-radius: 2px; }\n  .tile.tile-hidden .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-rotated.tile-hovered {\n    padding: 38px 0 0 0; }\n  .tile.tile-rotated .tile-graphic {\n    width: 58px;\n    height: 38px; }\n    .tile.tile-rotated .tile-graphic .tile-symbol {\n      transform: rotate(90deg); }\n  .tile.tile-rotated.tile-small .tile-graphic {\n    width: 24px;\n    height: 16px; }\n  .tile.tile-blank .tile-graphic .tile-symbol {\n    display: none; }\n  .tile.tile-spaced {\n    border-left: 8px solid transparent; }\n    .tile.tile-spaced.tile-rotated {\n      border-left: 0;\n      border-top: 8px solid transparent; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2172,7 +2172,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n\n.before, .after {\n  flex-grow: 1;\n  height: 58px;\n  background: red;\n  opacity: 0.01; }\n\n.after {\n  pointer-events: none;\n  background: green; }\n\n.tile-count {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 5px;\n  background: black;\n  color: white;\n  font-size: 10px;\n  opacity: 0.5; }\n  .tile-count.tile-count-overflow {\n    background: red; }\n", ""]);
+exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n\n.before, .after {\n  position: absolute;\n  opacity: 0.01; }\n\n.before {\n  background: red; }\n\n.after {\n  background: green; }\n\n.tray-regular .before, .tray-regular .after {\n  top: 0;\n  bottom: 0;\n  height: 100%;\n  width: 50%; }\n\n.tray-regular .before {\n  left: 0; }\n\n.tray-regular .after {\n  right: 0; }\n\n.tray-rotate .before, .tray-rotate .after {\n  left: 0;\n  right: 0;\n  width: 100%;\n  height: 50%; }\n\n.tray-rotate .before {\n  top: 0; }\n\n.tray-rotate .after {\n  bottom: 0; }\n\n.tile-count {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 5px;\n  background: black;\n  color: white;\n  font-size: 10px;\n  opacity: 0.5; }\n  .tile-count.tile-count-overflow {\n    background: red; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2190,7 +2190,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".wall {\n  position: absolute;\n  bottom: 0;\n  height: 200px;\n  width: 140px;\n  background: #e6e6e6; }\n  .wall:before {\n    content: '';\n    border-top: 20px dashed #e6e6e6;\n    position: absolute;\n    width: 140px;\n    top: -20px; }\n  .wall.wall-begin {\n    left: 10px; }\n  .wall.wall-end {\n    right: 10px; }\n  .wall .tray {\n    height: 210px;\n    margin-top: -30px;\n    background: transparent; }\n  .wall .tile .tile-graphic:before {\n    content: '?';\n    font-size: 30px;\n    font-family: serif;\n    font-weight: bolder;\n    color: firebrick; }\n", ""]);
+exports.push([module.i, ".wall {\n  position: absolute;\n  bottom: 0;\n  height: 200px;\n  width: 140px;\n  background: #e6e6e6; }\n  .wall:before {\n    content: '';\n    border-top: 20px dashed #e6e6e6;\n    position: absolute;\n    width: 140px;\n    top: -20px; }\n  .wall.wall-begin {\n    left: 10px; }\n    .wall.wall-begin .tile-count {\n      right: auto;\n      left: 0; }\n  .wall.wall-end {\n    right: 10px; }\n  .wall .tray {\n    height: 220px;\n    margin-top: -20px;\n    background: transparent; }\n  .wall .tile .tile-graphic:before {\n    content: '?';\n    font-size: 30px;\n    font-family: serif;\n    font-weight: bolder;\n    color: firebrick; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -32398,49 +32398,53 @@ let Table = class Table extends react_1.default.Component {
     const {
       dropTarget,
       dragged
-    } = this.state;
+    } = this.state; // if (dropTarget?.id) {
 
-    if (dropTarget === null || dropTarget === void 0 ? void 0 : dropTarget.id) {
-      if (dropTarget.id === dragged) {
-        if (e.clientX - x > 1) {
-          this.space(dragged, true);
-        } else if (x - e.clientX > 1) {
-          this.space(dragged, false);
-        }
-      } else {
-        let target = dropTarget;
-        let index = Array.from(dropTarget.children).length;
-
-        if (target.classList.contains('tile')) {
-          target = dropTarget.parentNode;
-          index = Array.from(target.children).indexOf(dropTarget) - 1;
-        }
-
-        if (target.classList.contains('before')) {
-          target = dropTarget.parentNode;
-          index = 0;
-        }
-
-        if (target.id === 't0-begin') {
-          index = 0;
-        }
-
-        if (target.id === 't0-end') {
-          index = table.game.tiles.filter(tile => tile.tray === 't0').length;
-        }
-
-        const tray = target.id;
-
-        if (tray) {
-          axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
-            data: {
-              tray: tray.match('t0') ? 't0' : tray,
-              index
-            }
-          });
-        }
+    if (dropTarget.id === dragged) {
+      if (e.clientX - x > 1) {
+        this.space(dragged, true);
+      } else if (x - e.clientX > 1) {
+        this.space(dragged, false);
       }
-    }
+    } else {
+      let target = dropTarget;
+      let index;
+
+      if (target.classList.contains('tile')) {
+        target = dropTarget.parentNode;
+        index = Array.from(target.children).indexOf(dropTarget) - 2;
+      }
+
+      if (target.classList.contains('before')) {
+        target = dropTarget.parentNode;
+        index = 0;
+      }
+
+      if (target.classList.contains('after')) {
+        target = dropTarget.parentNode;
+        index = table.game.tiles.filter(tile => tile.tray === target.id).length;
+      }
+
+      if (target.id === 't0-begin') {
+        index = 0;
+      }
+
+      if (target.id === 't0-end') {
+        index = table.game.tiles.filter(tile => tile.tray === 't0').length;
+      }
+
+      const tray = target.id;
+
+      if (tray) {
+        axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
+          data: {
+            tray: tray.match('t0') ? 't0' : tray,
+            index
+          }
+        });
+      }
+    } // }
+
 
     this.setState({
       dragged: undefined,
@@ -32555,6 +32559,7 @@ const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-clas
 __webpack_require__(/*! ./ss-tile.scss */ "./src/ts/components/table/ss-tile.scss");
 
 let id;
+let index;
 let Tile = class Tile extends react_1.default.Component {
   constructor() {
     super(...arguments);
@@ -32577,7 +32582,7 @@ let Tile = class Tile extends react_1.default.Component {
       tile
     } = this.props;
 
-    if (id !== tile.id) {
+    if (id !== tile.id && index !== tile.index - 1) {
       this.setState({
         hovered: true
       });
@@ -32590,12 +32595,13 @@ let Tile = class Tile extends react_1.default.Component {
     });
   }
 
-  onDragStart() {
+  onDragStart(e) {
     setTimeout(() => {
       const {
         tile
       } = this.props;
       id = tile.id;
+      index = tile.index;
       this.setState({
         dragged: true
       });
@@ -32654,7 +32660,7 @@ let Tile = class Tile extends react_1.default.Component {
       onDragEnter: this.onDragEnter,
       onDragLeave: this.onDragLeave,
       onDragStart: draggable ? this.onDragStart : e => e.preventDefault(),
-      title: blank || hidden ? undefined : title,
+      title: tile.index.toString(),
       onClick: draggable ? this.onDoubleClick : undefined
     }, react_1.default.createElement("div", {
       className: "tile-graphic"
@@ -32708,17 +32714,20 @@ exports.Tray = ({
   showCount,
   flip
 }) => {
-  var _a;
-
   return react_1.default.createElement("div", {
     id: id,
     className: util_merge_classes_1.mergeClasses('tray', {
-      'tray-hidden': hidden
+      'tray-hidden': hidden,
+      'tray-rotate': rotate,
+      'tray-regular': !rotate
     })
-  }, tiles.length > 0 ? react_1.default.createElement("div", {
+  }, react_1.default.createElement("div", {
     className: "before",
-    id: (_a = tiles[0]) === null || _a === void 0 ? void 0 : _a.id
-  }) : null, tiles.map((t, i) => react_1.default.createElement(cp_tile_1.Tile, {
+    id: "before"
+  }), react_1.default.createElement("div", {
+    className: "after",
+    id: "before"
+  }), tiles.map((t, i) => react_1.default.createElement(cp_tile_1.Tile, {
     key: t.id,
     tile: t,
     hidden: hidden,
@@ -32727,9 +32736,7 @@ exports.Tray = ({
     small: small,
     draggable: draggable,
     flip: flip
-  })), react_1.default.createElement("div", {
-    className: "after"
-  }), showCount ? react_1.default.createElement("div", {
+  })), showCount ? react_1.default.createElement("div", {
     className: util_merge_classes_1.mergeClasses('tile-count', {
       'tile-count-overflow': tiles.length > 13
     })

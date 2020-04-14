@@ -19,6 +19,7 @@ interface State {
 }
 
 let id;
+let index;
 
 @bind
 export class Tile extends React.Component<Props, State> {
@@ -35,7 +36,7 @@ export class Tile extends React.Component<Props, State> {
 	onDragEnter() {
 		const { tile } = this.props;
 
-		if (id !== tile.id) {
+		if (id !== tile.id && index !== tile.index - 1) {
 			this.setState({ hovered: true });
 		}
 	}
@@ -44,10 +45,11 @@ export class Tile extends React.Component<Props, State> {
 		this.setState({ hovered: false });
 	}
 
-	onDragStart() {
+	onDragStart(e: React.SyntheticEvent) {
 		setTimeout(() => {
 			const { tile } = this.props;
 			id = tile.id;
+			index = tile.index;
 			this.setState({ dragged: true });
 		}, 1);
 	}
@@ -87,7 +89,7 @@ export class Tile extends React.Component<Props, State> {
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
 				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
-				title={ blank || hidden ? undefined : title }
+				title={ tile.index.toString() } // blank || hidden ? undefined : title }
 				onClick={ draggable ? this.onDoubleClick : undefined }
 			>
 				<div className="tile-graphic">

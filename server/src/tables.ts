@@ -258,6 +258,8 @@ export const Tables = {
 			console.log('Tile', tileId, 'moved from', from, 'to', tray, 'at index', index);
 		}
 
+		console.log(tile.title, 'van', `${ from }.${ tile.index }`, 'naar', `${ tray }.${ index }`);
+
 		return {
 			from,
 			to: tray,

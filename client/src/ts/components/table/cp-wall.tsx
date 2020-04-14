@@ -31,4 +31,4 @@ export const Wall = ({ tiles, begin }: Props) => {
 			</div>
 		</div>
 	);
-}
+};

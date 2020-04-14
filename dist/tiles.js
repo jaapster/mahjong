@@ -968,48 +968,56 @@ exports.getTileSet = () => {
             id: '137',
             suit: SUITS.FLOWERS,
             name: 'plum',
+            title: 'pruimenbloesem',
             spaced: false
         },
         {
             id: '138',
             suit: SUITS.FLOWERS,
             name: 'orchid',
+            title: 'orchidee',
             spaced: false
         },
         {
             id: '139',
             suit: SUITS.FLOWERS,
             name: 'chrysanthemum',
+            title: 'chrysant',
             spaced: false
         },
         {
             id: '140',
             suit: SUITS.FLOWERS,
             name: 'bamboo',
+            title: 'bamboe',
             spaced: false
         },
         {
             id: '141',
             suit: SUITS.SEASONS,
             name: 'spring',
+            title: 'lente',
             spaced: false
         },
         {
             id: '142',
             suit: SUITS.SEASONS,
             name: 'summer',
+            title: 'zomer',
             spaced: false
         },
         {
             id: '143',
             suit: SUITS.SEASONS,
             name: 'autumn',
+            title: 'herfst',
             spaced: false
         },
         {
             id: '144',
             suit: SUITS.SEASONS,
             name: 'winter',
+            title: 'winter',
             spaced: false
         }
     ]).map((t, index) => (Object.assign(Object.assign({}, t), { tray: 't0', index, hidden: false })));

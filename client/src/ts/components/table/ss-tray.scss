@@ -9,15 +9,50 @@
 }
 
 .before, .after {
-	flex-grow: 1;
-	height: 58px;
-	background: red;
+	position: absolute;
 	opacity: 0.01;
 }
 
+.before {
+	background: red;
+}
+
 .after {
-	pointer-events: none;
 	background: green;
+}
+
+.tray-regular {
+	.before, .after {
+		top: 0;
+		bottom: 0;
+		height: 100%;
+		width: 50%;
+	}
+
+	.before {
+		left: 0;
+	}
+
+	.after {
+		right: 0;
+	}
+}
+
+.tray-rotate {
+	.before, .after {
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 50%;
+	}
+
+	.before {
+		top: 0;
+	}
+
+	.after {
+		bottom: 0;
+	}
 }
 
 .tile-count {

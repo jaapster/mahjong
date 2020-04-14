@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const https_1 = __importDefault(require("https"));
+const fs_1 = __importDefault(require("fs"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const express_sse_1 = __importDefault(require("express-sse"));
 const tables_1 = require("./tables");
@@ -86,9 +88,15 @@ app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { dat
         tableStreams[id].send(tables_1.Tables.read(id), 'update');
     }
 });
-app.listen(port, err => {
-    if (err) {
-        return console.error(err);
-    }
-    return console.log(`Mahjong server is listening on ${port}`);
+// app.listen(port, err => {
+// 	if (err) {
+// 		return console.error(err);
+// 	}
+// 	return console.log(`Mahjong server is listening on ${ port }`);
+// });
+https_1.default.createServer({
+    key: fs_1.default.readFileSync('localhost+2-key.pem'),
+    cert: fs_1.default.readFileSync('localhost+2.pem')
+}, app).listen(2001, function () {
+    console.log('Mahjong server on https://localhost:2001');
 });

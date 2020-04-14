@@ -44,7 +44,7 @@ export class Table extends React.Component<Props, State> {
 		const { table } = this.props;
 		const { dropTarget, dragged } = this.state;
 
-		if (dropTarget?.id) {
+		// if (dropTarget?.id) {
 			if (dropTarget.id === dragged) {
 				if (e.clientX - x > 1) {
 					this.space(dragged, true);
@@ -53,16 +53,21 @@ export class Table extends React.Component<Props, State> {
 				}
 			} else {
 				let target = dropTarget as HTMLElement;
-				let index = Array.from(dropTarget.children).length;
+				let index;
 
 				if (target.classList.contains('tile')) {
 					target = dropTarget.parentNode as HTMLElement;
-					index = Array.from(target.children).indexOf(dropTarget) - 1;
+					index = Array.from(target.children).indexOf(dropTarget) - 2;
 				}
 
 				if (target.classList.contains('before')) {
 					target = dropTarget.parentNode as HTMLElement;
 					index = 0;
+				}
+
+				if (target.classList.contains('after')) {
+					target = dropTarget.parentNode as HTMLElement;
+					index = table.game.tiles.filter(tile => tile.tray === target.id).length;
 				}
 
 				if (target.id === 't0-begin') {
@@ -84,7 +89,7 @@ export class Table extends React.Component<Props, State> {
 					});
 				}
 			}
-		}
+		// }
 
 		this.setState({
 			dragged: undefined,
