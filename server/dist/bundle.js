@@ -31360,6 +31360,7 @@ let App = class App extends react_1.default.Component {
   constructor() {
     super(...arguments);
     this.state = {
+      alive: true,
       player: null,
       table: null,
       tables: [],
@@ -31379,6 +31380,9 @@ let App = class App extends react_1.default.Component {
       });
       this.tablesStream = new EventSource('/streams/tables');
       this.tablesStream.addEventListener('update', this.onTablesUpdate);
+      this.tablesStream.onerror = this.onServerError;
+      this.clockStream = new EventSource('/streams/clock');
+      this.clockStream.onmessage = this.onClock;
 
       if (table != null) {
         this.openTable(table);
@@ -31403,6 +31407,15 @@ let App = class App extends react_1.default.Component {
         });
       }
     };
+  }
+
+  onServerError(e) {
+    console.log('server error');
+  }
+
+  onClock() {
+    clearInterval(this.tick);
+    this.tick = setInterval(() => console.log('connection error'), 1500);
   }
 
   onKeyUp(e) {
@@ -31486,8 +31499,10 @@ let App = class App extends react_1.default.Component {
   }
 
   onTablesUpdate(event) {
+    console.log('tables!');
     this.setState({
-      tables: JSON.parse(event.data)
+      tables: JSON.parse(event.data),
+      alive: true
     });
   }
 
@@ -31627,6 +31642,7 @@ let App = class App extends react_1.default.Component {
 
   render() {
     const {
+      alive,
       player,
       table,
       tables,

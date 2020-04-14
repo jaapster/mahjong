@@ -11,6 +11,14 @@ app.use(bodyParser.json());
 // Statics
 app.use('/', express.static('dist'));
 
+const clock = new SSE(['tick']);
+
+setInterval(() => clock.send('tick'), 1000);
+
+app.get('/streams/clock', (req, res) => {
+	clock.init(req, res);
+});
+
 // Tables
 const tableStreams = {};
 const tablesStream = new SSE({

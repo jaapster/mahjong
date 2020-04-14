@@ -8,11 +8,12 @@ import { Notifications } from './cp-notifications';
 import { Table } from '../table/cp-table';
 
 interface State {
+	alive: boolean;
 	player: string | null;
 	table: Mahjong.Table | null;
 	tables: Mahjong.Table[];
 	showMenu: boolean;
-	notification?: string
+	notification?: string;
 }
 
 const Storage = {
@@ -37,11 +38,13 @@ const Storage = {
 
 @bind
 export class App extends React.Component<any, State> {
-	state = { player: null, table: null, tables: [], showMenu: false, notification: undefined };
+	state = { alive: true, player: null, table: null, tables: [], showMenu: false, notification: undefined };
 
+	private clockStream: any;
 	private tableStream: any;
 	private tablesStream: any;
 	private timeout: any;
+	private tick: any;
 
 	componentDidMount() {
 		this.getTables().then(() => {
@@ -51,6 +54,10 @@ export class App extends React.Component<any, State> {
 
 			this.tablesStream = new EventSource('/streams/tables');
 			this.tablesStream.addEventListener('update', this.onTablesUpdate);
+			this.tablesStream.onerror = this.onServerError;
+
+			this.clockStream = new EventSource('/streams/clock');
+			this.clockStream.onmessage = this.onClock;
 
 			if (table != null) {
 				this.openTable(table);
@@ -76,6 +83,16 @@ export class App extends React.Component<any, State> {
 				});
 			}
 		};
+	}
+
+	private onServerError(e) {
+		console.log('server error');
+	}
+
+	private onClock() {
+		clearInterval(this.tick);
+
+		this.tick = setInterval(() => console.log('connection error'), 1500);
 	}
 
 	private onKeyUp(e: any) {
@@ -160,7 +177,8 @@ export class App extends React.Component<any, State> {
 	}
 
 	private onTablesUpdate(event) {
-		this.setState({ tables: JSON.parse(event.data) });
+		console.log('tables!');
+		this.setState({ tables: JSON.parse(event.data), alive: true });
 	}
 
 	private onTableUpdate(event) {
@@ -269,7 +287,7 @@ export class App extends React.Component<any, State> {
 	}
 
 	render() {
-		const { player, table, tables, showMenu, notification } = this.state;
+		const { alive, player, table, tables, showMenu, notification } = this.state;
 
 		return (
 			<>

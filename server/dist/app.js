@@ -12,6 +12,11 @@ const port = 2001;
 app.use(body_parser_1.default.json());
 // Statics
 app.use('/', express_1.default.static('dist'));
+const clock = new express_sse_1.default(['tick']);
+setInterval(() => clock.send('tick'), 1000);
+app.get('/streams/clock', (req, res) => {
+    clock.init(req, res);
+});
 // Tables
 const tableStreams = {};
 const tablesStream = new express_sse_1.default({
