@@ -11,7 +11,7 @@ const port = 2001;
 app.use(bodyParser.json());
 
 // Statics
-app.use('/', express.static('../dist'));
+app.use('/', express.static('../client/build'));
 
 const clock = new SSE(['tick']);
 
@@ -87,31 +87,16 @@ app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { dat
 		res.send(event);
 		tableStreams[id].send(Tables.read(id), 'update');
 		tableStreams[id].send(event, 'tile-move');
-	}
-
-	if (data.space != null) {
-		const event = Tables.spaceTile(id, tileId, data.space);
+	} else {
+		const event = Tables.updateTile(id, tileId, data);
 		res.send(event);
-		tableStreams[id].send(Tables.read(id), 'update');
-	}
-
-	if (data.hidden != null) {
-		res.send(Tables.updateTile(id, tileId, data));
 		tableStreams[id].send(Tables.read(id), 'update');
 	}
 });
 
-// app.listen(port, err => {
-// 	if (err) {
-// 		return console.error(err);
-// 	}
-
-// 	return console.log(`Mahjong server is listening on ${ port }`);
-// });
-
 https.createServer({
 	key: fs.readFileSync('localhost+2-key.pem'),
 	cert: fs.readFileSync('localhost+2.pem')
-}, app).listen(2001, function () {
+}, app).listen(port, function () {
 	console.log('Mahjong server on https://localhost:2001');
 });

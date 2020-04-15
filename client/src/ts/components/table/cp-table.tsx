@@ -25,12 +25,12 @@ interface State {
 	drop?: DragDrop
 }
 
-const getDragDrop = (e) => (
-	e.target.dataset.tray
+const getDragDrop = ({ target: { dataset: { tray, index }, id } }: any) => (
+	tray != null
 		? {
-			id: e.target.id,
-			tray: e.target.dataset.tray,
-			index: parseFloat(e.target.dataset.index)
+			id,
+			tray,
+			index: parseFloat(index)
 		}
 		: undefined
 );
@@ -53,6 +53,19 @@ export class Table extends React.Component<Props, State> {
 	}
 
 	private onDragOver(e: React.MouseEvent) {
+		const { table } = this.props;
+		const { startX, drag, drop } = this.state;
+
+		if (drop.id === drag.id) {
+			const space = Math.abs(e.clientX - startX);
+
+			axios.put(`/tables/${ table.id }/game/tiles/${ drag.id }`, {
+				data: {
+						space: space < 20 ? space : 0
+				}
+			});
+		}
+
 		e.preventDefault();
 	}
 
@@ -65,10 +78,12 @@ export class Table extends React.Component<Props, State> {
 		const { startX, drag, drop } = this.state;
 
 		if (drop != null) {
+			console.log();
+
 			axios.put(`/tables/${ table.id }/game/tiles/${ drag.id }`, {
-				data: drop.id === drag.id && Math.abs(clientX - startX) > 1
+				data: drop.tray === drag.tray && Math.abs(drop.index - drag.index) <= 1
 					? {
-						space: clientX > startX
+						spaced: clientX > startX
 					}
 					: {
 						tray: drop.tray,

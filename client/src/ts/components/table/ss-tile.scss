@@ -1,6 +1,10 @@
 .tile {
-	transition: padding 30ms;
+	transition: all 200ms;
 	position: relative;
+
+	border-style: solid;
+	border-color: transparent;
+	border-width: 0 0 0 0;
 
 	.tile-graphic {
 		pointer-events: none;
@@ -111,7 +115,13 @@
 		}
 	}
 
+	&.tile-spaced {
+		border-width: 0 0 0 16px;
+	}
+
 	&.tile-rotated {
+		border-top: 0px solid transparent;
+
 		&.tile-hovered {
 			padding: 38px 0 0 0;
 		}
@@ -131,6 +141,10 @@
 				height: 16px;
 			}
 		}
+
+		&.tile-spaced {
+			border-width: 16px 0 0 0 0;
+		}
 	}
 
 	&.tile-blank {
@@ -138,15 +152,6 @@
 			.tile-symbol {
 				display: none;
 			}
-		}
-	}
-
-	&.tile-spaced {
-		border-left: 8px solid transparent;
-
-		&.tile-rotated {
-			border-left: 0;
-			border-top: 8px solid transparent;
 		}
 	}
 }

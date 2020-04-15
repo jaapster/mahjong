@@ -201,6 +201,21 @@ export const Tables = {
 
 		let from = tray;
 
+		const trayTiles = () => (
+			tables
+				.find(table => table.id === tableId)
+				.game
+				.tiles
+				.filter(t => t.tray === tray)
+		);
+
+		// const ts = trayTiles();
+
+		// const t = ts.find(t => t.id === tileId);
+		// const i = ts.findIndex(t1 => t1 === t) + 1;
+
+		// ts[i].spaced = ts[i].spaced || t.spaced;
+
 		tables = tables.map(table => {
 			if (table.id !== tableId) {
 				return table;
@@ -237,12 +252,20 @@ export const Tables = {
 						return {
 							...tile,
 							tray,
-							index
+							index,
+							spaced: false
 						};
 					})
 				}
 			};
 		});
+
+		// renumber indices
+		const tz = trayTiles();
+
+		tz
+			.sort((a, b) => a.index > b.index ? 1 : -1)
+			.forEach((t1, i) => { tz.find(t2 => t2.id === t1.id).index = i; });
 
 		return {
 			to: tray,

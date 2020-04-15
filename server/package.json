@@ -4,6 +4,7 @@
 	"author": "jaaplous@gmail.com",
 	"license": "MIT",
 	"scripts": {
+		"start": "node ../dist/app.js",
 		"watch": "tsc-watch --onSuccess 'node ../dist/app.js'",
 		"certs": "mkcert -install && mkcert localhost 127.0.0.1 ::1"
 	},

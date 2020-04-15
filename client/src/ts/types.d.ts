@@ -8,6 +8,7 @@ declare namespace Mahjong {
 		title: string;
 		spaced: boolean;
 		hidden: boolean;
+		space: number;
 	}
 
 	interface Chair {

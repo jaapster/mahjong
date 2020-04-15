@@ -1021,5 +1021,5 @@ export const getTileSet = (): Mahjong.Tile[]  => {
 			spaced: false
 		}
 
-	]).map((t, index) => ({ ...t, tray: 't0', index, hidden: false }));
+	]).map((t, index) => ({ ...t, tray: 't0', index, hidden: false, space: 0 }));
 };

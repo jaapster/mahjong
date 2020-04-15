@@ -59,7 +59,7 @@ export class Tile extends React.Component<Props, State> {
 	}
 
 	render() {
-		const { tile: { id, suit, name, spaced }, tile, left, hidden, rotate, blank, small, draggable } = this.props;
+		const { tile: { id, suit, name, spaced, title }, tile, left, hidden, rotate, blank, small, draggable } = this.props;
 		const { hovered, dragged } = this.state;
 
 		return (
@@ -82,7 +82,7 @@ export class Tile extends React.Component<Props, State> {
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
 				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
-				title={ tile.index.toString() } // blank || hidden ? undefined : title }
+				title={ blank || hidden || tile.hidden ? undefined : title }
 				data-tray={ tile.tray }
 				data-index={ (tile.index + (left?.index ?? (tile.index - 1))) / 2 }
 				data-hidden={ tile.hidden }
