@@ -4,117 +4,97 @@ import axios from 'axios';
 import { Chair } from './cp-chair';
 import { Wall } from './cp-wall';
 import { Center } from './cp-center';
+
 import './ss-table.scss';
 
 interface Props {
-	table: Mahjong.Table;
 	player: string;
-	leaveTable(id: string): void;
 	reveal(id: string): void;
+	table: Mahjong.Table;
+}
+
+interface DragDrop {
+	id: string;
+	tray: string;
+	index: number,
 }
 
 interface State {
-	dragged?: string;
-	dropTarget?: HTMLElement;
+	startX: number;
+	drag?: DragDrop,
+	drop?: DragDrop
 }
 
-let x;
+const getDragDrop = (e) => (
+	e.target.dataset.tray
+		? {
+			id: e.target.id,
+			tray: e.target.dataset.tray,
+			index: parseFloat(e.target.dataset.index)
+		}
+		: undefined
+);
 
 @bind
 export class Table extends React.Component<Props, State> {
-	private onDragStart(e) {
-		x = e.clientX;
-		this.setState({ dragged: e.target.id });
-	}
-
-	private onDragEnter(e) {
-		this.setState({ dropTarget: e.nativeEvent.target });
-		e.preventDefault();
-	}
-
-	private onDragLeave(e) {
-		e.preventDefault();
-	}
-
-	private onDragOver(e) {
-		e.preventDefault();
-	}
-
-	private onDragEnd(e) {
-		const { table } = this.props;
-		const { dropTarget, dragged } = this.state;
-
-		// if (dropTarget?.id) {
-			if (dropTarget.id === dragged) {
-				if (e.clientX - x > 1) {
-					this.space(dragged, true);
-				} else if (x - e.clientX > 1) {
-					this.space(dragged, false);
-				}
-			} else {
-				let target = dropTarget as HTMLElement;
-				let index;
-
-				if (target.classList.contains('tile')) {
-					target = dropTarget.parentNode as HTMLElement;
-					index = Array.from(target.children).indexOf(dropTarget) - 2;
-				}
-
-				if (target.classList.contains('before')) {
-					target = dropTarget.parentNode as HTMLElement;
-					index = 0;
-				}
-
-				if (target.classList.contains('after')) {
-					target = dropTarget.parentNode as HTMLElement;
-					index = table.game.tiles.filter(tile => tile.tray === target.id).length;
-				}
-
-				if (target.id === 't0-begin') {
-					index = 0;
-				}
-
-				if (target.id === 't0-end') {
-					index = table.game.tiles.filter(tile => tile.tray === 't0').length;
-				}
-
-				const tray = target.id;
-
-				if (tray) {
-					axios.put(`/tables/${ table.id }/game/tiles/${ dragged }`, {
-						data: {
-							tray: tray.match('t0') ? 't0' : tray,
-							index
-						}
-					});
-				}
-			}
-		// }
-
+	private onDragStart(e: React.MouseEvent) {
 		this.setState({
-			dragged: undefined,
-			dropTarget: undefined
+			startX: e.clientX,
+			drag: getDragDrop(e)
 		});
 	}
 
-	private space(id: string, space: boolean) {
-		const { table } = this.props;
-
-		axios.put(`/tables/${ table.id }/game/tiles/${ id }`, {
-			data: {
-				space
-			}
+	private onDragEnter(e: React.MouseEvent) {
+		this.setState({
+			drop: getDragDrop(e)
 		});
+
+		e.preventDefault();
 	}
 
-	private flip(id: string) {
-		const { table } = this.props;
+	private onDragOver(e: React.MouseEvent) {
+		e.preventDefault();
+	}
 
-		axios.put(`/tables/${ table.id }/game/tiles/${ id }`, {
-			data: {
-				flip: true
-			}
-		});
+	private onDragLeave(e: React.MouseEvent) {
+		e.preventDefault();
+	}
+
+	private onDragEnd({ clientX }: React.MouseEvent) {
+		const { table } = this.props;
+		const { startX, drag, drop } = this.state;
+
+		if (drop != null) {
+			axios.put(`/tables/${ table.id }/game/tiles/${ drag.id }`, {
+				data: drop.id === drag.id && Math.abs(clientX - startX) > 1
+					? {
+						space: clientX > startX
+					}
+					: {
+						tray: drop.tray,
+						index: drop.index
+					}
+			});
+
+			this.setState({
+				drag: undefined,
+				drop: undefined
+			});
+		}
+	}
+
+	private onClick({ target, shiftKey }: React.MouseEvent) {
+		const { id, dataset, classList } = target as HTMLElement;
+
+		if (classList.contains('tile') && shiftKey) {
+			const { table } = this.props;
+
+			axios.put(`/tables/${ table.id }/game/tiles/${ id }`, {
+				data: {
+					hidden: dataset.hidden === 'false'
+				}
+			});
+		}
 	}
 
 	render() {
@@ -125,6 +105,7 @@ export class Table extends React.Component<Props, State> {
 		return (
 			<div
 				className="table"
+				onClick={ this.onClick }
 				onDragEnd={ this.onDragEnd }
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
@@ -140,11 +121,10 @@ export class Table extends React.Component<Props, State> {
 								chair={ c }
 								index={ i }
 								key={ c.id }
-								tiles={ tiles }
-								reveal={ reveal }
-								transit={ table.transit }
 								player={ player }
-								flip={ this.flip }
+								reveal={ reveal }
+								tiles={ tiles }
+								transit={ table.transit }
 							/>
 						))
 				}

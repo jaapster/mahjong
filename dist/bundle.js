@@ -2118,7 +2118,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-a {\n    background: lightyellow; }\n  .chair.chair-b {\n    background: lightpink; }\n  .chair.chair-c {\n    background: lightblue; }\n  .chair.chair-d {\n    background: darkseagreen; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 5px;\n    color: white;\n    background: green;\n    opacity: 0.5; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n  .chair .tray-visibility {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 5px;\n    background: black;\n    color: white;\n    cursor: default;\n    opacity: 0.5; }\n    .chair .tray-visibility:hover {\n      opacity: 1; }\n    .chair .tray-visibility.tray-visible {\n      background: yellow;\n      color: black;\n      opacity: 1; }\n", ""]);
+exports.push([module.i, ".chair {\n  position: absolute;\n  display: flex;\n  justify-content: center; }\n  .chair.chair-top .tray, .chair.chair-player .tray {\n    flex-direction: row;\n    width: 100%; }\n  .chair.chair-left .tray, .chair.chair-right .tray {\n    flex-direction: column;\n    height: 100%; }\n  .chair.chair-top .tray:first-child, .chair.chair-left .tray:first-child, .chair.chair-right .tray:first-child {\n    background: rgba(0, 0, 0, 0.2);\n    flex-basis: 30px; }\n  .chair.chair-a {\n    background: lightyellow; }\n  .chair.chair-b {\n    background: lightpink; }\n  .chair.chair-c {\n    background: lightblue; }\n  .chair.chair-d {\n    background: darkseagreen; }\n  .chair.chair-top {\n    flex-direction: column;\n    top: 0;\n    left: 150px;\n    right: 150px;\n    height: 150px; }\n  .chair.chair-left {\n    flex-direction: row;\n    top: 0;\n    left: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-right {\n    flex-direction: row-reverse;\n    top: 0;\n    right: 0;\n    bottom: 240px;\n    width: 150px; }\n  .chair.chair-player {\n    flex-direction: column-reverse;\n    bottom: 0;\n    left: 150px;\n    right: 150px;\n    height: 240px; }\n    .chair.chair-player .tray:first-child {\n      background: rgba(0, 0, 0, 0.2); }\n  .chair.chair-exceeds .tile-count {\n    background: red;\n    opacity: 1; }\n  .chair .player {\n    position: absolute;\n    top: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 5px;\n    color: white;\n    background: green;\n    opacity: 0.5; }\n    .chair .player.player-unseated {\n      background: black;\n      opacity: 0.2; }\n  .chair .tray-visibility {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    font-size: 10px;\n    padding: 5px;\n    background: black;\n    color: white;\n    cursor: default;\n    opacity: 0.5; }\n    .chair .tray-visibility:hover {\n      opacity: 1; }\n    .chair .tray-visibility.tray-visible {\n      background: yellow;\n      color: black;\n      opacity: 1; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2172,7 +2172,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n\n.before, .after {\n  position: absolute;\n  opacity: 0.01; }\n\n.before {\n  background: red; }\n\n.after {\n  background: green; }\n\n.tray-regular .before, .tray-regular .after {\n  top: 0;\n  bottom: 0;\n  height: 100%;\n  width: 50%; }\n\n.tray-regular .before {\n  left: 0; }\n\n.tray-regular .after {\n  right: 0; }\n\n.tray-rotate .before, .tray-rotate .after {\n  left: 0;\n  right: 0;\n  width: 100%;\n  height: 50%; }\n\n.tray-rotate .before {\n  top: 0; }\n\n.tray-rotate .after {\n  bottom: 0; }\n\n.tile-count {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 5px;\n  background: black;\n  color: white;\n  font-size: 10px;\n  opacity: 0.5; }\n  .tile-count.tile-count-overflow {\n    background: red; }\n", ""]);
+exports.push([module.i, ".tray {\n  position: relative;\n  display: flex;\n  flex-basis: 120px;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  background: rgba(0, 0, 0, 0.05); }\n\n.before, .after {\n  position: absolute;\n  opacity: 0.01; }\n\n.before {\n  background: red; }\n\n.after {\n  background: green; }\n\n.tray-regular .before, .tray-regular .after {\n  top: 0;\n  bottom: 0;\n  height: 100%;\n  width: 50%; }\n\n.tray-regular .before {\n  left: 0; }\n\n.tray-regular .after {\n  right: 0; }\n\n.tray-rotate .before, .tray-rotate .after {\n  left: 0;\n  right: 0;\n  width: 100%;\n  height: 50%; }\n\n.tray-rotate .before {\n  top: 0; }\n\n.tray-rotate .after {\n  bottom: 0; }\n\n.tile-count {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  padding: 5px;\n  background: black;\n  color: white;\n  font-size: 10px;\n  opacity: 0.5; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -31716,7 +31716,6 @@ let App = class App extends react_1.default.Component {
       submit: this.submitName
     })) : table != null ? react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(cp_table_1.Table, {
       table: table,
-      leaveTable: this.onTableDelete,
       player: player,
       reveal: this.reveal
     }), showMenu ? react_1.default.createElement(cp_menu_1.Menu, {
@@ -32264,8 +32263,7 @@ class Chair extends react_1.default.Component {
       tiles,
       reveal,
       transit,
-      player,
-      flip
+      player
     } = this.props;
     const isPlayer = index === 0 || player === 'zork';
     const isDummy = chair.player == null;
@@ -32274,7 +32272,9 @@ class Chair extends react_1.default.Component {
     const rotate = index === 1 || index === 3;
     const total = set0.length + set1.length;
     return react_1.default.createElement("div", {
-      className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`, `chair-${id}`)
+      className: util_merge_classes_1.mergeClasses('chair', `chair-${POSITIONS[index]}`, `chair-${id}`, {
+        'chair-exceeds': total > 13
+      })
     }, react_1.default.createElement(cp_tray_1.Tray, {
       draggable: isPlayer || isDummy,
       hidden: !isPlayer && !chair.reveal,
@@ -32282,8 +32282,7 @@ class Chair extends react_1.default.Component {
       rotate: rotate,
       showCount: true,
       small: !isPlayer && !chair.reveal,
-      tiles: set0,
-      flip: flip
+      tiles: set0
     }), react_1.default.createElement(cp_tray_1.Tray, {
       draggable: isPlayer,
       hidden: false,
@@ -32291,8 +32290,7 @@ class Chair extends react_1.default.Component {
       rotate: rotate,
       showCount: true,
       small: false,
-      tiles: set1,
-      flip: flip
+      tiles: set1
     }), react_1.default.createElement("div", {
       className: util_merge_classes_1.mergeClasses('player', {
         'player-unseated': !chair.seated
@@ -32313,8 +32311,7 @@ class Chair extends react_1.default.Component {
       tiles: util_get_tray_1.getTray(`${id}transit`, tiles),
       rotate: index === 1 || index === 3,
       small: false,
-      draggable: true,
-      flip: flip
+      draggable: true
     }))) : null);
   }
 
@@ -32367,23 +32364,24 @@ const cp_center_1 = __webpack_require__(/*! ./cp-center */ "./src/ts/components/
 
 __webpack_require__(/*! ./ss-table.scss */ "./src/ts/components/table/ss-table.scss");
 
-let x;
+const getDragDrop = e => e.target.dataset.tray ? {
+  id: e.target.id,
+  tray: e.target.dataset.tray,
+  index: parseFloat(e.target.dataset.index)
+} : undefined;
+
 let Table = class Table extends react_1.default.Component {
   onDragStart(e) {
-    x = e.clientX;
     this.setState({
-      dragged: e.target.id
+      startX: e.clientX,
+      drag: getDragDrop(e)
     });
   }
 
   onDragEnter(e) {
     this.setState({
-      dropTarget: e.nativeEvent.target
+      drop: getDragDrop(e)
     });
-    e.preventDefault();
-  }
-
-  onDragLeave(e) {
     e.preventDefault();
   }
 
@@ -32391,87 +32389,58 @@ let Table = class Table extends react_1.default.Component {
     e.preventDefault();
   }
 
-  onDragEnd(e) {
-    const {
-      table
-    } = this.props;
-    const {
-      dropTarget,
-      dragged
-    } = this.state; // if (dropTarget?.id) {
-
-    if (dropTarget.id === dragged) {
-      if (e.clientX - x > 1) {
-        this.space(dragged, true);
-      } else if (x - e.clientX > 1) {
-        this.space(dragged, false);
-      }
-    } else {
-      let target = dropTarget;
-      let index;
-
-      if (target.classList.contains('tile')) {
-        target = dropTarget.parentNode;
-        index = Array.from(target.children).indexOf(dropTarget) - 2;
-      }
-
-      if (target.classList.contains('before')) {
-        target = dropTarget.parentNode;
-        index = 0;
-      }
-
-      if (target.classList.contains('after')) {
-        target = dropTarget.parentNode;
-        index = table.game.tiles.filter(tile => tile.tray === target.id).length;
-      }
-
-      if (target.id === 't0-begin') {
-        index = 0;
-      }
-
-      if (target.id === 't0-end') {
-        index = table.game.tiles.filter(tile => tile.tray === 't0').length;
-      }
-
-      const tray = target.id;
-
-      if (tray) {
-        axios_1.default.put(`/tables/${table.id}/game/tiles/${dragged}`, {
-          data: {
-            tray: tray.match('t0') ? 't0' : tray,
-            index
-          }
-        });
-      }
-    } // }
-
-
-    this.setState({
-      dragged: undefined,
-      dropTarget: undefined
-    });
+  onDragLeave(e) {
+    e.preventDefault();
   }
 
-  space(id, space) {
+  onDragEnd({
+    clientX
+  }) {
     const {
       table
     } = this.props;
-    axios_1.default.put(`/tables/${table.id}/game/tiles/${id}`, {
-      data: {
-        space
-      }
-    });
+    const {
+      startX,
+      drag,
+      drop
+    } = this.state;
+
+    if (drop != null) {
+      axios_1.default.put(`/tables/${table.id}/game/tiles/${drag.id}`, {
+        data: drop.id === drag.id && Math.abs(clientX - startX) > 1 ? {
+          space: clientX > startX
+        } : {
+          tray: drop.tray,
+          index: drop.index
+        }
+      });
+      this.setState({
+        drag: undefined,
+        drop: undefined
+      });
+    }
   }
 
-  flip(id) {
+  onClick({
+    target,
+    shiftKey
+  }) {
     const {
-      table
-    } = this.props;
-    axios_1.default.put(`/tables/${table.id}/game/tiles/${id}`, {
-      data: {
-        flip: true
-      }
-    });
+      id,
+      dataset,
+      classList
+    } = target;
+
+    if (classList.contains('tile') && shiftKey) {
+      const {
+        table
+      } = this.props;
+      axios_1.default.put(`/tables/${table.id}/game/tiles/${id}`, {
+        data: {
+          hidden: dataset.hidden === 'false'
+        }
+      });
+    }
   }
 
   render() {
@@ -32489,6 +32458,7 @@ let Table = class Table extends react_1.default.Component {
     const p = chairs.findIndex(c => c.player === player);
     return react_1.default.createElement("div", {
       className: "table",
+      onClick: this.onClick,
       onDragEnd: this.onDragEnd,
       onDragEnter: this.onDragEnter,
       onDragLeave: this.onDragLeave,
@@ -32498,11 +32468,10 @@ let Table = class Table extends react_1.default.Component {
       chair: c,
       index: i,
       key: c.id,
-      tiles: tiles,
-      reveal: reveal,
-      transit: table.transit,
       player: player,
-      flip: this.flip
+      reveal: reveal,
+      tiles: tiles,
+      transit: table.transit
     })), react_1.default.createElement(cp_center_1.Center, {
       tiles: tiles,
       transit: table.transit
@@ -32614,26 +32583,18 @@ let Tile = class Tile extends react_1.default.Component {
     });
   }
 
-  onDoubleClick(e) {
-    if (e.shiftKey) {
-      const {
-        flip,
-        tile
-      } = this.props;
-      flip === null || flip === void 0 ? void 0 : flip(tile.id);
-    }
-  }
-
   render() {
+    var _a;
+
     const {
       tile: {
         id,
         suit,
         name,
-        title,
         spaced
       },
       tile,
+      left,
       hidden,
       rotate,
       blank,
@@ -32661,7 +32622,9 @@ let Tile = class Tile extends react_1.default.Component {
       onDragLeave: this.onDragLeave,
       onDragStart: draggable ? this.onDragStart : e => e.preventDefault(),
       title: tile.index.toString(),
-      onClick: draggable ? this.onDoubleClick : undefined
+      "data-tray": tile.tray,
+      "data-index": (tile.index + ((_a = left === null || left === void 0 ? void 0 : left.index) !== null && _a !== void 0 ? _a : tile.index - 1)) / 2,
+      "data-hidden": tile.hidden
     }, react_1.default.createElement("div", {
       className: "tile-graphic"
     }, react_1.default.createElement("div", {
@@ -32711,9 +32674,12 @@ exports.Tray = ({
   blank,
   small,
   draggable,
-  showCount,
-  flip
+  showCount
 }) => {
+  var _a, _b, _c, _d;
+
+  const index0 = (_b = (_a = tiles[0]) === null || _a === void 0 ? void 0 : _a.index) !== null && _b !== void 0 ? _b : 0;
+  const index1 = (_d = (_c = tiles[tiles.length - 1]) === null || _c === void 0 ? void 0 : _c.index) !== null && _d !== void 0 ? _d : 0;
   return react_1.default.createElement("div", {
     id: id,
     className: util_merge_classes_1.mergeClasses('tray', {
@@ -32723,23 +32689,25 @@ exports.Tray = ({
     })
   }, react_1.default.createElement("div", {
     className: "before",
-    id: "before"
+    id: "before",
+    "data-tray": id,
+    "data-index": (index0 + (index0 - 1)) / 2
   }), react_1.default.createElement("div", {
     className: "after",
-    id: "before"
+    id: "before",
+    "data-tray": id,
+    "data-index": (index1 + (index1 + 1)) / 2
   }), tiles.map((t, i) => react_1.default.createElement(cp_tile_1.Tile, {
     key: t.id,
     tile: t,
+    left: tiles[i - 1],
     hidden: hidden,
     rotate: rotate,
     blank: blank,
     small: small,
-    draggable: draggable,
-    flip: flip
+    draggable: draggable
   })), showCount ? react_1.default.createElement("div", {
-    className: util_merge_classes_1.mergeClasses('tile-count', {
-      'tile-count-overflow': tiles.length > 13
-    })
+    className: "tile-count"
   }, tiles.length) : null);
 };
 
@@ -32767,13 +32735,13 @@ Object.defineProperty(exports, "__esModule", {
 
 const react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 
-const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/ts/components/table/cp-tray.tsx");
-
 const util_get_tray_1 = __webpack_require__(/*! ../../utils/util-get-tray */ "./src/ts/utils/util-get-tray.ts");
 
-__webpack_require__(/*! ./ss-wall.scss */ "./src/ts/components/table/ss-wall.scss");
-
 const util_merge_classes_1 = __webpack_require__(/*! ../../utils/util-merge-classes */ "./src/ts/utils/util-merge-classes.ts");
+
+const cp_tray_1 = __webpack_require__(/*! ./cp-tray */ "./src/ts/components/table/cp-tray.tsx");
+
+__webpack_require__(/*! ./ss-wall.scss */ "./src/ts/components/table/ss-wall.scss");
 
 exports.Wall = ({
   tiles,
@@ -32788,12 +32756,12 @@ exports.Wall = ({
       'wall-end': !begin
     })
   }, react_1.default.createElement(cp_tray_1.Tray, {
-    id: `t0-${begin ? 'begin' : 'end'}`,
-    hidden: false,
-    tiles: tile ? [tile] : [],
     blank: true,
+    draggable: true,
+    hidden: false,
+    id: "t0",
     small: false,
-    draggable: true
+    tiles: tile ? [tile] : []
   }), react_1.default.createElement("div", {
     className: "tile-count"
   }, count));

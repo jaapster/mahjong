@@ -86,6 +86,13 @@
 		}
 	}
 
+	&.chair-exceeds {
+		.tile-count {
+			background: red;
+			opacity: 1;
+		}
+	}
+
 	.player {
 		position: absolute;
 		top: 0;

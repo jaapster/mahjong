@@ -95,9 +95,8 @@ app.put('/tables/:id/game/tiles/:tileId', ({ params: { id, tileId }, body: { dat
 		tableStreams[id].send(Tables.read(id), 'update');
 	}
 
-	if (data.flip) {
-		const event = Tables.flipTile(id, tileId);
-		res.send(event);
+	if (data.hidden != null) {
+		res.send(Tables.updateTile(id, tileId, data));
 		tableStreams[id].send(Tables.read(id), 'update');
 	}
 });

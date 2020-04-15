@@ -5,12 +5,12 @@ import './ss-tile.scss';
 
 interface Props {
 	tile: Mahjong.Tile;
+	left: Mahjong.Tile;
 	hidden: boolean;
 	rotate: boolean;
 	blank: boolean;
 	small: boolean;
 	draggable: boolean;
-	flip?(id: string): void;
 }
 
 interface State {
@@ -58,15 +58,8 @@ export class Tile extends React.Component<Props, State> {
 		this.setState({ dragged: false });
 	}
 
-	onDoubleClick(e) {
-		if (e.shiftKey) {
-			const { flip, tile } = this.props;
-			flip?.(tile.id);
-		}
-	}
-
 	render() {
-		const { tile: { id, suit, name, title, spaced }, tile, hidden, rotate, blank, small, draggable } = this.props;
+		const { tile: { id, suit, name, spaced }, tile, left, hidden, rotate, blank, small, draggable } = this.props;
 		const { hovered, dragged } = this.state;
 
 		return (
@@ -90,7 +83,9 @@ export class Tile extends React.Component<Props, State> {
 				onDragLeave={ this.onDragLeave }
 				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
 				title={ tile.index.toString() } // blank || hidden ? undefined : title }
-				onClick={ draggable ? this.onDoubleClick : undefined }
+				data-tray={ tile.tray }
+				data-index={ (tile.index + (left?.index ?? (tile.index - 1))) / 2 }
+				data-hidden={ tile.hidden }
 			>
 				<div className="tile-graphic">
 					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />

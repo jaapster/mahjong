@@ -106,65 +106,51 @@ exports.Tables = {
             tile: tileId
         };
     },
-    moveTile(tableId, tileId, { tray, index }) {
-        const table = tables.find(table => table.id === tableId);
-        const tile = table.game.tiles.find(tile => tile.id === tileId);
-        const openTrays = ['a1', 'b1', 'c1', 'd1'];
-        const noMove = {
-            to: tray,
-            from: tray,
-            tile: tileId
-        };
-        if (!tile) {
-            console.log('tile not found with id', tileId);
-            return noMove;
-        }
-        const from = tile.tray;
-        // check for illegal moves
-        // move tile from wall to table
-        if (tray === 't1' && tile.tray === 't0') {
-            return noMove;
-        }
-        // move tile from wall to open tray
-        if (openTrays.includes(tray) && tile.tray === 't0') {
-            return noMove;
-        }
-        // move tile from open tray to table
-        if (openTrays.includes(from) && tray === 't1') {
-            return noMove;
-        }
+    updateTile(tableId, tileId, data) {
         tables = tables.map(table => {
             if (table.id !== tableId) {
                 return table;
             }
-            const { game } = table;
-            const tile = game.tiles.find(t => t.id === tileId);
-            const fromTray = tile.tray;
-            const fromIndex = tile.index;
-            const spaced = tile.spaced;
-            if (tray === 't1') {
-                // tile in "active" table zone moves to inactive zone
-                game.tiles = game.tiles.map(t => (t.tray === tray
-                    ? Object.assign(Object.assign({}, t), { tray: 't2' }) : t));
-            }
-            else {
-                game.tiles = game.tiles.map(t => (t.tray === tray && t.index >= index
-                    ? Object.assign(Object.assign({}, t), { index: t.index + 1 }) : t));
-            }
-            game.tiles = game.tiles.map(t => (t.tray === fromTray && t.index > fromIndex
-                ? Object.assign(Object.assign({}, t), { index: t.index - 1 }) : t));
-            game.tiles = game.tiles.map(t => (t.id === tileId
-                ? Object.assign(Object.assign({}, t), { tray, index: index - (fromTray === tray && fromIndex < index ? 1 : 0), spaced: false }) : t.tray === fromTray && t.index === fromIndex
-                ? Object.assign(Object.assign({}, t), { spaced: t.spaced || spaced }) : t));
-            return table;
+            return Object.assign(Object.assign({}, table), { game: Object.assign(Object.assign({}, table.game), { tiles: table.game.tiles.map(tile => {
+                        if (tile.id !== tileId) {
+                            return tile;
+                        }
+                        return Object.assign(Object.assign({}, tile), data);
+                    }) }) });
         });
-        if (from !== tray) {
-            console.log('Tile', tileId, 'moved from', from, 'to', tray, 'at index', index);
-        }
-        console.log(tile.title, 'van', `${from}.${tile.index}`, 'naar', `${tray}.${index}`);
+    },
+    moveTile(tableId, tileId, { tray, index }) {
+        const openTrays = ['a1', 'b1', 'c1', 'd1'];
+        let from = tray;
+        tables = tables.map(table => {
+            if (table.id !== tableId) {
+                return table;
+            }
+            return Object.assign(Object.assign({}, table), { game: Object.assign(Object.assign({}, table.game), { tiles: table.game.tiles.map(tile => {
+                        if (tile.id !== tileId) {
+                            return tile;
+                        }
+                        // check for illegal moves
+                        // move tile from wall to table
+                        if (tile.tray === 't0' && tray === 't1') {
+                            return tile;
+                        }
+                        // move tile from wall to open tray
+                        if (openTrays.includes(tray) && tile.tray === 't0') {
+                            return tile;
+                        }
+                        // move tile from open tray to table
+                        if (openTrays.includes(from) && tray === 't1') {
+                            return tile;
+                        }
+                        from = tile.tray;
+                        return Object.assign(Object.assign({}, tile), { tray,
+                            index });
+                    }) }) });
+        });
         return {
-            from,
             to: tray,
+            from,
             tile: tileId
         };
     }

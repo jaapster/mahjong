@@ -1,8 +1,9 @@
 import React from 'react';
-import { Tray } from './cp-tray';
 import { getTray } from '../../utils/util-get-tray';
-import './ss-wall.scss';
 import { mergeClasses } from '../../utils/util-merge-classes';
+import { Tray } from './cp-tray';
+
+import './ss-wall.scss';
 
 interface Props {
 	tiles: Mahjong.Tile[];
@@ -17,14 +18,24 @@ export const Wall = ({ tiles, begin }: Props) => {
 		: list[count - 1];
 
 	return (
-		<div className={ mergeClasses('wall', { 'wall-begin': begin, 'wall-end': !begin })}>
+		<div
+			className={
+				mergeClasses(
+					'wall',
+					{
+						'wall-begin': begin,
+						'wall-end': !begin
+					}
+				)
+			}
+		>
 			<Tray
-				id={ `t0-${ begin ? 'begin' : 'end' }` }
-				hidden={ false }
-				tiles={ tile ? [tile] : [] }
 				blank={ true }
-				small={ false }
 				draggable={ true }
+				hidden={ false }
+				id="t0"
+				small={ false }
+				tiles={ tile ? [tile] : [] }
 			/>
 			<div className="tile-count">
 				{ count }

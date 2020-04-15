@@ -12,7 +12,6 @@ interface Props {
 	transit: boolean;
 	reveal(id: string): void;
 	player: string;
-	flip?(id: string): void;
 }
 
 const POSITIONS = ['player', 'left', 'top', 'right'];
@@ -24,7 +23,7 @@ export class Chair extends React.Component<Props> {
 	}
 
 	render() {
-		const { chair: { id }, chair, index, tiles, reveal, transit, player, flip } = this.props;
+		const { chair: { id }, chair, index, tiles, reveal, transit, player } = this.props;
 
 		const isPlayer = index === 0 || player === 'zork';
 		const isDummy = chair.player == null;
@@ -39,7 +38,10 @@ export class Chair extends React.Component<Props> {
 			<div className={ mergeClasses(
 					'chair',
 					`chair-${ POSITIONS[index] }`,
-					`chair-${ id }`
+					`chair-${ id }`,
+					{
+						'chair-exceeds': total > 13
+					}
 				) }>
 				<Tray
 					draggable={ isPlayer || isDummy }
@@ -49,7 +51,6 @@ export class Chair extends React.Component<Props> {
 					showCount
 					small={ !isPlayer && !chair.reveal }
 					tiles={ set0 }
-					flip={ flip }
 				/>
 				<Tray
 					draggable={ isPlayer }
@@ -59,7 +60,6 @@ export class Chair extends React.Component<Props> {
 					showCount
 					small={ false }
 					tiles={ set1 }
-					flip={ flip }
 				/>
 				<div
 					className={
@@ -118,7 +118,6 @@ export class Chair extends React.Component<Props> {
 										rotate={ index === 1 || index === 3 }
 										small={ false }
 										draggable={ true }
-										flip={ flip }
 									/>
 								</div>
 							</Portal>

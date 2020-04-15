@@ -12,10 +12,12 @@ interface Props {
 	small: boolean;
 	draggable: boolean;
 	showCount?: boolean;
-	flip?(id: string): void;
 }
 
-export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount, flip }: Props) => {
+export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount }: Props) => {
+	const index0 = tiles[0]?.index ?? 0;
+	const index1 = tiles[tiles.length - 1]?.index ?? 0;
+
 	return (
 		<div
 			id={ id }
@@ -30,33 +32,36 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 				)
 			}
 		>
-			<div className="before" id="before"/>
-			<div className="after" id="before"/>
+			<div
+				className="before"
+				id="before"
+				data-tray={ id }
+				data-index={ (index0 + (index0 - 1)) / 2 }
+			/>
+			<div
+				className="after"
+				id="before"
+				data-tray={ id }
+				data-index={ (index1 + (index1 + 1)) / 2 }
+			/>
 			{
 				tiles.map((t, i) => (
 					<Tile
 						key={ t.id }
 						tile={ t }
+						left={ tiles[i - 1]}
 						hidden={ hidden }
 						rotate={ rotate }
 						blank={ blank }
 						small={ small }
 						draggable={ draggable }
-						flip={ flip }
 					/>
 				))
 			}
 			{
 				showCount
 					? (
-						<div
-							className={ mergeClasses(
-								'tile-count',
-								{
-									'tile-count-overflow': tiles.length > 13
-								}
-							) }
-						>
+						<div className="tile-count">
 							{ tiles.length }
 						</div>
 					)

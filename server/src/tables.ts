@@ -171,98 +171,82 @@ export const Tables = {
 		};
 	},
 
+	updateTile(tableId: string, tileId, data: any) {
+		tables = tables.map(table => {
+			if (table.id !== tableId) {
+				return table;
+			}
+
+			return {
+				...table,
+				game: {
+					...table.game,
+					tiles: table.game.tiles.map(tile => {
+						if (tile.id !== tileId) {
+							return tile;
+						}
+
+						return {
+							...tile,
+							...data
+						};
+					})
+				}
+			};
+		});
+	},
+
 	moveTile(tableId: string, tileId: string, { tray, index }: { tray: string; index: number }) {
-		const table = tables.find(table => table.id === tableId);
-		const tile = table.game.tiles.find(tile => tile.id === tileId);
-
 		const openTrays = ['a1', 'b1', 'c1', 'd1'];
-		const noMove = {
-			to: tray,
-			from: tray,
-			tile: tileId
-		};
 
-		if (!tile) {
-			console.log('tile not found with id', tileId);
-			return noMove;
-		}
-
-		const from = tile.tray;
-
-		// check for illegal moves
-
-		// move tile from wall to table
-		if (tray === 't1' && tile.tray === 't0') {
-			return noMove;
-		}
-
-		// move tile from wall to open tray
-		if (openTrays.includes(tray) && tile.tray === 't0') {
-			return noMove;
-		}
-
-		// move tile from open tray to table
-		if (openTrays.includes(from) && tray === 't1') {
-			return noMove;
-		}
+		let from = tray;
 
 		tables = tables.map(table => {
 			if (table.id !== tableId) {
 				return table;
 			}
 
-			const { game } = table;
-			const tile = game.tiles.find(t => t.id === tileId);
-			const fromTray = tile.tray;
-			const fromIndex = tile.index;
-			const spaced = tile.spaced;
+			return {
+				...table,
+				game: {
+					...table.game,
+					tiles: table.game.tiles.map(tile => {
+						if (tile.id !== tileId) {
+							return tile;
+						}
 
-			if (tray === 't1') {
-				// tile in "active" table zone moves to inactive zone
-				game.tiles = game.tiles.map(t => (
-					t.tray === tray
-						? { ...t, tray: 't2' }
-						: t
-				));
-			} else {
-				game.tiles = game.tiles.map(t => (
-					t.tray === tray && t.index >= index
-						? { ...t, index: t.index + 1 }
-						: t
-				));
-			}
+						// check for illegal moves
 
-			game.tiles = game.tiles.map(t => (
-				t.tray === fromTray && t.index > fromIndex
-					? { ...t, index: t.index - 1 }
-					: t
-			));
+						// move tile from wall to table
+						if (tile.tray === 't0' && tray === 't1') {
+							return tile;
+						}
 
-			game.tiles = game.tiles.map(t => (
-				t.id === tileId
-					? {
-						...t,
-						tray,
-						index: index - (fromTray === tray && fromIndex < index ? 1 : 0),
-						spaced: false
-					}
-					: t.tray === fromTray && t.index === fromIndex
-						? { ...t, spaced: t.spaced || spaced }
-						: t
-			));
+						// move tile from wall to open tray
+						if (openTrays.includes(tray) && tile.tray === 't0') {
+							return tile;
+						}
 
-			return table;
+						// move tile from open tray to table
+						if (openTrays.includes(from) && tray === 't1') {
+							return tile;
+						}
+
+						from = tile.tray;
+
+						return {
+							...tile,
+							tray,
+							index
+						};
+					})
+				}
+			};
 		});
 
-		if (from !== tray) {
-			console.log('Tile', tileId, 'moved from', from, 'to', tray, 'at index', index);
-		}
-
-		console.log(tile.title, 'van', `${ from }.${ tile.index }`, 'naar', `${ tray }.${ index }`);
-
 		return {
-			from,
 			to: tray,
+			from,
 			tile: tileId
 		};
 	}

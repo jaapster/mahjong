@@ -304,7 +304,6 @@ export class App extends React.Component<any, State> {
 								<>
 									<Table
 										table={ table }
-										leaveTable={ this.onTableDelete }
 										player={ player }
 										reveal={ this.reveal }
 									/>
