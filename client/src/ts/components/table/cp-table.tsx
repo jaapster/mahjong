@@ -9,7 +9,6 @@ import './ss-table.scss';
 
 interface Props {
 	player: string;
-	reveal(id: string): void;
 	table: Mahjong.Table;
 }
 
@@ -53,19 +52,6 @@ export class Table extends React.Component<Props, State> {
 	}
 
 	private onDragOver(e: React.MouseEvent) {
-		const { table } = this.props;
-		const { startX, drag, drop } = this.state;
-
-		if (drop.id === drag.id) {
-			const space = Math.abs(e.clientX - startX);
-
-			axios.put(`/tables/${ table.id }/game/tiles/${ drag.id }`, {
-				data: {
-						space: space < 20 ? space : 0
-				}
-			});
-		}
-
 		e.preventDefault();
 	}
 
@@ -78,10 +64,10 @@ export class Table extends React.Component<Props, State> {
 		const { startX, drag, drop } = this.state;
 
 		if (drop != null) {
-			console.log();
+			const diff = drop.index - drag.index;
 
 			axios.put(`/tables/${ table.id }/game/tiles/${ drag.id }`, {
-				data: drop.tray === drag.tray && Math.abs(drop.index - drag.index) <= 1
+				data: drop.tray === drag.tray && diff >= 0 && diff <= 1
 					? {
 						spaced: clientX > startX
 					}
@@ -112,8 +98,20 @@ export class Table extends React.Component<Props, State> {
 		}
 	}
 
+	private reveal(id: string) {
+		const { table } = this.props;
+		const chair = table.chairs.find(chair => chair.id === id);
+
+		axios.put(`/tables/${ table.id }/chairs/${ id }`, {
+			data: {
+				...chair,
+				reveal: !chair.reveal
+			}
+		});
+	}
+
 	render() {
-		const { table, player, reveal } = this.props;
+		const { table, player } = this.props;
 		const { game: { tiles }, chairs } = table;
 		const p = chairs.findIndex(c => c.player === player );
 
@@ -137,7 +135,7 @@ export class Table extends React.Component<Props, State> {
 								index={ i }
 								key={ c.id }
 								player={ player }
-								reveal={ reveal }
+								reveal={ this.reveal }
 								tiles={ tiles }
 								transit={ table.transit }
 							/>

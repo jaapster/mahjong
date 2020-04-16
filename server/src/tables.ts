@@ -23,6 +23,14 @@ let tables: Mahjong.Table[] = [
 	}
 ];
 
+const trayTiles = (tableId: string, trayId: string) => (
+	tables
+		.find(table => table.id === tableId)
+		.game
+		.tiles
+		.filter(t => t.tray === trayId)
+);
+
 export const Tables = {
 	all() {
 		return tables;
@@ -201,20 +209,13 @@ export const Tables = {
 
 		let from = tray;
 
-		const trayTiles = () => (
-			tables
-				.find(table => table.id === tableId)
-				.game
-				.tiles
-				.filter(t => t.tray === tray)
-		);
-
-		// const ts = trayTiles();
-
-		// const t = ts.find(t => t.id === tileId);
-		// const i = ts.findIndex(t1 => t1 === t) + 1;
-
-		// ts[i].spaced = ts[i].spaced || t.spaced;
+		// const trayTiles = () => (
+		// 	tables
+		// 		.find(table => table.id === tableId)
+		// 		.game
+		// 		.tiles
+		// 		.filter(t => t.tray === tray)
+		// );
 
 		tables = tables.map(table => {
 			if (table.id !== tableId) {
@@ -261,11 +262,33 @@ export const Tables = {
 		});
 
 		// renumber indices
-		const tz = trayTiles();
+		const tz = trayTiles(tableId, tray);
 
 		tz
 			.sort((a, b) => a.index > b.index ? 1 : -1)
 			.forEach((t1, i) => { tz.find(t2 => t2.id === t1.id).index = i; });
+
+		// is tile is put on table,
+		// move tile that was there to inaccessible part of table
+		if (tray === 't1' && from !== 't1') {
+			const g = tz[tz.length - 2];
+
+			if (g) {
+				const gs = tables
+					.find(table => table.id === tableId)
+					.game
+					.tiles
+					.filter(t => t.tray === 't2');
+
+				const h = gs[gs.length - 1];
+
+				const i = h
+					? h.index + 1
+					: 0;
+
+				return Tables.moveTile(tableId, g.id, { tray: 't2', index: i });
+			}
+		}
 
 		return {
 			to: tray,

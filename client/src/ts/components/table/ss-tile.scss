@@ -1,10 +1,12 @@
 .tile {
-	transition: all 200ms;
+	transition: all 50ms;
 	position: relative;
 
 	border-style: solid;
 	border-color: transparent;
 	border-width: 0 0 0 0;
+
+	margin: 0.5px;
 
 	.tile-graphic {
 		pointer-events: none;
@@ -15,9 +17,8 @@
 		width: 38px;
 		height: 58px;
 
-		background: linear-gradient(white, white 1%, ivory 15%, blanchedalmond);
+		background: ivory;
 
-		margin: 0.5px;
 		border-radius: 4px;
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 		overflow: hidden;
@@ -82,12 +83,28 @@
 		}
 	}
 
-	&.tile-hovered {
-		padding: 0 0 0 38px;
+	.tile-gloss {
+		box-sizing: border-box;
+		z-index: 10;
+		position: absolute;
+		top: 0x;
+		left: 0px;
+		width: 38px;
+		height: 58px;
+		border-radius: 4px;
+		background: linear-gradient(rgba(255, 255, 255, 0.7), transparent 30%, rgba(0, 0, 0, 0.2));
+	}
 
-		&:nth-child(2) {
-			padding: 0;
+	&.tile-spaced {
+		border-width: 0 0 0 16px;
+
+		&.tile-rotated {
+		 	border-width: 16px 0 0 0;
 		}
+	}
+
+	&.tile-hovered {
+		border-width: 0 0 0 38px;
 	}
 
 	&.tile-dragged {
@@ -102,21 +119,27 @@
 		.tile-graphic {
 			width: 16px;
 			height: 24px;
+
 			box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 			border-radius: 2px;
+		}
+
+		.tile-gloss {
+			width: 16px;
+			height: 24px;
+			border-radius: 2px;
+			background: linear-gradient(rgba(255, 255, 255, 0.5), transparent 30%, rgba(0, 0, 0, 0.2));
 		}
 	}
 
 	&.tile-hidden {
 		.tile-graphic {
+			background: blanchedalmond;
+
 			.tile-symbol {
 				display: none;
 			}
 		}
-	}
-
-	&.tile-spaced {
-		border-width: 0 0 0 16px;
 	}
 
 	&.tile-rotated {
@@ -135,15 +158,21 @@
 			}
 		}
 
+		.tile-gloss {
+			width: 58px;
+			height: 38px;
+		}
+
 		&.tile-small {
 			.tile-graphic {
 				width: 24px;
 				height: 16px;
 			}
-		}
 
-		&.tile-spaced {
-			border-width: 16px 0 0 0 0;
+			.tile-gloss {
+				width: 24px;
+				height: 16px;
+			}
 		}
 	}
 

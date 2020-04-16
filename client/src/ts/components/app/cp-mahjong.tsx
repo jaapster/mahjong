@@ -1,7 +1,7 @@
 import React from 'react';
 import bind from 'autobind-decorator';
 import axios from 'axios';
-import { Entrance } from '../lobby/cp-entrance';
+import { Login } from '../lobby/cp-login';
 import { Lobby } from '../lobby/cp-lobby';
 import { Menu } from './cp-menu';
 import { Notifications } from './cp-notifications';
@@ -239,25 +239,13 @@ export class App extends React.Component<any, State> {
 		axios.delete(`/tables/${ id }`);
 	}
 
-	private submitName(player: string) {
+	private login(player: string) {
 		this.setState({ player });
 		Storage.setPlayer(player);
 	}
 
 	private logout() {
 		this.setState({ player: null });
-	}
-
-	private reveal(id: string) {
-		const { table } = this.state;
-		const chair = table.chairs.find(chair => chair.id === id);
-
-		axios.put(`/tables/${ table.id }/chairs/${ id }`, {
-			data: {
-				...chair,
-				reveal: !chair.reveal
-			}
-		});
 	}
 
 	private toggleTransitMode() {
@@ -282,7 +270,6 @@ export class App extends React.Component<any, State> {
 
 	private startNewGame() {
 		const { table } = this.state;
-
 		axios.post(`/tables/${ table.id }/game`);
 	}
 
@@ -293,19 +280,13 @@ export class App extends React.Component<any, State> {
 			<>
 				{
 					player == null
-						? (
-							<>
-								<h1>Mahjong</h1>
-								<Entrance submit={ this.submitName } />
-							</>
-						)
+						? <Login submit={ this.login } />
 						: table != null
 							? (
 								<>
 									<Table
 										table={ table }
 										player={ player }
-										reveal={ this.reveal }
 									/>
 									{
 										showMenu
