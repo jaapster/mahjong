@@ -64,7 +64,10 @@ export const Tables = {
 	update(id: string, data: Mahjong.Table) {
 		tables = tables.map(table => (
 			table.id === id
-				? data
+				? {
+					...table,
+					...data
+				}
 				: table
 		));
 
@@ -84,7 +87,10 @@ export const Tables = {
 					...table,
 					chairs: table.chairs.map(chair => (
 						chair.id === chairId
-							? data
+							? {
+								...chair,
+								...data
+							}
 							: chair
 					))
 				}

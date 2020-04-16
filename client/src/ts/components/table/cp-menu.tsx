@@ -8,7 +8,7 @@ export const Menu = ({ toggleTransitMode, startNewGame, close, table, leaveTable
 				<a
 					href="#"
 					onClick={ () => {
-						leaveTable(table.id);
+						leaveTable();
 						close();
 					} }
 				>

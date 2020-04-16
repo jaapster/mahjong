@@ -27,4 +27,24 @@ declare namespace Mahjong {
 			tiles: Tile[];
 		};
 	}
+
+	interface Tables {
+		tables:	Table[];
+		activeTable?: string;
+	}
+
+	interface User {
+		name?: string;
+	}
+
+	interface Action {
+		type: string;
+		data: any;
+		token: any;
+	}
+
+	interface Store {
+		tables: Tables;
+		user: User;
+	}
 }

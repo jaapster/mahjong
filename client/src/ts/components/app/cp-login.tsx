@@ -1,17 +1,21 @@
 import React from 'react';
 import bind from 'autobind-decorator';
-import './ss-login.scss';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
+import { ActionLogin } from '../../store/actions/actions';
 
-interface Props {
-	submit(name: string): void;
-}
+import './ss-login.scss';
 
 interface State {
 	name: string;
 }
 
+interface Props {
+	login(userName: string): void;
+}
+
 @bind
-export class Login extends React.Component<Props, State> {
+export class _Login extends React.Component<Props, State> {
 	state = { name: '' };
 
 	private onChange(e) {
@@ -19,10 +23,10 @@ export class Login extends React.Component<Props, State> {
 	}
 
 	private onSubmit() {
-		const { submit } = this.props;
 		const { name } = this.state;
+		const { login } = this.props;
 
-		submit(name);
+		login(name);
 	}
 
 	render() {
@@ -52,3 +56,13 @@ export class Login extends React.Component<Props, State> {
 		);
 	}
 }
+
+const mapDispatchToProps = (dispatch: Dispatch) => {
+	return {
+		login(userName: string) {
+			dispatch(ActionLogin.create({ userName, password: 'secret' }));
+		}
+	};
+};
+
+export const Login = connect(null, mapDispatchToProps)(_Login);

@@ -36,14 +36,11 @@ app.get('/streams/tables/:id', (req, res) => {
 	const id = req.params.id;
 
 	if (!tableStreams[id]) {
-		tableStreams[id] = new SSE({
-			type: 'table',
-			data: Tables.read(id)
-		});
+		tableStreams[id] = new SSE(Tables.read(req.params.id), 'initial');
 	}
 
 	tableStreams[id].init(req, res);
-	tableStreams[id].send(Tables.read(id), 'update');
+	tableStreams[id].send(Tables.read(id), 'initial');
 });
 
 app.get('/tables', (req, res) => {
