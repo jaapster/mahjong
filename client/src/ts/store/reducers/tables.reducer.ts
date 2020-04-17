@@ -1,26 +1,12 @@
-import { Action } from 'redux';
-import { ActionSetActiveTable, ActionSetTables } from '../actions/actions';
-
 const STATE = {
 	tables: []
 };
 
-export const tables = (state: Mahjong.Tables = STATE, action: Action): Mahjong.Tables => {
-	if (ActionSetActiveTable.validate(action)) {
-		const {
-			id
-		} = ActionSetActiveTable.data(action);
-
-		return {
-			...state,
-			activeTable: id
-		};
-	}
-
-	if (ActionSetTables.validate(action)) {
+export const tables = (state: Mahjong.Tables = STATE, action: any): Mahjong.Tables => {
+	if (action.type === 'actionSetTables') {
 		const {
 			tables
-		} = ActionSetTables.data(action);
+		} = action.data;
 
 		return {
 			...state,

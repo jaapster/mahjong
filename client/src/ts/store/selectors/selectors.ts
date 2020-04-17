@@ -9,7 +9,7 @@ export const selectTables = (store: Mahjong.Store) => {
 };
 
 export const selectActiveTableId = (store: Mahjong.Store) => {
-	return store.tables.activeTable;
+	return store.settings.activeTable;
 };
 
 export const selectActiveTable = createSelector(

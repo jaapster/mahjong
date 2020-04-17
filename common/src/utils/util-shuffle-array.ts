@@ -7,4 +7,4 @@ export const shuffle = (array: any[]): any[] => {
 	}
 
 	return target;
-}
+};

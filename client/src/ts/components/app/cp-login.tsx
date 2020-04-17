@@ -60,7 +60,7 @@ export class _Login extends React.Component<Props, State> {
 const mapDispatchToProps = (dispatch: Dispatch) => {
 	return {
 		login(userName: string) {
-			dispatch(ActionLogin.create({ userName, password: 'secret' }));
+			dispatch(ActionLogin.create(userName, 'secret'));
 		}
 	};
 };

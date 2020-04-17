@@ -118,11 +118,11 @@ const mapStateToProps = (state: Mahjong.Store) => {
 const mapDispatchToProps = (dispatch: Dispatch) => {
 	return {
 		logout() {
-			dispatch(ActionLogout.create({}));
+			dispatch(ActionLogout.create());
 		},
 
 		setActiveTable(id?: string) {
-			dispatch(ActionSetActiveTable.create({ id }));
+			dispatch(ActionSetActiveTable.create(id));
 		},
 
 		createTable(creator: string) {

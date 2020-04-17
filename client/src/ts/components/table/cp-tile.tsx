@@ -82,8 +82,8 @@ export class Tile extends React.Component<Props, State> {
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
 				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
-				// title={ tile.index.toString() }
-				title={ blank || hidden || tile.hidden ? undefined : title }
+				title={ tile.index.toString() }
+				// title={ blank || hidden || tile.hidden ? undefined : title }
 				data-tray={ tile.tray }
 				data-index={ (tile.index + (left?.index ?? (tile.index - 1))) / 2 }
 				data-hidden={ tile.hidden }

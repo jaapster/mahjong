@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Login } from './cp-login';
 import { Lobby } from '../lobby/cp-lobby';
 import { selectUserName } from '../../store/selectors/selectors';
+import { Stream } from '../logic/cp-stream';
+import { Storage } from '../logic/cp-storage';
 
 interface Props {
 	player?: string;
@@ -21,6 +23,8 @@ export class _App extends React.Component<Props> {
 						? <Login />
 						: <Lobby />
 				}
+				<Stream />
+				<Storage />
 			</>
 		);
 	}

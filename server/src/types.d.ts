@@ -27,4 +27,8 @@ declare namespace Mahjong {
 			tiles: Tile[];
 		};
 	}
+
+	interface Store {
+		tables: Table[];
+	}
 }

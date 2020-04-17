@@ -43,8 +43,13 @@ declare namespace Mahjong {
 		token: any;
 	}
 
+	interface Settings {
+		activeTable?: string;
+	}
+
 	interface Store {
 		tables: Tables;
 		user: User;
+		settings: Settings;
 	}
 }

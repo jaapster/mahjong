@@ -1,14 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {
+	ActionSetActiveTable,
+	ActionSetTransit,
+	ActionNewGame
+} from '../../store/actions/actions';
+
 import './ss-menu.scss';
 
-export const Menu = ({ toggleTransitMode, startNewGame, close, table, leaveTable }: any) => {
+interface AttributeProps {
+	close(): void;
+	table: Mahjong.Table;
+}
+
+interface MappedProps {
+	setTransit(tableId: string, transit: boolean): void;
+	startNewGame(tableId: string): void;
+	leave(): void;
+}
+
+export const _Menu = ({ setTransit, startNewGame, close, table, leave }: MappedProps & AttributeProps) => {
 	return (
 		<div className="menu">
 			<div className="menu-body">
 				<a
 					href="#"
 					onClick={ () => {
-						leaveTable();
+						leave();
 						close();
 					} }
 				>
@@ -22,7 +40,7 @@ export const Menu = ({ toggleTransitMode, startNewGame, close, table, leaveTable
 								<a
 									href="#"
 									onClick={ () => {
-										toggleTransitMode();
+										setTransit(table.id, false);
 										close();
 									} }
 								>
@@ -33,7 +51,7 @@ export const Menu = ({ toggleTransitMode, startNewGame, close, table, leaveTable
 							<a
 								href="#"
 								onClick={ () => {
-									toggleTransitMode();
+									setTransit(table.id, true);
 									close();
 								} }
 							>
@@ -44,7 +62,7 @@ export const Menu = ({ toggleTransitMode, startNewGame, close, table, leaveTable
 				<a
 					href="#"
 					onClick={ () => {
-						startNewGame();
+						startNewGame(table.id);
 						close();
 					} }
 				>
@@ -54,3 +72,21 @@ export const Menu = ({ toggleTransitMode, startNewGame, close, table, leaveTable
 		</div>
 	);
 };
+
+const mapDispatchToProps = (dispatch: any): MappedProps => {
+	return {
+		leave() {
+			dispatch(ActionSetActiveTable.create());
+		},
+
+		setTransit(tableId: string, transit: boolean) {
+			dispatch(ActionSetTransit.create(tableId, transit));
+		},
+
+		startNewGame(tableId: string) {
+			dispatch(ActionNewGame.create(tableId));
+		}
+	};
+};
+
+export const Menu = connect(null, mapDispatchToProps)(_Menu);

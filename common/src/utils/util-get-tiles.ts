@@ -1,4 +1,4 @@
-import { shuffle } from "./utils/util-shuffle-array";
+import { shuffle } from './util-shuffle-array';
 
 const SUITS = {
 	BAMBOO: 'bamboo',
