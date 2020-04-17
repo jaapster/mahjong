@@ -140,6 +140,10 @@ export class _Table extends React.Component<Props, State> {
 			startX: e.clientX,
 			drag: getDragDrop(e)
 		});
+
+		const target = e.target as HTMLElement;
+
+		setTimeout(() => { target.style.display = 'none'; });
 	}
 
 	private onDragEnter(e: React.MouseEvent) {
@@ -158,7 +162,8 @@ export class _Table extends React.Component<Props, State> {
 		e.preventDefault();
 	}
 
-	private onDragEnd({ clientX }: React.MouseEvent) {
+	private onDragEnd(e: React.MouseEvent) {
+		const { clientX } = e;
 		const { id, moveTile, spaceTile } = this.props;
 		const { startX, drag, drop } = this.state;
 
@@ -175,6 +180,10 @@ export class _Table extends React.Component<Props, State> {
 				drag: undefined,
 				drop: undefined
 			});
+
+			const target = e.target as HTMLElement;;
+
+			setTimeout(() => { target.style.display = 'block'; });
 		}
 	}
 

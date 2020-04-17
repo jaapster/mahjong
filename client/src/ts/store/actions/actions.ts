@@ -61,6 +61,10 @@ export const ActionSetTables = {
 
 // ASYNC //
 
+const remoteDispatch = action => (
+	axios.put('/dispatch', action)
+);
+
 export const ActionJoinTable = {
 	create(tableId: string, chairId: string, player: string) {
 		return (dispatch) => {
@@ -74,8 +78,7 @@ export const ActionJoinTable = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -91,8 +94,7 @@ export const ActionCreateTable = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -108,8 +110,7 @@ export const ActionDeleteTable = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -127,8 +128,7 @@ export const ActionSetSeated = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -147,8 +147,7 @@ export const ActionMoveTile = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -166,8 +165,7 @@ export const ActionSpaceTile = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -184,8 +182,7 @@ export const ActionToggleTileHidden = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -202,8 +199,7 @@ export const ActionToggleReveal = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -219,8 +215,7 @@ export const ActionToggleTransit = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };
@@ -236,8 +231,7 @@ export const ActionNewGame = {
 			};
 
 			dispatch(action);
-
-			axios.put('/dispatch', action);
+			remoteDispatch(action);
 		};
 	}
 };

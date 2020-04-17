@@ -19,6 +19,8 @@ const STATE: Mahjong.Table[] = [
 	}
 ];
 
+const byId = id => item => item.id === id;
+
 export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Table[] => {
 	if (action.type === 'actionSetTables') {
 		const {
@@ -254,6 +256,9 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 			toIndex
 		} = action.data;
 
+		const target = state.find(byId(tableId))?.game.tiles.find(byId(tileId));
+		const fromRack = target?.tray !== 't0' && target?.tray[1] === '0';
+
 		return state.map(table => (
 			table.id !== tableId
 				? table
@@ -263,7 +268,7 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 						...table.game,
 						tiles: table.game.tiles.map(tile => (
 							tile.id !== tileId
-								? tile.tray === 't1' && toTray === 't1'
+								? tile.tray === 't1' && toTray === 't1' && fromRack
 									/*
 										Tile moved to accessible part of table,
 										move the tile that was there to inaccessible part

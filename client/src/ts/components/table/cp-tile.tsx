@@ -36,9 +36,9 @@ export class Tile extends React.Component<Props, State> {
 	onDragEnter() {
 		const { tile } = this.props;
 
-		if (id !== tile.id && index !== tile.index - 1) {
-			this.setState({ hovered: true });
-		}
+		// if (id !== tile.id && index !== tile.index - 1) {
+		this.setState({ hovered: true });
+		// }
 	}
 
 	onDragLeave() {
