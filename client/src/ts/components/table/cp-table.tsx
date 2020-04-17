@@ -20,16 +20,21 @@ import {
 
 import './ss-table.scss';
 
-interface Props {
+interface MappedProps {
 	id: string;
 	player: string;
 	table: Mahjong.Table;
+}
+
+interface DispatchProps {
 	moveTile(tableId: string, tileId: string, tray: string, index: number): void;
-	spaceTile(tableId: string, tileId: string, spaced: boolean): void;
 	setSeated(tableId: string, chairId: string, seated: boolean): void;
+	spaceTile(tableId: string, tileId: string, spaced: boolean): void;
 	toggleReveal(tableId: string, chairId: string): void;
 	toggleTileHidden(tableId: string, tileId: string): void;
 }
+
+type Props = MappedProps & DispatchProps;
 
 interface DragDrop {
 	id: string;
@@ -41,9 +46,12 @@ interface State {
 	startX: number;
 	drag?: DragDrop;
 	drop?: DragDrop;
-	notification?: string;
+	notification?: any;
+	showNotification?: string;
 	chairs: { [id: string]: string };
 	showMenu: boolean;
+	startTimer: boolean;
+	__prevProps: Props;
 }
 
 interface State {
@@ -62,13 +70,51 @@ const getDragDrop = ({ target: { dataset: { tray, index }, id } }: any) => (
 
 @bind
 export class _Table extends React.Component<Props, State> {
+	static getDerivedStateFromProps(nextProps: Props, prevState: State) {
+		const { game: { tiles: nextTiles} } = nextProps.table;
+		const { game: { tiles: prevTiles} } = prevState.__prevProps.table;
+
+		const diff = nextTiles === prevTiles
+			? undefined
+			: nextTiles.reduce((m: any, next) => {
+				const prev = prevTiles.find(tile => tile.id === next.id);
+
+				if (prev.tray !== next.tray && prev.tray[0] !== next.tray[0]) {
+					{
+						return {
+							from: prev.tray,
+							title: prev.title,
+							to: next.tray
+						};
+					}
+				}
+
+				return m;
+			}, undefined);
+
+		const notification = diff
+			? `"${ diff.title }" van ${ diff.from } naar ${ diff.to }`
+			: undefined;
+
+		return {
+			...prevState,
+			__prevProps: nextProps,
+			notification: diff ?? prevState.notification,
+			startTimer: notification != null
+		};
+	}
+
+	private timer: any;
+
 	constructor(props: Props) {
 		super(props);
 
 		this.state = {
 			startX: 0,
 			chairs: {},
-			showMenu: false
+			showMenu: false,
+			startTimer: false,
+			__prevProps: props
 		};
 	}
 
@@ -76,8 +122,17 @@ export class _Table extends React.Component<Props, State> {
 		document.addEventListener('keyup', this.onKeyUp);
 	}
 
+	componentDidUpdate() {
+		const { startTimer } = this.state;
+
+		if (startTimer) {
+			this.startNotificationTimer();
+		}
+	}
+
 	componentWillUnmount() {
 		document.removeEventListener('keyup', this.onKeyUp);
+		clearTimeout(this.timer);
 	}
 
 	private onDragStart(e: React.MouseEvent) {
@@ -132,16 +187,16 @@ export class _Table extends React.Component<Props, State> {
 		}
 	}
 
-	private revealRack(chairId: string) {
-		const { id, toggleReveal } = this.props;
-
-		toggleReveal(id, chairId);
-	}
-
 	private onKeyUp(e: any) {
 		if (e.key === 'Escape') {
 			this.toggleMenu();
 		}
+	}
+
+	private toggleReveal(chairId: string) {
+		const { id, toggleReveal } = this.props;
+
+		toggleReveal(id, chairId);
 	}
 
 	private hideMenu() {
@@ -151,6 +206,16 @@ export class _Table extends React.Component<Props, State> {
 	private toggleMenu() {
 		const { showMenu } = this.state;
 		this.setState({ showMenu: !showMenu });
+	}
+
+	private startNotificationTimer() {
+		clearTimeout(this.timer);
+
+		this.timer = setTimeout(() => {
+			this.setState({ notification: undefined });
+		}, 5000);
+
+		this.setState({ startTimer: false });
 	}
 
 	render() {
@@ -185,7 +250,7 @@ export class _Table extends React.Component<Props, State> {
 								index={ i }
 								key={ c.id }
 								player={ player }
-								reveal={ this.revealRack }
+								reveal={ this.toggleReveal }
 								tiles={ tiles }
 								transit={ table.transit }
 							/>
@@ -207,13 +272,13 @@ export class _Table extends React.Component<Props, State> {
 						)
 						: null
 				}
-				<Notifications notification={ notification } />
+				<Notifications table={ table } notification={ notification } />
 			</div>
 		);
 	}
 };
 
-const mapStateToProps = (state: Mahjong.Store) => {
+const mapStateToProps = (state: Mahjong.Store): MappedProps => {
 	return {
 		player: selectUserName(state),
 		id: selectActiveTableId(state),
@@ -221,7 +286,7 @@ const mapStateToProps = (state: Mahjong.Store) => {
 	};
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: any): DispatchProps => {
 	return {
 		moveTile(tableId: string, tileId: string, tray: string, index: number) {
 			dispatch(ActionMoveTile.create(tableId, tileId, tray, index));

@@ -1,12 +1,10 @@
 .tile {
-	transition: all 50ms;
+	// transition: all 50ms;
 	position: relative;
 
 	border-style: solid;
 	border-color: transparent;
-	border-width: 0 0 0 0;
-
-	margin: 0.5px;
+	border-width: 0 1px 0 0;
 
 	.tile-graphic {
 		pointer-events: none;
@@ -96,15 +94,15 @@
 	}
 
 	&.tile-spaced {
-		border-width: 0 0 0 16px;
+		border-left-width: 16px;
 
 		&.tile-rotated {
-		 	border-width: 16px 0 0 0;
+			border-top-width: 16px;
 		}
 	}
 
 	&.tile-hovered {
-		border-width: 0 0 0 38px;
+		border-left-width: 38px;
 	}
 
 	&.tile-dragged {
@@ -143,7 +141,7 @@
 	}
 
 	&.tile-rotated {
-		border-top: 0px solid transparent;
+		border-top-width: 0;
 
 		&.tile-hovered {
 			padding: 38px 0 0 0;

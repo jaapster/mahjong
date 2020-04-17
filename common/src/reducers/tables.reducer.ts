@@ -2,7 +2,22 @@ import { v4 } from 'uuid';
 import { getTileSet } from '../utils/util-get-tiles';
 import { dealTiles } from '../utils/util-deal-tiles';
 
-const STATE: Mahjong.Table[] = [];
+const STATE: Mahjong.Table[] = [
+	{
+		id: '42',
+		creator: 'Zaphod',
+		chairs: [
+			{ id: 'a', reveal: false, player: 'Zaphod', seated: true },
+			{ id: 'b', reveal: false, player: 'Ford', seated: false },
+			{ id: 'c', reveal: false, player: 'Trillian', seated: true },
+			{ id: 'd', reveal: false, seated: false }
+		],
+		game: {
+			tiles: dealTiles(getTileSet())
+		},
+		transit: false
+	}
+];
 
 export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Table[] => {
 	if (action.type === 'actionSetTables') {
