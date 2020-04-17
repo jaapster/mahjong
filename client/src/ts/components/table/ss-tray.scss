@@ -10,7 +10,7 @@
 
 .before, .after {
 	position: absolute;
-	opacity: 0.01;
+	opacity: 0.51;
 }
 
 .before {
@@ -35,6 +35,12 @@
 
 	.after {
 		right: 0;
+	}
+}
+
+.tray-mega {
+	.before, .after {
+		width: 100%;
 	}
 }
 

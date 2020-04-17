@@ -1,4 +1,8 @@
 declare namespace Mahjong {
+	interface Coin {
+		value: number;
+	}
+
 	interface Tile {
 		id: string;
 		index: number;
@@ -16,6 +20,7 @@ declare namespace Mahjong {
 		player?: string;
 		reveal: boolean;
 		seated: boolean;
+		coins: Coin[];
 	}
 
 	interface Table {
@@ -43,7 +48,7 @@ declare namespace Mahjong {
 	}
 
 	interface Store {
-		tables: Table[];
+		tables: Mahjong.Table[];
 		user: User;
 		settings: Settings;
 	}

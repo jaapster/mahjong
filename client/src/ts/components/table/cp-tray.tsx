@@ -12,9 +12,11 @@ interface Props {
 	small: boolean;
 	draggable: boolean;
 	showCount?: boolean;
+	before?: boolean;
+	after?: boolean;
 }
 
-export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount }: Props) => {
+export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount, before, after }: Props) => {
 	const index0 = tiles[0]?.index ?? 0;
 	const index1 = tiles[tiles.length - 1]?.index ?? 0;
 
@@ -27,23 +29,37 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 					{
 						'tray-hidden': hidden,
 						'tray-rotate': rotate,
-						'tray-regular': !rotate
+						'tray-regular': !rotate,
+						'tray-mega': before || after
 					}
 				)
 			}
 		>
-			<div
-				className="before"
-				id="before"
-				data-tray={ id }
-				data-index={ (index0 + (index0 - 1)) / 2 }
-			/>
-			<div
-				className="after"
-				id="before"
-				data-tray={ id }
-				data-index={ (index1 + (index1 + 1)) / 2 }
-			/>
+			{
+				after
+					? null
+					: (
+						<div
+							className="before"
+							id="before"
+							data-tray={ id }
+							data-index={ (index0 + (index0 - 1)) / 2 }
+						/>
+					)
+			}
+
+			{
+				before
+					? null
+					: (
+						<div
+							className="after"
+							id="before"
+							data-tray={ id }
+							data-index={ (index1 + (index1 + 1)) / 2 }
+						/>
+					)
+			}
 			{
 				tiles.map((t, i) => (
 					<Tile

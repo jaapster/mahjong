@@ -4,7 +4,7 @@
 	"author": "jaaplous@gmail.com",
 	"license": "MIT",
 	"private": true,
-	"workspaces": ["client", "server"],
+	"workspaces": ["client", "server", "common"],
 	"scripts": {
 		"start": "concurrently \"yarn watch-client\" \"yarn watch-server\"",
 		"watch-client": "cd ./client && yarn webpack --config webpack.config.js",

@@ -1,0 +1,9 @@
+{
+	"name": "common",
+	"version": "0.0.1",
+	"author": "jaaplous@gmail.com",
+	"license": "MIT",
+	"scripts": {},
+	"dependencies": {},
+	"devDependencies": {}
+}

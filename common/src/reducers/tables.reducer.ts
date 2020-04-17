@@ -7,10 +7,10 @@ const STATE: Mahjong.Table[] = [
 		id: '42',
 		creator: 'Zaphod',
 		chairs: [
-			{ id: 'a', reveal: false, player: 'Zaphod', seated: true },
-			{ id: 'b', reveal: false, player: 'Ford', seated: false },
-			{ id: 'c', reveal: false, player: 'Trillian', seated: true },
-			{ id: 'd', reveal: false, seated: false }
+			{ id: 'a', reveal: false, seated: true, coins: [], player: 'Zaphod' },
+			{ id: 'b', reveal: false, seated: true, coins: [], player: 'Ford' },
+			{ id: 'c', reveal: false, seated: true, coins: [], player: 'Trillian' },
+			{ id: 'd', reveal: false, seated: false, coins: [] }
 		],
 		game: {
 			tiles: dealTiles(getTileSet())
@@ -39,10 +39,10 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 				id: v4(),
 				creator,
 				chairs: [
-					{ id: 'a', reveal: false, player: creator, seated: false },
-					{ id: 'b', reveal: false, seated: false },
-					{ id: 'c', reveal: false, seated: false },
-					{ id: 'd', reveal: false, seated: false }
+					{ id: 'a', reveal: false, seated: false, coins: [], player: creator },
+					{ id: 'b', reveal: false, seated: false, coins: [] },
+					{ id: 'c', reveal: false, seated: false, coins: [] },
+					{ id: 'd', reveal: false, seated: false, coins: [] }
 				],
 				game: {
 					tiles: dealTiles(getTileSet())
@@ -295,7 +295,9 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 											 : {
 												...tile,
 												tray: toTray,
-												index: toIndex,
+												index: toTray === 't0' && toIndex > 0
+													? Infinity
+													: toIndex,
 												spaced: false
 											}
 						))

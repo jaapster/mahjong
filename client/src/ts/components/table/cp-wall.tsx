@@ -8,9 +8,10 @@ import './ss-wall.scss';
 interface Props {
 	tiles: Mahjong.Tile[];
 	begin: boolean;
+	x: boolean;
 }
 
-export const Wall = ({ tiles, begin }: Props) => {
+export const Wall = ({ tiles, begin, x }: Props) => {
 	const list = getTray('t0', tiles);
 	const count = list.length;
 	const tile = begin
@@ -36,6 +37,8 @@ export const Wall = ({ tiles, begin }: Props) => {
 				id="t0"
 				small={ false }
 				tiles={ tile ? [tile] : [] }
+				before={ begin }
+				after={ !begin }
 			/>
 			<div className="tile-count">
 				{ count }

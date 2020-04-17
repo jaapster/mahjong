@@ -220,7 +220,7 @@ export class _Table extends React.Component<Props, State> {
 
 	render() {
 		const { table } = this.props;
-		const { notification, showMenu } = this.state;
+		const { notification, showMenu, drag } = this.state;
 
 		if (!table) {
 			return null;
@@ -260,8 +260,8 @@ export class _Table extends React.Component<Props, State> {
 					tiles={ tiles }
 					transit={ table.transit }
 				/>
-				<Wall tiles={ tiles } begin={ true } />
-				<Wall tiles={ tiles } begin={ false } />
+				<Wall tiles={ tiles } begin={ true } x={ drag != null } />
+				<Wall tiles={ tiles } begin={ false }  x={ drag != null } />
 				{
 					showMenu
 						? (
