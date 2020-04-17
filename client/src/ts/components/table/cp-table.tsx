@@ -9,8 +9,8 @@ import { Menu } from './cp-menu';
 import {
 	ActionMoveTile,
 	ActionSpaceTile,
-	ActionSetTileHidden,
-	ActionRevealTiles
+	ActionToggleReveal,
+	ActionToggleTileHidden
 } from '../../store/actions/actions';
 import {
 	selectUserName,
@@ -27,8 +27,8 @@ interface Props {
 	moveTile(tableId: string, tileId: string, tray: string, index: number): void;
 	spaceTile(tableId: string, tileId: string, spaced: boolean): void;
 	setSeated(tableId: string, chairId: string, seated: boolean): void;
-	hideTile(tableId: string, tileId: string, hidden: boolean): void;
-	revealRack(tableId: string, chairId: string, reveal: boolean): void;
+	toggleReveal(tableId: string, chairId: string): void;
+	toggleTileHidden(tableId: string, tileId: string): void;
 }
 
 interface DragDrop {
@@ -124,20 +124,18 @@ export class _Table extends React.Component<Props, State> {
 	}
 
 	private onClick({ target, shiftKey }: React.MouseEvent) {
-		const { hideTile, id } = this.props;
-		const { dataset, classList, id: tileId } = target as HTMLElement;
+		const { id, toggleTileHidden } = this.props;
+		const { classList, id: tileId } = target as HTMLElement;
 
 		if (classList.contains('tile') && shiftKey) {
-			hideTile(id, tileId, dataset.hidden === 'false');
+			toggleTileHidden(id, tileId);
 		}
 	}
 
 	private revealRack(chairId: string) {
-		const { id, revealRack, table } = this.props;
+		const { id, toggleReveal } = this.props;
 
-		const chair = table.chairs.find(chair => chair.id === chairId);
-
-		revealRack(id, chairId, !chair.reveal);
+		toggleReveal(id, chairId);
 	}
 
 	private onKeyUp(e: any) {
@@ -233,16 +231,16 @@ const mapDispatchToProps = (dispatch: any) => {
 			dispatch(ActionSpaceTile.create(tableId, tileId, spaced));
 		},
 
-		hideTile(tableId: string, tileId: string, hidden: boolean) {
-			dispatch(ActionSetTileHidden.create(tableId, tileId, hidden));
+		toggleTileHidden(tableId: string, tileId: string) {
+			dispatch(ActionToggleTileHidden.create(tableId, tileId));
 		},
 
 		setSeated(tableId: string, chairId: string, seated: boolean) {
 			dispatch(ActionSpaceTile.create(tableId, chairId, seated));
 		},
 
-		revealRack(tableId: string, chairId: string, reveal: boolean) {
-			dispatch(ActionRevealTiles.create(tableId, chairId, reveal));
+		toggleReveal(tableId: string, chairId: string) {
+			dispatch(ActionToggleReveal.create(tableId, chairId));
 		}
 	};
 };

@@ -65,15 +65,15 @@ export const ActionJoinTable = {
 	create(tableId: string, chairId: string, player: string) {
 		return (dispatch) => {
 			const action = {
-				type: 'actionUpdateChair',
+				type: 'actionJoinTable',
 				data: {
 					tableId,
 					chairId,
-					data: {
-						player
-					}
+					player
 				}
 			};
+
+			dispatch(action);
 
 			axios.put('/dispatch', action);
 		};
@@ -90,6 +90,8 @@ export const ActionCreateTable = {
 				}
 			};
 
+			dispatch(action);
+
 			axios.put('/dispatch', action);
 		};
 	}
@@ -105,6 +107,8 @@ export const ActionDeleteTable = {
 				}
 			};
 
+			dispatch(action);
+
 			axios.put('/dispatch', action);
 		};
 	}
@@ -114,15 +118,15 @@ export const ActionSetSeated = {
 	create(tableId: string, chairId: string, seated: boolean) {
 		return (dispatch) => {
 			const action = {
-				type: 'actionUpdateChair',
+				type: 'actionSetSeated',
 				data: {
 					tableId,
 					chairId,
-					data: {
-						seated
-					}
+					seated
 				}
 			};
+
+			dispatch(action);
 
 			axios.put('/dispatch', action);
 		};
@@ -142,6 +146,8 @@ export const ActionMoveTile = {
 				}
 			};
 
+			dispatch(action);
+
 			axios.put('/dispatch', action);
 		};
 	}
@@ -159,61 +165,60 @@ export const ActionSpaceTile = {
 				}
 			};
 
-			axios.put('/dispatch', action);
-		};
-	}
-};
-
-export const ActionSetTileHidden = {
-	create(tableId: string, tileId: string, hidden: boolean) {
-		return (dispatch) => {
-			const action = {
-				type: 'actionUpdateTile',
-				data: {
-					tableId,
-					tileId,
-					data: {
-						hidden
-					}
-				}
-			};
+			dispatch(action);
 
 			axios.put('/dispatch', action);
 		};
 	}
 };
 
-export const ActionRevealTiles = {
-	create(tableId: string, chairId: string, reveal: boolean) {
+export const ActionToggleTileHidden = {
+	create(tableId: string, tileId: string) {
 		return (dispatch) => {
 			const action = {
-				type: 'actionUpdateChair',
+				type: 'actionToggleTileHidden',
 				data: {
 					tableId,
-					chairId,
-					data: {
-						reveal
-					}
+					tileId
 				}
 			};
+
+			dispatch(action);
 
 			axios.put('/dispatch', action);
 		};
 	}
 };
 
-export const ActionSetTransit = {
-	create(tableId: string, transit: boolean) {
+export const ActionToggleReveal = {
+	create(tableId: string, chairId: string) {
 		return (dispatch) => {
 			const action = {
-				type: 'actionUpdateTable',
+				type: 'actionToggleReveal',
 				data: {
 					tableId,
-					data: {
-						transit
-					}
+					chairId
 				}
 			};
+
+			dispatch(action);
+
+			axios.put('/dispatch', action);
+		};
+	}
+};
+
+export const ActionToggleTransit = {
+	create(tableId: string) {
+		return (dispatch) => {
+			const action = {
+				type: 'actionToggleTransit',
+				data: {
+					tableId
+				}
+			};
+
+			dispatch(action);
 
 			axios.put('/dispatch', action);
 		};
@@ -229,6 +234,8 @@ export const ActionNewGame = {
 					tableId
 				}
 			};
+
+			dispatch(action);
 
 			axios.put('/dispatch', action);
 		};

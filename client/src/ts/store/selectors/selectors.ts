@@ -5,7 +5,7 @@ export const selectUserName = (store: Mahjong.Store) => {
 };
 
 export const selectTables = (store: Mahjong.Store) => {
-	return store.tables.tables;
+	return store.tables;
 };
 
 export const selectActiveTableId = (store: Mahjong.Store) => {

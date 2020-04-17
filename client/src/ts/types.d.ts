@@ -28,11 +28,6 @@ declare namespace Mahjong {
 		};
 	}
 
-	interface Tables {
-		tables:	Table[];
-		activeTable?: string;
-	}
-
 	interface User {
 		name?: string;
 	}
@@ -48,7 +43,7 @@ declare namespace Mahjong {
 	}
 
 	interface Store {
-		tables: Tables;
+		tables: Table[];
 		user: User;
 		settings: Settings;
 	}

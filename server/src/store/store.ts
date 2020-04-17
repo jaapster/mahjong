@@ -27,6 +27,8 @@ export const connectStore = (app: any) => {
 	app.put('/dispatch', (req, res) => {
 		const action = req.body;
 
+		console.log(action.type);
+
 		store.dispatch(action);
 
 		res.send({ success: true });

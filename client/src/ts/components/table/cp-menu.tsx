@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {
 	ActionSetActiveTable,
-	ActionSetTransit,
+	ActionToggleTransit,
 	ActionNewGame
 } from '../../store/actions/actions';
 
@@ -14,12 +14,16 @@ interface AttributeProps {
 }
 
 interface MappedProps {
-	setTransit(tableId: string, transit: boolean): void;
+	toggleTransit(tableId: string): void;
 	startNewGame(tableId: string): void;
 	leave(): void;
 }
 
-export const _Menu = ({ setTransit, startNewGame, close, table, leave }: MappedProps & AttributeProps) => {
+export const _Menu = ({ toggleTransit, startNewGame, close, table, leave }: MappedProps & AttributeProps) => {
+	const tilesInTransit = table.game.tiles.filter(tile => tile.tray.match('transit')).length;
+
+	console.log('tilesInTransit', tilesInTransit);
+
 	return (
 		<div className="menu">
 			<div className="menu-body">
@@ -32,33 +36,20 @@ export const _Menu = ({ setTransit, startNewGame, close, table, leave }: MappedP
 				>
 					Naar de lobby
 				</a>
-				{
-					table.transit
-						? table.game.tiles.filter(tile => tile.tray.match('transit')).length
-							? <a href="#" style={ { opacity: 0.3 } }>Zet doorschuiven uit</a>
-							: (
-								<a
-									href="#"
-									onClick={ () => {
-										setTransit(table.id, false);
-										close();
-									} }
-								>
-									Zet doorschuiven uit
-								</a>
-							)
-						: (
-							<a
-								href="#"
-								onClick={ () => {
-									setTransit(table.id, true);
-									close();
-								} }
-							>
-								Zet doorschuiven aan
-							</a>
-						)
-				}
+				<a
+					href="#"
+					onClick={
+						!tilesInTransit
+							? () => {
+								toggleTransit(table.id);
+								close();
+							}
+							: undefined
+					}
+					style={ { opacity: tilesInTransit ? 0.3 : 1 } }
+				>
+					Zet doorschuiven { table.transit ? 'uit' : 'aan' }
+				</a>
 				<a
 					href="#"
 					onClick={ () => {
@@ -79,8 +70,8 @@ const mapDispatchToProps = (dispatch: any): MappedProps => {
 			dispatch(ActionSetActiveTable.create());
 		},
 
-		setTransit(tableId: string, transit: boolean) {
-			dispatch(ActionSetTransit.create(tableId, transit));
+		toggleTransit(tableId: string) {
+			dispatch(ActionToggleTransit.create(tableId));
 		},
 
 		startNewGame(tableId: string) {

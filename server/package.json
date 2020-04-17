@@ -4,8 +4,8 @@
 	"author": "jaaplous@gmail.com",
 	"license": "MIT",
 	"scripts": {
-		"start": "node ../dist/app.js",
-		"watch": "tsc-watch --onSuccess 'node ../dist/app.js'",
+		"start": "node ./build/app.js",
+		"watch": "tsc-watch --onSuccess 'node ./build/server/src/app.js'",
 		"certs": "mkcert -install && mkcert localhost 127.0.0.1 ::1"
 	},
 	"dependencies": {

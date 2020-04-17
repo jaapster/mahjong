@@ -4,7 +4,7 @@ import { dealTiles } from '../utils/util-deal-tiles';
 
 const STATE: Mahjong.Table[] = [];
 
-export const tables = (state: Mahjong.Table[] = STATE, action: { type: string; data: any}): Mahjong.Table[] => {
+export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Table[] => {
 	if (action.type === 'actionSetTables') {
 		const {
 			tables
@@ -37,22 +37,6 @@ export const tables = (state: Mahjong.Table[] = STATE, action: { type: string; d
 		];
 	}
 
-	if (action.type === 'actionUpdateTable') {
-		const {
-			tableId,
-			data
-		} = action.data;
-
-		return state.map(table => (
-			table.id === tableId
-				? {
-					...table,
-					...data
-				}
-				: table
-		));
-	}
-
 	if (action.type === 'actionDeleteTable') {
 		const {
 			tableId
@@ -61,11 +45,11 @@ export const tables = (state: Mahjong.Table[] = STATE, action: { type: string; d
 		return state.filter(table => table.id !== tableId);
 	}
 
-	if (action.type === 'actionUpdateChair') {
+	if (action.type === 'actionJoinTable') {
 		const {
 			tableId,
 			chairId,
-			data
+			player
 		} = action.data;
 
 		return state.map(table => (
@@ -76,10 +60,72 @@ export const tables = (state: Mahjong.Table[] = STATE, action: { type: string; d
 						chair.id === chairId
 							? {
 								...chair,
-								...data
+								player
 							}
 							: chair
 					))
+				}
+				: table
+		));
+	}
+
+	if (action.type === 'actionSetSeated') {
+		const {
+			tableId,
+			chairId,
+			seated
+		} = action.data;
+
+		return state.map(table => (
+			table.id === tableId
+				? {
+					...table,
+					chairs: table.chairs.map(chair => (
+						chair.id === chairId
+							? {
+								...chair,
+								seated
+							}
+							: chair
+					))
+				}
+				: table
+		));
+	}
+
+	if (action.type === 'actionToggleReveal') {
+		const {
+			tableId,
+			chairId
+		} = action.data;
+
+		return state.map(table => (
+			table.id === tableId
+				? {
+					...table,
+					chairs: table.chairs.map(chair => (
+						chair.id === chairId
+							? {
+								...chair,
+								reveal: !chair.reveal
+							}
+							: chair
+					))
+				}
+				: table
+		));
+	}
+
+	if (action.type === 'actionToggleTransit') {
+		const {
+			tableId
+		} = action.data;
+
+		return state.map(table => (
+			table.id === tableId
+				? {
+					...table,
+					transit: !table.transit
 				}
 				: table
 		));
@@ -106,11 +152,10 @@ export const tables = (state: Mahjong.Table[] = STATE, action: { type: string; d
 		));
 	}
 
-	if (action.type === 'actionUpdateTile') {
+	if (action.type === 'actionToggleTileHidden') {
 		const {
 			tableId,
-			tileId,
-			data
+			tileId
 		} = action.data;
 
 		return state.map(table => (
@@ -125,7 +170,7 @@ export const tables = (state: Mahjong.Table[] = STATE, action: { type: string; d
 								? tile
 								: {
 									...tile,
-									...data
+									hidden: !tile.hidden
 								}
 						))
 					}

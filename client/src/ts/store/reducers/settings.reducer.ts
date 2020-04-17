@@ -19,7 +19,7 @@ export const settings = (state: Mahjong.Settings = STATE, action: any): Mahjong.
 
 		return {
 			...state,
-			activeTable: table
+			// activeTable: table
 		};
 	}
 
