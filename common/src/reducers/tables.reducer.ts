@@ -7,9 +7,9 @@ const STATE: Mahjong.Table[] = [
 		id: '42',
 		creator: 'Zaphod',
 		chairs: [
-			{ id: 'a', reveal: false, seated: true, coins: [], player: 'Zaphod' },
-			{ id: 'b', reveal: false, seated: true, coins: [], player: 'Ford' },
-			{ id: 'c', reveal: false, seated: true, coins: [], player: 'Trillian' },
+			{ id: 'a', reveal: false, seated: true, coins: [], player: 'zaphod' },
+			{ id: 'b', reveal: false, seated: true, coins: [], player: 'ford' },
+			{ id: 'c', reveal: false, seated: true, coins: [], player: 'trillian' },
 			{ id: 'd', reveal: false, seated: false, coins: [] }
 		],
 		game: {

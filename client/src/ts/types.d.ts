@@ -4,29 +4,29 @@ declare namespace Mahjong {
 	}
 
 	interface Tile {
+		hidden: boolean;
 		id: string;
 		index: number;
 		name: string;
-		suit: string;
-		tray: string;
-		title: string;
-		spaced: boolean;
-		hidden: boolean;
 		space: number;
+		spaced: boolean;
+		suit: string;
+		title: string;
+		tray: string;
 	}
 
 	interface Chair {
+		coins: Coin[];
 		id: string;
 		player?: string;
 		reveal: boolean;
 		seated: boolean;
-		coins: Coin[];
 	}
 
 	interface Table {
-		id: string;
 		chairs: Chair[];
 		creator: string;
+		id: string;
 		transit: boolean;
 		game: {
 			tiles: Tile[];
@@ -34,13 +34,18 @@ declare namespace Mahjong {
 	}
 
 	interface User {
-		name?: string;
+		name: string;
+		id: string;
+	}
+
+	interface Auth {
+		error?: string;
+		user?: User;
 	}
 
 	interface Action {
-		type: string;
 		data: any;
-		token: any;
+		type: string;
 	}
 
 	interface Settings {
@@ -48,8 +53,8 @@ declare namespace Mahjong {
 	}
 
 	interface Store {
-		tables: Mahjong.Table[];
-		user: User;
+		auth: Auth;
 		settings: Settings;
+		tables: Mahjong.Table[];
 	}
 }

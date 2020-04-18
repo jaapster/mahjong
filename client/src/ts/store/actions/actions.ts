@@ -4,34 +4,13 @@ import axios from 'axios';
 // SYNC //
 
 export const ActionRestore = {
-	create(userName: string, table: string) {
+	create(user: Mahjong.User, table: string) {
 		return {
 			type: 'actionRestore',
 			data: {
-				userName,
+				user,
 				table
 			}
-		};
-	}
-};
-
-export const ActionLogin = {
-	create(userName: string, password: string) {
-		return {
-			type: 'actionLogin',
-			data: {
-				userName,
-				password
-			}
-		};
-	}
-};
-
-export const ActionLogout = {
-	create() {
-		return {
-			type: 'actionLogout',
-			data: {}
 		};
 	}
 };
@@ -58,12 +37,106 @@ export const ActionSetTables = {
 	}
 };
 
+export const ActionSetUser = {
+	create(user: Mahjong.User) {
+		return {
+			type: 'actionSetUser',
+			data: {
+				user
+			}
+		};
+	}
+};
+
 
 // ASYNC //
 
 const remoteDispatch = action => (
 	axios.put('/dispatch', action)
 );
+
+export const ActionRegister = {
+	create(userName: string, password: string) {
+		return (dispatch) => {
+			axios
+				.post('/auth/register', {
+					userName,
+					password
+				})
+				.then(res => {
+					if (res.data.success === true) {
+						dispatch({
+							type: 'actionSetAuthError',
+							data: {
+								error: undefined
+							}
+						});
+						dispatch({
+							type: 'actionLogin',
+							data: {
+								userName
+							}
+						});
+					} else {
+						dispatch({
+							type: 'actionSetAuthError',
+							data: {
+								error: 'Registreren mislukt'
+							}
+						});
+					}
+				});;
+		};
+	}
+};
+
+export const ActionLogin = {
+	create(userName: string, password: string) {
+		return (dispatch) => {
+			axios
+				.post('/auth/login', {
+					userName,
+					password
+				})
+				.then(res => {
+					if (res.data.success === true) {
+						dispatch({
+							type: 'actionSetAuthError',
+							data: {
+								error: undefined
+							}
+						});
+						dispatch({
+							type: 'actionLogin',
+							data: res.data.data as Mahjong.User
+						});
+					} else {
+						dispatch({
+							type: 'actionSetAuthError',
+							data: {
+								error: 'Onbekende gerbruiker'
+							}
+						});
+					}
+				});
+		};
+	}
+};
+
+export const ActionLogout = {
+	create() {
+		return (dispatch) => {
+			axios
+				.post('/auth/logout')
+				.then(() => {
+					dispatch({
+						type: 'actionLogout',
+						data: {}
+					});
+				});
+		};
+	}
+};
 
 export const ActionJoinTable = {
 	create(tableId: string, chairId: string, player: string) {

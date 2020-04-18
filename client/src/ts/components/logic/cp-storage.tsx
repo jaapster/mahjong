@@ -2,15 +2,15 @@ import React from 'react';
 import bind from 'autobind-decorator';
 import { connect } from 'react-redux';
 import { ActionRestore } from '../../store/actions/actions';
-import { selectUserName, selectActiveTableId } from '../../store/selectors/selectors';
+import { selectActiveTableId, selectUser } from '../../store/selectors/selectors';
 
 interface MappedProps {
-	player: string;
+	user?: Mahjong.User;
 	table: string;
 }
 
 interface DispatchProps {
-	restore(player: string, table: string): void;
+	restore(user: Mahjong.User, table: string): void;
 }
 
 @bind
@@ -18,11 +18,11 @@ class _Storage extends React.PureComponent<MappedProps & DispatchProps> {
 	componentDidMount() {
 		const { restore } = this.props;
 		const {
-			player,
+			user,
 			table
 		} = JSON.parse(localStorage.getItem('mahjong') ?? '{}');
 
-		restore(player, table);
+		restore(user, table);
 	}
 
 	componentDidUpdate() {
@@ -36,15 +36,15 @@ class _Storage extends React.PureComponent<MappedProps & DispatchProps> {
 
 const mapStateToProps = (state: Mahjong.Store): MappedProps => {
 	return {
-		player: selectUserName(state),
+		user: selectUser(state),
 		table: selectActiveTableId(state)
 	};
 };
 
 const mapDispatchToProps = (dispatch: any): DispatchProps => {
 	return {
-		restore(player: string, table: string) {
-			dispatch(ActionRestore.create(player, table));
+		restore(user: Mahjong.User, table: string) {
+			dispatch(ActionRestore.create(user, table));
 		}
 	};
 };

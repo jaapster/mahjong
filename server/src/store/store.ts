@@ -1,4 +1,4 @@
-import { createStore, Store } from 'redux';
+import { createStore } from 'redux';
 import { root } from './reducers/root.reducer';
 import SSE from 'express-sse';
 

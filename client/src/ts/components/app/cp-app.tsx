@@ -3,28 +3,28 @@ import bind from 'autobind-decorator';
 import { connect } from 'react-redux';
 import { Login } from './cp-login';
 import { Lobby } from '../lobby/cp-lobby';
-import { selectUserName } from '../../store/selectors/selectors';
+import { selectUserName, selectUser } from '../../store/selectors/selectors';
 import { Stream } from '../logic/cp-stream';
 import { Storage } from '../logic/cp-storage';
 
 interface Props {
-	player?: string;
+	user?: Mahjong.User;
 }
 
 @bind
 export class _App extends React.Component<Props> {
 	render() {
-		const { player } = this.props;
+		const { user } = this.props;
 
 		return (
 			<>
 				{
-					player == null
+					user == null
 						? <Login />
 						: <Lobby />
 				}
 				<Stream />
-				<Storage />
+				{/* <Storage /> */}
 			</>
 		);
 	}
@@ -32,7 +32,7 @@ export class _App extends React.Component<Props> {
 
 const mapStateToProps = (state: Mahjong.Store) => {
 	return {
-		player: selectUserName(state)
+		user: selectUser(state)
 	};
 };
 
