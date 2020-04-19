@@ -4,8 +4,6 @@ import { Table } from '../table/cp-table';
 import { selectUserName, selectActiveTableId, selectTables } from '../../store/selectors/selectors';
 import { ActionLogout, ActionSetActiveTable, ActionJoinTable, ActionCreateTable, ActionDeleteTable } from '../../store/actions/actions';
 
-import './ss-lobby.scss';
-
 interface Props {
 	player: string;
 	logout(): void;
@@ -29,47 +27,60 @@ export const _Lobby = ({
 }: Props) => {
 	return activeTable == null
 		? (
-			<div className="lobby">
-				<h2>Lobby</h2>
-				<p>
-					Spelernaam: { player }&nbsp;
-					<a href="#" onClick={ logout }>
-						(aanpassen)
-					</a>
-				</p>
-				<div className="tables">
-					<h3>
-						<span>Tafels</span>
-						<a href="#" onClick={ () => createTable(player) } title="Nieuwe tafel">
-							(+)
+			<div className="root">
+				<div className="panel">
+				<div className="head">
+					<h2>Mahjong Lobby</h2>
+					<div>
+						{ player }&nbsp;
+						<a href="#" onClick={ logout }>
+							uitloggen
 						</a>
-					</h3>
+					</div>
+				</div>
+				<div className="panel">
+					<div className="head">
+						<h3>Tafels</h3>
+						<a
+							href="#"
+							onClick={ () => createTable(player) }
+							title="Nieuwe tafel"
+						>
+							toevoegen
+						</a>
+					</div>
 					{
 						tables.map((table) => {
 							const { id, chairs } = table;
-							const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
+							// const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
 							const inThisGame = chairs.find(c => c.player === player) || player === 'zork';
 
 							return (
-								<div key={ id } className="list-game">
-									<h4>
-										{
-											inThisGame
-												? (
-													<a
-														href="#"
-														onClick={ () => setActiveTable(id) }
-													>
-														{ chairs[0].player }'s tafel
-													</a>
-												)
-												: `${ chairs[0].player }'s tafel`
-										}
-									</h4>
-									<a href="#" onClick={ () => deleteTable(id) }>X</a>
-
-									<h4>Spelers { chairsTaken < 4 ? `(nog ${ 4 - chairsTaken } nodig)` : null}</h4>
-									<ul>
+								<div key={ id } className="panel">
+									<div className="head">
+										<h4>
+											{
+												inThisGame
+													? (
+														<a
+															href="#"
+															onClick={ () => setActiveTable(id) }
+														>
+															{ chairs[0].player }'s tafel
+														</a>
+													)
+													: `${ chairs[0].player }'s tafel`
+											}
+										</h4>
+										<a
+											href="#"
+											onClick={ () => deleteTable(id) }
+										>
+											verwijder
+										</a>
+									</div>
+									<div className="body">
+										<ul>
 										{
 											chairs.map(c => (
 												c.player != null
@@ -97,11 +108,13 @@ export const _Lobby = ({
 											))
 										}
 									</ul>
+									</div>
 								</div>
 							);
 						})
 					}
 				</div>
+			</div>
 			</div>
 		)
 		: <Table />;

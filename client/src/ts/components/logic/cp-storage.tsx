@@ -26,6 +26,7 @@ class _Storage extends React.PureComponent<MappedProps & DispatchProps> {
 	}
 
 	componentDidUpdate() {
+		console.log('set storage', this.props);
 		localStorage.setItem('mahjong', JSON.stringify(this.props));
 	}
 

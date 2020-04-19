@@ -1,5 +1,8 @@
 * {
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
 }
 
 body {
@@ -12,4 +15,102 @@ body {
 	margin: 0;
 	padding: 0;
 	user-select: none;
+}
+
+a {
+	color: dodgerblue;
+}
+
+.root {
+	display: flex;
+	justify-content: center;
+
+	> .panel {
+		width: 400px;
+
+		.head {
+			background: lightcyan;
+		}
+
+		> .panel {
+			> .head {
+				background: honeydew;
+			}
+
+			> .panel {
+				> .head {
+					background: ivory;
+				}
+			}
+		}
+	}
+}
+
+.panel {
+	margin: 4px;
+	border: 1px solid black;
+
+	.head {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 8px;
+		border-bottom: 1px solid black;
+	}
+
+	.body {
+		padding: 4px;
+
+		button, input, p {
+			outline: none;
+			border: none;
+			padding: 8px;
+			display: block;
+			width: 100%;
+		}
+
+		button {
+			background: dodgerblue;
+			color: white;
+
+			&:disabled {
+				opacity: 0.2;
+			}
+		}
+
+		input {
+			border: 1px solid #ddd;
+			margin-bottom: 4px;
+			background: #f3f3f3;
+
+			&::placeholder {
+				color: black;
+				opacity: 0.2;
+			}
+
+			&.warning {
+				background: yellow;
+			}
+
+			&.ok {
+				background: lightgreen;
+			}
+		}
+
+		p {
+			margin-bottom: 4px;
+
+			&.error {
+				text-align: center;
+				background: tomato;
+				color: white;
+			}
+		}
+
+		ul {
+			li {
+				margin-left: 20px;
+			}
+		}
+	}
 }

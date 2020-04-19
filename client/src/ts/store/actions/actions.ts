@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 // SYNC //
 
 export const ActionRestore = {
@@ -72,9 +71,9 @@ export const ActionRegister = {
 							}
 						});
 						dispatch({
-							type: 'actionLogin',
+							type: 'actionSetUser',
 							data: {
-								userName
+								user: res.data.data as Mahjong.User
 							}
 						});
 					} else {
@@ -92,48 +91,69 @@ export const ActionRegister = {
 
 export const ActionLogin = {
 	create(userName: string, password: string) {
-		return (dispatch) => {
-			axios
-				.post('/auth/login', {
-					userName,
-					password
-				})
-				.then(res => {
-					if (res.data.success === true) {
-						dispatch({
-							type: 'actionSetAuthError',
-							data: {
-								error: undefined
-							}
-						});
-						dispatch({
-							type: 'actionLogin',
-							data: res.data.data as Mahjong.User
-						});
-					} else {
-						dispatch({
-							type: 'actionSetAuthError',
-							data: {
-								error: 'Onbekende gerbruiker'
-							}
-						});
+		return (dispatch, getState) => {
+			if (getState().auth.authenticate) {
+				axios
+					.post('/auth/login', {
+						userName,
+						password
+					})
+					.then(res => {
+						if (res.data.success === true) {
+							dispatch({
+								type: 'actionSetAuthError',
+								data: {
+									error: undefined
+								}
+							});
+							dispatch({
+								type: 'actionSetUser',
+								data: {
+									user: res.data.data as Mahjong.User
+								}
+							});
+						} else {
+							dispatch({
+								type: 'actionSetAuthError',
+								data: {
+									error: 'Onbekende naam/wachtwoord combinatie'
+								}
+							});
+						}
+					});
+			} else {
+				dispatch({
+					type: 'actionSetUser',
+					data: {
+						user: {
+							name: userName,
+							id: userName
+						}
 					}
 				});
+			}
 		};
 	}
 };
 
 export const ActionLogout = {
 	create() {
-		return (dispatch) => {
-			axios
-				.post('/auth/logout')
-				.then(() => {
-					dispatch({
-						type: 'actionLogout',
-						data: {}
+		return (dispatch, getState) => {
+			if (getState().auth.authenticate) {
+				axios
+					.post('/auth/logout')
+					.then(() => {
+						dispatch({
+							type: 'actionClearUser',
+							data: {}
+						});
 					});
+			} else {
+				dispatch({
+					type: 'actionClearUser',
+					data: {}
 				});
+			}
 		};
 	}
 };

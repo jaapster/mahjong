@@ -13,13 +13,14 @@ export const settings = (state: Mahjong.Settings = STATE, action: any): Mahjong.
 	}
 
 	if (action.type === 'actionRestore') {
+		console.log('restore it');
 		const {
 			table
 		} = action.data;
 
 		return {
 			...state,
-			// activeTable: table
+			activeTable: table
 		};
 	}
 

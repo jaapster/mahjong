@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { v4 } from 'uuid';
 
 const hash = (str: string) => {
@@ -14,34 +15,24 @@ const hash = (str: string) => {
 	return hash >>> 0;
 };
 
-const users: {
-	name: string;
-	id: string;
-	password: number;
-}[] = [
-	{
-		name: 'zaphod',
-		id: 'b8569725-7726-42ec-acab-903aabe31dec',
-		password: 1166315532 // 'beeble'
-	},
-	{
-		name: 'trillian',
-		id: 'c98a9fa5-9d19-4a9f-89f8-3ab05aedb8b3',
-		password: 193416106 // 'mac'
-	},
-	{
-		name: 'ford',
-		id: 'a442ff8b-a487-41ca-ab37-b64347777d82',
-		password: 1601328694 // 'prefect'
-	},
-	{
-		name: 'arthur',
-		id: '161c180f-a772-4740-8329-543e778b996a',
-		password: 2087962174 // 'dent'
-	}
-];
+const read = () => JSON.parse(fs.readFileSync(__dirname + '/users.json') as any);
 
-export const getUserById = id => users.find(user => user.id === id);
+const write = (data) => fs.writeFileSync(__dirname + '/users.json', JSON.stringify(data));
+
+const users = read();
+
+export const getUserById = id => {
+	const user = users.find(user => user.id === id);
+
+	if (!user) {
+		return null;
+	}
+
+	return {
+		name: user.name,
+		id: user.id
+	};
+};
 
 export const getUserByName = name => users.find(user => user.name === name);
 
@@ -57,6 +48,8 @@ export const addUser = (name, password) => {
 	};
 
 	users.push(userData);
+
+	write(users);
 
 	return {
 		name,

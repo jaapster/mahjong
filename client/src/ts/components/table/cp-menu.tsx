@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import {
 	ActionSetActiveTable,
 	ActionToggleTransit,
-	ActionNewGame
+	ActionNewGame,
+	ActionLogout
 } from '../../store/actions/actions';
 
 import './ss-menu.scss';
@@ -17,12 +18,11 @@ interface MappedProps {
 	toggleTransit(tableId: string): void;
 	startNewGame(tableId: string): void;
 	leave(): void;
+	logout(): void;
 }
 
-export const _Menu = ({ toggleTransit, startNewGame, close, table, leave }: MappedProps & AttributeProps) => {
+export const _Menu = ({ toggleTransit, startNewGame, close, table, leave, logout }: MappedProps & AttributeProps) => {
 	const tilesInTransit = table.game.tiles.filter(tile => tile.tray.match('transit')).length;
-
-	console.log('tilesInTransit', tilesInTransit);
 
 	return (
 		<div className="menu">
@@ -35,6 +35,15 @@ export const _Menu = ({ toggleTransit, startNewGame, close, table, leave }: Mapp
 					} }
 				>
 					Naar de lobby
+				</a>
+				<a
+					href="#"
+					onClick={ () => {
+						logout();
+						//close();
+					} }
+				>
+					Uitloggen
 				</a>
 				<a
 					href="#"
@@ -68,6 +77,10 @@ const mapDispatchToProps = (dispatch: any): MappedProps => {
 	return {
 		leave() {
 			dispatch(ActionSetActiveTable.create());
+		},
+
+		logout() {
+			dispatch(ActionLogout.create());
 		},
 
 		toggleTransit(tableId: string) {

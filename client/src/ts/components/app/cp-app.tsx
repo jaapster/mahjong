@@ -3,9 +3,8 @@ import bind from 'autobind-decorator';
 import { connect } from 'react-redux';
 import { Login } from './cp-login';
 import { Lobby } from '../lobby/cp-lobby';
-import { selectUserName, selectUser } from '../../store/selectors/selectors';
+import { selectUser } from '../../store/selectors/selectors';
 import { Stream } from '../logic/cp-stream';
-import { Storage } from '../logic/cp-storage';
 
 interface Props {
 	user?: Mahjong.User;
@@ -21,10 +20,13 @@ export class _App extends React.Component<Props> {
 				{
 					user == null
 						? <Login />
-						: <Lobby />
+						: (
+							<>
+								<Lobby />
+								<Stream />
+							</>
+						)
 				}
-				<Stream />
-				{/* <Storage /> */}
 			</>
 		);
 	}

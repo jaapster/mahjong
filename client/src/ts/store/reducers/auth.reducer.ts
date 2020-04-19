@@ -1,22 +1,22 @@
-const STATE = {};
+const STATE: Mahjong.Auth = {
+	authenticate: false
+};
 
 export const auth = (state: Mahjong.Auth = STATE, action: any): Mahjong.Auth => {
-	if (action.type === 'actionLogin') {
+	if (action.type === 'actionSetUser') {
 		const {
-			name,
-			id
+			user
 		} = action.data;
 
 		return {
-			user: {
-				name,
-				id
-			}
+			...state,
+			user
 		};
 	}
 
-	if (action.type === 'actionLogout') {
+	if (action.type === 'actionClearUser') {
 		return {
+			...state,
 			user: undefined
 		};
 	}
@@ -27,17 +27,8 @@ export const auth = (state: Mahjong.Auth = STATE, action: any): Mahjong.Auth => 
 		} = action.data;
 
 		return {
+			...state,
 			error
-		};
-	}
-
-	if (action.type === 'actionSetUser') {
-		const {
-			user
-		} = action.data;
-
-		return {
-			user
 		};
 	}
 

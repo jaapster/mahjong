@@ -41,6 +41,7 @@ declare namespace Mahjong {
 	interface Auth {
 		error?: string;
 		user?: User;
+		authenticate?: boolean;
 	}
 
 	interface Action {

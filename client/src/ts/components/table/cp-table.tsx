@@ -92,15 +92,11 @@ export class _Table extends React.Component<Props, State> {
 				return m;
 			}, undefined);
 
-		const notification = diff
-			? `"${ diff.title }" van ${ diff.from } naar ${ diff.to }`
-			: undefined;
-
 		return {
 			...prevState,
 			__prevProps: nextProps,
 			notification: diff ?? prevState.notification,
-			startTimer: notification != null
+			startTimer: diff != null
 		};
 	}
 
