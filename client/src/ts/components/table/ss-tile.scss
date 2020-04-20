@@ -18,7 +18,7 @@
 		background: ivory;
 
 		border-radius: 4px;
-		// box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 		overflow: hidden;
 
 		.tile-symbol {
@@ -97,6 +97,7 @@
 		border-left-width: 16px;
 
 		&.tile-rotated {
+			border-left-width: 0;
 			border-top-width: 16px;
 		}
 	}
@@ -128,8 +129,6 @@
 		.tile-graphic {
 			width: 16px;
 			height: 24px;
-
-			// box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 			border-radius: 2px;
 		}
 
@@ -152,7 +151,7 @@
 	}
 
 	&.tile-rotated {
-		border-top-width: 0;
+		// border-top-width: 0;
 		width: 58px;
 		height: 40px;
 
@@ -186,6 +185,7 @@
 			.tile-gloss {
 				width: 24px;
 				height: 16px;
+				opacity: 0.5;
 			}
 		}
 	}

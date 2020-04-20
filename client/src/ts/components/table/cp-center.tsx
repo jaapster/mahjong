@@ -1,7 +1,8 @@
 import React from 'react';
-import './ss-center.scss';
 import { Tray } from './cp-tray';
 import { getTray } from '../../utils/util-get-tray';
+
+import './ss-center.scss';
 
 interface Props {
 	tiles: Mahjong.Tile[];

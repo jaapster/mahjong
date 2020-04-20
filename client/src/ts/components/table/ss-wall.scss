@@ -6,7 +6,7 @@
 	bottom: 0;
 	height: $largeTray + $largeTray;
 	width: $smallTray + $largeTray;
-	background: lighten(black, 90%);
+	// background: slategrey; //lighten(black, 90%);
 
 	&.wall-begin {
 		.tile-count {
