@@ -1,9 +1,12 @@
 .chair {
-	$large: 150px;
+	$smallTray: 30px;
+	$largeTray: 64px;
 
 	position: absolute;
-	display: flex;
-	justify-content: center;
+
+	.tray {
+		position: absolute;
+	}
 
 	&.chair-top,
 	&.chair-player {
@@ -15,9 +18,23 @@
 
 	&.chair-left,
 	&.chair-right {
+		top: $smallTray + $largeTray;
+		width: $smallTray + $largeTray;
+		bottom: $largeTray + $largeTray;
+
 		.tray {
 			flex-direction: column;
 			height: 100%;
+			top: 0;
+			bottom: 0;
+
+			&:nth-child(1) {
+				width: $smallTray;
+			}
+
+			&:nth-child(2) {
+				width: $largeTray;
+			}
 		}
 	}
 
@@ -26,8 +43,80 @@
 	&.chair-right {
 		.tray {
 			&:first-child {
+				background: rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+
+	&.chair-top {
+		top: 0;
+		left: $smallTray + $largeTray;
+		right: $smallTray + $largeTray;
+		height: $smallTray + $largeTray;
+
+		.tray {
+			left: 0;
+			right: 0;
+
+			&:nth-child(1) {
+				height: $smallTray;
+				top: 0;
+			}
+
+			&:nth-child(2) {
+				height: $largeTray;
+				top: $smallTray;
+			}
+		}
+	}
+
+	&.chair-left {
+		left: 0;
+
+		.tray {
+			&:nth-child(1) {
+				left: 0;
+			}
+
+			&:nth-child(2) {
+				left: $smallTray;
+			}
+		}
+	}
+
+	&.chair-right {
+		right: 0;
+
+		.tray {
+			&:nth-child(1) {
+				right: 0;
+			}
+
+			&:nth-child(2) {
+				right: $smallTray;
+			}
+		}
+	}
+
+	&.chair-player {
+		flex-direction: column-reverse;
+		bottom: 0;
+		left: $smallTray + $largeTray;
+		right: $smallTray + $largeTray;
+		height: $largeTray + $largeTray;
+
+		.tray {
+			height: $largeTray;
+			left: 0;
+			right: 0;
+
+			&:nth-child(1) {
+				bottom: 0;
 				background: rgba(0, 0, 0, 0.2);
-				flex-basis: 30px;
+			}
+
+			&:nth-child(2) {
+				bottom: $largeTray;
 			}
 		}
 	}
@@ -48,44 +137,6 @@
 		background: darkseagreen;
 	}
 
-	&.chair-top {
-		flex-direction: column;
-		top: 0;
-		left: $large;
-		right: $large;
-		height: $large;
-	}
-
-	&.chair-left {
-		flex-direction: row;
-		top: 0;
-		left: 0;
-		bottom: 240px;
-		width: $large;
-	}
-
-	&.chair-right {
-		flex-direction: row-reverse;
-		top: 0;
-		right: 0;
-		bottom: 240px;
-		width: $large;
-	}
-
-	&.chair-player {
-		flex-direction: column-reverse;
-		bottom: 0;
-		left: $large;
-		right: $large;
-		height: 240px;
-
-		.tray {
-			&:first-child {
-				background: rgba(0, 0, 0, 0.2);
-			}
-		}
-	}
-
 	&.chair-exceeds {
 		.tile-count {
 			background: red;
@@ -97,11 +148,11 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		font-size: 10px;
+		font-size: 12px;
 		padding: 5px;
 		color: white;
 		background: green;
-		opacity: 0.5;
+		// opacity: 0.5;
 
 		&.player-unseated {
 			background: black;

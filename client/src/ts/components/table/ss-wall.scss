@@ -1,21 +1,14 @@
 .wall {
+	$smallTray: 30px;
+	$largeTray: 64px;
+
 	position: absolute;
 	bottom: 0;
-	height: 200px;
-	width: 140px;
+	height: $largeTray + $largeTray;
+	width: $smallTray + $largeTray;
 	background: lighten(black, 90%);
 
-	&:before {
-		content: '';
-		border-top: 20px dashed lighten(black, 90%);
-		position: absolute;
-		width: 140px;
-		top: -20px;
-	}
-
 	&.wall-begin {
-		left: 10px;
-
 		.tile-count {
 			right: auto;
 			left: 0;
@@ -23,12 +16,11 @@
 	}
 
 	&.wall-end {
-		right: 10px;
+		right: 0;
 	}
 
 	.tray {
-		height: 220px;
-		margin-top: -20px;
+		height: $largeTray + $largeTray;
 		background: transparent;
 	}
 

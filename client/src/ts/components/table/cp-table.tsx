@@ -273,6 +273,7 @@ export class _Table extends React.Component<Props, State> {
 							<Menu
 								close={ this.hideMenu }
 								table={ table }
+								chair={ chairs[p].id }
 							/>
 						)
 						: null

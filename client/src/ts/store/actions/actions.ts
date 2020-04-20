@@ -210,6 +210,7 @@ export const ActionDeleteTable = {
 
 export const ActionSetSeated = {
 	create(tableId: string, chairId: string, seated: boolean) {
+		console.log('set seated');
 		return (dispatch) => {
 			const action = {
 				type: 'actionSetSeated',

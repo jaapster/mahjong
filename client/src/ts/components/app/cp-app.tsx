@@ -32,7 +32,7 @@ export class _App extends React.Component<Props> {
 	}
 }
 
-const mapStateToProps = (state: Mahjong.Store) => {
+const mapStateToProps = (state: Mahjong.Store): Props => {
 	return {
 		user: selectUser(state)
 	};

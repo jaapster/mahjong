@@ -1,11 +1,12 @@
 .center {
-	$large: 150px;
+	$smallTray: 30px;
+	$largeTray: 64px;
 
 	position: absolute;
-	top: $large;
-	left: $large;
-	bottom: 240px;
-	right: $large;
+	top: $smallTray + $largeTray;
+	left: $smallTray + $largeTray;
+	bottom: $largeTray + $largeTray;
+	right: $smallTray + $largeTray;
 	box-shadow: inset 0 0 5px grey;
 	background: rgba(0, 0, 0, 0.05);
 
@@ -15,8 +16,6 @@
 		left: 0px;
 		right: 0px;
 		bottom: 0px;
-		// background: lighten(desaturate($color: deeppink, $amount: 40), 20%);
-		// opacity: 0.2;
 	}
 
 	.tray {

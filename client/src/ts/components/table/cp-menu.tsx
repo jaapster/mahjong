@@ -4,7 +4,8 @@ import {
 	ActionSetActiveTable,
 	ActionToggleTransit,
 	ActionNewGame,
-	ActionLogout
+	ActionLogout,
+	ActionSetSeated
 } from '../../store/actions/actions';
 
 import './ss-menu.scss';
@@ -12,16 +13,17 @@ import './ss-menu.scss';
 interface AttributeProps {
 	close(): void;
 	table: Mahjong.Table;
+	chair: string;
 }
 
 interface MappedProps {
 	toggleTransit(tableId: string): void;
 	startNewGame(tableId: string): void;
-	leave(): void;
+	leave(tableId: string, chairId: string): void;
 	logout(): void;
 }
 
-export const _Menu = ({ toggleTransit, startNewGame, close, table, leave, logout }: MappedProps & AttributeProps) => {
+export const _Menu = ({ toggleTransit, startNewGame, close, table, leave, logout, chair }: MappedProps & AttributeProps) => {
 	const tilesInTransit = table.game.tiles.filter(tile => tile.tray.match('transit')).length;
 
 	return (
@@ -30,7 +32,7 @@ export const _Menu = ({ toggleTransit, startNewGame, close, table, leave, logout
 				<a
 					href="#"
 					onClick={ () => {
-						leave();
+						leave(table.id, chair);
 						close();
 					} }
 				>
@@ -75,8 +77,9 @@ export const _Menu = ({ toggleTransit, startNewGame, close, table, leave, logout
 
 const mapDispatchToProps = (dispatch: any): MappedProps => {
 	return {
-		leave() {
+		leave(tableId: string, chairId: string) {
 			dispatch(ActionSetActiveTable.create());
+			dispatch(ActionSetSeated.create(tableId, chairId, false));
 		},
 
 		logout() {

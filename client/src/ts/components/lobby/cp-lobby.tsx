@@ -2,13 +2,13 @@ import React from 'react';
 import { connect, Dispatch } from 'react-redux';
 import { Table } from '../table/cp-table';
 import { selectUserName, selectActiveTableId, selectTables } from '../../store/selectors/selectors';
-import { ActionLogout, ActionSetActiveTable, ActionJoinTable, ActionCreateTable, ActionDeleteTable } from '../../store/actions/actions';
+import { ActionLogout, ActionSetActiveTable, ActionJoinTable, ActionCreateTable, ActionDeleteTable, ActionSetSeated } from '../../store/actions/actions';
 
 interface Props {
 	player: string;
 	logout(): void;
 	activeTable: string;
-	setActiveTable(id?: string): void;
+	setActiveTable(id?: string, chairId?: string): void;
 	joinTable(tableId: string, chairId: string, player: string): void;
 	tables: Mahjong.Table[];
 	createTable(creator: string): void;
@@ -53,7 +53,8 @@ export const _Lobby = ({
 						tables.map((table) => {
 							const { id, chairs } = table;
 							// const chairsTaken = chairs.reduce((m, c) => m + (c.player != null ? 1 : 0), 0);
-							const inThisGame = chairs.find(c => c.player === player) || player === 'zork';
+							const playerChair = chairs.find(c => c.player === player);
+							const inThisGame = playerChair || player === 'zork';
 
 							return (
 								<div key={ id } className="panel">
@@ -64,7 +65,7 @@ export const _Lobby = ({
 													? (
 														<a
 															href="#"
-															onClick={ () => setActiveTable(id) }
+															onClick={ () => setActiveTable(id, playerChair.id) }
 														>
 															{ chairs[0].player }'s tafel
 														</a>
@@ -134,8 +135,12 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
 			dispatch(ActionLogout.create());
 		},
 
-		setActiveTable(id?: string) {
-			dispatch(ActionSetActiveTable.create(id));
+		setActiveTable(tableId?: string, chairId?: string) {
+			dispatch(ActionSetActiveTable.create(tableId));
+
+			if (tableId != null && chairId != null) {
+				dispatch(ActionSetSeated.create(tableId, chairId, true));
+			}
 		},
 
 		createTable(creator: string) {
