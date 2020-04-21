@@ -29,6 +29,7 @@ declare namespace Mahjong {
 		id: string;
 		transit: boolean;
 		game: {
+			id: string;
 			tiles: Tile[];
 		};
 	}
@@ -50,6 +51,7 @@ declare namespace Mahjong {
 	}
 
 	interface Settings {
+		size: number;
 		activeTable?: string;
 	}
 

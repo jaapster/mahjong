@@ -7,7 +7,7 @@ interface Props {
 	tile: Mahjong.Tile;
 	left: Mahjong.Tile;
 	hidden: boolean;
-	rotate: boolean;
+	rotate: number;
 	blank: boolean;
 	small: boolean;
 	draggable: boolean;
@@ -36,9 +36,9 @@ export class Tile extends React.Component<Props, State> {
 	onDragEnter() {
 		const { tile } = this.props;
 
-		// if (id !== tile.id && index !== tile.index - 1) {
-		this.setState({ hovered: true });
-		// }
+		if (id !== tile.id && index !== tile.index - 1) {
+			this.setState({ hovered: true });
+		}
 	}
 
 	onDragLeave() {
@@ -59,7 +59,23 @@ export class Tile extends React.Component<Props, State> {
 	}
 
 	render() {
-		const { tile: { id, suit, name, spaced, title }, tile, left, hidden, rotate, blank, small, draggable } = this.props;
+		const {
+			tile: {
+				id,
+				suit,
+				name,
+				spaced,
+				title
+			},
+			tile,
+			left,
+			hidden,
+			rotate,
+			blank,
+			small,
+			draggable
+		} = this.props;
+
 		const { hovered, dragged } = this.state;
 
 		return (
@@ -70,7 +86,9 @@ export class Tile extends React.Component<Props, State> {
 						'tile-hidden': hidden || tile.hidden,
 						'tile-hovered': hovered,
 						'tile-dragged': dragged,
-						'tile-rotated': rotate,
+						'tile-rotated': rotate !== 0,
+						'tile-rotate-cw': rotate === 90,
+						'tile-rotate-ccw': rotate === -90,
 						'tile-blank': blank,
 						'tile-small': small,
 						'tile-spaced': spaced
@@ -89,8 +107,12 @@ export class Tile extends React.Component<Props, State> {
 				data-hidden={ tile.hidden }
 			>
 				<div className="tile-graphic">
-					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />
-					<div className="tile-gloss" />
+					<div className="tile-set">
+						<div className="tile-side" />
+						<div className="tile-background" />
+						<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />
+						<div className="tile-gloss" />
+					</div>
 				</div>
 			</div>
 		);

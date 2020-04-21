@@ -4,7 +4,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 4;
+	z-index: 10;
 	background: rgba(255, 255, 255, 0.01);
 
 	display: flex;
@@ -13,18 +13,18 @@
 
 	.menu-body {
 		background: white;
-		width: 300px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		padding: 20px;
+		width: 300rem;
+		box-shadow: 0 0 10rem rgba(0, 0, 0, 0.1);
+		padding: 20rem;
 		text-align: center;
-		border-radius: 2px;
+		border-radius: 2rem;
 
 		a {
 			display: block;
-			// margin-bottom: 20px;
+			// margin-bottom: 20rem;
 			text-decoration: none;
 			color: grey;
-			padding: 5px;
+			padding: 5rem;
 
 			// &:last-child {
 			// 	margin-bottom: 0;

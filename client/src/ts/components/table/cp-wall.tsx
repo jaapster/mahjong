@@ -33,7 +33,7 @@ export const Wall = ({ tiles, begin, x }: Props) => {
 			<Tray
 				blank={ true }
 				draggable={ true }
-				hidden={ false }
+				hidden={ true }
 				id="t0"
 				small={ false }
 				tiles={ tile ? [tile] : [] }

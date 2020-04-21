@@ -3,17 +3,22 @@ import bind from 'autobind-decorator';
 import { connect } from 'react-redux';
 import { Login } from './cp-login';
 import { Lobby } from '../lobby/cp-lobby';
-import { selectUser } from '../../store/selectors/selectors';
+import { selectUser, selectSize } from '../../store/selectors/selectors';
 import { Stream } from '../logic/cp-stream';
 
 interface Props {
+	size: number;
 	user?: Mahjong.User;
 }
+
+const HTML = document.getElementsByTagName('html')[0];
 
 @bind
 export class _App extends React.Component<Props> {
 	render() {
-		const { user } = this.props;
+		const { user, size } = this.props;
+
+		HTML.style.fontSize = `${ size }px`;
 
 		return (
 			<>
@@ -34,7 +39,8 @@ export class _App extends React.Component<Props> {
 
 const mapStateToProps = (state: Mahjong.Store): Props => {
 	return {
-		user: selectUser(state)
+		user: selectUser(state),
+		size: selectSize(state)
 	};
 };
 

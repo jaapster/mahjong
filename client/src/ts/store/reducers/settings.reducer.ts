@@ -1,6 +1,19 @@
-const STATE = {};
+const STATE = {
+	size: 1
+};
 
 export const settings = (state: Mahjong.Settings = STATE, action: any): Mahjong.Settings => {
+	if (action.type === 'actionSetSize') {
+		const {
+			size
+		} = action.data;
+
+		return {
+			...state,
+			size
+		};
+	}
+
 	if (action.type === 'actionSetActiveTable') {
 		const {
 			id

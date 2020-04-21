@@ -30,7 +30,7 @@ export class Chair extends React.Component<Props> {
 
 		const set0 = getTray(`${ id }0`, tiles);
 		const set1 = getTray(`${ id }1`, tiles);
-		const rotate = index === 1 || index === 3;
+		const rotate = index === 1 ? -90 : index === 3 ? 90 : 0;
 
 		const total = set0.length + set1.length;
 
@@ -71,7 +71,12 @@ export class Chair extends React.Component<Props> {
 						)
 					}
 				>
-					{ chair.player }
+					<div className="name">{ chair.player }</div>
+					<div className="coins">
+						{
+							chair.coins.reduce((m, coin) => m + coin.value, 0)
+						}
+					</div>
 				</div>
 				{
 					index === 0
@@ -115,7 +120,7 @@ export class Chair extends React.Component<Props> {
 										id={isPlayer || isDummy ? `${ id }transit` : undefined }
 										hidden={ true }
 										tiles={ getTray(`${ id }transit`, tiles) }
-										rotate={ index === 1 || index === 3 }
+										rotate={ 0 }
 										small={ false }
 										draggable={ true }
 									/>

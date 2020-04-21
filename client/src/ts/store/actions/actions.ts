@@ -2,6 +2,17 @@ import axios from 'axios';
 
 // SYNC //
 
+export const ActionSetSize = {
+	create(size: number) {
+		return {
+			type: 'actionSetSize',
+			data: {
+				size
+			}
+		};
+	}
+};
+
 export const ActionRestore = {
 	create(user: Mahjong.User, table: string) {
 		return {
@@ -210,7 +221,6 @@ export const ActionDeleteTable = {
 
 export const ActionSetSeated = {
 	create(tableId: string, chairId: string, seated: boolean) {
-		console.log('set seated');
 		return (dispatch) => {
 			const action = {
 				type: 'actionSetSeated',

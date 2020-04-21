@@ -1,5 +1,9 @@
 import { createSelector } from 'reselect';
 
+export const selectSize = (store: Mahjong.Store) => {
+	return store.settings.size;
+};
+
 export const selectUser = (store: Mahjong.Store) => {
 	return store.auth.user;
 };

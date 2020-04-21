@@ -7,12 +7,68 @@ const STATE: Mahjong.Table[] = [
 		id: '42',
 		creator: 'Zaphod',
 		chairs: [
-			{ id: 'a', reveal: false, seated: true, coins: [], player: 'zaphod' },
-			{ id: 'b', reveal: false, seated: true, coins: [], player: 'ford' },
-			{ id: 'c', reveal: false, seated: true, coins: [], player: 'trillian' },
-			{ id: 'd', reveal: false, seated: false, coins: [] }
+			{
+				id: 'a',
+				reveal: false,
+				seated: true,
+				coins: [
+					{ value: 500 },
+					{ value: 200 },
+					{ value: 100 },
+					{ value: 100 },
+					{ value: 100 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 }
+				],
+				player: 'zaphod'
+			},
+			{
+				id: 'b',
+				reveal: false,
+				seated: true,
+				coins: [
+					{ value: 500 },
+					{ value: 200 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 }
+				],
+				player: 'ford'
+			},
+			{
+				id: 'c',
+				reveal: false,
+				seated: true,
+				coins: [
+					{ value: 500 },
+					{ value: 200 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 }
+				],
+				player: 'trillian'
+			},
+			{
+				id: 'd',
+				reveal: false,
+				seated: false,
+				coins: [
+					{ value: 500 },
+					{ value: 200 },
+					{ value: 100 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 },
+					{ value: 50 }
+				]
+			}
 		],
 		game: {
+			id: v4(),
 			tiles: dealTiles(getTileSet())
 		},
 		transit: false
@@ -47,6 +103,7 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 					{ id: 'd', reveal: false, seated: false, coins: [] }
 				],
 				game: {
+					id: v4(),
 					tiles: dealTiles(getTileSet())
 				},
 				transit: false
@@ -158,6 +215,7 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 				? {
 					...table,
 					game: {
+						id: v4(),
 						tiles: dealTiles(getTileSet())
 					},
 					chairs: table.chairs.map(chair => ({

@@ -1,38 +1,24 @@
-.wall {
-	$smallTray: 30px;
-	$largeTray: 64px;
+// @import './ss-variables.scss';
 
-	position: absolute;
-	bottom: 0;
-	height: $largeTray + $largeTray;
-	width: $smallTray + $largeTray;
-	// background: slategrey; //lighten(black, 90%);
+// .wall {
+// 	position: absolute;
+// 	bottom: 0;
+// 	height: $largeTray + $largeTray;
+// 	width: $smallTray + $largeTray;
 
-	&.wall-begin {
-		.tile-count {
-			right: auto;
-			left: 0;
-		}
-	}
+// 	&.wall-begin {
+// 		.tile-count {
+// 			right: auto;
+// 			left: 0;
+// 		}
+// 	}
 
-	&.wall-end {
-		right: 0;
-	}
+// 	&.wall-end {
+// 		right: 0;
+// 	}
 
-	.tray {
-		height: $largeTray + $largeTray;
-		background: transparent;
-	}
-
-	.tile {
-		.tile-graphic {
-			&:before {
-				content: '?';
-				font-size: 30px;
-				font-family: serif;
-				font-weight: bolder;
-				color: firebrick;
-			}
-		}
-	}
-}
+// 	.tray {
+// 		height: $largeTray + $largeTray;
+// 		background: transparent;
+// 	}
+// }

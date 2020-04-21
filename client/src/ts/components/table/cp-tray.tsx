@@ -7,7 +7,7 @@ interface Props {
 	id: string;
 	hidden: boolean;
 	tiles: Mahjong.Tile[];
-	rotate?: boolean;
+	rotate?: number;
 	blank?: boolean;
 	small: boolean;
 	draggable: boolean;
@@ -16,7 +16,7 @@ interface Props {
 	after?: boolean;
 }
 
-export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showCount, before, after }: Props) => {
+export const Tray = ({ id, tiles, hidden, rotate = 0, blank, small, draggable, showCount, before, after }: Props) => {
 	const index0 = tiles[0]?.index ?? 0;
 	const index1 = tiles[tiles.length - 1]?.index ?? 0;
 
@@ -28,8 +28,8 @@ export const Tray = ({ id, tiles, hidden, rotate, blank, small, draggable, showC
 					'tray',
 					{
 						'tray-hidden': hidden,
-						'tray-rotate': rotate,
-						'tray-regular': !rotate,
+						'tray-regular': rotate === 0,
+						'tray-rotate': rotate !== 0,
 						'tray-mega': before || after
 					}
 				)

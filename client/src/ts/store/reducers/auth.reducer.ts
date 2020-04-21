@@ -1,9 +1,9 @@
 const STATE: Mahjong.Auth = {
 	authenticate: false,
-	// user: {
-	// 	name: 'jaap',
-	// 	id: '1'
-	// }
+	user: {
+		name: 'jaap',
+		id: '1'
+	}
 };
 
 export const auth = (state: Mahjong.Auth = STATE, action: any): Mahjong.Auth => {

@@ -1,11 +1,41 @@
-.chair {
-	$smallTray: 30px;
-	$largeTray: 64px;
+@import './ss-variables.scss';
 
+.chair {
 	position: absolute;
 
 	.tray {
 		position: absolute;
+	}
+
+	.player {
+		position: absolute;
+		opacity: 1;
+		display: flex;
+		flex-direction: row;
+		width: 300rem;
+		transition: opacity 1s;
+
+		&.player-unseated {
+			opacity: 0.2;
+		}
+
+		.name,
+		.coins {
+			padding: 0 5rem;
+			line-height: 20rem;
+			font-size: 12rem;
+		}
+
+		.name {
+			color: white;
+			background: black;
+		}
+
+		.coins {
+			background: goldenrod;
+			color: white;
+			text-shadow: 0 1rem 2rem darken(darkgoldenrod, 40%);
+		}
 	}
 
 	&.chair-top,
@@ -67,6 +97,10 @@
 				height: $largeTray;
 				top: $smallTray;
 			}
+		}
+
+		.player {
+			left: 0;
 		}
 	}
 
@@ -144,28 +178,12 @@
 		}
 	}
 
-	.player {
-		position: absolute;
-		top: 0;
-		left: 0;
-		font-size: 12px;
-		padding: 5px;
-		color: white;
-		background: green;
-		// opacity: 0.5;
-
-		&.player-unseated {
-			background: black;
-			opacity: 0.2;
-		}
-	}
-
 	.tray-visibility {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		font-size: 10px;
-		padding: 5px;
+		font-size: 10rem;
+		padding: 5rem;
 		background: black;
 		color: white;
 		cursor: default;
