@@ -7,7 +7,8 @@
 	display: flex;
 	width: $largeTray + $smallTray;
 	height: $largeTray + $smallTray;
-	color: rgba(255, 255, 255, 0.2);
+	color: black;
+	opacity: 0.3;
 	font-size: 100px !important;
 	cursor: default;
 	justify-content: center;
@@ -19,6 +20,7 @@
 
 	&:hover {
 		background: dodgerblue;
-		color: ivory;
+		opacity: 1;
+		color: white;
 	}
 }

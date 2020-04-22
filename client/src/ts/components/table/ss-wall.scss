@@ -1,24 +1,24 @@
-// @import './ss-variables.scss';
+@import './ss-variables.scss';
 
-// .wall {
-// 	position: absolute;
-// 	bottom: 0;
-// 	height: $largeTray + $largeTray;
-// 	width: $smallTray + $largeTray;
+.mini-wall {
+	position: absolute;
+	bottom: 0;
+	height: $largeTray + $largeTray;
+	width: $smallTray + $largeTray;
 
-// 	&.wall-begin {
-// 		.tile-count {
-// 			right: auto;
-// 			left: 0;
-// 		}
-// 	}
+	&.wall-begin {
+		.tile-count {
+			right: auto;
+			left: 0;
+		}
+	}
 
-// 	&.wall-end {
-// 		right: 0;
-// 	}
+	&.wall-end {
+		right: 0;
+	}
 
-// 	.tray {
-// 		height: $largeTray + $largeTray;
-// 		background: transparent;
-// 	}
-// }
+	.tray {
+		height: $largeTray + $largeTray;
+		background: transparent;
+	}
+}

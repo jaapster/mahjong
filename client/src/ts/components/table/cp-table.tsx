@@ -2,7 +2,7 @@ import bind from 'autobind-decorator';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Chair } from './cp-chair';
-// import { Wall } from './cp-wall';
+import { Wall } from './cp-wall';
 import { Center } from './cp-center';
 import { Notifications } from './cp-notifications';
 import { Menu } from './cp-menu';
@@ -62,15 +62,15 @@ interface State {
 	table?: Mahjong.Table;
 }
 
-const getDragDrop = ({ target: { dataset: { tray, index }, id } }: any) => (
-	tray != null
+const getDragDrop = ({ target: { dataset: { tray, index }, id } }: any) => {
+	return tray != null
 		? {
 			id,
 			tray,
 			index: parseFloat(index)
 		}
-		: undefined
-);
+		: undefined;
+};
 
 @bind
 export class _Table extends React.Component<Props, State> {
@@ -268,8 +268,8 @@ export class _Table extends React.Component<Props, State> {
 					tiles={ tiles }
 					transit={ table.transit }
 				/>
-				{/* <Wall tiles={ tiles } begin={ true } x={ drag != null } />
-				<Wall tiles={ tiles } begin={ false }  x={ drag != null } /> */}
+				<Wall tiles={ tiles } begin={ true } x={ drag != null } />
+				<Wall tiles={ tiles } begin={ false }  x={ drag != null } />
 				{
 					showMenu
 						? (

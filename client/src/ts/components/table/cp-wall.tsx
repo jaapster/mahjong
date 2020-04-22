@@ -22,7 +22,7 @@ export const Wall = ({ tiles, begin, x }: Props) => {
 		<div
 			className={
 				mergeClasses(
-					'wall',
+					'mini-wall',
 					{
 						'wall-begin': begin,
 						'wall-end': !begin
@@ -31,7 +31,6 @@ export const Wall = ({ tiles, begin, x }: Props) => {
 			}
 		>
 			<Tray
-				blank={ true }
 				draggable={ true }
 				hidden={ true }
 				id="t0"

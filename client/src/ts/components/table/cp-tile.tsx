@@ -8,7 +8,6 @@ interface Props {
 	left: Mahjong.Tile;
 	hidden: boolean;
 	rotate: number;
-	blank: boolean;
 	small: boolean;
 	draggable: boolean;
 }
@@ -71,7 +70,6 @@ export class Tile extends React.Component<Props, State> {
 			left,
 			hidden,
 			rotate,
-			blank,
 			small,
 			draggable
 		} = this.props;
@@ -86,33 +84,26 @@ export class Tile extends React.Component<Props, State> {
 						'tile-hidden': hidden || tile.hidden,
 						'tile-hovered': hovered,
 						'tile-dragged': dragged,
-						'tile-rotated': rotate !== 0,
+						'tile-regular': rotate === 0,
+						'tile-rotate': rotate !== 0,
 						'tile-rotate-cw': rotate === 90,
 						'tile-rotate-ccw': rotate === -90,
-						'tile-blank': blank,
 						'tile-small': small,
 						'tile-spaced': spaced
 					}
 				) }
+				data-index={ (tile.index + (left?.index ?? (tile.index - 1))) / 2 }
+				data-tray={ tile.tray }
 				draggable={ draggable }
 				id={ id.toString() }
 				onDragEnd={ draggable ? this.onDragEnd : undefined }
 				onDragEnter={ this.onDragEnter }
 				onDragLeave={ this.onDragLeave }
 				onDragStart={ draggable ? this.onDragStart : (e) => e.preventDefault() }
-				// title={ tile.index.toString() }
-				title={ blank || hidden || tile.hidden ? undefined : title }
-				data-tray={ tile.tray }
-				data-index={ (tile.index + (left?.index ?? (tile.index - 1))) / 2 }
-				data-hidden={ tile.hidden }
+				title={ hidden || tile.hidden ? undefined : title }
 			>
 				<div className="tile-graphic">
-					<div className="tile-set">
-						<div className="tile-side" />
-						<div className="tile-background" />
-						<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />
-						<div className="tile-gloss" />
-					</div>
+					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />
 				</div>
 			</div>
 		);

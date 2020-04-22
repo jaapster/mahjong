@@ -1,6 +1,7 @@
 @import './ss-variables.scss';
 
-$offset: 3rem;
+$offsetX: 0;
+$offsetY: ($tileHeight / 5) + 1;
 
 .center {
 	position: absolute;
@@ -8,15 +9,16 @@ $offset: 3rem;
 	left: $smallTray + $largeTray;
 	bottom: $largeTray + $largeTray;
 	right: $smallTray + $largeTray;
-	box-shadow: inset 0 0 5rem grey;
-	background: rgba(255, 255, 255, 0.4);
+	box-shadow: inset 0 0 5rem #333;
 
 	.drop-zone {
 		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		top: $tileHeight;
+		left: $tileHeight;
+		right: $tileHeight;
+		bottom: $tileHeight;
+		background: rgba(255, 0, 0, 0.001);
+		pointer-events: all;
 	}
 
 	.tray {
@@ -25,20 +27,23 @@ $offset: 3rem;
 		right: $tileHeight;
 		background: none;
 		z-index: 4;
-
 		pointer-events: all;
 
+		justify-content: baseline;
+
 		&#t1 {
-			bottom: $tileHeight;
-			height: 35%;
-			margin: 5rem;
+			bottom: ($tileWidth + 1) * 4;
+			height: $tileWidth;
 		}
 
 		&#t2 {
-			top: $tileHeight;
-			height: 50%;
+			top: $tileHeight * 3;
+			left: $tileHeight * 3;
+			right: $tileHeight * 3;
+			height: ($tileWidth + 1) * 2;
 			pointer-events: none;
-			opacity: 0.6;
+			background: rgba(255, 0, 0, 0.001);
+			opacity: 0.5;
 		}
 	}
 
@@ -130,7 +135,9 @@ $offset: 3rem;
 
 		.wall {
 			position: relative;
-			margin-top: -10px;
+			// margin-top: -10rem;
+
+			// background: #ffdc00;
 
 			width: (($tileWidth + 1) * 17) + $tileHeight;
 			height: (($tileWidth + 1) * 17) + $tileHeight;
@@ -146,6 +153,12 @@ $offset: 3rem;
 					display: flex;
 					pointer-events: all;
 				}
+
+				&.b {
+					.tile-symbol {
+						box-shadow: none;
+					}
+				}
 			}
 
 			.wall-left,
@@ -158,8 +171,8 @@ $offset: 3rem;
 
 			.wall-bottom {
 				&.a {
-					bottom: -$offset;
-					left: $offset;
+					bottom: -$offsetY;
+					left: $offsetX;
 				}
 
 				&.b {
@@ -170,8 +183,8 @@ $offset: 3rem;
 
 			.wall-right {
 				&.a {
-					bottom: -$offset;
-					right: -$offset;
+					bottom: -$offsetY;
+					right: -$offsetX;
 				}
 
 				&.b {
@@ -182,20 +195,20 @@ $offset: 3rem;
 
 			.wall-top {
 				&.a {
-					top: $offset;
-					right: -$offset - 1;
+					top: $offsetY;
+					right: -$offsetX;
 				}
 
 				&.b {
 					top: 0;
-					right: -1rem;
+					right: 0;
 				}
 			}
 
 			.wall-left {
 				&.a {
-					top: -$offset;
-					left: $offset;
+					top: -$offsetY;
+					left: $offsetX;
 				}
 
 				&.b {

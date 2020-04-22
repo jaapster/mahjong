@@ -10,12 +10,11 @@ interface Props {
 	transit: boolean;
 }
 
-const T = ({ t, ts, r }: any) => (
+const T = ({ t, id, r }: any) => (
 	<Tile
-		blank={ true }
-		draggable={ t.id === ts[ts.length - 1].id }
+		draggable={ t.id === id }
 		hidden={ true }
-		key={ t.id === ts[ts.length - 1].id ? t.id : undefined }
+		key={ t.id === id ? t.id : undefined }
 		left={undefined }
 		rotate={ r }
 		small={ false }
@@ -38,45 +37,36 @@ export const Center = ({ tiles, transit }: Props) => {
 	const right = wall.slice(34, 68).reverse();
 	const bottom = wall.slice(0, 34);
 
+	const id = wall[wall.length - 1]?.id;
+
 	return (
 		<div className="center">
 			{
 				!transit
 					? (
 						<>
-							<div className="drop-zone" id="t1" />
+
 							<div className="tiles">
 								<div className="wall">
 									<div className="wall-top a">
-										{
-											aTiles(top).map(t => <T t={ t } ts={ wall } r={ 0 } />)
-										}
+										{ aTiles(top).map(t => <T key={ t.id } t={ t } id={ id } r={ 0 } />) }
 									</div>
 									<div className="wall-top b">
-										{
-											bTiles(top).map(t => <T t={ t } ts={ wall } r={ 0 } />)
-										}
+										{ bTiles(top).map(t => <T  key={ t.id }t={ t } id={ id } r={ 0 } />) }
 									</div>
 									<div className="wall-bottom a">
-										{
-											aTiles(bottom, 1).map(t => <T t={ t } ts={ wall } r={ 0 } />)
-										}
+										{ aTiles(bottom, 1).map(t => <T key={ t.id } t={ t } id={ id } r={ 0 } />) }
 									</div>
 									<div className="wall-bottom b">
-										{
-											bTiles(bottom, 1).map(t => <T t={ t } ts={ wall } r={ 0 } />)
-										}
+										{ bTiles(bottom, 1).map(t => <T key={ t.id } t={ t } id={ id } r={ 0 } />) }
 									</div>
 									<div className="wall-right a">
-										{
-											aTiles(right).map(t => <T t={ t } ts={ wall } r={ 90 } />)
-										}
+										{ aTiles(right).map(t => <T key={ t.id } t={ t } id={ id } r={ 90 } />) }
 									</div>
 									<div className="wall-right b">
-										{
-											bTiles(right).map(t => <T t={ t } ts={ wall } r={ 90 } />)
-										}
+										{ bTiles(right).map(t => <T key={ t.id } t={ t } id={ id } r={ 90 } />) }
 									</div>
+									<div className="drop-zone" data-tray="t1" />
 									<Tray
 										draggable={ false }
 										hidden={ false }

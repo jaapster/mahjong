@@ -9,11 +9,8 @@
 
 	.player {
 		position: absolute;
-		opacity: 1;
-		display: flex;
-		flex-direction: row;
-		width: 300rem;
 		transition: opacity 1s;
+		width: 20px;
 
 		&.player-unseated {
 			opacity: 0.2;
@@ -24,6 +21,7 @@
 			padding: 0 5rem;
 			line-height: 20rem;
 			font-size: 12rem;
+			display: inline-block;
 		}
 
 		.name {
