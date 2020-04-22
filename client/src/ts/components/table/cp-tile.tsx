@@ -103,7 +103,11 @@ export class Tile extends React.Component<Props, State> {
 				title={ hidden || tile.hidden ? undefined : title }
 			>
 				<div className="tile-graphic">
-					<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />
+					<div className="tile-side" />
+					<div className="tile-top">
+						<div className="tile-gloss" />
+						<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />
+					</div>
 				</div>
 			</div>
 		);

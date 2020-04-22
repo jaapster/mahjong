@@ -4,225 +4,181 @@ $radius: $tileWidth / 10;
 
 .tile {
 	position: relative;
-	margin-top: $tileHeight / 10;
+	transform: translateY($tileHeight * 0.1);
 
-	.tile-graphic {
+	.tile-side,
+	.tile-top {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: $radius;
 		pointer-events: none;
+	}
 
+	.tile-side {
+		background: darken(burlywood, 10%);
+		box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
+	}
+
+	.tile-top {
+		top: -($tileHeight / 5);
+		background: ivory; // blanchedalmond;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.tile-gloss,
 		.tile-symbol {
 			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.tile-gloss {
+			// display: none;
 			border-radius: $radius;
-			background-color: darken(burlywood, 20%);
-			box-shadow: 0 $tileHeight / 10 $tileHeight / 10 rgba(0, 0, 0, 0.6);
-			z-index: 1;
-
-			&:after {
-				content: ' ';
-
-				position: absolute;
-
-				top: -$tileHeight / 5;
-
-				width: $tileWidth;
-				height: $tileHeight;
-				border-radius: $radius;
-
-				display: block;
-
-				background-size: $tileWidth * 0.8 $tileHeight * 0.8;
-				background-repeat: no-repeat;
-				background-position: center center;
-				background-color: ivory;
-
-				z-index: 2;
-			}
-
-			&:before {
-				content: ' ';
-
-				position: absolute;
-
-				width: $tileWidth;
-				height: $tileHeight;
-				border-radius: $radius;
-
-				overflow: hidden;
-
-				top: -$tileHeight / 5;
-
-				// background: linear-gradient(135deg, transparent, transparent 40%, burlywood);
-				background: linear-gradient(
-					180deg,
-					white,
-					white $tileHeight * 0.05,
-					transparent $tileHeight * 0.15,
-					transparent 50%,
-					rgba(222, 184, 135, 0.5) 90%,
-					rgba(222, 184, 135, 1));
-
-				opacity: 1;
-
-				z-index: 3;
-			}
-
-			&.tile-symbol-dragons-red { &:after { background-image: url(/tiles/Chun.svg); } }
-			&.tile-symbol-dragons-green { &:after { background-image: url(/tiles/Hatsu.svg); } }
-			&.tile-symbol-dragons-white { &:after { background-image: url(/tiles/wittedraak.svg); } }
-
-			&.tile-symbol-winds-east { &:after { background-image: url(/tiles/Ton.svg); } }
-			&.tile-symbol-winds-north { &:after { background-image: url(/tiles/Pei.svg); } }
-			&.tile-symbol-winds-west { &:after { background-image: url(/tiles/Shaa.svg); } }
-			&.tile-symbol-winds-south { &:after { background-image: url(/tiles/Nan.svg); } }
-
-			&.tile-symbol-dots-1 { &:after { background-image: url(/tiles/Pin1.svg); } }
-			&.tile-symbol-dots-2 { &:after { background-image: url(/tiles/Pin2.svg); } }
-			&.tile-symbol-dots-3 { &:after { background-image: url(/tiles/Pin3.svg); } }
-			&.tile-symbol-dots-4 { &:after { background-image: url(/tiles/Pin4.svg); } }
-			&.tile-symbol-dots-5 { &:after { background-image: url(/tiles/Pin5.svg); } }
-			&.tile-symbol-dots-6 { &:after { background-image: url(/tiles/Pin6.svg); } }
-			&.tile-symbol-dots-7 { &:after { background-image: url(/tiles/Pin7.svg); } }
-			&.tile-symbol-dots-8 { &:after { background-image: url(/tiles/Pin8.svg); } }
-			&.tile-symbol-dots-9 { &:after { background-image: url(/tiles/Pin9.svg); } }
-
-			&.tile-symbol-characters-1 { &:after { background-image: url(/tiles/Man1.svg); } }
-			&.tile-symbol-characters-2 { &:after { background-image: url(/tiles/Man2.svg); } }
-			&.tile-symbol-characters-3 { &:after { background-image: url(/tiles/Man3.svg); } }
-			&.tile-symbol-characters-4 { &:after { background-image: url(/tiles/Man4.svg); } }
-			&.tile-symbol-characters-5 { &:after { background-image: url(/tiles/Man5.svg); } }
-			&.tile-symbol-characters-6 { &:after { background-image: url(/tiles/Man6.svg); } }
-			&.tile-symbol-characters-7 { &:after { background-image: url(/tiles/Man7.svg); } }
-			&.tile-symbol-characters-8 { &:after { background-image: url(/tiles/Man8.svg); } }
-			&.tile-symbol-characters-9 { &:after { background-image: url(/tiles/Man9.svg); } }
-
-			&.tile-symbol-bamboo-1 { &:after { background-image: url(/tiles/Sou1.svg); } }
-			&.tile-symbol-bamboo-2 { &:after { background-image: url(/tiles/Sou2.svg); } }
-			&.tile-symbol-bamboo-3 { &:after { background-image: url(/tiles/Sou3.svg); } }
-			&.tile-symbol-bamboo-4 { &:after { background-image: url(/tiles/Sou4.svg); } }
-			&.tile-symbol-bamboo-5 { &:after { background-image: url(/tiles/Sou5.svg); } }
-			&.tile-symbol-bamboo-6 { &:after { background-image: url(/tiles/Sou6.svg); } }
-			&.tile-symbol-bamboo-7 { &:after { background-image: url(/tiles/Sou7.svg); } }
-			&.tile-symbol-bamboo-8 { &:after { background-image: url(/tiles/Sou8.svg); } }
-			&.tile-symbol-bamboo-9 { &:after { background-image: url(/tiles/Sou9.svg); } }
-
-			&.tile-symbol-seasons-spring { &:after { background-image: url(/tiles/seizoenlente.svg); } }
-			&.tile-symbol-seasons-summer { &:after { background-image: url(/tiles/seizoenzomer.svg); } }
-			&.tile-symbol-seasons-autumn { &:after { background-image: url(/tiles/seizoenherfst.svg); } }
-			&.tile-symbol-seasons-winter { &:after { background-image: url(/tiles/seizoenwinter.svg); } }
-
-			&.tile-symbol-flowers-plum { &:after { background-image: url(/tiles/flowersplum.svg); } }
-			&.tile-symbol-flowers-orchid { &:after { background-image: url(/tiles/flowersorchid.svg); } }
-			&.tile-symbol-flowers-chrysanthemum { &:after { background-image: url(/tiles/flowerschrysanthemum.svg); } }
-			&.tile-symbol-flowers-bamboo { &:after { background-image: url(/tiles/flowersbamboo.svg); } }
+			background: linear-gradient(white, transparent $tileHeight * 0.2, transparent $tileHeight * 0.9, burlywood);
 		}
-	}
 
-	&.tile-hidden {
-		.tile-graphic {
-			.tile-symbol {
-				&:after {
-					background-image: none;
-					background-color: blanchedalmond;
-				}
-			}
+		.tile-symbol {
+			background-size: $tileWidth * 0.8 $tileHeight * 0.8;
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			// margin-top: $tileHeight / -30;
+
+			&.tile-symbol-dragons-red { background-image: url(/tiles/Chun.svg); }
+			&.tile-symbol-dragons-green { background-image: url(/tiles/Hatsu.svg); }
+			&.tile-symbol-dragons-white { background-image: url(/tiles/wittedraak.svg); }
+			&.tile-symbol-winds-east { background-image: url(/tiles/Ton.svg); }
+			&.tile-symbol-winds-north { background-image: url(/tiles/Pei.svg); }
+			&.tile-symbol-winds-west { background-image: url(/tiles/Shaa.svg); }
+			&.tile-symbol-winds-south { background-image: url(/tiles/Nan.svg); }
+			&.tile-symbol-dots-1 { background-image: url(/tiles/Pin1.svg); }
+			&.tile-symbol-dots-2 { background-image: url(/tiles/Pin2.svg); }
+			&.tile-symbol-dots-3 { background-image: url(/tiles/Pin3.svg); }
+			&.tile-symbol-dots-4 { background-image: url(/tiles/Pin4.svg); }
+			&.tile-symbol-dots-5 { background-image: url(/tiles/Pin5.svg); }
+			&.tile-symbol-dots-6 { background-image: url(/tiles/Pin6.svg); }
+			&.tile-symbol-dots-7 { background-image: url(/tiles/Pin7.svg); }
+			&.tile-symbol-dots-8 { background-image: url(/tiles/Pin8.svg); }
+			&.tile-symbol-dots-9 { background-image: url(/tiles/Pin9.svg); }
+			&.tile-symbol-characters-1 { background-image: url(/tiles/Man1.svg); }
+			&.tile-symbol-characters-2 { background-image: url(/tiles/Man2.svg); }
+			&.tile-symbol-characters-3 { background-image: url(/tiles/Man3.svg); }
+			&.tile-symbol-characters-4 { background-image: url(/tiles/Man4.svg); }
+			&.tile-symbol-characters-5 { background-image: url(/tiles/Man5.svg); }
+			&.tile-symbol-characters-6 { background-image: url(/tiles/Man6.svg); }
+			&.tile-symbol-characters-7 { background-image: url(/tiles/Man7.svg); }
+			&.tile-symbol-characters-8 { background-image: url(/tiles/Man8.svg); }
+			&.tile-symbol-characters-9 { background-image: url(/tiles/Man9.svg); }
+			&.tile-symbol-bamboo-1 { background-image: url(/tiles/Sou1.svg); }
+			&.tile-symbol-bamboo-2 { background-image: url(/tiles/Sou2.svg); }
+			&.tile-symbol-bamboo-3 { background-image: url(/tiles/Sou3.svg); }
+			&.tile-symbol-bamboo-4 { background-image: url(/tiles/Sou4.svg); }
+			&.tile-symbol-bamboo-5 { background-image: url(/tiles/Sou5.svg); }
+			&.tile-symbol-bamboo-6 { background-image: url(/tiles/Sou6.svg); }
+			&.tile-symbol-bamboo-7 { background-image: url(/tiles/Sou7.svg); }
+			&.tile-symbol-bamboo-8 { background-image: url(/tiles/Sou8.svg); }
+			&.tile-symbol-bamboo-9 { background-image: url(/tiles/Sou9.svg); }
+			&.tile-symbol-seasons-spring { background-image: url(/tiles/seizoenlente.svg); }
+			&.tile-symbol-seasons-summer { background-image: url(/tiles/seizoenzomer.svg); }
+			&.tile-symbol-seasons-autumn { background-image: url(/tiles/seizoenherfst.svg); }
+			&.tile-symbol-seasons-winter { background-image: url(/tiles/seizoenwinter.svg); }
+			&.tile-symbol-flowers-plum { background-image: url(/tiles/flowersplum.svg); }
+			&.tile-symbol-flowers-orchid { background-image: url(/tiles/flowersorchid.svg); }
+			&.tile-symbol-flowers-chrysanthemum { background-image: url(/tiles/flowerschrysanthemum.svg); }
+			&.tile-symbol-flowers-bamboo { background-image: url(/tiles/flowersbamboo.svg); }
 		}
-	}
-
-	&.tile-dragged {
-		opacity: 0.2;
 	}
 
 	&.tile-small {
-		margin-top: 1rem;
+		transform: translateY($tileHeight * 0.05);
+		border-radius: $radius / 2;
 
-		.tile-graphic .tile-symbol {
+		.tile-side {
 			border-radius: $radius / 2;
-			background-color: blanchedalmond;
-			box-shadow: 0 $tileHeight / 20 $tileHeight / 20 rgba(0, 0, 0, 0.3);
+			box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.5);
+		}
 
-			&:after {
-				display: none;
-			}
+		.tile-top {
+			top: -($tileHeight / 10);
+			border-width: 1rem;
+			border-radius: $radius / 2;
+		}
+	}
 
-			&:before {
+	&.tile-small,
+	&.tile-hidden {
+		.tile-top {
+			.tile-symbol {
 				display: none;
 			}
 		}
 	}
 
 	&.tile-regular {
+		width: $tileWidth;
+		height: $tileHeight;
+
 		margin-right: 1rem;
+		border-left: 0 solid transparent;
 
 		&:last-child {
 			margin-right: 0;
 		}
 
-		.tile-graphic,
-		.tile-graphic .tile-symbol {
-			width: $tileWidth;
-			height: $tileHeight;
-		}
-
-		.tile-symbol {
-			right: 0;
-		}
-
-		&.tile-spaced {
-			.tile-graphic {
-				width: $tileWidth * 1.5;
-			}
-		}
-
 		&.tile-hovered {
-			.tile-graphic {
-				width: $tileWidth * 2;
-			}
+			border-left: $tileWidth solid transparent;
 		}
 
 		&.tile-small {
-			.tile-graphic,
-			.tile-graphic .tile-symbol {
-				width: $tileWidth / 2;
-				height: $tileHeight / 2;
-			}
+			width: $tileWidth / 2;
+			height: $tileHeight / 2;
 		}
 	}
 
 	&.tile-rotate {
-		margin-top: 1rem;
+		width: $tileHeight;
+		height: $tileWidth;
 
-		.tile-graphic,
-		.tile-graphic .tile-symbol {
-			width: $tileHeight;
-			height: $tileWidth;
+		margin-top: 1rem;
+		border-bottom: 0 solid transparent;
+
+		.tile-top {
+			.tile-gloss {
+				background: linear-gradient(transparent, transparent $tileWidth - $tileHeight * 0.1, burlywood);
+			}
 		}
 
-		&.tile-spaced {
-			.tile-graphic {
-				height: $tileWidth * 1.5;
+		&.tile-rotate-cw {
+			.tile-symbol {
+				transform: rotate(90deg);
 			}
+		}
+
+		&.tile-rotate-ccw {
+			.tile-symbol {
+				transform: rotate(-90deg);
+			}
+		}
+
+		&:first-child {
+			margin-top: 0;
 		}
 
 		&.tile-hovered {
-			.tile-graphic {
-				height: $tileWidth * 2;
-			}
+			border-bottom: $tileWidth solid transparent;
 		}
 
 		&.tile-small {
-			.tile-graphic,
-			.tile-graphic .tile-symbol {
-				width: $tileHeight / 2;
-				height: $tileWidth / 2;
-			}
+			width: $tileHeight / 2;
+			height: $tileWidth / 2;
 		}
+	}
 
-		.tile-graphic .tile-symbol {
-			bottom: 0;
-
-			&:before {
-				width: $tileHeight;
-				height: $tileWidth;
-			}
-		}
+	&.tile-dragged {
+		opacity: 0.5;
 	}
 }
