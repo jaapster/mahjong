@@ -23,15 +23,19 @@ declare namespace Mahjong {
 		coins: Coin[];
 	}
 
-	interface Table {
+	interface Game {
 		id: string;
+		tiles: Tile[];
+		turn: string;
+		x: number;
+	}
+
+	interface Table {
 		chairs: Chair[];
 		creator: string;
+		id: string;
 		transit: boolean;
-		game: {
-			id: string;
-			tiles: Tile[];
-		};
+		game: Game;
 	}
 
 	interface Store {

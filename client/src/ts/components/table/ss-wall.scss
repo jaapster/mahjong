@@ -3,8 +3,10 @@
 .mini-wall {
 	position: absolute;
 	bottom: 0;
-	height: $largeTray + $largeTray;
-	width: $smallTray + $largeTray;
+	height: $largeTray;
+	width: $largeTray;
+
+	display: none;
 
 	&.wall-begin {
 		.tile-count {
@@ -18,7 +20,7 @@
 	}
 
 	.tray {
-		height: $largeTray + $largeTray;
+		height: $largeTray;
 		background: transparent;
 	}
 }

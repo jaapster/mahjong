@@ -1,7 +1,7 @@
 const STATE: Mahjong.Auth = {
 	authenticate: false,
 	user: {
-		name: 'jaap',
+		name: 'zaphod',
 		id: '1'
 	}
 };

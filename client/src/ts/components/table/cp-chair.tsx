@@ -43,41 +43,51 @@ export class Chair extends React.Component<Props> {
 						'chair-exceeds': total > 13
 					}
 				) }>
-				<Tray
-					draggable={ isPlayer || isDummy }
-					hidden={ !isPlayer && !chair.reveal }
-					id={ (isPlayer || isDummy) ? `${ id }0` : undefined }
-					rotate={ rotate }
-					showCount
-					small={ !isPlayer && !chair.reveal }
-					tiles={ set0 }
-				/>
-				<Tray
-					draggable={ isPlayer }
-					hidden={ false }
-					id={ isPlayer ? `${ id }1` : undefined }
-					rotate={ rotate }
-					showCount
-					small={ false }
-					tiles={ set1 }
-				/>
-				<div
-					className={
-						mergeClasses(
-							'player',
-							{
-								'player-unseated': !chair.seated
-							}
-						)
-					}
-				>
-					<div className="name">{ chair.player }</div>
-					<div className="coins">
-						{
-							chair.coins.reduce((m, coin) => m + coin.value, 0)
-						}
-					</div>
+				<div className="trays">
+					<Tray
+						draggable={ isPlayer || isDummy }
+						hidden={ !isPlayer && !chair.reveal }
+						id={ (isPlayer || isDummy) ? `${ id }0` : undefined }
+						rotate={ rotate }
+						showCount
+						// small={ !isPlayer && !chair.reveal }
+						small={ false }
+						tiles={ set0 }
+					/>
+					{/* {
+						isPlayer || set1.length
+							? ( */}
+								<Tray
+									draggable={ isPlayer }
+									hidden={ false }
+									id={ isPlayer ? `${ id }1` : undefined }
+									rotate={ rotate }
+									showCount
+									small={ false }
+									tiles={ set1 }
+								/>
+							{/* )
+							: null
+					} */}
 				</div>
+				{
+					!isPlayer
+						? (
+							<div
+								className={
+									mergeClasses(
+										'player',
+										{
+											'player-unseated': !chair.seated
+										}
+									)
+								}
+							>
+								{ chair.player }
+							</div>
+						)
+						: null
+				}
 				{
 					index === 0
 						? (

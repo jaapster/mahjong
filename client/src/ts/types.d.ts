@@ -13,6 +13,7 @@ declare namespace Mahjong {
 		suit: string;
 		title: string;
 		tray: string;
+		x?: boolean;
 	}
 
 	interface Chair {
@@ -23,15 +24,19 @@ declare namespace Mahjong {
 		seated: boolean;
 	}
 
+	interface Game {
+		id: string;
+		tiles: Tile[];
+		turn: string;
+		x: number;
+	}
+
 	interface Table {
 		chairs: Chair[];
 		creator: string;
 		id: string;
 		transit: boolean;
-		game: {
-			id: string;
-			tiles: Tile[];
-		};
+		game: Game;
 	}
 
 	interface User {

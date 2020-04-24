@@ -1,200 +1,159 @@
 @import './ss-variables.scss';
 
+$radius: 20rem;
+$color-red: #ff4136;
+$color-orange: #ff851b;
+$color-yellow: #ffdc00;
+$color-smoke: rgba(0, 0, 0, 0.3);
+
 .chair {
 	position: absolute;
+	overflow: hidden;
+	box-sizing: border-box;
+	background-color: wheat;//$color-smoke;
+	box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.5);
 
-	.tray {
+	.trays {
 		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: space-evenly;
+
+		.tray {
+			flex-grow: 1;
+
+			&:first-child {
+				background: $color-smoke;
+			}
+		}
 	}
 
-	.player {
-		position: absolute;
-		transition: opacity 1s;
-		width: 20rem;
+	&.chair-left,
+	&.chair-right {
+		top: $largeTray;
+		bottom: $largeTray;
+		width: $largeTray;
 
-		&.player-unseated {
-			opacity: 0.2;
-		}
-
-		.name,
-		.coins {
-			padding: 0 5rem;
-			line-height: 20rem;
-			font-size: 12rem;
-			display: inline-block;
-		}
-
-		.name {
-			color: white;
-			background: black;
-		}
-
-		.coins {
-			background: goldenrod;
-			color: white;
-			text-shadow: 0 1rem 2rem darken(darkgoldenrod, 40%);
+		.tray {
+			flex-direction: column;
 		}
 	}
 
 	&.chair-top,
 	&.chair-player {
+		left: $largeTray;
+		right: $largeTray;
+		height: $largeTray;
+
 		.tray {
 			flex-direction: row;
-			width: 100%;
-		}
-	}
-
-	&.chair-left,
-	&.chair-right {
-		top: $smallTray + $largeTray;
-		width: $smallTray + $largeTray;
-		bottom: $largeTray + $largeTray;
-
-		.tray {
-			flex-direction: column;
-			height: 100%;
-			top: 0;
-			bottom: 0;
-
-			&:nth-child(1) {
-				width: $smallTray;
-			}
-
-			&:nth-child(2) {
-				width: $largeTray;
-			}
-		}
-	}
-
-	&.chair-top,
-	&.chair-left,
-	&.chair-right {
-		.tray {
-			&:first-child {
-				background: rgba(0, 0, 0, 0.25);
-			}
-		}
-	}
-
-	&.chair-top {
-		top: 0;
-		left: $smallTray + $largeTray;
-		right: $smallTray + $largeTray;
-		height: $smallTray + $largeTray;
-
-		.tray {
-			left: 0;
-			right: 0;
-
-			&:nth-child(1) {
-				height: $smallTray;
-				top: 0;
-			}
-
-			&:nth-child(2) {
-				height: $largeTray;
-				top: $smallTray;
-			}
-		}
-
-		.player {
-			left: 0;
 		}
 	}
 
 	&.chair-left {
 		left: 0;
 
-		.tray {
-			&:nth-child(1) {
-				left: 0;
-			}
+		border-left-width: 0;
+		border-radius: 0 $radius $radius 0;
 
-			&:nth-child(2) {
-				left: $smallTray;
-			}
+		.trays {
+			flex-direction: column-reverse;
 		}
 	}
 
 	&.chair-right {
 		right: 0;
 
-		.tray {
-			&:nth-child(1) {
-				right: 0;
-			}
+		border-right-width: 0;
+		border-radius: $radius 0 0 $radius;
 
-			&:nth-child(2) {
-				right: $smallTray;
-			}
+		.trays {
+			flex-direction: column;
+		}
+
+		.player {
+			right: 0;
+		}
+	}
+
+	&.chair-top {
+		top: 0;
+
+		border-top-width: 0;
+		border-radius: 0 0 $radius $radius;
+
+		.trays {
+			flex-direction: row;
 		}
 	}
 
 	&.chair-player {
-		flex-direction: column-reverse;
 		bottom: 0;
-		left: $smallTray + $largeTray;
-		right: $smallTray + $largeTray;
-		height: $largeTray + $largeTray;
 
-		.tray {
-			height: $largeTray;
-			left: 0;
-			right: 0;
+		border-bottom-width: 0;
+		border-radius: $radius $radius 0 0;
 
-			&:nth-child(1) {
-				bottom: 0;
-				background: rgba(0, 0, 0, 0.2);
-			}
-
-			&:nth-child(2) {
-				bottom: $largeTray;
-			}
+		.trays {
+			flex-direction: row-reverse;
 		}
 	}
 
-	&.chair-a {
-		background: lightyellow;
-	}
+	// &.chair-a {
+	// 	background: #ffdc00;
+	// }
 
-	&.chair-b {
-		background: lightpink;
-	}
+	// &.chair-b {
+	// 	background: #7FDBFF; //lightpink;
+	// }
 
-	&.chair-c {
-		background: lightblue;
-	}
+	// &.chair-c {
+	// 	background: #01FF70;
+	// }
 
-	&.chair-d {
-		background: darkseagreen;
-	}
+	// &.chair-d {
+	// 	background: lighten(desaturate(deeppink, 30%), 20%); //#FF851B; //darkseagreen;
+	// }
 
 	&.chair-exceeds {
-		.tile-count {
-			background: red;
-			opacity: 1;
+		background: $color-orange;
+	}
+
+	.player,
+	.tray-visibility {
+		position: absolute;
+		font-size: 12rem;
+		padding: 0 5rem;
+		line-height: 20rem;
+		background: black;
+		color: white;
+		margin: 3rem;
+	}
+
+	.player {
+		transition: opacity 1s;
+
+		&.player-unseated {
+			opacity: 0.2;
 		}
 	}
 
 	.tray-visibility {
-		position: absolute;
 		bottom: 0;
-		left: 0;
-		font-size: 10rem;
-		padding: 5rem;
-		background: black;
-		color: white;
-		cursor: default;
+		right: 0;
 		opacity: 0.5;
+		cursor: default;
 
+		&.tray-visible,
 		&:hover {
 			opacity: 1;
 		}
 
 		&.tray-visible {
-			background: yellow;
+			background: $color-yellow;
 			color: black;
-			opacity: 1;
 		}
 	}
 }

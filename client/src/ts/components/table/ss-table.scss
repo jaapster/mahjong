@@ -1,8 +1,41 @@
+@import './ss-variables.scss';
+
 .table {
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: slategrey;
+	// width: 1024px; // right: 0;
+	// height: 700px; // bottom: 0;
+	background: grey;
+
+	.corner {
+		$pos: $largeTray / 4;
+
+		position: absolute;
+		width: $largeTray / 2;
+		height: $largeTray / 2;
+
+		background: black;
+		border-radius: $largeTray / 2;
+
+		opacity: 0.5;
+
+		&.corner-top {
+			top: $pos;
+		}
+
+		&.corner-bottom {
+			bottom: $pos;
+		}
+
+		&.corner-left {
+			left: $pos;
+		}
+
+		&.corner-right {
+			right: $pos;
+		}
+	}
 }

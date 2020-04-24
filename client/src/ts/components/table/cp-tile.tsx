@@ -64,7 +64,8 @@ export class Tile extends React.Component<Props, State> {
 				suit,
 				name,
 				spaced,
-				title
+				title,
+				x
 			},
 			tile,
 			left,
@@ -89,7 +90,9 @@ export class Tile extends React.Component<Props, State> {
 						'tile-rotate-cw': rotate === 90,
 						'tile-rotate-ccw': rotate === -90,
 						'tile-small': small,
-						'tile-spaced': spaced
+						'tile-spaced': spaced,
+						'tile-disabled': !draggable,
+						'tile-padding': x
 					}
 				) }
 				data-index={ (tile.index + (left?.index ?? (tile.index - 1))) / 2 }
@@ -105,6 +108,7 @@ export class Tile extends React.Component<Props, State> {
 				<div className="tile-graphic">
 					<div className="tile-side" />
 					<div className="tile-top">
+						<div className="tile-side-gloss" />
 						<div className="tile-gloss" />
 						<div className={ `tile-symbol tile-symbol-${ suit }-${ name }` } />
 					</div>

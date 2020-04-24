@@ -234,7 +234,7 @@ export class _Table extends React.Component<Props, State> {
 		}
 
 		const { player } = this.props;
-		const { game: { tiles }, chairs } = table;
+		const { game: { tiles, x }, chairs } = table;
 		const p = chairs.findIndex(c => c.player === player );
 
 		return (
@@ -263,13 +263,18 @@ export class _Table extends React.Component<Props, State> {
 							/>
 						))
 				}
-				<Exit onClick={ () => leave(table.id, chairs[p].id) } />
+				{/* <Exit onClick={ () => leave(table.id, chairs[p].id) } /> */}
 				<Center
 					tiles={ tiles }
 					transit={ table.transit }
+					padding={ x }
 				/>
-				<Wall tiles={ tiles } begin={ true } x={ drag != null } />
-				<Wall tiles={ tiles } begin={ false }  x={ drag != null } />
+				{/* <Wall tiles={ tiles } begin={ true } x={ drag != null } />
+				<Wall tiles={ tiles } begin={ false }  x={ drag != null } /> */}
+				{/* <div className="corner corner-top corner-left" />
+				<div className="corner corner-top corner-right" />
+				<div className="corner corner-bottom corner-left" />
+				<div className="corner corner-bottom corner-right" /> */}
 				{
 					showMenu
 						? (
