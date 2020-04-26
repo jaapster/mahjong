@@ -24,25 +24,23 @@ const T = ({ t, id, r }: any) => (
 );
 
 // x is used to reverse stacking order
-const aTiles = (tiles, x = 0) => (tiles.length + x) % 2
-	? tiles.slice(0, Math.ceil(tiles.length / 2))
-	: tiles.slice(tiles.length / 2);
+// const aTiles = (tiles, x = 0) => (tiles.length + x) % 2
+// 	? tiles.slice(0, Math.ceil(tiles.length / 2))
+// 	: tiles.slice(tiles.length / 2);
 
-const bTiles = (tiles, x = 0) => (tiles.length + x) % 2
-	? tiles.slice(Math.ceil(tiles.length / 2))
-	: tiles.slice(0, tiles.length / 2);
+// const bTiles = (tiles, x = 0) => (tiles.length + x) % 2
+// 	? tiles.slice(Math.ceil(tiles.length / 2))
+// 	: tiles.slice(0, tiles.length / 2);
 
 const gTiles = (tiles) => tiles.reduce((m, t, i) => {
 	return {
-		a: m.a.concat(i % 2 ? [t] : []),
-		b: m.b.concat(i % 2 ? [] : [t]),
+		a: (i % 2 ? [] : [t]).concat(m.a), //.concat(i % 2 ? [t] : []),
+		b: (i % 2 ? [t] : []).concat(m.b) // .concat(i % 2 ? [] : [t]),
 	};
 }, { a: [], b: [] });
 
 export const Center = ({ tiles, transit, padding }: Props) => {
 	const wall = getTray('t0', tiles);
-
-	// const ts = wall;
 
 	const ts = (new Array(padding)).fill(1).map((_x, i) => {
 		return {
@@ -60,14 +58,30 @@ export const Center = ({ tiles, transit, padding }: Props) => {
 		// @ts-ignore
 	}).concat(wall);
 
-	const top = ts.slice(68, 102).reverse();
-	const right = ts.slice(34, 68).reverse();
-	const bottom = ts.slice(0, 34);
+	const wallSize = 18;
+
+	const top = ts.slice(wallSize * 4, wallSize * 6);
+	const right = ts.slice(wallSize * 2, wallSize * 4);
+	const bottom = ts.slice(0, wallSize * 2);
 
 	const idE = wall[wall.length - 1]?.id;
 	const idB = wall[0]?.id;
 
-	const bt = gTiles(bottom);
+	const i = top.findIndex(t => !t.x);
+	const a = top[i];
+
+	if (!(top.filter(t => !t.x).length % 2)) {
+		const b = top[i + 1];
+
+		top[i] = b;
+		top[i + 1] = a;
+	} else {
+		const a = top[i];
+		const b = top[i - 1];
+
+		top[i] = b;
+		top[i - 1] = a;
+	}
 
 	return (
 		<div className="center">
@@ -75,29 +89,34 @@ export const Center = ({ tiles, transit, padding }: Props) => {
 				!transit
 					? (
 						<>
-
 							<div className="tiles">
 								<div className="wall">
-									<div className="wall-top a">
-										{ aTiles(top).map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
-									</div>
-									<div className="wall-top b">
-										{ bTiles(top).map(t => <T  key={ t.id }t={ t } id={ [idE, idB] } r={ 0 } />) }
-									</div>
-									<div className="wall-bottom a">
-										{/* { aTiles(bottom).map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) } */}
-										{ gTiles(bottom).a.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
-									</div>
-									<div className="wall-bottom b">
-										{/* { bTiles(bottom).map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) } */}
-										{ gTiles(bottom).b.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
-									</div>
-									<div className="wall-right a">
-										{ aTiles(right).map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 90 } />) }
-									</div>
-									<div className="wall-right b">
-										{ bTiles(right).map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 90 } />) }
-									</div>
+									{
+										wall.length > 0
+											? (
+												<>
+													<div className="wall-top a">
+														{ gTiles(top).a.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
+													</div>
+													<div className="wall-top b">
+														{ gTiles(top).b.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
+													</div>
+													<div className="wall-bottom a">
+														{ gTiles(bottom).b.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
+													</div>
+													<div className="wall-bottom b">
+														{ gTiles(bottom).a.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
+													</div>
+													<div className="wall-right a">
+														{ gTiles(right).b.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 90 } />) }
+													</div>
+													<div className="wall-right b">
+														{ gTiles(right).a.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 90 } />) }
+													</div>
+												</>
+											)
+											: null
+									}
 									<div className="drop-zone" data-tray="t1" />
 									<Tray
 										draggable={ false }

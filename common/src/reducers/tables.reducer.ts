@@ -325,8 +325,7 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 		const fromRack = target?.tray !== 't0' && target?.tray[1] === '0';
 
 		const fromWallEnd = target?.tray === 't0' && target?.index === 0;
-
-		console.log(target.tray, toTray);
+		const toWallEnd = toTray === 't0' && toIndex <= 3;
 
 		return state.map(table => (
 			table.id !== tableId
@@ -335,7 +334,7 @@ export const tables = (state: Mahjong.Table[] = STATE, action: any): Mahjong.Tab
 					...table,
 					game: {
 						...table.game,
-						x: table.game.x + (fromWallEnd ? 1 : 0),
+						x: table.game.x + (fromWallEnd ? 1 : toWallEnd ? -1 : 0),
 						tiles: table.game.tiles.map(tile => (
 							tile.id !== tileId
 								? tile.tray === 't1' && toTray === 't1' && fromRack

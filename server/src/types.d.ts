@@ -27,7 +27,7 @@ declare namespace Mahjong {
 		id: string;
 		tiles: Tile[];
 		turn: string;
-		x?: number;
+		x?: number; // number of tiles taken from back of wall
 	}
 
 	interface Table {

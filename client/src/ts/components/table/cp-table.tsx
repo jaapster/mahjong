@@ -2,7 +2,7 @@ import bind from 'autobind-decorator';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Chair } from './cp-chair';
-import { Wall } from './cp-wall';
+// import { Wall } from './cp-wall';
 import { Center } from './cp-center';
 import { Notifications } from './cp-notifications';
 import { Menu } from './cp-menu';
@@ -260,6 +260,7 @@ export class _Table extends React.Component<Props, State> {
 								reveal={ this.toggleReveal }
 								tiles={ tiles }
 								transit={ table.transit }
+								table={ table }
 							/>
 						))
 				}

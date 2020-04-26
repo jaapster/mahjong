@@ -137,6 +137,10 @@ $radius: $tileWidth / 10;
 
 		&.tile-hovered {
 			border-left: $tileWidth solid transparent;
+
+			&.tile-disabled {
+				border-left: 0;
+			}
 		}
 
 		&.tile-spaced {
@@ -188,6 +192,10 @@ $radius: $tileWidth / 10;
 
 		&.tile-hovered {
 			border-bottom: $tileWidth solid transparent;
+
+			&.tile-disabled {
+				border-bottom: 0;
+			}
 		}
 
 		&.tile-spaced {
@@ -208,17 +216,12 @@ $radius: $tileWidth / 10;
 		opacity: 0.5;
 	}
 
-	&.tile-disabled {
-		// filter: grayscale(100%);
-		// filter: contrast(70%);
-	}
-
 	&.tile-padding {
 		opacity: 0;
 		pointer-events: none;
+	}
 
-		// * {
-		// 	pointer-events: none;
-		// }
+	&.tile-disabled {
+		filter: grayscale(100%);
 	}
 }

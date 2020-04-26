@@ -32,15 +32,15 @@ $offsetY: ($tileHeight / 5) + 1;
 		justify-content: baseline;
 
 		&#t1 {
-			bottom: ($tileWidth + 1) * 4;
+			bottom: ($tileWidth) * 4;
 			height: $tileWidth;
 		}
 
 		&#t2 {
-			top: $tileHeight * 3;
-			left: $tileHeight * 3;
-			right: $tileHeight * 3;
-			height: ($tileWidth + 1) * 2;
+			top: $tileHeight * 2;
+			left: $tileHeight * 1;
+			right: $tileHeight * 1;
+			height: ($tileWidth + 1) * 3;
 			pointer-events: none;
 			background: rgba(255, 0, 0, 0.001);
 			// opacity: 0.5;
@@ -137,8 +137,8 @@ $offsetY: ($tileHeight / 5) + 1;
 			position: relative;
 			margin-top: -$tileHeight * 0.5;
 
-			width: (($tileWidth + 1) * 17) + $tileHeight;
-			height: (($tileWidth + 1) * 17) + $tileHeight;
+			width: (($tileWidth + 1) * 18) + $tileHeight;
+			height: (($tileWidth + 1) * 18) + $tileHeight;
 
 			.wall-top,
 			.wall-left,
@@ -146,10 +146,6 @@ $offsetY: ($tileHeight / 5) + 1;
 			.wall-bottom {
 				position: absolute;
 				pointer-events: none;
-
-				// .tile {
-				// 	pointer-events: all;
-				// }
 
 				&.a,
 				&.b {
@@ -159,6 +155,17 @@ $offsetY: ($tileHeight / 5) + 1;
 				&.b {
 					.tile-side {
 						box-shadow: none;
+					}
+				}
+
+				.tile {
+					&.tile-regular {
+						&.tile-hovered {
+
+								border-left: 0 !important;
+								border-bottom: 0;
+
+						}
 					}
 				}
 			}
@@ -172,6 +179,11 @@ $offsetY: ($tileHeight / 5) + 1;
 			}
 
 			.wall-bottom {
+				&.a,
+				&.b {
+					flex-direction: row-reverse;
+				}
+
 				&.a {
 					bottom: -$offsetY;
 					left: $offsetX;
@@ -180,6 +192,14 @@ $offsetY: ($tileHeight / 5) + 1;
 				&.b {
 					bottom: 0;
 					left: 0;
+				}
+
+				.tile {
+					margin: 0 1px 0 0;
+
+					&:last-child {
+						margin: 0 1px 0 0;
+					}
 				}
 			}
 

@@ -8,13 +8,6 @@
 
 	display: none;
 
-	&.wall-begin {
-		.tile-count {
-			right: auto;
-			left: 0;
-		}
-	}
-
 	&.wall-end {
 		right: 0;
 	}

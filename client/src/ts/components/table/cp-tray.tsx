@@ -72,7 +72,7 @@ export const Tray = ({ id, tiles, hidden, rotate = 0, small, draggable, showCoun
 					/>
 				))
 			}
-			{
+			{/* {
 				showCount
 					? (
 						<div className="tile-count">
@@ -80,7 +80,7 @@ export const Tray = ({ id, tiles, hidden, rotate = 0, small, draggable, showCoun
 						</div>
 					)
 					: null
-			}
+			} */}
 		</div>
 	);
 };
