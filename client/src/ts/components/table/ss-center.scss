@@ -1,15 +1,11 @@
 @import './ss-variables.scss';
 
-$offsetX: 0;
-$offsetY: ($tileHeight / 5) + 1;
-
 .center {
 	position: absolute;
 	top: $largeTray;
 	left: $largeTray;
 	right: $largeTray;
 	bottom: $largeTray;
-	// box-shadow: inset 0 0 5rem #333;
 
 	.drop-zone {
 		position: absolute;
@@ -43,7 +39,6 @@ $offsetY: ($tileHeight / 5) + 1;
 			height: ($tileWidth + 1) * 3;
 			pointer-events: none;
 			background: rgba(255, 0, 0, 0.001);
-			// opacity: 0.5;
 		}
 	}
 
@@ -135,10 +130,9 @@ $offsetY: ($tileHeight / 5) + 1;
 
 		.wall {
 			position: relative;
-			margin-top: -$tileHeight * 0.5;
 
-			width: (($tileWidth + 1) * 18) + $tileHeight;
-			height: (($tileWidth + 1) * 18) + $tileHeight;
+			width: (($tileWidth + $tileSpacing) * 18) + $tileHeight;
+			height: (($tileWidth + $tileSpacing) * 18) + $tileHeight;
 
 			.wall-top,
 			.wall-left,
@@ -146,25 +140,19 @@ $offsetY: ($tileHeight / 5) + 1;
 			.wall-bottom {
 				position: absolute;
 				pointer-events: none;
-
-				&.a,
-				&.b {
-					display: flex;
-				}
-
-				&.b {
-					.tile-side {
-						box-shadow: none;
-					}
-				}
+				display: flex;
 
 				.tile {
 					&.tile-regular {
 						&.tile-hovered {
+							border-left: 0;
+							border-bottom: 0;
+						}
+					}
 
-								border-left: 0 !important;
-								border-bottom: 0;
-
+					&:nth-child(odd) {
+						.tile-side {
+							box-shadow: none;
 						}
 					}
 				}
@@ -172,71 +160,52 @@ $offsetY: ($tileHeight / 5) + 1;
 
 			.wall-left,
 			.wall-right {
-				&.a,
-				&.b {
-					flex-direction: column;
-				}
-			}
-
-			.wall-bottom {
-				&.a,
-				&.b {
-					flex-direction: row-reverse;
-				}
-
-				&.a {
-					bottom: -$offsetY;
-					left: $offsetX;
-				}
-
-				&.b {
-					bottom: 0;
-					left: 0;
-				}
-
 				.tile {
-					margin: 0 1px 0 0;
+					&:nth-child(odd) {
+						margin-top: -$tileSide;
+					}
 
-					&:last-child {
-						margin: 0 1px 0 0;
+					&:nth-child(even) {
+						z-index: 1;
+						margin-top: $tileSide - $tileWidth + $tileSpacing;
 					}
 				}
 			}
 
-			.wall-right {
-				&.a {
-					bottom: -$offsetY;
-					right: -$offsetX;
-				}
+			.wall-left {
+				left: 0;
+				flex-direction: column-reverse;
+			}
 
-				&.b {
-					bottom: 0;
-					right: 0;
+			.wall-right {
+				bottom: 0;
+				right: 0;
+				flex-direction: column;
+			}
+
+			.wall-top,
+			.wall-bottom {
+				.tile {
+					&:nth-child(odd) {
+						z-index: 1;
+					}
+
+					&:nth-child(even) {
+						z-index: 0;
+						margin-top: $tileSide + $tileSpacing;
+						margin-left: -($tileWidth + $tileSpacing);
+					}
 				}
 			}
 
 			.wall-top {
-				&.a {
-					top: $offsetY;
-					right: -$offsetX;
-				}
-
-				&.b {
-					top: 0;
-					right: 0;
-				}
+				top: -($tileSide + $tileSpacing);
+				right: -$tileSpacing;
+				flex-direction: row-reverse;
 			}
 
-			.wall-left {
-				&.a {
-					top: -$offsetY;
-					left: $offsetX;
-				}
-
-				&.b {
-					top: 0;
-					left: 0;
-				}
+			.wall-bottom {
+				bottom: 0;
 			}
 		}
 	}

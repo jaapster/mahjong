@@ -23,24 +23,26 @@ const T = ({ t, id, r }: any) => (
 	/>
 );
 
-// x is used to reverse stacking order
-// const aTiles = (tiles, x = 0) => (tiles.length + x) % 2
-// 	? tiles.slice(0, Math.ceil(tiles.length / 2))
-// 	: tiles.slice(tiles.length / 2);
+const flipPairs = (array) => {
+	const res = [];
 
-// const bTiles = (tiles, x = 0) => (tiles.length + x) % 2
-// 	? tiles.slice(Math.ceil(tiles.length / 2))
-// 	: tiles.slice(0, tiles.length / 2);
+	for (let i = 0; i < array.length - 1; i += 2) {
+		res.push(array[i + 1], array[i]);
+	}
 
-const gTiles = (tiles) => tiles.reduce((m, t, i) => {
-	return {
-		a: (i % 2 ? [] : [t]).concat(m.a), //.concat(i % 2 ? [t] : []),
-		b: (i % 2 ? [t] : []).concat(m.b) // .concat(i % 2 ? [] : [t]),
-	};
-}, { a: [], b: [] });
+	if (array.length % 2) {
+		res.push(array[array.length - 1]);
+	}
+
+	return res;
+};
 
 export const Center = ({ tiles, transit, padding }: Props) => {
 	const wall = getTray('t0', tiles);
+
+	if (padding < 0) {
+		padding = 0;
+	}
 
 	const ts = (new Array(padding)).fill(1).map((_x, i) => {
 		return {
@@ -61,27 +63,11 @@ export const Center = ({ tiles, transit, padding }: Props) => {
 	const wallSize = 18;
 
 	const top = ts.slice(wallSize * 4, wallSize * 6);
-	const right = ts.slice(wallSize * 2, wallSize * 4);
+	const right = flipPairs(ts.slice(wallSize * 2, wallSize * 4).reverse());
 	const bottom = ts.slice(0, wallSize * 2);
 
 	const idE = wall[wall.length - 1]?.id;
 	const idB = wall[0]?.id;
-
-	const i = top.findIndex(t => !t.x);
-	const a = top[i];
-
-	if (!(top.filter(t => !t.x).length % 2)) {
-		const b = top[i + 1];
-
-		top[i] = b;
-		top[i + 1] = a;
-	} else {
-		const a = top[i];
-		const b = top[i - 1];
-
-		top[i] = b;
-		top[i - 1] = a;
-	}
 
 	return (
 		<div className="center">
@@ -96,22 +82,13 @@ export const Center = ({ tiles, transit, padding }: Props) => {
 											? (
 												<>
 													<div className="wall-top a">
-														{ gTiles(top).a.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
-													</div>
-													<div className="wall-top b">
-														{ gTiles(top).b.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
+														{ top.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
 													</div>
 													<div className="wall-bottom a">
-														{ gTiles(bottom).b.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
-													</div>
-													<div className="wall-bottom b">
-														{ gTiles(bottom).a.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
+														{ bottom.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 0 } />) }
 													</div>
 													<div className="wall-right a">
-														{ gTiles(right).b.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 90 } />) }
-													</div>
-													<div className="wall-right b">
-														{ gTiles(right).a.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 90 } />) }
+														{right.map(t => <T key={ t.id } t={ t } id={ [idE, idB] } r={ 90 } />) }
 													</div>
 												</>
 											)
@@ -138,7 +115,7 @@ export const Center = ({ tiles, transit, padding }: Props) => {
 					)
 					: null
 			}
-			<div className="transit-area" id="transit-area"/>
+			<div className="transit-area" id="transit-area" />
 		</div>
 	);
 };

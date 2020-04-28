@@ -7,6 +7,7 @@ import { Portal } from '../app/cp-portal';
 import './ss-chair.scss';
 import { ActionMoveTile, ActionSpaceTile } from '../../store/actions/actions';
 import { connect } from 'react-redux';
+import { analyseHand } from './ai/ai';
 
 interface Props {
 	chair: Mahjong.Chair;
@@ -25,35 +26,6 @@ interface DispatchProps {
 
 const POSITIONS = ['player', 'left', 'top', 'right'];
 
-const findChows = (r: Mahjong.Tile[]) => {
-	let tiles = r.map(t => ({ ...t, u: false }));
-
-	// let unused = tiles.length;
-	let sets = [];
-
-	tiles.forEach(t => {
-		if (['dots', 'bamboo', 'characters'].includes(t.suit)) {
-			const number = parseInt(t.name);
-			const { suit } = t;
-
-			if (number > 1 && number < 9) {
-				const left = tiles.find(t => t.suit === suit && parseInt(t.name) + 1 === number);
-				const right = tiles.find(t => t.suit === suit && parseInt(t.name) - 1 === number);
-
-				if (left && right) {
-					t.u = true;
-					left.u = true;
-					right.u = true;
-
-					sets.push([t, left, right]);
-				}
-			}
-		}
-	});
-
-	return sets;
-};
-
 @bind
 export class _Chair extends React.Component<Props & DispatchProps> {
 	componentDidMount() {
@@ -62,49 +34,23 @@ export class _Chair extends React.Component<Props & DispatchProps> {
 	}
 
 	private autoPlay() {
-		return;
-		// const {
-		// 	chair: {
-		// 		id
-		// 	},
-		// 	index,
-		// 	tiles,
-		// 	// reveal,
-		// 	table,
-		// 	moveTile,
-		// 	spaceTile
-		// } = this.props;
+		const { chair: { id }, table, tiles, moveTile } = this.props;
 
-		// const rack = getTray(`${ id }0`, tiles);
-		// // const open = getTray(`${ id }1`, tiles);
-		// const wall = getTray('t0', tiles);
-		// const last = getTray('t1', tiles)[0];
+		const { move, discard, take } = analyseHand(
+			getTray(`${ id }0`, tiles),
+			getTray('t1', tiles)[0],
+			getTray('t0', tiles)[0]
+		);
 
-		// // find all possibel chows using tiles on rack and free tile on the table
-		// const rackChows = findChows(rack);
-		// const chows = findChows(rack.concat(last));
+		if (move != null) {
+			move.forEach(t => moveTile(table.id, t.id, `${ id }1`, -0.5));
+		}
 
-		// // check if there is a chow using the free tile on the table
-		// const chowUsingLast = chows.find(c => c.find(t => t.id === last?.id ?? null));
+		if (take != null) {
+			moveTile(table.id, take.id, `${ id }0`, -0.5);
+		}
 
-		// if (chowUsingLast != null) {
-		// 	// use the free tile on the table: move the chow containing the free tile to the
-		// 	// players "public" tray
-		// 	chowUsingLast.sort((a, b) => a.name > b.name ? 1 : -1).forEach((t, i) => {
-		// 		moveTile(table.id, t.id, `${ id }1`, -0.5);
-
-		// 		if (i === 2) {
-		// 			spaceTile(table.id, t.id);
-		// 		}
-		// 	});
-		// } else {
-		// 	// get tile from wall
-		// 	moveTile(table.id, wall[0].id, `${ id }0`, -0.5);
-		// }
-		// setTimeout(() => {
-		// 	// put tile on table
-		// 	moveTile(table.id, rack[0].id, 't1', 0);
-		// }, 500);
+		moveTile(table.id, discard.id, 't1', -0.5);
 	}
 
 	render() {
@@ -162,7 +108,7 @@ export class _Chair extends React.Component<Props & DispatchProps> {
 									)
 								}
 							>
-								{ chair.player }
+								{ chair.player ?? 'leeg' }
 							</div>
 						)
 						: null

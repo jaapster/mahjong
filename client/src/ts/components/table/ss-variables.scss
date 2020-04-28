@@ -1,5 +1,7 @@
 $padding: 1.5;
-$tileWidth: 29rem;
-$tileHeight: $tileWidth * 1.4; // * 1.5;
+$tileWidth: 45rem;
+$tileHeight: $tileWidth * 1.25;
+$tileSide: $tileWidth / 4;
+$tileSpacing: 1rem;
 $smallTray: ($tileHeight / 2) * $padding;
-$largeTray: $tileHeight * $padding;
+$largeTray: ($tileHeight + $tileSide) * $padding;

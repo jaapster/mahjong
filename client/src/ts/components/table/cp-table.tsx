@@ -170,18 +170,21 @@ export class _Table extends React.Component<Props, State> {
 			const diff = drop.index - drag.index;
 
 			if (drop.tray === drag.tray && diff >= 0 && diff <= 1) {
-				spaceTile(id, drag.id, clientX > startX);
+				if (drop.tray !== 't0') {
+					spaceTile(id, drag.id, clientX > startX);
+				}
 			} else {
-				moveTile(id, drag.id, drop.tray, drop.index);
+				if (drag.tray === 't0' && drop.tray === 't0') {
+
+				} else {
+					moveTile(id, drag.id, drop.tray, drop.index);
+				}
 			}
 
 			this.setState({
 				drag: undefined,
 				drop: undefined
 			});
-
-			// const target = e.target as HTMLElement;;
-			// setTimeout(() => { target.style.display = 'block'; });
 		}
 	}
 
